@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=40 format=2]
+[gd_resource type="TileSet" load_steps=39 format=2]
 
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ground 04.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ground 11.png" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Brick 02.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Brick 01.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bonus.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ladder.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ground 10.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ground 08.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Wooden Box.png" type="Texture" id=14]
@@ -406,20 +405,6 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 15/z_index = 0
-16/name = "Cartoon Spooky Level Set_Platformer - Ladder.png 16"
-16/texture = ExtResource( 11 )
-16/tex_offset = Vector2( 0, 0 )
-16/modulate = Color( 1, 1, 1, 1 )
-16/region = Rect2( 0, 0, 128, 128 )
-16/tile_mode = 0
-16/occluder_offset = Vector2( 0, 0 )
-16/navigation_offset = Vector2( 0, 0 )
-16/shape_offset = Vector2( 0, 0 )
-16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-16/shape_one_way = false
-16/shape_one_way_margin = 0.0
-16/shapes = [  ]
-16/z_index = 0
 17/name = "Cartoon Spooky Level Set_Platformer - Stone.png 17"
 17/texture = ExtResource( 16 )
 17/tex_offset = Vector2( 0, 0 )

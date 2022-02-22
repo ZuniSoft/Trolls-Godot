@@ -11,7 +11,8 @@ func _physics_process(_delta):
 		$AnimatedSprite.play("falling")
 	elif not is_on_floor() and velocity.y < 0:
 		$AnimatedSprite.play("jumping")
-	elif Input.is_action_pressed("ui_right"):
+		
+	if Input.is_action_pressed("ui_right"):
 		$AnimatedSprite.flip_h = false
 		velocity.x = SPEED
 		$AnimatedSprite.play("walking")
