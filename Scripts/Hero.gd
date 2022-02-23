@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 var velocity = Vector2(0, 0)
 
-const SPEED = 120
+const WALK_SPEED = 120
+const RUN_SPEED = 500
 const GRAVITY = 35
 const JUMPFORCE = -1100
 
@@ -10,15 +11,28 @@ func _physics_process(_delta):
 	if not is_on_floor() and velocity.y > 0:
 		$AnimatedSprite.play("falling")
 	elif not is_on_floor() and velocity.y < 0:
-		$AnimatedSprite.play("jumping")
-		
-	if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("ui_right"):
+			velocity.x = WALK_SPEED
+		elif Input.is_action_pressed("ui_left"):
+			velocity.x = -WALK_SPEED
+		else:
+			velocity.x = 0
+		$AnimatedSprite.play("jumping") 
+	elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_run"):
 		$AnimatedSprite.flip_h = false
-		velocity.x = SPEED
+		velocity.x = RUN_SPEED
+		$AnimatedSprite.play("running")
+	elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_run"):
+		$AnimatedSprite.flip_h = true
+		velocity.x = -RUN_SPEED	
+		$AnimatedSprite.play("running")
+	elif Input.is_action_pressed("ui_right"):
+		$AnimatedSprite.flip_h = false
+		velocity.x = WALK_SPEED
 		$AnimatedSprite.play("walking")
 	elif Input.is_action_pressed("ui_left"):
 		$AnimatedSprite.flip_h = true
-		velocity.x = -SPEED
+		velocity.x = -WALK_SPEED
 		$AnimatedSprite.play("walking")
 	else:
 		velocity.x = 0

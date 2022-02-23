@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Scripts/Hero.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Hero/Idle Blinking/Idle Blinking_008.png" type="Texture" id=2]
@@ -61,6 +61,18 @@
 [ext_resource path="res://Assets/Hero/Falling Down/Falling Down_003.png" type="Texture" id=59]
 [ext_resource path="res://Assets/Hero/Falling Down/Falling Down_004.png" type="Texture" id=60]
 [ext_resource path="res://Assets/Hero/Falling Down/Falling Down_005.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Hero/Running/Running_006.png" type="Texture" id=62]
+[ext_resource path="res://Assets/Hero/Running/Running_004.png" type="Texture" id=63]
+[ext_resource path="res://Assets/Hero/Running/Running_002.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Hero/Running/Running_003.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Hero/Running/Running_010.png" type="Texture" id=66]
+[ext_resource path="res://Assets/Hero/Running/Running_009.png" type="Texture" id=67]
+[ext_resource path="res://Assets/Hero/Running/Running_011.png" type="Texture" id=68]
+[ext_resource path="res://Assets/Hero/Running/Running_008.png" type="Texture" id=69]
+[ext_resource path="res://Assets/Hero/Running/Running_001.png" type="Texture" id=70]
+[ext_resource path="res://Assets/Hero/Running/Running_000.png" type="Texture" id=71]
+[ext_resource path="res://Assets/Hero/Running/Running_007.png" type="Texture" id=72]
+[ext_resource path="res://Assets/Hero/Running/Running_005.png" type="Texture" id=73]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -88,6 +100,11 @@ animations = [ {
 "loop": true,
 "name": "falling",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 71 ), ExtResource( 70 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 73 ), ExtResource( 62 ), ExtResource( 72 ), ExtResource( 69 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 68 ) ],
+"loop": true,
+"name": "running",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -100,7 +117,7 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "climbing"
+animation = "walking"
 frame = 3
 speed_scale = 3.0
 playing = true
