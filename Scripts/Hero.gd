@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var velocity = Vector2(0, 0)
+var coins = 0
 
 const WALK_SPEED = 120
 const RUN_SPEED = 500
@@ -44,3 +45,6 @@ func _physics_process(_delta):
 		velocity.y = JUMPFORCE
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+func _on_FallZone_body_entered(body):
+	get_tree().change_scene("res://Levels/Level1/Level1.tscn")
