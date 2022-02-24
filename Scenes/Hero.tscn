@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Scripts/Hero.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Hero/Idle Blinking/Idle Blinking_008.png" type="Texture" id=2]
@@ -73,6 +73,21 @@
 [ext_resource path="res://Assets/Hero/Running/Running_000.png" type="Texture" id=71]
 [ext_resource path="res://Assets/Hero/Running/Running_007.png" type="Texture" id=72]
 [ext_resource path="res://Assets/Hero/Running/Running_005.png" type="Texture" id=73]
+[ext_resource path="res://Assets/Hero/Dying/Dying_000.png" type="Texture" id=74]
+[ext_resource path="res://Assets/Hero/Dying/Dying_008.png" type="Texture" id=75]
+[ext_resource path="res://Assets/Hero/Dying/Dying_010.png" type="Texture" id=76]
+[ext_resource path="res://Assets/Hero/Dying/Dying_009.png" type="Texture" id=77]
+[ext_resource path="res://Assets/Hero/Dying/Dying_004.png" type="Texture" id=78]
+[ext_resource path="res://Assets/Hero/Dying/Dying_006.png" type="Texture" id=79]
+[ext_resource path="res://Assets/Hero/Dying/Dying_007.png" type="Texture" id=80]
+[ext_resource path="res://Assets/Hero/Dying/Dying_014.png" type="Texture" id=81]
+[ext_resource path="res://Assets/Hero/Dying/Dying_012.png" type="Texture" id=82]
+[ext_resource path="res://Assets/Hero/Dying/Dying_011.png" type="Texture" id=83]
+[ext_resource path="res://Assets/Hero/Dying/Dying_001.png" type="Texture" id=84]
+[ext_resource path="res://Assets/Hero/Dying/Dying_005.png" type="Texture" id=85]
+[ext_resource path="res://Assets/Hero/Dying/Dying_003.png" type="Texture" id=86]
+[ext_resource path="res://Assets/Hero/Dying/Dying_002.png" type="Texture" id=87]
+[ext_resource path="res://Assets/Hero/Dying/Dying_013.png" type="Texture" id=88]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -105,6 +120,11 @@ animations = [ {
 "loop": true,
 "name": "running",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 74 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 86 ), ExtResource( 78 ), ExtResource( 85 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 82 ), ExtResource( 88 ), ExtResource( 81 ) ],
+"loop": true,
+"name": "dying",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -118,10 +138,20 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "walking"
-frame = 3
+frame = 18
 speed_scale = 3.0
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 4.99998, 4.99995 )
 shape = SubResource( 1 )
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 0.581
+one_shot = true
+
+[node name="DieTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="HitTimer" to="." method="_on_HitTimer_timeout"]
+[connection signal="timeout" from="DieTimer" to="." method="_on_DieTimer_timeout"]

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=39 format=2]
+[gd_resource type="TileSet" load_steps=38 format=2]
 
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ground 04.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ground 11.png" type="Texture" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ground 13.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ground 07.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Ground 05.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Spikes.png" type="Texture" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -468,17 +467,3 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 19/z_index = 0
-20/name = "Cartoon Spooky Level Set_Platformer - Spikes.png 20"
-20/texture = ExtResource( 21 )
-20/tex_offset = Vector2( 0, 0 )
-20/modulate = Color( 1, 1, 1, 1 )
-20/region = Rect2( 0, -64, 128, 128 )
-20/tile_mode = 0
-20/occluder_offset = Vector2( 0, 0 )
-20/navigation_offset = Vector2( 0, 0 )
-20/shape_offset = Vector2( 0, 0 )
-20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-20/shape_one_way = false
-20/shape_one_way_margin = 0.0
-20/shapes = [  ]
-20/z_index = 0
