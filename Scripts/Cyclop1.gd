@@ -34,6 +34,7 @@ func _on_TopChecker_body_entered(body):
 	speed = 0
 	$HitTimer.start()
 	body.bounce()
+	$SoundHit.play()
 
 func _on_SideChecker_body_entered(body):
 	body.hit(position.x)

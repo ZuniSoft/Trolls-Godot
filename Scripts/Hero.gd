@@ -47,11 +47,12 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("ui_jump") and is_on_floor():
 		velocity.y = JUMPFORCE
+		$SoundJump.play()
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 func _on_FallZone_body_entered(_body):
-	get_tree().change_scene("res://Levels/Level1/Level1.tscn")
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
 	
 func bounce():
 	velocity.y = JUMPFORCE * 0.7
@@ -69,6 +70,8 @@ func hit(var enemy_pos_x):
 	Input.action_release("ui_left")
 	Input.action_release("ui_right")
 	
+	$SoundBump.play()
+	
 	$HitTimer.start()
 
 func _on_HitTimer_timeout():
@@ -78,8 +81,11 @@ func _on_HitTimer_timeout():
 func dying():
 	is_dying = true
 	$AnimatedSprite.play("dying")
+	
+	$SoundDie.play()
+	
 	$DieTimer.start()
 
 func _on_DieTimer_timeout():
 	queue_free()
-	get_tree().change_scene("res://Levels/Level1/Level1.tscn")
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
