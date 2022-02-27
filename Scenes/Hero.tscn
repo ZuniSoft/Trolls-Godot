@@ -104,11 +104,6 @@ animations = [ {
 "name": "dying",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 51 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 46 ) ],
-"loop": true,
-"name": "climbing",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 51 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 54 ), ExtResource( 53 ), ExtResource( 50 ), ExtResource( 55 ) ],
 "loop": true,
 "name": "jumping",
@@ -128,6 +123,11 @@ animations = [ {
 "loop": true,
 "name": "running",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "climbing",
+"speed": 3.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -141,7 +141,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "walking"
-frame = 19
+frame = 20
 speed_scale = 3.0
 playing = true
 
@@ -158,10 +158,11 @@ one_shot = true
 
 [node name="SoundJump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 89 )
-volume_db = -18.0
+volume_db = -35.0
 
 [node name="SoundBump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 90 )
+volume_db = -10.0
 
 [node name="SoundDie" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 91 )

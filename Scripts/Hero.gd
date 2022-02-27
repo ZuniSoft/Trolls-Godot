@@ -4,12 +4,14 @@ var velocity = Vector2(0, 0)
 var coins = 0
 var is_hit = false
 var is_dying = false
+var on_ladder = false
 
 const WALK_SPEED = 120
 const RUN_SPEED = 500
 const GRAVITY = 35
 const JUMPFORCE = -1100
 const HIT_JUMP_VEL = 200 
+const CLIMB_VELOCITY = 450
 
 func _physics_process(_delta):
 	if not is_hit and not is_dying:
@@ -39,16 +41,19 @@ func _physics_process(_delta):
 			$AnimatedSprite.flip_h = true
 			velocity.x = -WALK_SPEED
 			$AnimatedSprite.play("walking")
+		elif Input.is_action_pressed("ui_up") and on_ladder:
+			velocity.y = -CLIMB_VELOCITY
+			$AnimatedSprite.play("climbing")
 		else:
 			velocity.x = 0
 			$AnimatedSprite.play("idle")
 	
 	velocity.y = velocity.y + GRAVITY
 	
-	if Input.is_action_just_pressed("ui_jump") and is_on_floor():
+	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not on_ladder:
 		velocity.y = JUMPFORCE
 		$SoundJump.play()
-		
+	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 func _on_FallZone_body_entered(_body):
@@ -89,3 +94,13 @@ func dying():
 func _on_DieTimer_timeout():
 	queue_free()
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
+
+func _on_Ladder_body_entered(body):
+	if body.name == "Hero":
+		on_ladder = true
+		print("on")
+
+func _on_Ladder1_body_exited(body):
+	if body.name == "Hero":
+		on_ladder = false
+		print("off")

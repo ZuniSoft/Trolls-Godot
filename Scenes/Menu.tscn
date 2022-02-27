@@ -124,10 +124,10 @@ __meta__ = {
 }
 
 [node name="RightKey" type="Label" parent="Keys"]
-margin_left = 175.0
-margin_top = 57.0
-margin_right = 207.0
-margin_bottom = 89.0
+margin_left = 192.0
+margin_top = 58.0
+margin_right = 224.0
+margin_bottom = 90.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
@@ -139,13 +139,40 @@ __meta__ = {
 }
 
 [node name="RightKeyDesc" type="Label" parent="Keys"]
-margin_left = 224.0
+margin_left = 240.0
 margin_top = 57.0
-margin_right = 280.0
+margin_right = 311.0
 margin_bottom = 98.0
 custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "= Right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpKey" type="Label" parent="Keys"]
+margin_left = 192.0
+margin_top = 102.0
+margin_right = 224.0
+margin_bottom = 134.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "^"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpKeyDesc" type="Label" parent="Keys"]
+margin_left = 240.546
+margin_top = 102.182
+margin_right = 315.546
+margin_bottom = 143.182
+custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "= Climb"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -160,9 +187,9 @@ custom_fonts/font = SubResource( 5 )
 text = "= Left"
 
 [node name="FireKey" type="Label" parent="Keys"]
-margin_left = 176.0
+margin_left = 192.0
 margin_top = 11.0
-margin_right = 208.0
+margin_right = 224.0
 margin_bottom = 43.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -175,9 +202,9 @@ __meta__ = {
 }
 
 [node name="FireKeyDesc" type="Label" parent="Keys"]
-margin_left = 224.0
+margin_left = 240.0
 margin_top = 11.0
-margin_right = 280.0
+margin_right = 296.0
 margin_bottom = 52.0
 custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
 custom_fonts/font = SubResource( 5 )
@@ -186,7 +213,7 @@ text = "= Fire"
 [node name="SpaceKey" type="Label" parent="Keys"]
 margin_left = 16.0
 margin_top = 102.0
-margin_right = 192.0
+margin_right = 92.0
 margin_bottom = 132.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -199,10 +226,10 @@ __meta__ = {
 }
 
 [node name="SpaceKeyDesc" type="Label" parent="Keys"]
-margin_left = 206.0
-margin_top = 100.0
-margin_right = 280.0
-margin_bottom = 141.0
+margin_left = 103.0
+margin_top = 102.0
+margin_right = 177.0
+margin_bottom = 143.0
 custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "= Jump"
@@ -299,6 +326,7 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -20.0
 autoplay = true
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
