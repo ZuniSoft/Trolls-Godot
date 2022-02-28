@@ -4,7 +4,8 @@ var velocity = Vector2(0, 0)
 var coins = 0
 var is_hit = false
 var is_dying = false
-var on_ladder = false
+#var on_ladder = false
+var in_ladder_area = false
 
 const WALK_SPEED = 120
 const RUN_SPEED = 500
@@ -41,7 +42,8 @@ func _physics_process(_delta):
 			$AnimatedSprite.flip_h = true
 			velocity.x = -WALK_SPEED
 			$AnimatedSprite.play("walking")
-		elif Input.is_action_pressed("ui_up") and on_ladder:
+		elif Input.is_action_pressed("ui_up") and in_ladder_area:
+			set_collision_layer_bit(0, true)
 			velocity.y = -CLIMB_VELOCITY
 			$AnimatedSprite.play("climbing")
 		else:
@@ -50,7 +52,7 @@ func _physics_process(_delta):
 	
 	velocity.y = velocity.y + GRAVITY
 	
-	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not on_ladder:
+	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not in_ladder_area:
 		velocity.y = JUMPFORCE
 		$SoundJump.play()
 	
@@ -76,7 +78,6 @@ func hit(var enemy_pos_x):
 	Input.action_release("ui_right")
 	
 	$SoundBump.play()
-	
 	$HitTimer.start()
 
 func _on_HitTimer_timeout():
@@ -86,9 +87,7 @@ func _on_HitTimer_timeout():
 func dying():
 	is_dying = true
 	$AnimatedSprite.play("dying")
-	
 	$SoundDie.play()
-	
 	$DieTimer.start()
 
 func _on_DieTimer_timeout():
@@ -97,10 +96,10 @@ func _on_DieTimer_timeout():
 
 func _on_Ladder_body_entered(body):
 	if body.name == "Hero":
-		on_ladder = true
-		print("on")
-
-func _on_Ladder1_body_exited(body):
+		in_ladder_area = true
+		set_collision_layer_bit(0, false)
+			
+func _on_Ladder_body_exited(body):
 	if body.name == "Hero":
-		on_ladder = false
-		print("off")
+		in_ladder_area = false
+		set_collision_layer_bit(0, true)
