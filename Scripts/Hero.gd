@@ -4,11 +4,11 @@ var velocity = Vector2(0, 0)
 var coins = 0
 var is_hit = false
 var is_dying = false
-#var on_ladder = false
 var in_ladder_area = false
 
 const WALK_SPEED = 120
 const RUN_SPEED = 500
+const ATTACK_SPEED = 90
 const GRAVITY = 35
 const JUMPFORCE = -1100
 const HIT_JUMP_VEL = 200 
@@ -26,6 +26,17 @@ func _physics_process(_delta):
 			else:
 				velocity.x = 0
 			$AnimatedSprite.play("jumping") 
+		elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_attack"):
+			setup_attack()
+			velocity.x = ATTACK_SPEED
+			$AnimatedSprite.flip_h = false
+		elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_attack"):
+			setup_attack()
+			velocity.x = -ATTACK_SPEED
+			$AnimatedSprite.flip_h = true
+		elif Input.is_action_pressed("ui_attack"):
+			setup_attack()
+			velocity.x = 0
 		elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_run"):
 			$AnimatedSprite.flip_h = false
 			velocity.x = RUN_SPEED
@@ -60,6 +71,11 @@ func _physics_process(_delta):
 	
 func _on_FallZone_body_entered(_body):
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	
+func setup_attack():
+	$SoundSword.play()
+	$SwordHit/CollisionShape2D.disabled = false
+	$AnimatedSprite.play("fighting")	
 	
 func bounce():
 	velocity.y = JUMPFORCE * 0.7
@@ -103,3 +119,9 @@ func _on_Ladder_body_exited(body):
 	if body.name == "Hero":
 		in_ladder_area = false
 		set_collision_layer_bit(0, true)
+
+func _on_SwordHit_body_entered(body):
+	if body.is_in_group("enemies") and not $SwordHit/CollisionShape2D.disabled:
+		body.hit()
+		$SwordHit/CollisionShape2D.disabled = true
+		print("sword hit")

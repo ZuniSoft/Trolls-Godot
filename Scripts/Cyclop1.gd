@@ -1,7 +1,10 @@
 extends KinematicBody2D
 
-var speed = 50
+const WALK_SPEED = 50
+
+var speed = WALK_SPEED
 var velocity = Vector2()
+var life = 50
 
 export var direction = -1
 export var detect_cliffs = true
@@ -24,20 +27,27 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func _on_TopChecker_body_entered(body):
-	$AnimatedSprite.play("hurt")
-	set_collision_layer_bit(4, false)
-	set_collision_mask_bit(0, false)
-	$TopChecker.set_collision_layer_bit(4, false)
-	$TopChecker.set_collision_mask_bit(0, false)
-	$SideChecker.set_collision_layer_bit(4, false)
-	$SideChecker.set_collision_mask_bit(0, false)
-	speed = 0
-	$HitTimer.start()
+	hit()
 	body.bounce()
 	$SoundHit.play()
 
 func _on_SideChecker_body_entered(body):
 	body.hit(position.x)
 
+func hit():
+	print(life)
+	if life > 0:
+		life -= 1
+	if life == 0:
+		speed = 0
+		$AnimatedSprite.play("dying")	
+		$DieTimer.start()
+	else:
+		$AnimatedSprite.play("hurt")
+		$HitTimer.start()
+		
 func _on_HitTimer_timeout():
+	$AnimatedSprite.play("walking")
+	
+func _on_DieTimer_timeout():
 	queue_free()
