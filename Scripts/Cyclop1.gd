@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const WALK_SPEED = 50
+const HIT_POINTS = 5
 
 var speed = WALK_SPEED
 var velocity = Vector2()
@@ -27,18 +28,17 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func _on_TopChecker_body_entered(body):
-	hit()
+	hit(body.JUMP_HIT_POINTS)
 	body.bounce()
 	$SoundHit.play()
 
 func _on_SideChecker_body_entered(body):
-	body.hit(position.x)
+	body.hit(position.x, HIT_POINTS)
 
-func hit():
-	print(life)
+func hit(var damage):
 	if life > 0:
-		life -= 1
-	if life == 0:
+		life -= damage
+	if life <= 0:
 		speed = 0
 		$AnimatedSprite.play("dying")	
 		$DieTimer.start()

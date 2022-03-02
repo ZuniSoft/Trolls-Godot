@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
+signal life_lost(hit_points)
+
 var velocity = Vector2(0, 0)
-var coins = 0
 var is_hit = false
 var is_dying = false
 var in_ladder_area = false
@@ -13,6 +14,9 @@ const GRAVITY = 35
 const JUMPFORCE = -1100
 const HIT_JUMP_VEL = 200 
 const CLIMB_VELOCITY = 450
+const FIREBALL = preload("res://Scenes/Fireball.tscn")
+const ATTACK_HIT_POINTS = 10
+const JUMP_HIT_POINTS = 2
 
 func _physics_process(_delta):
 	if not is_hit and not is_dying:
@@ -48,10 +52,14 @@ func _physics_process(_delta):
 		elif Input.is_action_pressed("ui_right"):
 			$AnimatedSprite.flip_h = false
 			velocity.x = WALK_SPEED
+			if sign($Position2D.position.x) == -1:
+					$Position2D.position.x *= -1
 			$AnimatedSprite.play("walking")
 		elif Input.is_action_pressed("ui_left"):
 			$AnimatedSprite.flip_h = true
 			velocity.x = -WALK_SPEED
+			if sign($Position2D.position.x) == 1:
+					$Position2D.position.x *= -1
 			$AnimatedSprite.play("walking")
 		elif Input.is_action_pressed("ui_up") and in_ladder_area:
 			set_collision_layer_bit(0, true)
@@ -66,7 +74,19 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not in_ladder_area:
 		velocity.y = JUMPFORCE
 		$SoundJump.play()
-	
+		
+	if Input.is_action_just_pressed("ui_focus_next"):
+		var fireball = FIREBALL.instance()
+		
+		if sign($Position2D.position.x) == 1:
+			fireball.set_fireball_dir(1)
+		else:
+			fireball.set_fireball_dir(-1)
+		
+		get_parent().add_child(fireball)
+		fireball.position = $Position2D.global_position
+		$SoundFireball.play()
+		
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 func _on_FallZone_body_entered(_body):
@@ -80,7 +100,7 @@ func setup_attack():
 func bounce():
 	velocity.y = JUMPFORCE * 0.7
 	
-func hit(var enemy_pos_x):
+func hit(var enemy_pos_x, var hit_points):
 	is_hit = true
 	set_modulate(Color(1.0, 0.3, 0.3, 0.3))
 	velocity.y = JUMPFORCE * 0.5
@@ -94,6 +114,7 @@ func hit(var enemy_pos_x):
 	Input.action_release("ui_right")
 	
 	$SoundBump.play()
+	emit_signal("life_lost", hit_points)
 	$HitTimer.start()
 
 func _on_HitTimer_timeout():
@@ -101,6 +122,7 @@ func _on_HitTimer_timeout():
 	is_hit = false
 
 func dying():
+	set_modulate(Color(1, 1, 1, 1))
 	is_dying = true
 	$AnimatedSprite.play("dying")
 	$SoundDie.play()
@@ -122,6 +144,9 @@ func _on_Ladder_body_exited(body):
 
 func _on_SwordHit_body_entered(body):
 	if body.is_in_group("enemies") and not $SwordHit/CollisionShape2D.disabled:
-		body.hit()
+		body.hit(ATTACK_HIT_POINTS)
 		$SwordHit/CollisionShape2D.disabled = true
-		print("sword hit")
+		
+
+func _on_HUD_hero_dead():
+	dying()
