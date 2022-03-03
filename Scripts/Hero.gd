@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
 signal life_lost(hit_points)
+signal fireball_used
 
 var velocity = Vector2(0, 0)
 var is_hit = false
 var is_dying = false
 var in_ladder_area = false
+var has_fireballs = true
 
 const WALK_SPEED = 120
 const RUN_SPEED = 500
@@ -75,7 +77,7 @@ func _physics_process(_delta):
 		velocity.y = JUMPFORCE
 		$SoundJump.play()
 		
-	if Input.is_action_just_pressed("ui_focus_next"):
+	if Input.is_action_just_pressed("ui_focus_next") and has_fireballs:
 		var fireball = FIREBALL.instance()
 		
 		if sign($Position2D.position.x) == 1:
@@ -86,6 +88,8 @@ func _physics_process(_delta):
 		get_parent().add_child(fireball)
 		fireball.position = $Position2D.global_position
 		$SoundFireball.play()
+		
+		emit_signal("fireball_used")
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
@@ -147,6 +151,8 @@ func _on_SwordHit_body_entered(body):
 		body.hit(ATTACK_HIT_POINTS)
 		$SwordHit/CollisionShape2D.disabled = true
 		
-
 func _on_HUD_hero_dead():
 	dying()
+
+func _on_HUD_fireballs_empty():
+	has_fireballs = false

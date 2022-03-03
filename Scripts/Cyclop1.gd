@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
-const WALK_SPEED = 50
+const WALK_SPEED = 70
 const HIT_POINTS = 5
 
 var speed = WALK_SPEED
 var velocity = Vector2()
-var life = 50
+var life = 20
 
 export var direction = -1
 export var detect_cliffs = true

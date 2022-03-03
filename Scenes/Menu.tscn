@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Fonts/Sniglet-ExtraBold.ttf" type="DynamicFontData" id=2]
@@ -12,6 +12,10 @@
 size = 144
 outline_size = 12
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 28
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.172549, 0.0666667, 0.360784, 1 )
@@ -67,6 +71,17 @@ custom_fonts/font = SubResource( 1 )
 text = "TROLLS!"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Version" type="Label" parent="."]
+margin_left = 856.0
+margin_top = 16.0
+margin_right = 1009.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 7 )
+text = "Version 0.5.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
