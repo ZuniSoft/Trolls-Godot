@@ -2,7 +2,7 @@ extends CanvasLayer
 
 signal hero_dead
 
-const COINS_TO_WIN = 6
+const COINS_TO_WIN = 9
 const MAX_LIFE = 50
 
 var coins = 0
