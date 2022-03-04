@@ -93,6 +93,19 @@ func _physics_process(_delta):
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.name == "MysteryBox":
+			remove_mystery_box(collision)
+			
+func remove_mystery_box(collision):
+	var tilemap = get_parent().get_node("Tilesets/MysteryBox")
+	var local_position = tilemap.to_local(collision.position)
+	var cell_position = tilemap.world_to_map(local_position)
+	
+	cell_position -= collision.normal
+	tilemap.set_cell(cell_position.x, cell_position.y, -1)
+	
 func _on_FallZone_body_entered(_body):
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
 	
