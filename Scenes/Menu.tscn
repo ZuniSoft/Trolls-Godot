@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Fonts/Sniglet-ExtraBold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/HUD/Cartoon Spooky Level Set_Collectable Object - Coin 00.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Ogre3/Idle/Idle_000.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Hero/Idle/Idle_000.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/PlayButton.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Background1/Layer1.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sound/Menu.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Fireball/Fireball.png" type="Texture" id=8]
+[ext_resource path="res://Assets/CommonObjects/Cartoon Spooky Level Set_Collectable Object - Life.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 144
@@ -61,10 +63,10 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 188.0
-margin_top = 122.0
-margin_right = 840.0
-margin_bottom = 302.0
+margin_left = 192.0
+margin_top = 174.0
+margin_right = 844.0
+margin_bottom = 354.0
 custom_colors/font_color = Color( 0.654902, 0.133333, 0.694118, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -268,9 +270,9 @@ __meta__ = {
 }
 
 [node name="SpaceKeyDesc2" type="Label" parent="Keys"]
-margin_left = 312.0
+margin_left = 310.0
 margin_top = 107.0
-margin_right = 386.0
+margin_right = 384.0
 margin_bottom = 148.0
 custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
 custom_fonts/font = SubResource( 5 )
@@ -290,9 +292,10 @@ __meta__ = {
 }
 
 [node name="YouImage" type="TextureRect" parent="Legend"]
-margin_left = 80.0
-margin_right = 240.0
-margin_bottom = 112.0
+margin_left = -38.0
+margin_top = -17.0
+margin_right = 122.0
+margin_bottom = 95.0
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
@@ -300,47 +303,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="YouDesc" type="Label" parent="Legend"]
-margin_left = 195.0
-margin_top = 41.0
-margin_right = 270.0
-margin_bottom = 82.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
-text = "= You"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text1" type="Label" parent="Legend"]
-margin_left = 99.0
-margin_top = 101.0
-margin_right = 196.0
-margin_bottom = 142.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
-text = "Collect"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text2" type="Label" parent="Legend"]
-margin_left = 234.0
-margin_top = 101.0
-margin_right = 327.0
-margin_bottom = 142.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
-text = "to win!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Coin" type="TextureRect" parent="Legend"]
-margin_left = 183.0
-margin_top = 97.0
-margin_right = 223.0
-margin_bottom = 137.0
+[node name="BossImage" type="TextureRect" parent="Legend"]
+margin_left = -26.0
+margin_top = 44.0
+margin_right = 115.0
+margin_bottom = 160.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
@@ -348,11 +315,71 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="YouDesc" type="Label" parent="Legend"]
+margin_left = 80.0
+margin_top = 23.0
+margin_right = 155.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "= You"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YouImage2" type="TextureRect" parent="Legend"]
+margin_left = 164.0
+margin_top = 23.0
+margin_right = 207.0
+margin_bottom = 56.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YouImage3" type="TextureRect" parent="Legend"]
+margin_left = 204.0
+margin_top = 22.0
+margin_right = 248.0
+margin_bottom = 56.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YouDesc2" type="Label" parent="Legend"]
+margin_left = 249.0
+margin_top = 23.0
+margin_right = 375.0
+margin_bottom = 86.0
+custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "= Power ups"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text1" type="Label" parent="Legend"]
+margin_left = 94.0
+margin_top = 92.0
+margin_right = 371.0
+margin_bottom = 133.0
+custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "= Beat bosses to advance!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 411.0
-margin_top = 299.0
-margin_right = 620.0
-margin_bottom = 395.0
+margin_left = 408.0
+margin_top = 466.0
+margin_right = 617.0
+margin_bottom = 562.0
 custom_colors/font_color_focus = Color( 0.0666667, 0.929412, 0.117647, 1 )
 custom_colors/font_color = Color( 0.137255, 0.768627, 0.176471, 1 )
 custom_colors/font_color_hover = Color( 0.0666667, 0.929412, 0.117647, 1 )

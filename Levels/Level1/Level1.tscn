@@ -265,7 +265,7 @@ tile_set = SubResource( 14 )
 cell_size = Vector2( 128, 128 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( 327676, 0, 0 )
+tile_data = PoolIntArray( -65527, 0, 0, 22, 0, 0, 262140, 0, 0 )
 
 [node name="Life" type="Node" parent="."]
 

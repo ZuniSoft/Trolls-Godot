@@ -8,6 +8,7 @@ var is_hit = false
 var is_dying = false
 var in_ladder_area = false
 var has_fireballs = true
+var mystery_items = ["res://Scenes/Fireballs.tscn", "res://Scenes/Heart.tscn", "res://Scenes/Coin.tscn"]
 
 const WALK_SPEED = 120
 const RUN_SPEED = 500
@@ -96,18 +97,23 @@ func _physics_process(_delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "MysteryBox":
-			remove_mystery_box(collision)
+			reveal_mystery_box(collision)
 			
-func remove_mystery_box(collision):
-	var tilemap = get_parent().get_node("Tilesets/MysteryBox")
-	var local_position = tilemap.to_local(collision.position)
-	var cell_position = tilemap.world_to_map(local_position)
-	
-	cell_position -= collision.normal
-	tilemap.set_cell(cell_position.x, cell_position.y, -1)
-	
-func _on_FallZone_body_entered(_body):
-	get_tree().change_scene("res://Scenes/GameOver.tscn")
+func reveal_mystery_box(collision):
+	if collision.normal.y == 1:
+		var tilemap = get_parent().get_node("Tilesets/MysteryBox")
+		var local_position = tilemap.to_local(collision.position)
+		var cell_position = tilemap.world_to_map(local_position)
+		
+		cell_position -= collision.normal
+		tilemap.set_cell(cell_position.x, cell_position.y, -1)
+		mystery_items.shuffle()
+		
+		var scene = load(mystery_items[0])
+		var scene_instance = scene.instance()
+		
+		scene_instance.set_position(collision.position)
+		get_parent().add_child(scene_instance)
 	
 func setup_attack():
 	$SoundSword.play()
@@ -134,16 +140,16 @@ func hit(var enemy_pos_x, var hit_points):
 	emit_signal("life_lost", hit_points)
 	$HitTimer.start()
 
-func _on_HitTimer_timeout():
-	set_modulate(Color(1, 1, 1, 1))
-	is_hit = false
-
 func dying():
 	set_modulate(Color(1, 1, 1, 1))
 	is_dying = true
 	$AnimatedSprite.play("dying")
 	$SoundDie.play()
 	$DieTimer.start()
+
+func _on_HitTimer_timeout():
+	set_modulate(Color(1, 1, 1, 1))
+	is_hit = false
 
 func _on_DieTimer_timeout():
 	queue_free()
@@ -169,3 +175,6 @@ func _on_HUD_hero_dead():
 
 func _on_HUD_fireballs_empty():
 	has_fireballs = false
+
+func _on_FallZone_body_entered(_body):
+	get_tree().change_scene("res://Scenes/GameOver.tscn")	

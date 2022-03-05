@@ -51,3 +51,4 @@ func _on_HitTimer_timeout():
 	
 func _on_DieTimer_timeout():
 	queue_free()
+	# Move to next level
