@@ -6,12 +6,12 @@
 [ext_resource path="res://Scenes/Ogre.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level1/rock_wall.tres" type="TileSet" id=5]
 [ext_resource path="res://Levels/Level1/environment.tres" type="TileSet" id=6]
-[ext_resource path="res://Assets/Background1/Layer1.png" type="Texture" id=7]
-[ext_resource path="res://Levels/Level1/platformer.tres" type="TileSet" id=8]
+[ext_resource path="res://Assets/Background2/wall-2.png" type="Texture" id=7]
+[ext_resource path="res://Levels/Level2/platform.tres" type="TileSet" id=8]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bridge 02.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bonus.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Background1/Layer2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Background2/wall-1.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bridge 01.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Fireballs.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sound/Background.mp3" type="AudioStream" id=15]
@@ -124,17 +124,17 @@ extents = Vector2( 317, 82 )
 motion_scale = Vector2( 0.1, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer1"]
-position = Vector2( 783.251, 420.5 )
-scale = Vector2( 2.65779, 2.52933 )
-texture = ExtResource( 7 )
+position = Vector2( 857.5, 398 )
+scale = Vector2( 6.96289, 3.875 )
+texture = ExtResource( 12 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.6, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 842.751, 425.375 )
-scale = Vector2( 2.71552, 2.543 )
-texture = ExtResource( 12 )
+position = Vector2( 837, 420 )
+scale = Vector2( 6.74219, 3.70703 )
+texture = ExtResource( 7 )
 
 [node name="Coins" type="Node" parent="."]
 

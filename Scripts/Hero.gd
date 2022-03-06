@@ -52,16 +52,19 @@ func _physics_process(_delta):
 			velocity.x = 0
 			$AnimatedSprite.play("fighting")
 		elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_run"):
+			$SwordHit/Sword.disabled = true
 			$SwordHit/Sword.position.x = SWORD_X_POS
 			$AnimatedSprite.flip_h = false
 			velocity.x = RUN_SPEED
 			$AnimatedSprite.play("running")
 		elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_run"):
+			$SwordHit/Sword.disabled = true
 			$SwordHit/Sword.position.x = -SWORD_X_POS
 			$AnimatedSprite.flip_h = true
 			velocity.x = -RUN_SPEED	
 			$AnimatedSprite.play("running")
 		elif Input.is_action_pressed("ui_right"):
+			$SwordHit/Sword.disabled = true
 			$SwordHit/Sword.position.x = SWORD_X_POS
 			$AnimatedSprite.flip_h = false
 			velocity.x = WALK_SPEED
@@ -69,6 +72,7 @@ func _physics_process(_delta):
 					$Position2D.position.x *= -1
 			$AnimatedSprite.play("walking")
 		elif Input.is_action_pressed("ui_left"):
+			$SwordHit/Sword.disabled = true
 			$SwordHit/Sword.position.x = -SWORD_X_POS
 			$AnimatedSprite.flip_h = true
 			velocity.x = -WALK_SPEED
@@ -181,6 +185,9 @@ func _on_HUD_hero_dead():
 
 func _on_HUD_fireballs_empty():
 	has_fireballs = false
+
+func _on_HUD_has_fireballs():
+	has_fireballs = true
 
 func _on_FallZone_body_entered(_body):
 	get_tree().change_scene("res://Scenes/GameOver.tscn")	
