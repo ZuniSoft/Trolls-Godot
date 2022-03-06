@@ -113,24 +113,24 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 74 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 86 ), ExtResource( 78 ), ExtResource( 85 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 82 ), ExtResource( 88 ), ExtResource( 81 ) ],
+"frames": [ ExtResource( 51 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 46 ) ],
 "loop": true,
-"name": "dying",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 71 ), ExtResource( 70 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 73 ), ExtResource( 62 ), ExtResource( 72 ), ExtResource( 69 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 68 ) ],
-"loop": true,
-"name": "running",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 35 ), ExtResource( 23 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 42 ), ExtResource( 34 ), ExtResource( 41 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "walking",
-"speed": 5.0
+"name": "climbing",
+"speed": 3.0
 }, {
 "frames": [ ExtResource( 51 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 54 ), ExtResource( 53 ), ExtResource( 50 ), ExtResource( 55 ) ],
 "loop": true,
 "name": "jumping",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "falling",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 74 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 86 ), ExtResource( 78 ), ExtResource( 85 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 82 ), ExtResource( 88 ), ExtResource( 81 ) ],
+"loop": true,
+"name": "dying",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 97 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 100 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 103 ), ExtResource( 101 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 102 ), ExtResource( 96 ) ],
@@ -138,15 +138,15 @@ animations = [ {
 "name": "fighting",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 35 ), ExtResource( 23 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 42 ), ExtResource( 34 ), ExtResource( 41 ), ExtResource( 30 ) ],
 "loop": true,
-"name": "falling",
+"name": "walking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 51 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"frames": [ ExtResource( 71 ), ExtResource( 70 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 73 ), ExtResource( 62 ), ExtResource( 72 ), ExtResource( 69 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 68 ) ],
 "loop": true,
-"name": "climbing",
-"speed": 3.0
+"name": "running",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -179,8 +179,8 @@ shape = SubResource( 1 )
 [node name="SwordHit" type="Area2D" parent="."]
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHit"]
-position = Vector2( 305, 197.5 )
+[node name="Sword" type="CollisionShape2D" parent="SwordHit"]
+position = Vector2( 310, 160 )
 shape = SubResource( 3 )
 disabled = true
 

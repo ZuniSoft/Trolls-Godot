@@ -34,31 +34,41 @@ func _physics_process(_delta):
 				velocity.x = 0
 			$AnimatedSprite.play("jumping") 
 		elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_attack"):
-			setup_attack()
+			$SoundSword.play()
+			$SwordHit/Sword.disabled = false
 			velocity.x = ATTACK_SPEED
 			$AnimatedSprite.flip_h = false
+			$AnimatedSprite.play("fighting")
 		elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_attack"):
-			setup_attack()
+			$SoundSword.play()
+			$SwordHit/Sword.disabled = false
 			velocity.x = -ATTACK_SPEED
 			$AnimatedSprite.flip_h = true
+			$AnimatedSprite.play("fighting")
 		elif Input.is_action_pressed("ui_attack"):
-			setup_attack()
+			$SoundSword.play()
+			$SwordHit/Sword.disabled = false
 			velocity.x = 0
+			$AnimatedSprite.play("fighting")
 		elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_run"):
+			$SwordHit/Sword.position.x = 310
 			$AnimatedSprite.flip_h = false
 			velocity.x = RUN_SPEED
 			$AnimatedSprite.play("running")
 		elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_run"):
+			$SwordHit/Sword.position.x = -310
 			$AnimatedSprite.flip_h = true
 			velocity.x = -RUN_SPEED	
 			$AnimatedSprite.play("running")
 		elif Input.is_action_pressed("ui_right"):
+			$SwordHit/Sword.position.x = 310
 			$AnimatedSprite.flip_h = false
 			velocity.x = WALK_SPEED
 			if sign($Position2D.position.x) == -1:
 					$Position2D.position.x *= -1
 			$AnimatedSprite.play("walking")
 		elif Input.is_action_pressed("ui_left"):
+			$SwordHit/Sword.position.x = -310
 			$AnimatedSprite.flip_h = true
 			velocity.x = -WALK_SPEED
 			if sign($Position2D.position.x) == 1:
@@ -117,7 +127,8 @@ func reveal_mystery_box(collision):
 	
 func setup_attack():
 	$SoundSword.play()
-	$SwordHit/CollisionShape2D.disabled = false
+	$SwordHit/Left.disabled = false
+	$SwordHit/Right.disabled = false
 	$AnimatedSprite.play("fighting")	
 	
 func bounce():
@@ -166,9 +177,9 @@ func _on_Ladder_body_exited(body):
 		set_collision_layer_bit(0, true)
 
 func _on_SwordHit_body_entered(body):
-	if body.is_in_group("enemies") and not $SwordHit/CollisionShape2D.disabled:
+	if body.is_in_group("enemies") and not $SwordHit/Sword.disabled:
 		body.hit(ATTACK_HIT_POINTS)
-		$SwordHit/CollisionShape2D.disabled = true
+		$SwordHit/Sword.disabled = true
 		
 func _on_HUD_hero_dead():
 	dying()

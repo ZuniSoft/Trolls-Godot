@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Ogre1/Dying/Dying_011.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Ogre1/Walking/Walking_003.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Ogre1/Walking/Walking_012.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Ogre1.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Ogre.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Ogre1/Dying/Dying_014.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Ogre1/Hurt/Hurt_000.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Ogre1/Walking/Walking_005.png" type="Texture" id=8]
@@ -75,7 +75,7 @@ extents = Vector2( 91, 21.125 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 254, 146 )
 
-[node name="Ogre1" type="KinematicBody2D"]
+[node name="Ogre" type="KinematicBody2D"]
 collision_layer = 16
 collision_mask = 51
 script = ExtResource( 5 )
@@ -84,7 +84,7 @@ script = ExtResource( 5 )
 position = Vector2( 2, 0 )
 frames = SubResource( 1 )
 animation = "walking"
-frame = 7
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
