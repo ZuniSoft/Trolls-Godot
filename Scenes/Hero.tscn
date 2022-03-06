@@ -113,10 +113,10 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 51 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"frames": [ ExtResource( 74 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 86 ), ExtResource( 78 ), ExtResource( 85 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 82 ), ExtResource( 88 ), ExtResource( 81 ) ],
 "loop": true,
-"name": "climbing",
-"speed": 3.0
+"name": "dying",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 51 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 54 ), ExtResource( 53 ), ExtResource( 50 ), ExtResource( 55 ) ],
 "loop": true,
@@ -126,11 +126,6 @@ animations = [ {
 "frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ) ],
 "loop": true,
 "name": "falling",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 74 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 86 ), ExtResource( 78 ), ExtResource( 85 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 82 ), ExtResource( 88 ), ExtResource( 81 ) ],
-"loop": true,
-"name": "dying",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 97 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 100 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 103 ), ExtResource( 101 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 102 ), ExtResource( 96 ) ],
@@ -147,6 +142,11 @@ animations = [ {
 "loop": true,
 "name": "running",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "climbing",
+"speed": 3.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]

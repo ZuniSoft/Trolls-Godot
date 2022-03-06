@@ -20,6 +20,7 @@ const CLIMB_VELOCITY = 450
 const FIREBALL = preload("res://Scenes/Fireball.tscn")
 const ATTACK_HIT_POINTS = 10
 const JUMP_HIT_POINTS = 2
+const SWORD_X_POS = 310
 
 func _physics_process(_delta):
 	if not is_hit and not is_dying:
@@ -51,24 +52,24 @@ func _physics_process(_delta):
 			velocity.x = 0
 			$AnimatedSprite.play("fighting")
 		elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_run"):
-			$SwordHit/Sword.position.x = 310
+			$SwordHit/Sword.position.x = SWORD_X_POS
 			$AnimatedSprite.flip_h = false
 			velocity.x = RUN_SPEED
 			$AnimatedSprite.play("running")
 		elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_run"):
-			$SwordHit/Sword.position.x = -310
+			$SwordHit/Sword.position.x = -SWORD_X_POS
 			$AnimatedSprite.flip_h = true
 			velocity.x = -RUN_SPEED	
 			$AnimatedSprite.play("running")
 		elif Input.is_action_pressed("ui_right"):
-			$SwordHit/Sword.position.x = 310
+			$SwordHit/Sword.position.x = SWORD_X_POS
 			$AnimatedSprite.flip_h = false
 			velocity.x = WALK_SPEED
 			if sign($Position2D.position.x) == -1:
 					$Position2D.position.x *= -1
 			$AnimatedSprite.play("walking")
 		elif Input.is_action_pressed("ui_left"):
-			$SwordHit/Sword.position.x = -310
+			$SwordHit/Sword.position.x = -SWORD_X_POS
 			$AnimatedSprite.flip_h = true
 			velocity.x = -WALK_SPEED
 			if sign($Position2D.position.x) == 1:
@@ -124,12 +125,6 @@ func reveal_mystery_box(collision):
 		
 		scene_instance.set_position(collision.position)
 		get_parent().add_child(scene_instance)
-	
-func setup_attack():
-	$SoundSword.play()
-	$SwordHit/Left.disabled = false
-	$SwordHit/Right.disabled = false
-	$AnimatedSprite.play("fighting")	
 	
 func bounce():
 	velocity.y = JUMPFORCE * 0.7
