@@ -5,7 +5,7 @@ const HIT_POINTS = 10
 
 var speed = WALK_SPEED
 var velocity = Vector2()
-var life = 5 #50
+var life = 50
 
 export var direction = -1
 export var detect_cliffs = true

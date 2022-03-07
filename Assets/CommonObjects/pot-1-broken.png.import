@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crystal-bottom-2.png-ad8b744ab54a7e54640fe7201b78c1ab.stex"
+path="res://.import/pot-1-broken.png-fcc3121d6b8b635e07b83103cce26f6c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer2/crystal-bottom-2.png"
-dest_files=[ "res://.import/crystal-bottom-2.png-ad8b744ab54a7e54640fe7201b78c1ab.stex" ]
+source_file="res://Assets/CommonObjects/pot-1-broken.png"
+dest_files=[ "res://.import/pot-1-broken.png-fcc3121d6b8b635e07b83103cce26f6c.stex" ]
 
 [params]
 

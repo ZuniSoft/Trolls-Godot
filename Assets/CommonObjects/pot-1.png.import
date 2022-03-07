@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bridge-4.png-02447ca7a738ae2af3da6580ff39a67a.stex"
+path="res://.import/pot-1.png-e4ac5ec5815f430f59526b606dee3e28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer2/bridge-4.png"
-dest_files=[ "res://.import/bridge-4.png-02447ca7a738ae2af3da6580ff39a67a.stex" ]
+source_file="res://Assets/CommonObjects/pot-1.png"
+dest_files=[ "res://.import/pot-1.png-e4ac5ec5815f430f59526b606dee3e28.stex" ]
 
 [params]
 

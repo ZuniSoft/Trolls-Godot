@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bridge-2.png-df36960ec7be538cec85c69fc427caf4.stex"
+path="res://.import/Cartoon Spooky Level Set_Environment - Signpost 01.png-9f28d3a963631c81836045590c293c48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer2/bridge-2.png"
-dest_files=[ "res://.import/bridge-2.png-df36960ec7be538cec85c69fc427caf4.stex" ]
+source_file="res://Assets/Environment2/Cartoon Spooky Level Set_Environment - Signpost 01.png"
+dest_files=[ "res://.import/Cartoon Spooky Level Set_Environment - Signpost 01.png-9f28d3a963631c81836045590c293c48.stex" ]
 
 [params]
 

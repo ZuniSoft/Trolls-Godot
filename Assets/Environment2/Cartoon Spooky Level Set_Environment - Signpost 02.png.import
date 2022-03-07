@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rock.png-932d6b39719ca553c500415f536ff3ab.stex"
+path="res://.import/Cartoon Spooky Level Set_Environment - Signpost 02.png-d697145a7da449d1034b6392339f5156.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer2/rock.png"
-dest_files=[ "res://.import/rock.png-932d6b39719ca553c500415f536ff3ab.stex" ]
+source_file="res://Assets/Environment2/Cartoon Spooky Level Set_Environment - Signpost 02.png"
+dest_files=[ "res://.import/Cartoon Spooky Level Set_Environment - Signpost 02.png-d697145a7da449d1034b6392339f5156.stex" ]
 
 [params]
 

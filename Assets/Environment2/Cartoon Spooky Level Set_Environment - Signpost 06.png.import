@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crystal-bottom-1.png-3b05fe3149636a3cac372c050443e408.stex"
+path="res://.import/Cartoon Spooky Level Set_Environment - Signpost 06.png-15ad964cdae5fa34866f7de8fd8928e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer2/crystal-bottom-1.png"
-dest_files=[ "res://.import/crystal-bottom-1.png-3b05fe3149636a3cac372c050443e408.stex" ]
+source_file="res://Assets/Environment2/Cartoon Spooky Level Set_Environment - Signpost 06.png"
+dest_files=[ "res://.import/Cartoon Spooky Level Set_Environment - Signpost 06.png-15ad964cdae5fa34866f7de8fd8928e0.stex" ]
 
 [params]
 
