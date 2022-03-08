@@ -110,15 +110,15 @@ animations = [ {
 "name": "dying",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 16 ), ExtResource( 3 ), ExtResource( 40 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 39 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "walking",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 22 ), ExtResource( 19 ), ExtResource( 2 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 47 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 11 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "hurt",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 16 ), ExtResource( 3 ), ExtResource( 40 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 39 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "walking",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -132,14 +132,14 @@ extents = Vector2( 179, 100 )
 
 [node name="Goblin" type="KinematicBody2D"]
 collision_layer = 16
-collision_mask = 51
+collision_mask = 179
 script = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 2, 0 )
 frames = SubResource( 1 )
 animation = "walking"
-frame = 3
+frame = 9
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

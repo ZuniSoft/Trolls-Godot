@@ -280,13 +280,11 @@ position = Vector2( 472, 224 )
 position = Vector2( 30, 622 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 5
-collision_mask = 163
 
 [node name="Cyclop2" parent="Enemies" groups=["enemies"] instance=ExtResource( 18 )]
 position = Vector2( 973, 50 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 5
-collision_mask = 163
 direction = 1
 
 [node name="Goblin1" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
@@ -390,6 +388,7 @@ smoothing_enabled = true
 editor_draw_limits = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
 position = Vector2( 408, 352 )
 stream = ExtResource( 15 )
 volume_db = -20.0
