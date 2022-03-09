@@ -14,7 +14,7 @@
 [ext_resource path="res://Assets/Background1/Layer2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bridge 01.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Fireballs.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Sound/Background.mp3" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Sound/Forest.mp3" type="AudioStream" id=15]
 [ext_resource path="res://Scenes/Hero.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Cyclop.tscn" type="PackedScene" id=18]
@@ -387,7 +387,7 @@ drag_margin_v_enabled = true
 smoothing_enabled = true
 editor_draw_limits = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="SoundBackground" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2( 408, 352 )
 stream = ExtResource( 15 )
