@@ -4,7 +4,7 @@ signal hero_dead
 signal fireballs_empty
 signal has_fireballs
 
-const COINS_FOR_EXTRA_LIFE = 9
+const COINS_FOR_EXTRA_LIFE = 12
 const EXTRA_LIFE = 20
 const MAX_LIFE = 50
 const MAX_FIREBALLS = 20
@@ -20,14 +20,13 @@ func _ready():
 	
 func _on_coin_collected():
 	coins = coins + 1
-	_ready()
 	if coins == COINS_FOR_EXTRA_LIFE:
 		if life + EXTRA_LIFE <= MAX_LIFE:
 			life = life + EXTRA_LIFE
 		else:
 			life = MAX_LIFE
 		coins = 0
-		_ready()
+	_ready()
 		
 func _on_fireball_collected(fireball_cnt):
 	if fireballs + fireball_cnt <= MAX_FIREBALLS:
