@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
-const WALK_SPEED = 60
-const HIT_POINTS = 15
+const WALK_SPEED = 70
+const HIT_POINTS = 10
 
 var speed = WALK_SPEED
 var velocity = Vector2()
-var life = 75
+var life = 20
 
 export var direction = -1
 export var detect_cliffs = true
@@ -51,4 +51,3 @@ func _on_HitTimer_timeout():
 	
 func _on_DieTimer_timeout():
 	queue_free()
-	get_tree().change_scene("res://Levels/Level3/Scene.tscn")

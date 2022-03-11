@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=18 format=2]
+[gd_resource type="TileSet" load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Environment1/Cartoon Spooky Level Set_Environment - Signpost 05.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Environment1/Cartoon Spooky Level Set_Environment - Signpost 03.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Platformer2/04bc.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Platformer2/03a.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Platformer2/04b.png" type="Texture" id=17]
+[ext_resource path="res://Assets/CommonObjects/fish.png" type="Texture" id=18]
 
 [resource]
 6/name = "Cartoon Spooky Level Set_Environment - Signpost 01.png 6"
@@ -257,3 +258,17 @@
 23/shape_one_way_margin = 0.0
 23/shapes = [  ]
 23/z_index = 0
+24/name = "fish.png 24"
+24/texture = ExtResource( 18 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 0, 0, 128, 128 )
+24/tile_mode = 0
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shape_offset = Vector2( 0, 0 )
+24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape_one_way = false
+24/shape_one_way_margin = 0.0
+24/shapes = [  ]
+24/z_index = 0
