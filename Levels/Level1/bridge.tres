@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Platformer/Cartoon Spooky Level Set_Platformer - Bridge 01.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Platformer/Cartoon Spooky Level Set_Platformer - Bridge 02.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bridge 01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bridge 02.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )

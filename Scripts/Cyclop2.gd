@@ -6,6 +6,7 @@ const HIT_POINTS = 15
 var speed = WALK_SPEED
 var velocity = Vector2()
 var life = 50
+var dying = false
 
 export var direction = -1
 export var detect_cliffs = true
@@ -33,7 +34,8 @@ func _on_TopChecker_body_entered(body):
 	$SoundHit.play()
 
 func _on_SideChecker_body_entered(body):
-	body.hit(position.x, HIT_POINTS)
+	if not dying:
+		body.hit(position.x, HIT_POINTS)
 
 func hit(var damage):
 	if life > 0:
@@ -41,6 +43,7 @@ func hit(var damage):
 	if life <= 0:
 		speed = 0
 		$AnimatedSprite.play("dying")	
+		dying = true
 		$DieTimer.start()
 	else:
 		$AnimatedSprite.play("hurt")

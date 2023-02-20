@@ -8,6 +8,7 @@ var is_hit = false
 var is_dying = false
 var is_throwing = false
 var in_ladder_area = false
+var on_ladder = false
 var has_fireballs = true
 var mystery_items = ["res://Scenes/Fireballs.tscn", "res://Scenes/Heart.tscn", "res://Scenes/Coin.tscn"]
 
@@ -17,7 +18,7 @@ const ATTACK_SPEED = 90
 const GRAVITY = 35
 const JUMPFORCE = -1100
 const HIT_JUMP_VEL = 200 
-const CLIMB_VELOCITY = 450
+const LADDER_STEP_HT = 1
 const FIREBALL = preload("res://Scenes/Fireball.tscn")
 const ATTACK_HIT_POINTS = 10
 const JUMP_HIT_POINTS = 2
@@ -25,6 +26,9 @@ const SWORD_X_POS = 310
 
 func _physics_process(_delta):
 	if not is_hit and not is_dying:
+		if is_on_floor():
+			on_ladder = false
+			
 		if not is_on_floor() and velocity.y > 0:
 			$AnimatedSprite.play("falling")
 		elif not is_on_floor() and velocity.y < 0:
@@ -35,23 +39,23 @@ func _physics_process(_delta):
 			else:
 				velocity.x = 0
 			$AnimatedSprite.play("jumping")
-		elif Input.is_action_just_pressed("ui_focus_next") and not in_ladder_area and has_fireballs:
+		elif Input.is_action_just_pressed("ui_focus_next") and not on_ladder and has_fireballs:
 			is_throwing = true
 			$ThrowTimer.start()
 			$AnimatedSprite.play("throwing")
-		elif Input.is_action_pressed("ui_right") and not in_ladder_area and Input.is_action_pressed("ui_attack"):
+		elif Input.is_action_pressed("ui_right") and not on_ladder and Input.is_action_pressed("ui_attack"):
 			$SoundSword.play()
 			$SwordHit/Sword.disabled = false
 			velocity.x = ATTACK_SPEED
 			$AnimatedSprite.flip_h = false
 			$AnimatedSprite.play("fighting")
-		elif Input.is_action_pressed("ui_left") and not in_ladder_area and Input.is_action_pressed("ui_attack"):
+		elif Input.is_action_pressed("ui_left") and not on_ladder and Input.is_action_pressed("ui_attack"):
 			$SoundSword.play()
 			$SwordHit/Sword.disabled = false
 			velocity.x = -ATTACK_SPEED
 			$AnimatedSprite.flip_h = true
 			$AnimatedSprite.play("fighting")
-		elif Input.is_action_pressed("ui_attack") and not in_ladder_area:
+		elif Input.is_action_pressed("ui_attack") and not on_ladder:
 			$SoundSword.play()
 			$SwordHit/Sword.disabled = false
 			velocity.x = 0
@@ -85,20 +89,25 @@ func _physics_process(_delta):
 					$Position2D.position.x *= -1
 			$AnimatedSprite.play("walking")
 		elif Input.is_action_pressed("ui_up") and in_ladder_area:
-			set_collision_layer_bit(0, true)
-			velocity.y = -CLIMB_VELOCITY
+			on_ladder = true
+			global_transform.origin.y -= LADDER_STEP_HT
+			$AnimatedSprite.play("climbing")
+		elif Input.is_action_pressed("ui_down") and in_ladder_area:
+			on_ladder = true
+			global_transform.origin.y += LADDER_STEP_HT
 			$AnimatedSprite.play("climbing")
 		else:
 			if not is_throwing:
 				velocity.x = 0
 				$AnimatedSprite.play("idle")
-	
-	velocity.y = velocity.y + GRAVITY
+				
+	if not in_ladder_area:
+		velocity.y = velocity.y + GRAVITY
 	
 	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not in_ladder_area:
 		velocity.y = JUMPFORCE
 		$SoundJump.play()
-		
+			
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	for i in get_slide_count():
@@ -174,12 +183,11 @@ func _on_ThrowTimer_timeout():
 func _on_Ladder_body_entered(body):
 	if body.name == "Hero":
 		in_ladder_area = true
-		set_collision_layer_bit(0, false)
+		velocity.y = 0
 			
 func _on_Ladder_body_exited(body):
 	if body.name == "Hero":
 		in_ladder_area = false
-		set_collision_layer_bit(0, true)
 
 func _on_SwordHit_body_entered(body):
 	if body.is_in_group("enemies") and not $SwordHit/Sword.disabled:

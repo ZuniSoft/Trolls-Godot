@@ -23,7 +23,7 @@
 [ext_resource path="res://Levels/Level1/ladder.tres" type="TileSet" id=21]
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 32, 148 )
+extents = Vector2( 32, 95 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 34, 182.25 )
@@ -188,7 +188,7 @@ position = Vector2( 696, 480 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1"]
-position = Vector2( 481, 894 )
+position = Vector2( -351, 884 )
 shape = SubResource( 9 )
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
@@ -365,7 +365,7 @@ collision_layer = 128
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stops/EnemyStop4"]
-position = Vector2( -206, 968 )
+position = Vector2( -212, 964 )
 shape = SubResource( 12 )
 
 [node name="FallZone" type="Area2D" parent="."]

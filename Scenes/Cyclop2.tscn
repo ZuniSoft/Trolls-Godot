@@ -50,11 +50,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 27 ), ExtResource( 35 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 30 ), ExtResource( 34 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 43 ) ],
-"loop": true,
-"name": "walking",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 47 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 21 ), ExtResource( 28 ), ExtResource( 46 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 45 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "dying",
@@ -64,6 +59,11 @@ animations = [ {
 "loop": true,
 "name": "hurt",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 35 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 30 ), ExtResource( 34 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "walking",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -84,7 +84,7 @@ script = ExtResource( 5 )
 position = Vector2( 2, 0 )
 frames = SubResource( 1 )
 animation = "walking"
-frame = 2
+frame = 12
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
