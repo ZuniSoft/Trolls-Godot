@@ -26,6 +26,8 @@ const SWORD_X_POS = 310
 
 func _physics_process(_delta):
 	if not is_hit and not is_dying:
+		$SwordHit/Sword.disabled = true
+		
 		if is_on_floor():
 			on_ladder = false
 			
@@ -61,19 +63,16 @@ func _physics_process(_delta):
 			velocity.x = 0
 			$AnimatedSprite.play("fighting")
 		elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_run"):
-			$SwordHit/Sword.disabled = true
 			$SwordHit/Sword.position.x = SWORD_X_POS
 			$AnimatedSprite.flip_h = false
 			velocity.x = RUN_SPEED
 			$AnimatedSprite.play("running")
 		elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_run"):
-			$SwordHit/Sword.disabled = true
 			$SwordHit/Sword.position.x = -SWORD_X_POS
 			$AnimatedSprite.flip_h = true
 			velocity.x = -RUN_SPEED	
 			$AnimatedSprite.play("running")
 		elif Input.is_action_pressed("ui_right"):
-			$SwordHit/Sword.disabled = true
 			$SwordHit/Sword.position.x = SWORD_X_POS
 			$AnimatedSprite.flip_h = false
 			velocity.x = WALK_SPEED
@@ -81,7 +80,6 @@ func _physics_process(_delta):
 					$Position2D.position.x *= -1
 			$AnimatedSprite.play("walking")
 		elif Input.is_action_pressed("ui_left"):
-			$SwordHit/Sword.disabled = true
 			$SwordHit/Sword.position.x = -SWORD_X_POS
 			$AnimatedSprite.flip_h = true
 			velocity.x = -WALK_SPEED
@@ -156,7 +154,8 @@ func dying():
 	is_dying = true
 	$AnimatedSprite.play("dying")
 	$SoundDie.play()
-	$DieTimer.start()
+	if $DieTimer.time_left == 0:
+		$DieTimer.start()
 
 func _on_HitTimer_timeout():
 	set_modulate(Color(1, 1, 1, 1))
@@ -192,7 +191,6 @@ func _on_Ladder_body_exited(body):
 func _on_SwordHit_body_entered(body):
 	if body.is_in_group("enemies") and not $SwordHit/Sword.disabled:
 		body.hit(ATTACK_HIT_POINTS)
-		$SwordHit/Sword.disabled = true
 		
 func _on_HUD_hero_dead():
 	dying()

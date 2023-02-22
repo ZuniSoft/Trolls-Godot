@@ -44,7 +44,8 @@ func hit(var damage):
 		speed = 0
 		$AnimatedSprite.play("dying")	
 		dying = true
-		$DieTimer.start()
+		if $DieTimer.time_left == 0:
+			$DieTimer.start()
 	else:
 		$AnimatedSprite.play("hurt")
 		$HitTimer.start()

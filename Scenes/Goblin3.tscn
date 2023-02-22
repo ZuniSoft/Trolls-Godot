@@ -50,11 +50,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 13 ), ExtResource( 35 ), ExtResource( 15 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 37 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "walking",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 42 ), ExtResource( 46 ), ExtResource( 43 ), ExtResource( 6 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 47 ), ExtResource( 4 ), ExtResource( 44 ), ExtResource( 8 ), ExtResource( 40 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 39 ), ExtResource( 41 ) ],
 "loop": true,
 "name": "dying",
@@ -64,6 +59,11 @@ animations = [ {
 "loop": true,
 "name": "hurt",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 13 ), ExtResource( 35 ), ExtResource( 15 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 37 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "walking",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -84,7 +84,7 @@ script = ExtResource( 5 )
 position = Vector2( 2, 0 )
 frames = SubResource( 1 )
 animation = "walking"
-frame = 17
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -115,7 +115,7 @@ shape = SubResource( 5 )
 one_shot = true
 
 [node name="DieTimer" type="Timer" parent="."]
-wait_time = 2.8
+wait_time = 2.0
 one_shot = true
 
 [node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
