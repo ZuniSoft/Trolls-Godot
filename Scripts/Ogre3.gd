@@ -55,4 +55,8 @@ func _on_HitTimer_timeout():
 	
 func _on_DieTimer_timeout():
 	queue_free()
-	get_tree().change_scene("res://Scenes/Win.tscn")
+	
+	GameState.current_level = 1
+	GameState.save_config()
+	
+	var _retval = get_tree().change_scene("res://Scenes/Win.tscn")

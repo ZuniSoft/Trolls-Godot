@@ -157,13 +157,16 @@ func dying():
 	if $DieTimer.time_left == 0:
 		$DieTimer.start()
 
+func hero_died_cleanup():
+	var _retval = get_tree().change_scene("res://Scenes/GameOver.tscn")
+
 func _on_HitTimer_timeout():
 	set_modulate(Color(1, 1, 1, 1))
 	is_hit = false
 
 func _on_DieTimer_timeout():
 	queue_free()
-	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	hero_died_cleanup()
 
 func _on_ThrowTimer_timeout():
 	var fireball = FIREBALL.instance()
@@ -202,4 +205,4 @@ func _on_HUD_has_fireballs():
 	has_fireballs = true
 
 func _on_FallZone_body_entered(_body):
-	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	hero_died_cleanup()

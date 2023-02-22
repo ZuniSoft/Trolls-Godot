@@ -16,6 +16,10 @@ boot_splash/image="res://logo.png"
 boot_splash/fullsize=false
 config/icon="res://icon.png"
 
+[autoload]
+
+GameState="*res://Scripts/GameState.gd"
+
 [display]
 
 window/stretch/mode="viewport"
