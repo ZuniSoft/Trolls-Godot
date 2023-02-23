@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/ResetDialog.gd" type="Script" id=1]
+
+[node name="Control" type="ConfirmationDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 312.0
+margin_top = 224.0
+margin_right = -312.0
+margin_bottom = -236.0
+rect_min_size = Vector2( 400, 140 )
+window_title = "Reset Game"
+script = ExtResource( 1 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 392.0
+margin_bottom = 112.0
+text = "This action will set your current progress to the beginning of the game!
+
+Proceed?"
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="confirmed" from="." to="." method="_on_Control_confirmed"]
+[connection signal="hide" from="." to="." method="_on_Control_hide"]

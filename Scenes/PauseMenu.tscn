@@ -19,20 +19,23 @@ font_data = ExtResource( 2 )
 [node name="PauseMenu" type="CanvasLayer"]
 
 [node name="PauseMenuLabel" type="Label" parent="."]
-margin_left = 280.0
+margin_left = 392.0
 margin_top = 160.0
-margin_right = 739.0
+margin_right = 656.0
 margin_bottom = 247.0
 custom_colors/font_color = Color( 0.152941, 0.780392, 0.12549, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Game Paused"
+text = "Paused"
 
 [node name="ResumeButton" type="Button" parent="."]
 margin_left = 456.0
 margin_top = 296.0
 margin_right = 577.0
 margin_bottom = 338.0
+custom_colors/font_color_focus = Color( 0.152941, 0.780392, 0.12549, 1 )
 custom_colors/font_color = Color( 0.152941, 0.780392, 0.12549, 1 )
+custom_colors/font_color_hover = Color( 0.236786, 1, 0.333769, 1 )
+custom_colors/font_color_pressed = Color( 0.235294, 1, 0.333333, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Resume"
 flat = true
@@ -43,7 +46,10 @@ margin_left = 440.0
 margin_top = 376.0
 margin_right = 599.0
 margin_bottom = 418.0
+custom_colors/font_color_focus = Color( 0.152941, 0.780392, 0.12549, 1 )
 custom_colors/font_color = Color( 0.152941, 0.780392, 0.12549, 1 )
+custom_colors/font_color_hover = Color( 0.235294, 1, 0.333333, 1 )
+custom_colors/font_color_pressed = Color( 0.235294, 1, 0.333333, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Main Menu"
 flat = true
