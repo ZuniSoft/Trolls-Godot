@@ -7,14 +7,14 @@ Godot based platformer game with 3 levels.
 2. Go to Xcode Settings, Accounts and create a Developer ID Application certificate.
 3. Use “security find-identity -v -p codesigning” to find the long string of the Developer ID Application certificate, that should be the Identity for Codesign in the Godot export template settings.
 
-	<long-A> "Apple Development: Your Name (<short-1>)"
-	<long-B> "Apple Distribution: Your Name (<short-2>)"
-	<long-C> "Developer ID Application: Your Name (<short-2>)"
+	&lt;long-A&gt; "Apple Development: Your Name (&lt;short-1&gt;)"
+	&lt;long-B&gt; "Apple Distribution: Your Name (&lt;short-2>&gt;)"
+	&lt;long-C&gt; "Developer ID Application: Your Name (&lt;short-2>&gt;)"
    	3 valid identities found
 	
 	Use <long-C> from above.
 4. Enable export settings:
-	[preset.0]
+	\[preset.0\]
 
 	name="Mac OSX"
 	platform="Mac OSX"
@@ -27,7 +27,7 @@ Godot based platformer game with 3 levels.
 	script_export_mode=1
 	script_encryption_key=""
 
-	[preset.0.options]
+	\[preset.0.options\]
 
 	custom_template/debug=""
 	custom_template/release=""
@@ -53,7 +53,7 @@ Godot based platformer game with 3 levels.
 	privacy/network_volumes_usage_description=""
 	privacy/removable_volumes_usage_description=""
 	codesign/enable=true
-	codesign/identity=<long-c>
+	codesign/identity=&lt;long-c&gt;
 	codesign/timestamp=true
 	codesign/hardened_runtime=true
 	codesign/replace_existing_signature=true
@@ -82,7 +82,7 @@ Godot based platformer game with 3 levels.
 	codesign/custom_options=PoolStringArray(  )
 	notarization/enable=true
 	notarization/apple_id_name="keithrdavis.krd@gmail.com"
-	notarization/apple_id_password=<app-specific-password>
+	notarization/apple_id_password=&lt;app-specific-password&gt;
 	notarization/apple_team_id=""
 	texture_format/s3tc=true
 	texture_format/etc=false
