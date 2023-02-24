@@ -8,8 +8,8 @@ Godot based platformer game with 3 levels.
 3. Use “security find-identity -v -p codesigning” to find the long string of the Developer ID Application certificate, that should be the Identity for Codesign in the Godot export template settings.
 
 	&lt;long-A&gt; "Apple Development: Your Name (&lt;short-1&gt;)"
-	&lt;long-B&gt; "Apple Distribution: Your Name (&lt;short-2>&gt;)"
-	&lt;long-C&gt; "Developer ID Application: Your Name (&lt;short-2>&gt;)"
+	&lt;long-B&gt; "Apple Distribution: Your Name (&lt;short-2&gt;)"
+	&lt;long-C&gt; "Developer ID Application: Your Name (&lt;short-2&gt;)"
    	3 valid identities found
 	
 	Use <long-C> from above.
