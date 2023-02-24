@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PauseButton.tscn" type="PackedScene" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Ogre.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level1/rock_wall.tres" type="TileSet" id=5]
 [ext_resource path="res://Levels/Level1/environment.tres" type="TileSet" id=6]
-[ext_resource path="res://Assets/Background1/Layer1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Background1/Background.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Level1/platformer.tres" type="TileSet" id=8]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bridge 02.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bonus.png" type="Texture" id=10]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Scenes/Heart.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Levels/Level1/ladder.tres" type="TileSet" id=21]
+[ext_resource path="res://Assets/Background1/Layer1.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 32, 95 )
@@ -118,24 +119,40 @@ extents = Vector2( 317, 82 )
 
 [node name="Level1" type="Node2D"]
 
+[node name="FixedBackground" type="TextureRect" parent="."]
+margin_left = -704.0
+margin_top = -512.0
+margin_right = 3392.0
+margin_bottom = 688.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 2
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.1, 1 )
-motion_mirroring = Vector2( 3072, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer1"]
-position = Vector2( 573, 580 )
-scale = Vector2( 3, 3.47812 )
-texture = ExtResource( 7 )
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer1"]
+margin_left = -704.0
+margin_top = 624.0
+margin_right = 1344.0
+margin_bottom = 1264.0
+texture = ExtResource( 22 )
+expand = true
+stretch_mode = 2
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.6, 1 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 842.751, 425.375 )
-scale = Vector2( 2.71552, 2.543 )
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+margin_left = -704.0
+margin_top = 408.0
+margin_right = 1344.0
+margin_bottom = 1048.0
 texture = ExtResource( 12 )
+expand = true
+stretch_mode = 2
 
 [node name="Coins" type="Node" parent="."]
 
@@ -189,7 +206,7 @@ position = Vector2( 696, 480 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1"]
-position = Vector2( -159, 676 )
+position = Vector2( -216, 800 )
 shape = SubResource( 9 )
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
