@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PauseButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Level1/one_way.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/Ogre.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/MetalSpikes.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Level1/environment.tres" type="TileSet" id=6]
 [ext_resource path="res://Assets/Background1/Background.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Level1/platformer.tres" type="TileSet" id=8]
@@ -14,7 +15,6 @@
 [ext_resource path="res://Scenes/Fireballs.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sound/Forest.mp3" type="AudioStream" id=15]
 [ext_resource path="res://Scenes/Hero.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Cyclop.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Heart.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=20]
@@ -29,9 +29,6 @@ extents = Vector2( 34, 182.25 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 31.5, 89.5 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 217, 62 )
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -182,7 +179,7 @@ cell_quadrant_size = 8
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -458764, 8, 0, -524252, 8, 0, -393228, 8, 0, -458716, 8, 0, -327692, 8, 0, -393180, 8, 0, -262156, 8, 0, -327644, 8, 0, -196620, 8, 0, -262108, 8, 0, -131084, 8, 0, -196572, 8, 0, -65548, 8, 0, -131036, 8, 0, -12, 8, 0, -65500, 8, 0, 65524, 8, 0, 36, 8, 0, 131060, 8, 0, 65572, 8, 0, 196596, 8, 0, 131108, 8, 0, 6094785, 5, 0, 6094793, 5, 0, 6094801, 5, 0, 6094809, 5, 0, 6094817, 5, 0, 6094825, 5, 0 )
+tile_data = PoolIntArray( 6094785, 5, 0, 6094793, 5, 0, 6094801, 5, 0, 6094809, 5, 0, 6094817, 5, 0, 6094825, 5, 0, 8650664, 5, 0, 8650672, 5, 0, 8650680, 5, 0, 8650688, 5, 0, 8650696, 5, 0, 8650704, 5, 0 )
 
 [node name="Bridge" type="TileMap" parent="Tilesets"]
 tile_set = ExtResource( 9 )
@@ -204,7 +201,6 @@ format = 1
 tile_data = PoolIntArray( 131078, 30, 0, 131098, 30, 0, 393225, 31, 0, 393228, 30, 0, 524307, 31, 0, 524309, 30, 0, 524310, 12, 0, 524317, 31, 0, 524319, 12, 0, 524322, 12, 0, 524323, 31, 0, 589837, 12, 0, 655389, 37, 0, 655390, 37, 0, 655391, 37, 0, 655392, 37, 0, 655393, 37, 0, 655394, 37, 0, 655395, 37, 0, 720925, 37, 0, 720926, 37, 0, 720927, 37, 0, 720928, 37, 0, 720929, 37, 0, 720930, 37, 0, 720931, 37, 0, 786461, 37, 0, 786462, 37, 0, 786463, 37, 0, 786466, 37, 0, 786467, 37, 0, 851997, 37, 0, 851998, 37, 0, 851999, 37, 0, 852002, 37, 0, 852003, 37, 0, 917515, 12, 0, 917518, 30, 0, 917533, 37, 0, 917534, 37, 0, 917535, 37, 0, 917536, 37, 0, 917537, 37, 0, 917538, 37, 0, 917539, 37, 0, 1048567, 34, 0, 1048580, 19, 0, 1048593, 35, 0, 1048601, 34, 0, 1048609, 35, 0, 1179645, 34, 0, 1114117, 36, 0, 1179663, 34, 0, 1179664, 17, 0, 1179668, 18, 0, 1179669, 35, 0, 1179672, 34, 0, 1245199, 17, 0, 1245200, 19, 0, 1310734, 17, 0, 1310741, 20, 0, 2031641, 13, 0, 2031644, 13, 0 )
 
 [node name="OneWay" type="TileMap" parent="Tilesets"]
-scale = Vector2( 0.5, 0.5 )
 z_index = 2
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 8, 8 )
@@ -212,16 +208,6 @@ cell_quadrant_size = 8
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 2
 format = 1
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Tilesets/OneWay"]
-collision_layer = 2
-collision_mask = 49
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tilesets/OneWay/StaticBody2D"]
-visible = false
-position = Vector2( -1114, 1602 )
-shape = SubResource( 4 )
-one_way_collision = true
 
 [node name="Ladder" type="TileMap" parent="Tilesets"]
 tile_set = ExtResource( 21 )
@@ -236,7 +222,7 @@ tile_set = SubResource( 14 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -65527, 0, 0, 262140, 0, 0, 589838, 0, 0, 1114102, 0, 0 )
+tile_data = PoolIntArray( 589838, 0, 0, 1114102, 0, 0 )
 
 [node name="Life" type="Node" parent="."]
 
@@ -263,8 +249,9 @@ z_index = 2
 collision_mask = 35
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( -593, 935 )
+position = Vector2( -464, 1007 )
 scale = Vector2( 0.4, 0.4 )
+z_index = 1
 collision_mask = 35
 
 [node name="Goblin3" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
@@ -279,14 +266,8 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 2
 collision_mask = 35
 
-[node name="Spikes1" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 638, 1140 )
-
-[node name="Spikes2" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( -2, 1203 )
-
-[node name="Spikes3" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( -597, 757 )
+[node name="Spikes1" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -336, 1024 )
 
 [node name="Stops" type="Node" parent="."]
 

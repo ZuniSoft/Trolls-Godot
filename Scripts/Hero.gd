@@ -119,8 +119,6 @@ func reveal_mystery_box(collision):
 		var local_position = tilemap.to_local(collision.position)
 		var cell_position = tilemap.world_to_map(local_position)
 		
-		print("hit")
-		
 		cell_position -= collision.normal
 		tilemap.set_cell(cell_position.x, cell_position.y, -1)
 		mystery_items.shuffle()
@@ -129,13 +127,13 @@ func reveal_mystery_box(collision):
 		var scene_instance = scene.instance()
 		var hud_instance = get_tree().get_root().find_node("HUD", true, false)
 		
-		if mystery_items[0] == "res://Scenes/Heart.tscn":
+		if "Heart" in mystery_items[0]:
 			scene_instance.connect("heart_collected", hud_instance, "_on_heart_collected")
-		if mystery_items[0] == "res://Scenes/Fireballs.tscn":
+		elif "Fireballs" in mystery_items[0]:
 			scene_instance.connect("fireball_collected", hud_instance, "_on_fireball_collected")
-		if mystery_items[0] == "res://Scenes/Coin.tscn":
+		elif "Coin" in mystery_items[0]:
 			scene_instance.connect("coin_collected", hud_instance, "_on_coin_collected")
-			
+
 		scene_instance.set_position(collision.position)
 		get_parent().add_child(scene_instance)
 		tilemap.queue_free()
