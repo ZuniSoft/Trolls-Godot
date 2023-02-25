@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Background3/bg.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Level3/environment.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/Goblin2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Platformer1/Cartoon Spooky Level Set_Platformer - Bonus.png" type="Texture" id=10]
+[ext_resource path="res://Assets/CommonObjects/Cartoon Spooky Level Set_Platformer - Bonus.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Levels/Level3/lava.tres" type="TileSet" id=12]
 [ext_resource path="res://Scenes/Lava.tscn" type="PackedScene" id=13]
