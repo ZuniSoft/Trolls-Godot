@@ -14,14 +14,14 @@ export var detect_cliffs = true
 func _ready():
 	if direction == -1:
 		$AnimatedSprite.flip_h = true
-	$FloorChecker.position.x = $CollisionShape2D.shape.get_extents().x * direction
+	$FloorChecker.cast_to.x = $CollisionShape2D.shape.get_extents().x * direction
 	$FloorChecker.enabled = detect_cliffs
 	
 func _physics_process(_delta):
 	if is_on_wall() or not $FloorChecker.is_colliding() and detect_cliffs and is_on_floor():
 		direction *= -1
 		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
-		$FloorChecker.position.x = $CollisionShape2D.shape.get_extents().x * direction
+		$FloorChecker.cast_to.x = $CollisionShape2D.shape.get_extents().x * direction
 		
 	velocity.y += 20
 	velocity.x = speed * direction

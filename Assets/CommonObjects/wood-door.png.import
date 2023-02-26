@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cartoon Spooky Level Set_Collectable Object - Diamond.png-93392c1ad9205a38860f0eb188f68f81.stex"
+path="res://.import/wood-door.png-4b89b30ac7b58c119609b0999f71b768.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CommonObjects/Cartoon Spooky Level Set_Collectable Object - Diamond.png"
-dest_files=[ "res://.import/Cartoon Spooky Level Set_Collectable Object - Diamond.png-93392c1ad9205a38860f0eb188f68f81.stex" ]
+source_file="res://Assets/CommonObjects/wood-door.png"
+dest_files=[ "res://.import/wood-door.png-4b89b30ac7b58c119609b0999f71b768.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cartoon Spooky Level Set_Collectable Object - Star.png-2da92ed0ac790706d88c20bd186d58a8.stex"
+path="res://.import/portal.png-34107363c2c14e914839200a63df88d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CommonObjects/Cartoon Spooky Level Set_Collectable Object - Star.png"
-dest_files=[ "res://.import/Cartoon Spooky Level Set_Collectable Object - Star.png-2da92ed0ac790706d88c20bd186d58a8.stex" ]
+source_file="res://Assets/CommonObjects/portal.png"
+dest_files=[ "res://.import/portal.png-34107363c2c14e914839200a63df88d9.stex" ]
 
 [params]
 

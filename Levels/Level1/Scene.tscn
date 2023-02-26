@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PauseButton.tscn" type="PackedScene" id=2]
@@ -16,11 +16,13 @@
 [ext_resource path="res://Scenes/Fireballs.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sound/Forest.mp3" type="AudioStream" id=15]
 [ext_resource path="res://Scenes/Hero.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Cyclop.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Heart.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Levels/Level1/ladder.tres" type="TileSet" id=21]
 [ext_resource path="res://Assets/Background1/Layer1.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/DoorExit.tscn" type="PackedScene" id=23]
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 24, 156 )
@@ -115,7 +117,7 @@ stretch_mode = 2
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( -168, 661 )
+position = Vector2( 224, 288 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 11 )]
 position = Vector2( 96, 288 )
@@ -153,6 +155,11 @@ z_index = 3
 position = Vector2( 1376, 424 )
 z_index = 3
 
+[node name="Life" type="Node" parent="."]
+
+[node name="Heart1" parent="Life" instance=ExtResource( 19 )]
+position = Vector2( -72, 400 )
+
 [node name="Fireballs" type="Node" parent="."]
 
 [node name="Fireballs" parent="Fireballs" instance=ExtResource( 14 )]
@@ -182,6 +189,15 @@ position = Vector2( 1184.5, 573.5 )
 z_index = 3
 shape = SubResource( 11 )
 
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door1" parent="Doors" instance=ExtResource( 17 )]
+position = Vector2( -640, 992 )
+collision_layer = 0
+
+[node name="DoorExit1" parent="Doors" instance=ExtResource( 23 )]
+position = Vector2( -176, 680 )
+
 [node name="Tilesets" type="Node" parent="."]
 
 [node name="Platform" type="TileMap" parent="Tilesets"]
@@ -192,7 +208,7 @@ cell_quadrant_size = 8
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -4391008, 8, 0, -3866720, 8, 0, -3342432, 8, 0, -2818144, 8, 0, -2293856, 8, 0, -1769568, 8, 0, -1245280, 8, 0, -720992, 8, 0, -196704, 8, 0, 327584, 8, 0, 851872, 8, 0, 1376160, 8, 0, 1900448, 8, 0, 2424736, 8, 0, 2949024, 8, 0, 3473312, 8, 0, 3997600, 8, 0, 4521888, 8, 0, 5046176, 8, 0, 5570464, 8, 0, 6094752, 8, 0, 6094785, 5, 0, 6094793, 5, 0, 6094801, 5, 0, 6094809, 5, 0, 6094817, 5, 0, 6094825, 5, 0, 6619040, 8, 0, 7143328, 8, 0, 7667616, 8, 0, 8191904, 8, 0, 8650664, 5, 0, 8650672, 5, 0, 8650680, 5, 0, 8650688, 5, 0, 8650696, 5, 0, 8650704, 5, 0, 8650712, 5, 0, 8650720, 5, 0, 8650728, 5, 0, 8650736, 5, 0, 8650744, 5, 0, 8585216, 5, 0, 8585224, 5, 0, 8585232, 5, 0, 8585240, 5, 0, 8585248, 5, 0, 8585256, 5, 0, 8716192, 8, 0 )
+tile_data = PoolIntArray( -4391008, 8, 0, -3866720, 8, 0, -3342432, 8, 0, -2818144, 8, 0, -2293856, 8, 0, -1769568, 8, 0, -1245280, 8, 0, -720992, 8, 0, -196704, 8, 0, 327584, 8, 0, 851872, 8, 0, 1376160, 8, 0, 1900448, 8, 0, 2424736, 8, 0, 2949024, 8, 0, 3473312, 8, 0, 3997600, 8, 0, 4194368, 5, 0, 4194376, 5, 0, 4194384, 5, 0, 4194392, 5, 0, 4194400, 5, 0, 4521888, 8, 0, 5046176, 8, 0, 5570464, 8, 0, 6094752, 8, 0, 6094785, 5, 0, 6094793, 5, 0, 6094801, 5, 0, 6094809, 5, 0, 6094817, 5, 0, 6094825, 5, 0, 6619040, 8, 0, 7143328, 8, 0, 7667616, 8, 0, 8191904, 8, 0, 8650664, 5, 0, 8650672, 5, 0, 8650680, 5, 0, 8650688, 5, 0, 8650696, 5, 0, 8650704, 5, 0, 8650712, 5, 0, 8650720, 5, 0, 8650728, 5, 0, 8650736, 5, 0, 8650744, 5, 0, 8585216, 5, 0, 8585224, 5, 0, 8585232, 5, 0, 8585240, 5, 0, 8585248, 5, 0, 8585256, 5, 0, 8716192, 8, 0, 9174976, 8, 0, 9174984, 8, 0, 9174992, 8, 0, 9175000, 8, 0, 9175008, 8, 0, 9175016, 8, 0, 9175024, 8, 0, 9699264, 8, 0, 9699272, 8, 0, 9699280, 8, 0, 9699288, 8, 0, 9699296, 8, 0, 9699304, 8, 0, 9699312, 8, 0 )
 
 [node name="Bridge" type="TileMap" parent="Tilesets"]
 tile_set = ExtResource( 9 )
@@ -237,11 +253,6 @@ collision_layer = 2
 format = 1
 tile_data = PoolIntArray( 589838, 0, 0, 1114102, 0, 0 )
 
-[node name="Life" type="Node" parent="."]
-
-[node name="Heart1" parent="Life" instance=ExtResource( 19 )]
-position = Vector2( -296, 664 )
-
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Cyclop1" parent="Enemies" groups=["enemies"] instance=ExtResource( 18 )]
@@ -262,13 +273,14 @@ z_index = 2
 collision_mask = 35
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( -464, 1007 )
+position = Vector2( -384, 1006 )
 scale = Vector2( 0.4, 0.4 )
 z_index = 1
 collision_mask = 35
+direction = 1
 
 [node name="Goblin3" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( 1354, 616 )
+position = Vector2( 648, 472 )
 scale = Vector2( 0.4, 0.4 )
 collision_mask = 35
 direction = 1
@@ -280,7 +292,7 @@ z_index = 2
 collision_mask = 35
 
 [node name="Spikes1" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( -280, 816 )
+position = Vector2( -24, 272 )
 
 [node name="Stops" type="Node" parent="."]
 
@@ -313,7 +325,7 @@ collision_layer = 128
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stops/EnemyStop4"]
-position = Vector2( -212, 964 )
+position = Vector2( -224, 464 )
 shape = SubResource( 12 )
 
 [node name="FallZone" type="Area2D" parent="."]
@@ -368,6 +380,7 @@ autoplay = true
 [connection signal="coin_collected" from="Coins/Coin10" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin11" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin12" to="HUD" method="_on_coin_collected"]
+[connection signal="heart_collected" from="Life/Heart1" to="HUD" method="_on_heart_collected"]
 [connection signal="fireball_collected" from="Fireballs/Fireballs" to="HUD" method="_on_fireball_collected"]
 [connection signal="body_entered" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]
@@ -375,7 +388,6 @@ autoplay = true
 [connection signal="body_exited" from="Ladders/Ladder2" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladders/Ladder3" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder3" to="Hero" method="_on_Ladder_body_exited"]
-[connection signal="heart_collected" from="Life/Heart1" to="HUD" method="_on_heart_collected"]
 [connection signal="body_entered" from="FallZone" to="Hero" method="_on_FallZone_body_entered"]
 [connection signal="fireballs_empty" from="HUD" to="Hero" method="_on_HUD_fireballs_empty"]
 [connection signal="has_fireballs" from="HUD" to="Hero" method="_on_HUD_has_fireballs"]
