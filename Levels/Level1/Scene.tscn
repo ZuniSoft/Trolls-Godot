@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PauseButton.tscn" type="PackedScene" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Background1/Background.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Level1/platformer.tres" type="TileSet" id=8]
 [ext_resource path="res://Levels/Level1/bridge.tres" type="TileSet" id=9]
-[ext_resource path="res://Assets/CommonObjects/Cartoon Spooky Level Set_Platformer - Bonus.png" type="Texture" id=10]
+[ext_resource path="res://Assets/CommonObjects/mystery-box.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Background1/Layer3.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Background1/Layer2.png" type="Texture" id=13]
@@ -23,6 +23,10 @@
 [ext_resource path="res://Levels/Level1/ladder.tres" type="TileSet" id=21]
 [ext_resource path="res://Assets/Background1/Layer1.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/DoorExit.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/WoodSpikes.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Liquid.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Saw.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=27]
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 24, 156 )
@@ -162,8 +166,8 @@ position = Vector2( -72, 400 )
 
 [node name="Fireballs" type="Node" parent="."]
 
-[node name="Fireballs" parent="Fireballs" instance=ExtResource( 14 )]
-position = Vector2( -512, 614 )
+[node name="Fireballs1" parent="Fireballs" instance=ExtResource( 14 )]
+position = Vector2( -512, 648 )
 
 [node name="Ladders" type="Node" parent="."]
 
@@ -198,6 +202,19 @@ collision_layer = 0
 [node name="DoorExit1" parent="Doors" instance=ExtResource( 23 )]
 position = Vector2( -176, 680 )
 
+[node name="MovingPlatforms" type="Node" parent="."]
+
+[node name="MovingPlatform1" parent="MovingPlatforms" instance=ExtResource( 27 )]
+position = Vector2( -8, 640 )
+move_distance = 300
+speed = 5.0
+
+[node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource( 27 )]
+position = Vector2( 168, 456 )
+move_direction = "Vertical"
+move_distance = 300
+speed = 5.0
+
 [node name="Tilesets" type="Node" parent="."]
 
 [node name="Platform" type="TileMap" parent="Tilesets"]
@@ -208,7 +225,7 @@ cell_quadrant_size = 8
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -4391008, 8, 0, -3866720, 8, 0, -3342432, 8, 0, -2818144, 8, 0, -2293856, 8, 0, -1769568, 8, 0, -1245280, 8, 0, -720992, 8, 0, -196704, 8, 0, 327584, 8, 0, 851872, 8, 0, 1376160, 8, 0, 1900448, 8, 0, 2424736, 8, 0, 2949024, 8, 0, 3473312, 8, 0, 3997600, 8, 0, 4194368, 5, 0, 4194376, 5, 0, 4194384, 5, 0, 4194392, 5, 0, 4194400, 5, 0, 4521888, 8, 0, 5046176, 8, 0, 5570464, 8, 0, 6094752, 8, 0, 6094785, 5, 0, 6094793, 5, 0, 6094801, 5, 0, 6094809, 5, 0, 6094817, 5, 0, 6094825, 5, 0, 6619040, 8, 0, 7143328, 8, 0, 7667616, 8, 0, 8191904, 8, 0, 8650664, 5, 0, 8650672, 5, 0, 8650680, 5, 0, 8650688, 5, 0, 8650696, 5, 0, 8650704, 5, 0, 8650712, 5, 0, 8650720, 5, 0, 8650728, 5, 0, 8650736, 5, 0, 8650744, 5, 0, 8585216, 5, 0, 8585224, 5, 0, 8585232, 5, 0, 8585240, 5, 0, 8585248, 5, 0, 8585256, 5, 0, 8716192, 8, 0, 9174976, 8, 0, 9174984, 8, 0, 9174992, 8, 0, 9175000, 8, 0, 9175008, 8, 0, 9175016, 8, 0, 9175024, 8, 0, 9699264, 8, 0, 9699272, 8, 0, 9699280, 8, 0, 9699288, 8, 0, 9699296, 8, 0, 9699304, 8, 0, 9699312, 8, 0 )
+tile_data = PoolIntArray( -4391008, 8, 0, -3866720, 8, 0, -3342432, 8, 0, -2818144, 8, 0, -2293856, 8, 0, -1769568, 8, 0, -1245280, 8, 0, -720992, 8, 0, -196704, 8, 0, 327584, 8, 0, 851872, 8, 0, 1376160, 8, 0, 1900448, 8, 0, 2424736, 8, 0, 2949024, 8, 0, 3473312, 8, 0, 3997600, 8, 0, 4194368, 5, 0, 4194376, 5, 0, 4194384, 5, 0, 4194392, 5, 0, 4194400, 5, 0, 4521888, 8, 0, 5046176, 8, 0, 5570464, 8, 0, 6094752, 8, 0, 6094785, 5, 0, 6094793, 5, 0, 6094801, 5, 0, 6094809, 5, 0, 6094817, 5, 0, 6094825, 5, 0, 6619040, 8, 0, 7143328, 8, 0, 7667616, 8, 0, 8191904, 8, 0, 8650664, 5, 0, 8650672, 5, 0, 8650680, 5, 0, 8650688, 5, 0, 8650696, 5, 0, 8650704, 5, 0, 8650712, 5, 0, 8650720, 5, 0, 8650728, 5, 0, 8650736, 5, 0, 8650744, 5, 0, 8585216, 5, 0, 8585224, 5, 0, 8585232, 5, 0, 8585240, 5, 0, 8585248, 5, 0, 8716192, 8, 0, 9174976, 8, 0, 9174984, 8, 0, 9174992, 8, 0, 9175000, 8, 0, 9175008, 8, 0, 9175016, 8, 0, 9175024, 8, 0, 9699264, 8, 0, 9699272, 8, 0, 9699280, 8, 0, 9699288, 8, 0, 9699296, 8, 0, 9699304, 8, 0, 9699312, 8, 0 )
 
 [node name="Bridge" type="TileMap" parent="Tilesets"]
 tile_set = ExtResource( 9 )
@@ -256,7 +273,7 @@ tile_data = PoolIntArray( 589838, 0, 0, 1114102, 0, 0 )
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Cyclop1" parent="Enemies" groups=["enemies"] instance=ExtResource( 18 )]
-position = Vector2( 112, 608 )
+position = Vector2( -35, 949 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 5
 
@@ -291,8 +308,17 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 2
 collision_mask = 35
 
-[node name="Spikes1" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( -24, 272 )
+[node name="MetalSpikes1" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -264, 392 )
+
+[node name="WoodSpikes1" parent="Enemies" instance=ExtResource( 24 )]
+position = Vector2( -192, 416 )
+
+[node name="Water1" parent="Enemies" instance=ExtResource( 25 )]
+position = Vector2( 352, 1104 )
+
+[node name="Saw" parent="Enemies" instance=ExtResource( 26 )]
+position = Vector2( -552, 557 )
 
 [node name="Stops" type="Node" parent="."]
 
@@ -381,7 +407,7 @@ autoplay = true
 [connection signal="coin_collected" from="Coins/Coin11" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin12" to="HUD" method="_on_coin_collected"]
 [connection signal="heart_collected" from="Life/Heart1" to="HUD" method="_on_heart_collected"]
-[connection signal="fireball_collected" from="Fireballs/Fireballs" to="HUD" method="_on_fireball_collected"]
+[connection signal="fireball_collected" from="Fireballs/Fireballs1" to="HUD" method="_on_fireball_collected"]
 [connection signal="body_entered" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladders/Ladder2" to="Hero" method="_on_Ladder_body_entered"]

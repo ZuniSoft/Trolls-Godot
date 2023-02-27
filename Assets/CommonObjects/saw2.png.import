@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cartoon Spooky Level Set_Collectable Object - Coin 02.png-2a6ea75d08649fb7ea34007ec1eb4124.stex"
+path="res://.import/saw2.png-e9ebe7fb38f1306688181707af8489ce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CommonObjects/Cartoon Spooky Level Set_Collectable Object - Coin 02.png"
-dest_files=[ "res://.import/Cartoon Spooky Level Set_Collectable Object - Coin 02.png-2a6ea75d08649fb7ea34007ec1eb4124.stex" ]
+source_file="res://Assets/CommonObjects/saw2.png"
+dest_files=[ "res://.import/saw2.png-e9ebe7fb38f1306688181707af8489ce.stex" ]
 
 [params]
 

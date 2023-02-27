@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scripts/Saw.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Environment3/saw2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Environment3/saw.png" type="Texture" id=3]
+[ext_resource path="res://Assets/CommonObjects/saw2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/CommonObjects/saw.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Trap.gd" type="Script" id=4]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -20,7 +20,7 @@ extents = Vector2( 63.5, 28.125 )
 
 [node name="Saw" type="StaticBody2D"]
 collision_layer = 16
-script = ExtResource( 1 )
+script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -28.5 )

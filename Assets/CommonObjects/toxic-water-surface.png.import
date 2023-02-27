@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/barricade.png-dafbf522f26c6619148429b1e6e4a120.stex"
+path="res://.import/toxic-water-surface.png-7f3f0d1a288477748a273e0aaddb2067.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer1/barricade.png"
-dest_files=[ "res://.import/barricade.png-dafbf522f26c6619148429b1e6e4a120.stex" ]
+source_file="res://Assets/CommonObjects/toxic-water-surface.png"
+dest_files=[ "res://.import/toxic-water-surface.png-7f3f0d1a288477748a273e0aaddb2067.stex" ]
 
 [params]
 

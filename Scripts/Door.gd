@@ -19,6 +19,6 @@ func _ready():
 	var sprite = get_node("CollisionShape2D/Sprite")
 	sprite.set_texture(sprite_texture)
 
-func _teleport_to_other_door(body):
+func _teleport_to_other_door(_body):
 	door_exit.show_portal()
 	hero.global_transform.origin = door_exit.global_transform.origin

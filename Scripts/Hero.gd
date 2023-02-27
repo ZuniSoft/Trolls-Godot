@@ -105,8 +105,9 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not in_ladder_area:
 		velocity.y = JUMPFORCE
 		$SoundJump.play()
-			
-	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	var snap = Vector2.DOWN * 16 if is_on_floor() else Vector2.ZERO		
+	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
 	
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)

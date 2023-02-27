@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/HUD/Cartoon Spooky Level Set_Collectable Object - Coin 00.png" type="Texture" id=3]
-[ext_resource path="res://Assets/CommonObjects/Cartoon Spooky Level Set_Collectable Object - Life.png" type="Texture" id=4]
+[ext_resource path="res://Assets/CommonObjects/heart.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Fireball/Fireball.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]

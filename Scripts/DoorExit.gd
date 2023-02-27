@@ -1,18 +1,18 @@
 extends Area2D
 
-var show_portal = false
+var show_portal_state = false
 
 func _ready():
 	hide()
 
 func show_portal():
-	show_portal = true
+	show_portal_state = true
 	
-func _on_DoorExit_body_entered(body):
-	if show_portal:
+func _on_DoorExit_body_entered(_body):
+	if show_portal_state:
 		show()
 		$Timer.start()
 
 func _on_Timer_timeout():
-	show_portal = false
+	show_portal_state = false
 	hide()

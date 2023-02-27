@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Heart.gd" type="Script" id=1]
-[ext_resource path="res://Assets/CommonObjects/Cartoon Spooky Level Set_Collectable Object - Life.png" type="Texture" id=2]
+[ext_resource path="res://Assets/CommonObjects/heart.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sound/Heart.mp3" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]

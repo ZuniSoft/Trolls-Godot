@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile-16.png-0bb3a020b8199d2e4d8ce991ba20f659.stex"
+path="res://.import/heart.png-3df423a2e2c74c41ed4ae5e00b6359a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer1/tile-16.png"
-dest_files=[ "res://.import/tile-16.png-0bb3a020b8199d2e4d8ce991ba20f659.stex" ]
+source_file="res://Assets/CommonObjects/heart.png"
+dest_files=[ "res://.import/heart.png-3df423a2e2c74c41ed4ae5e00b6359a7.stex" ]
 
 [params]
 

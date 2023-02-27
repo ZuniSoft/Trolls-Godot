@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/platform-float.png-41f7f590604b41b43e8bdfb6db57124d.stex"
+path="res://.import/swamp-water.png-a9916da2725031e309e4f64ed2d62ace.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer2/platform-float.png"
-dest_files=[ "res://.import/platform-float.png-41f7f590604b41b43e8bdfb6db57124d.stex" ]
+source_file="res://Assets/CommonObjects/swamp-water.png"
+dest_files=[ "res://.import/swamp-water.png-a9916da2725031e309e4f64ed2d62ace.stex" ]
 
 [params]
 

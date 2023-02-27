@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cartoon Spooky Level Set_Collectable Object - Coin 06.png-e403451ba868866aa4b3b4de00869e1f.stex"
+path="res://.import/wood-spikes.png-26e1b6a5e988261f4ffb1f4fd22e24e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CommonObjects/Cartoon Spooky Level Set_Collectable Object - Coin 06.png"
-dest_files=[ "res://.import/Cartoon Spooky Level Set_Collectable Object - Coin 06.png-e403451ba868866aa4b3b4de00869e1f.stex" ]
+source_file="res://Assets/CommonObjects/wood-spikes.png"
+dest_files=[ "res://.import/wood-spikes.png-26e1b6a5e988261f4ffb1f4fd22e24e1.stex" ]
 
 [params]
 

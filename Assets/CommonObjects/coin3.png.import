@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile-26.png-b864d7ee16a6463294a58cb169e4031d.stex"
+path="res://.import/coin3.png-92721abee824de319e0004d644a83a4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer1/tile-26.png"
-dest_files=[ "res://.import/tile-26.png-b864d7ee16a6463294a58cb169e4031d.stex" ]
+source_file="res://Assets/CommonObjects/coin3.png"
+dest_files=[ "res://.import/coin3.png-92721abee824de319e0004d644a83a4a.stex" ]
 
 [params]
 

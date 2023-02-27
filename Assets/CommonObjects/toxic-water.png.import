@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cartoon Spooky Level Set_Collectable Object - Life.png-2a72ad262561be0b44f1e6f0ab0bb3a5.stex"
+path="res://.import/toxic-water.png-8fe581592a6d1829ebf5fdc71b57b95f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CommonObjects/Cartoon Spooky Level Set_Collectable Object - Life.png"
-dest_files=[ "res://.import/Cartoon Spooky Level Set_Collectable Object - Life.png-2a72ad262561be0b44f1e6f0ab0bb3a5.stex" ]
+source_file="res://Assets/CommonObjects/toxic-water.png"
+dest_files=[ "res://.import/toxic-water.png-8fe581592a6d1829ebf5fdc71b57b95f.stex" ]
 
 [params]
 
