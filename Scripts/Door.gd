@@ -20,4 +20,5 @@ func _ready():
 	sprite.set_texture(sprite_texture)
 
 func _teleport_to_other_door(body):
+	door_exit.show_portal()
 	hero.global_transform.origin = door_exit.global_transform.origin
