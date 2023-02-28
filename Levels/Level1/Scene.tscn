@@ -273,7 +273,7 @@ tile_data = PoolIntArray( 589838, 0, 0, 1114102, 0, 0 )
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Cyclop1" parent="Enemies" groups=["enemies"] instance=ExtResource( 18 )]
-position = Vector2( -35, 949 )
+position = Vector2( 680, 768 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 5
 
@@ -290,7 +290,7 @@ z_index = 2
 collision_mask = 35
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( -384, 1006 )
+position = Vector2( -280, 1006 )
 scale = Vector2( 0.4, 0.4 )
 z_index = 1
 collision_mask = 35

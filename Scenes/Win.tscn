@@ -45,6 +45,7 @@ margin_bottom = 421.0
 custom_colors/font_color_focus = Color( 0.0666667, 0.929412, 0.117647, 1 )
 custom_colors/font_color = Color( 0.137255, 0.768627, 0.176471, 1 )
 custom_colors/font_color_hover = Color( 0.0666667, 0.929412, 0.117647, 1 )
+custom_colors/font_color_pressed = Color( 0.0773159, 0.430361, 0.0618701, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Main Menu"
 flat = true

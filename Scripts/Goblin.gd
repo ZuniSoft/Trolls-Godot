@@ -27,7 +27,7 @@ func _physics_process(_delta):
 	velocity.x = speed * direction
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
-
+	
 func _on_TopChecker_body_entered(body):
 	hit(body.JUMP_HIT_POINTS)
 	body.bounce()
