@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Goblin.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Goblin_bak.gd" type="Script" id=2]
 [ext_resource path="res://Levels/Level3/one_way.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/Ogre2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level3/platform.tres" type="TileSet" id=5]

@@ -1,57 +1,14 @@
-extends KinematicBody2D
-
-const WALK_SPEED = 70
-const HIT_POINTS = 5
-
-var speed = WALK_SPEED
-var velocity = Vector2()
-var life = 20
-var dying = false
-
-export var direction = -1
-export var detect_cliffs = true
+extends "res://Scripts/KinematicEnemy.gd"
 
 func _ready():
-	if direction == -1:
-		$AnimatedSprite.flip_h = true
-	$FloorChecker.cast_to.x = $CollisionShape2D.shape.get_extents().x * direction
-	$FloorChecker.enabled = detect_cliffs
+	WALK_SPEED = 70
+	RUN_SPEED = 275
+	HIT_POINTS = 5
+	LIFE = 50
 	
-func _physics_process(_delta):
-	if is_on_wall() or not $FloorChecker.is_colliding() and detect_cliffs and is_on_floor():
-		direction *= -1
-		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
-		$FloorChecker.cast_to.x = $CollisionShape2D.shape.get_extents().x * direction
-		
-	velocity.y += 20
-	velocity.x = speed * direction
-	
-	velocity = move_and_slide(velocity, Vector2.UP)
-
-func _on_TopChecker_body_entered(body):
-	hit(body.JUMP_HIT_POINTS)
-	body.bounce()
-	$SoundHit.play()
-
-func _on_SideChecker_body_entered(body):
-	if not dying:
-		body.hit(position.x, HIT_POINTS)
-
-func hit(var damage):
-	if life > 0:
-		life -= damage
-	if life <= 0:
-		speed = 0
-		$AnimatedSprite.play("dying")	
-		dying = true
-		if $DieTimer.time_left == 0:
-			$DieTimer.start()
-	else:
-		$AnimatedSprite.play("hurt")
-		$HitTimer.start()
-		
-func _on_HitTimer_timeout():
-	$AnimatedSprite.play("walking")
-	
-func _on_DieTimer_timeout():
-	queue_free()
+	var _retval = get_node("TopChecker").connect("body_entered", self, "_on_TopChecker_body_entered")
+	_retval = get_node("SideChecker").connect("body_entered", self, "_on_SideChecker_body_entered")
+	_retval = get_node("DetectArea").connect("body_entered", self, "_on_DetectArea_body_entered")
+	_retval = get_node("DetectArea").connect("body_exited", self, "_on_DetectArea_body_exited")
+	_retval = get_node("HitTimer").connect("timeout", self, "_on_HitTimer_timeout")
+	_retval = get_node("DieTimer").connect("timeout", self, "_on_DieTimer_timeout")

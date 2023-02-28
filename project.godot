@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "KinematicEnemy",
+"language": "GDScript",
+"path": "res://Scripts/KinematicEnemy.gd"
+} ]
+_global_script_class_icons={
+"KinematicEnemy": ""
+}
+
 [application]
 
 config/name="Trolls"

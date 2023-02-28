@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Assets/Goblin2/Dying/Dying_011.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Goblin2/Dying/Dying_003.png" type="Texture" id=2]
@@ -75,6 +75,9 @@ extents = Vector2( 127.5, 21.125 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 179, 100 )
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 320, 10 )
+
 [node name="Goblin2" type="KinematicBody2D"]
 collision_layer = 16
 collision_mask = 163
@@ -84,7 +87,7 @@ script = ExtResource( 5 )
 position = Vector2( 2, 0 )
 frames = SubResource( 1 )
 animation = "walking"
-frame = 7
+frame = 10
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -111,6 +114,12 @@ collision_mask = 33
 position = Vector2( 16, -20 )
 shape = SubResource( 5 )
 
+[node name="DetectArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+shape = SubResource( 6 )
+
 [node name="HitTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -120,8 +129,3 @@ one_shot = true
 
 [node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 32 )
-
-[connection signal="body_entered" from="TopChecker" to="." method="_on_TopChecker_body_entered"]
-[connection signal="body_entered" from="SideChecker" to="." method="_on_SideChecker_body_entered"]
-[connection signal="timeout" from="HitTimer" to="." method="_on_HitTimer_timeout"]
-[connection signal="timeout" from="DieTimer" to="." method="_on_DieTimer_timeout"]

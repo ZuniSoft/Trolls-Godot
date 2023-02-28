@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PauseButton.tscn" type="PackedScene" id=2]
@@ -36,6 +36,9 @@ extents = Vector2( 34, 182.25 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 31.5, 89.5 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 64.9062, 31.5 )
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -254,6 +257,16 @@ cell_quadrant_size = 8
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 2
 format = 1
+tile_data = PoolIntArray( 6488073, 1, 0, 6488081, 1, 0 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Tilesets/OneWay"]
+position = Vector2( 72, 792 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tilesets/OneWay/StaticBody2D2"]
+position = Vector2( 63.0938, 32.5 )
+shape = SubResource( 15 )
+one_way_collision = true
 
 [node name="Ladder" type="TileMap" parent="Tilesets"]
 tile_set = ExtResource( 21 )
@@ -273,7 +286,7 @@ tile_data = PoolIntArray( 589838, 0, 0, 1114102, 0, 0 )
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Cyclop1" parent="Enemies" groups=["enemies"] instance=ExtResource( 18 )]
-position = Vector2( 680, 768 )
+position = Vector2( 888, 872 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 5
 
@@ -303,7 +316,7 @@ collision_mask = 35
 direction = 1
 
 [node name="Ogre1" parent="Enemies" groups=["enemies"] instance=ExtResource( 4 )]
-position = Vector2( 1985, 916 )
+position = Vector2( 1472, 776 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 2
 collision_mask = 35
@@ -351,7 +364,7 @@ collision_layer = 128
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stops/EnemyStop4"]
-position = Vector2( -224, 464 )
+position = Vector2( 88, 512 )
 shape = SubResource( 12 )
 
 [node name="FallZone" type="Area2D" parent="."]
