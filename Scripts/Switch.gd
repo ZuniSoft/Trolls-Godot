@@ -17,6 +17,8 @@ func _ready():
 	update()
 
 func _on_Switch_body_entered(_body):
+	$SoundSwitch.play()
+	
 	if not switch_state:
 		sprite.set_texture(switch_texture_open)
 		switch_state = true

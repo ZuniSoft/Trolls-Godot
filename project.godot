@@ -31,7 +31,7 @@ config/macos_native_icon="res://icon.icns"
 
 [autoload]
 
-GlobalConstants="*res://Scripts/GlobalConstants.gd"
+Globals="*res://Scripts/Globals.gd"
 GameState="*res://Scripts/GameState.gd"
 
 [display]
@@ -67,6 +67,7 @@ ui_attack={
 2d_physics/layer_6="FireBall"
 2d_physics/layer_7="FallZone"
 2d_physics/layer_8="Stops"
+2d_physics/layer_9="SwitchedDoor"
 
 [physics]
 

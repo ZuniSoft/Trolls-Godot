@@ -5,6 +5,7 @@ func _on_RetryButton_pressed():
 	
 	GameState.clear()
 	GameState.current_level = current_level
+	GameState.exit_from_door = false
 	GameState.reset_hud()
 	GameState.save_config()
 	

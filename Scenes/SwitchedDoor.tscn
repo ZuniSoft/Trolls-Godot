@@ -36,9 +36,11 @@ animations = [ {
 
 [node name="SwitchedDoor" type="Area2D"]
 collision_layer = 0
+gravity = 0.0
 script = ExtResource( 2 )
 
 [node name="DoorBlock" type="StaticBody2D" parent="."]
+collision_layer = 257
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorBlock"]
 shape = SubResource( 3 )

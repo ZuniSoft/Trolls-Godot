@@ -22,19 +22,19 @@ func _on_coin_collected():
 	
 	GameState.coins = coins
 	
-	if coins == GlobalConstants.COINS_FOR_EXTRA_LIFE:
-		if life + GlobalConstants.EXTRA_LIFE <= GlobalConstants.MAX_LIFE:
-			life = life + GlobalConstants.EXTRA_LIFE
+	if coins == Globals.COINS_FOR_EXTRA_LIFE:
+		if life + Globals.EXTRA_LIFE <= Globals.MAX_LIFE:
+			life = life + Globals.EXTRA_LIFE
 		else:
-			life = GlobalConstants.MAX_LIFE
+			life = Globals.MAX_LIFE
 		coins = 0
 	_ready()
 		
 func _on_fireball_collected(fireball_cnt):
-	if fireballs + fireball_cnt <= GlobalConstants.MAX_FIREBALLS:
+	if fireballs + fireball_cnt <= Globals.MAX_FIREBALLS:
 		fireballs = fireballs + fireball_cnt
 	else:
-		fireballs = GlobalConstants.MAX_FIREBALLS
+		fireballs = Globals.MAX_FIREBALLS
 		
 	GameState.fireballs = fireballs
 	
@@ -51,10 +51,19 @@ func _on_fireball_used():
 		
 	_ready()
 
-func _on_key_collected():
+func _on_key_collected(key_name):
 	keys = keys + 1
 	
 	GameState.keys = keys
+	
+	if key_name == "Key1":
+		GameState.key_1_collected = true
+	elif key_name == "Key2":
+		GameState.key_2_collected = true
+	elif key_name == "Key2":
+		GameState.key_3_collected = true
+		
+	GameState.save_config()
 	
 	emit_signal("has_keys")
 	_ready()
@@ -70,10 +79,10 @@ func _on_key_used():
 	_ready()
 		
 func _on_heart_collected(life_cnt):
-	if life + life_cnt <= GlobalConstants.MAX_LIFE:
+	if life + life_cnt <= Globals.MAX_LIFE:
 		life = life + life_cnt
 	else:
-		life = GlobalConstants.MAX_LIFE
+		life = Globals.MAX_LIFE
 		
 	GameState.life = life	
 		

@@ -4,15 +4,21 @@ var current_level = 1
 
 var coins = 0
 var keys = 0
-var fireballs = GlobalConstants.MAX_FIREBALLS
-var life = GlobalConstants.MAX_LIFE
+var fireballs = Globals.MAX_FIREBALLS
+var life = Globals.MAX_LIFE
 
 var door_1_locked = true
 var door_2_locked = true
 var door_3_locked = true
 
-var last_position_x = GlobalConstants.DROP_POS_X
-var last_position_y = GlobalConstants.DROP_POS_Y
+var key_1_collected = false
+var key_2_collected = false
+var key_3_collected = false
+
+var last_position_x = Globals.DROP_POS_X
+var last_position_y = Globals.DROP_POS_Y
+
+var exit_from_door = false
 
 func load_config():
 	var config = ConfigFile.new()
@@ -34,6 +40,10 @@ func load_config():
 			door_1_locked = config.get_value(section, "door_1_locked")
 			door_2_locked = config.get_value(section, "door_2_locked")
 			door_3_locked = config.get_value(section, "door_3_locked")
+		if section == "keys":
+			key_1_collected = config.get_value(section, "key_1_collected")
+			key_2_collected = config.get_value(section, "key_2_collected")
+			key_3_collected = config.get_value(section, "key_3_collected")
 		if section == "hero":
 			last_position_x = config.get_value(section, "last_position_x")
 			last_position_y = config.get_value(section, "last_position_y")
@@ -52,6 +62,10 @@ func save_config():
 	config.set_value("doors", "door_2_locked", door_2_locked)
 	config.set_value("doors", "door_3_locked", door_3_locked)
 	
+	config.set_value("keys", "key_1_collected", key_1_collected)
+	config.set_value("keys", "key_2_collected", key_2_collected)
+	config.set_value("keys", "key_3_collected", key_3_collected)
+	
 	config.set_value("hero", "last_position_x", last_position_x)
 	config.set_value("hero", "last_position_y", last_position_y)
 	
@@ -60,8 +74,8 @@ func save_config():
 func reset_hud():
 	coins = 0
 	keys = 0
-	fireballs = GlobalConstants.MAX_FIREBALLS
-	life = GlobalConstants.MAX_LIFE	
+	fireballs = Globals.MAX_FIREBALLS
+	life = Globals.MAX_LIFE	
 	
 func clear():
 	current_level = 0
@@ -75,5 +89,9 @@ func clear():
 	door_2_locked = true
 	door_3_locked = true
 	
-	last_position_x = GlobalConstants.DROP_POS_X
-	last_position_y = GlobalConstants.DROP_POS_Y
+	key_1_collected = false
+	key_2_collected = false
+	key_3_collected = false
+	
+	last_position_x = Globals.DROP_POS_X
+	last_position_y = Globals.DROP_POS_Y

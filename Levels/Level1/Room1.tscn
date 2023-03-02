@@ -157,7 +157,7 @@ shape = SubResource( 11 )
 
 [node name="Doors" type="Node" parent="."]
 
-[node name="LockedDoorExit" parent="Doors" instance=ExtResource( 12 )]
+[node name="LockedDoorExit1" parent="Doors" instance=ExtResource( 12 )]
 position = Vector2( -104, 992 )
 
 [node name="Switches" type="Node" parent="."]
@@ -345,7 +345,7 @@ shape = SubResource( 5 )
 [node name="Pause" parent="." instance=ExtResource( 2 )]
 
 [node name="Hero" parent="." instance=ExtResource( 16 )]
-position = Vector2( -432, 304 )
+position = Vector2( -206, 991 )
 scale = Vector2( 0.2, 0.2 )
 z_index = 10
 collision_mask = 94

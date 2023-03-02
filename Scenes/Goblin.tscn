@@ -80,14 +80,14 @@ extents = Vector2( 320, 10 )
 
 [node name="Goblin" type="KinematicBody2D"]
 collision_layer = 16
-collision_mask = 179
+collision_mask = 163
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 2, 0 )
 frames = SubResource( 1 )
 animation = "walking"
-frame = 7
+frame = 11
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

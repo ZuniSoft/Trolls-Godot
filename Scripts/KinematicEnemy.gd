@@ -62,6 +62,7 @@ func _on_TopChecker_body_entered(body):
 
 func _on_SideChecker_body_entered(body):
 	if body.name == "DoorBlock":
+		hero = null
 		return
 	if not dying:
 		body.hit(position.x, HIT_POINTS)

@@ -17,8 +17,6 @@ func _ready():
 	sprite.set_texture(sprite_texture)
 
 func _on_LockedDoorExit_body_entered(_body):
+	GameState.exit_from_door = true
 	GameState.save_config()
-	
-	var room = get_tree().get_root().get_node("Room1")
-	room.queue_free()
 	var _retval = get_tree().change_scene(door_exit_scene)

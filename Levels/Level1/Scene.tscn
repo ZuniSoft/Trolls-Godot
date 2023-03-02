@@ -227,7 +227,7 @@ position = Vector2( -408, 1024 )
 
 [node name="Keys" type="Node" parent="."]
 
-[node name="Key" parent="Keys" instance=ExtResource( 30 )]
+[node name="Key1" parent="Keys" instance=ExtResource( 30 )]
 position = Vector2( -288, 696 )
 
 [node name="MovingPlatforms" type="Node" parent="."]
@@ -328,7 +328,7 @@ z_index = 2
 collision_mask = 35
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( 672, 1008 )
+position = Vector2( 488, 1008 )
 scale = Vector2( 0.4, 0.4 )
 z_index = 1
 collision_mask = 35
@@ -453,7 +453,7 @@ autoplay = true
 [connection signal="body_exited" from="Ladders/Ladder3" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="key_used" from="Doors/LockedDoor1" to="HUD" method="_on_key_used"]
 [connection signal="key_used" from="Doors/LockedDoor2" to="HUD" method="_on_key_used"]
-[connection signal="key_collected" from="Keys/Key" to="HUD" method="_on_key_collected"]
+[connection signal="key_collected" from="Keys/Key1" to="HUD" method="_on_key_collected"]
 [connection signal="body_entered" from="FallZone" to="Hero" method="_on_FallZone_body_entered"]
 [connection signal="fireballs_empty" from="HUD" to="Hero" method="_on_HUD_fireballs_empty"]
 [connection signal="has_fireballs" from="HUD" to="Hero" method="_on_HUD_has_fireballs"]

@@ -11,6 +11,7 @@ func show_portal():
 func _on_DoorExit_body_entered(_body):
 	if show_portal_state:
 		show()
+		$SoundPortal.play()
 		$Timer.start()
 
 func _on_Timer_timeout():

@@ -25,29 +25,30 @@ func _ready():
 			show_open_door()
 
 func _on_LockedDoor_body_entered(body):
-	if "Room1" in door_scene:
-		if not GameState.door_1_locked:
+	if body.name == "Hero":
+		if "Room1" in door_scene:
+			if not GameState.door_1_locked:
+					open_door_scene()
+			else	:
+				if body.has_keys:
+					unlock_door()
+					GameState.door_1_locked = false
+			return
+		if "Room2" in door_scene:
+			if not GameState.door_2_locked:
 				open_door_scene()
-		else	:
-			if body.has_keys:
-				unlock_door()
-				GameState.door_1_locked = false
-		return
-	if "Room2" in door_scene:
-		if not GameState.door_2_locked:
-			open_door_scene()
-		else	:
-			if body.has_keys:
-				unlock_door()
-				GameState.door_2_locked = false
-		return
-	if "Room3" in door_scene:
-		if not GameState.door_3_locked:
-			open_door_scene()
-		else	:
-			if body.has_keys:
-				unlock_door()
-				GameState.door_3_locked = false
+			else	:
+				if body.has_keys:
+					unlock_door()
+					GameState.door_2_locked = false
+			return
+		if "Room3" in door_scene:
+			if not GameState.door_3_locked:
+				open_door_scene()
+			else	:
+				if body.has_keys:
+					unlock_door()
+					GameState.door_3_locked = false
 
 func show_open_door():
 	var sprite_texture
@@ -72,17 +73,16 @@ func show_closed_door():
 	sprite.set_texture(sprite_texture)
 		
 func unlock_door():
+	$SoundPlayTimer.start()
+	$SoundUnlockDoor.play()
+			
+func open_door_scene():
 	var hero = get_node("../../Hero")
 	
 	GameState.last_position_x = hero.position.x
 	GameState.last_position_y = hero.position.y
 	GameState.save_config()
 	
-	$SoundPlayTimer.start()
-	$SoundUnlockDoor.play()
-			
-func open_door_scene():
-	GameState.save_config()
 	var _retval = get_tree().change_scene(door_scene)
 
 func _on_SoundPlayTimer_timeout():
