@@ -16,7 +16,9 @@ func _ready():
 func _on_DieTimer_timeout():
 	._on_DieTimer_timeout()
 	
+	GameState.clear()
 	GameState.current_level = 3
+	GameState.reset_hud()
 	GameState.save_config()
 	
 	var _retval = get_tree().change_scene("res://Levels/Level3/Scene.tscn")

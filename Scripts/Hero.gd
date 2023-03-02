@@ -10,6 +10,7 @@ var is_throwing = false
 var in_ladder_area = false
 var on_ladder = false
 var has_fireballs = true
+var has_keys = false
 var mystery_items = ["res://Scenes/Fireballs.tscn", "res://Scenes/Heart.tscn", "res://Scenes/Coin.tscn"]
 
 const WALK_SPEED = 120
@@ -213,6 +214,12 @@ func _on_HUD_fireballs_empty():
 
 func _on_HUD_has_fireballs():
 	has_fireballs = true
+	
+func _on_HUD_keys_empty():
+	has_keys = false
+
+func _on_HUD_has_keys():
+	has_keys = true
 
 func _on_FallZone_body_entered(_body):
 	hero_died_cleanup()
