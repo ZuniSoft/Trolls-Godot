@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PauseButton.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Assets/Background1/Background.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Level1/platformer.tres" type="TileSet" id=8]
 [ext_resource path="res://Levels/Level1/bridge.tres" type="TileSet" id=9]
-[ext_resource path="res://Assets/CommonObjects/mystery-box.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Background1/Layer3.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Background1/Layer2.png" type="Texture" id=13]
@@ -32,6 +31,7 @@
 [ext_resource path="res://Scenes/Key.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/LockedDoor.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Scripts/LevelReady.gd" type="Script" id=32]
+[ext_resource path="res://Scenes/MysteryBox.tscn" type="PackedScene" id=33]
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 24, 156 )
@@ -44,32 +44,6 @@ extents = Vector2( 31.5, 89.5 )
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 64.9062, 31.5 )
-
-[sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
-
-[sub_resource type="TileSet" id=14]
-0/name = "Cartoon Spooky Level Set_Platformer - Bonus.png 0"
-0/texture = ExtResource( 10 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 128, 128 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 13 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 13 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 10.9375, 10.0625 )
@@ -171,12 +145,14 @@ z_index = 3
 [node name="Life" type="Node" parent="."]
 
 [node name="Heart1" parent="Life" instance=ExtResource( 19 )]
-position = Vector2( -72, 400 )
+position = Vector2( -192, 544 )
+mystery_box = false
 
 [node name="Fireballs" type="Node" parent="."]
 
 [node name="Fireballs1" parent="Fireballs" instance=ExtResource( 14 )]
-position = Vector2( -512, 648 )
+position = Vector2( -528, 544 )
+mystery_box = false
 
 [node name="Ladders" type="Node" parent="."]
 
@@ -222,7 +198,7 @@ door_scene = "res://Levels/Level1/Room2.tscn"
 
 [node name="Switches" type="Node" parent="."]
 
-[node name="Switch" parent="Switches" instance=ExtResource( 28 )]
+[node name="Switch1" parent="Switches" instance=ExtResource( 28 )]
 position = Vector2( -408, 1024 )
 
 [node name="Keys" type="Node" parent="."]
@@ -242,6 +218,11 @@ position = Vector2( 168, 456 )
 move_direction = "Vertical"
 move_distance = 300
 speed = 5.0
+
+[node name="MysteryBoxes" type="Node" parent="."]
+
+[node name="MysteryBox1" parent="MysteryBoxes" instance=ExtResource( 33 )]
+position = Vector2( -288, 544 )
 
 [node name="Tilesets" type="Node" parent="."]
 
@@ -284,11 +265,11 @@ collision_layer = 2
 format = 1
 tile_data = PoolIntArray( 6488073, 1, 0, 6488081, 1, 0 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Tilesets/OneWay"]
+[node name="Platform1" type="StaticBody2D" parent="Tilesets/OneWay"]
 position = Vector2( 72, 792 )
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tilesets/OneWay/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tilesets/OneWay/Platform1"]
 position = Vector2( 63.0938, 32.5 )
 shape = SubResource( 15 )
 one_way_collision = true
@@ -299,14 +280,6 @@ cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 128
 format = 1
 tile_data = PoolIntArray( 458770, 0, 0, 524306, 0, 0, 589842, 0, 0, 655385, 0, 0, 720903, 1, 0, 720921, 0, 0, 786439, 2, 0, 786457, 0, 0, 851975, 2, 0, 851993, 0, 0, 917511, 2, 0, 917529, 0, 0, 983047, 3, 0, 983065, 0, 0 )
-
-[node name="MysteryBox" type="TileMap" parent="Tilesets"]
-scale = Vector2( 0.5, 0.5 )
-tile_set = SubResource( 14 )
-cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
-collision_layer = 2
-format = 1
-tile_data = PoolIntArray( 589838, 0, 0, 1114102, 0, 0 )
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -346,7 +319,7 @@ z_index = 2
 collision_mask = 35
 
 [node name="MetalSpikes1" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( -264, 392 )
+position = Vector2( -168, 305 )
 
 [node name="WoodSpikes1" parent="Enemies" instance=ExtResource( 24 )]
 position = Vector2( -192, 416 )
@@ -355,7 +328,7 @@ position = Vector2( -192, 416 )
 position = Vector2( 928, 1096 )
 
 [node name="Saw" parent="Enemies" instance=ExtResource( 26 )]
-position = Vector2( -552, 557 )
+position = Vector2( -608, 480 )
 
 [node name="Stops" type="Node" parent="."]
 

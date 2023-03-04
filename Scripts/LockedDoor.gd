@@ -6,49 +6,29 @@ export var door_scene = "res://Levels/Level1/Room1.tscn"
 export var door_type = "Wood"
 
 func _ready():
-	if "Room1" in door_scene:
-		if GameState.door_1_locked:
-			show_closed_door()
-		else	:
-			show_open_door()
-		return
-	elif "Room2" in door_scene:
-		if GameState.door_2_locked:
-			show_closed_door()
-		else	:
-			show_open_door()
-		return
-	elif "Room3" in door_scene:
-		if GameState.door_3_locked:
-			show_closed_door()
-		else	:
-			show_open_door()
+	var path_items = door_scene.split("/", true)
+	var door = path_items[Globals.SCENE_FILE_NAME_IDX].rstrip(Globals.SCENE_FILE_NAME_EXT)
+	var node_idx = door.lstrip(Globals.NODE_ROOM_NAME)
+	var locked = GameState.get("door_" + str(node_idx) + "_locked")
+	
+	if locked:
+		show_closed_door()
+	else	:
+		show_open_door()
 
 func _on_LockedDoor_body_entered(body):
 	if body.name == "Hero":
-		if "Room1" in door_scene:
-			if not GameState.door_1_locked:
-					open_door_scene()
-			else	:
-				if body.has_keys:
-					unlock_door()
-					GameState.door_1_locked = false
-			return
-		if "Room2" in door_scene:
-			if not GameState.door_2_locked:
-				open_door_scene()
-			else	:
-				if body.has_keys:
-					unlock_door()
-					GameState.door_2_locked = false
-			return
-		if "Room3" in door_scene:
-			if not GameState.door_3_locked:
-				open_door_scene()
-			else	:
-				if body.has_keys:
-					unlock_door()
-					GameState.door_3_locked = false
+		var path_items = door_scene.split("/", true)
+		var door = path_items[Globals.SCENE_FILE_NAME_IDX].rstrip(Globals.SCENE_FILE_NAME_EXT)
+		var node_idx = door.lstrip(Globals.NODE_ROOM_NAME)
+		var locked = GameState.get("door_" + str(node_idx) + "_locked")
+		
+		if not locked:
+			open_door_scene()
+		else	:
+			if body.has_keys:
+				unlock_door()
+				GameState.set("door_" + str(node_idx) + "_locked", false)
 
 func show_open_door():
 	var sprite_texture

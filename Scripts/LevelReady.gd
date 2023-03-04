@@ -32,4 +32,27 @@ func _ready():
 				door.show_closed_door()
 			else:
 				door.show_open_door()
-	
+				
+	for idx in range(1, Globals.MAX_FIREBALLS):
+		var collected = GameState.get("fireball_" + str(idx) + "_collected")
+		if collected:
+			key = get_node("Fireballs/Fireballs" + str(idx))
+			key.queue_free()
+			
+	for idx in range(1, Globals.MAX_LIFE):
+		var collected = GameState.get("heart_" + str(idx) + "_collected")
+		if collected:
+			key = get_node("Life/Heart" + str(idx))
+			key.queue_free()
+			
+	for idx in range(1, Globals.MAX_MYSTERY_BOXES):
+		var collected = GameState.get("mystery_" + str(idx) + "_collected")
+		if collected:
+			key = get_node("MysteryBoxes/MysteryBox" + str(idx))
+			key.queue_free()
+			
+	for coin in GameState.coins_collected:
+		var collected = GameState.coins_collected[coin]
+		if collected:
+			var coin_node = get_node("Coins/" + coin)
+			coin_node.queue_free()

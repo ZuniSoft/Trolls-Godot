@@ -110,36 +110,6 @@ func _physics_process(_delta):
 	var snap = Vector2.DOWN * 16 if is_on_floor() else Vector2.ZERO		
 	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
 	
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		if collision.collider.name == "MysteryBox":
-			reveal_mystery_box(collision)
-			
-func reveal_mystery_box(collision):
-	if collision.normal.y == 1:
-		var tilemap = get_parent().get_node("Tilesets/MysteryBox")
-		var local_position = tilemap.to_local(collision.position)
-		var cell_position = tilemap.world_to_map(local_position)
-		
-		cell_position -= collision.normal
-		tilemap.set_cell(cell_position.x, cell_position.y, -1)
-		mystery_items.shuffle()
-		
-		var scene = load(mystery_items[0])
-		var scene_instance = scene.instance()
-		var hud_instance = get_tree().get_root().find_node("HUD", true, false)
-		
-		if "Heart" in mystery_items[0]:
-			scene_instance.connect("heart_collected", hud_instance, "_on_heart_collected")
-		elif "Fireballs" in mystery_items[0]:
-			scene_instance.connect("fireball_collected", hud_instance, "_on_fireball_collected")
-		elif "Coin" in mystery_items[0]:
-			scene_instance.connect("coin_collected", hud_instance, "_on_coin_collected")
-
-		scene_instance.set_position(collision.position)
-		get_parent().add_child(scene_instance)
-		tilemap.queue_free()
-	
 func bounce():
 	velocity.y = JUMPFORCE * 0.7
 	
