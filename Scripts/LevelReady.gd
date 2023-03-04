@@ -17,37 +17,19 @@ func _ready():
 	
 	var key = null 
 	
-	if GameState.key_1_collected:
-		key = get_node("Keys/Key1")
-		key.queue_free()
-	if GameState.key_2_collected:
-		key = get_node("Keys/Key2")
-		key.queue_free()
-	if GameState.key_3_collected:
-		key = get_node("Keys/Key3")
-		key.queue_free()
+	for idx in range(1, Globals.MAX_KEYS):
+		var collected = GameState.get("key_" + str(idx) + "_collected")
+		if collected:
+			key = get_node("Keys/Key" + str(idx))
+			key.queue_free()
 	
 	var door = null
 	
-	door = get_node_or_null("Doors/LockedDoor1")
-	if door:
-		if GameState.door_1_locked:
-			door.show_closed_door()
-		else:
-			door.show_open_door()
-		
-	door = get_node_or_null("Doors/LockedDoor2")
-	if door:
-		if GameState.door_2_locked:
-			door.show_closed_door()
-		else:
-			door.show_open_door()
-		
-	door = get_node_or_null("Doors/LockedDoor3")
-	if door:
-		if GameState.door_3_locked:
-			door.show_closed_door()
-		else:
-			door.show_open_door()
+	for idx in range(1, Globals.MAX_DOORS):
+		door = get_node_or_null("Doors/LockedDoor" + str(idx))
+		if door:
+			if  GameState.get("door_" + str(idx) + "_locked"):
+				door.show_closed_door()
+			else:
+				door.show_open_door()
 	
-

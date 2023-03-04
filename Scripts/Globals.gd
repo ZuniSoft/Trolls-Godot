@@ -9,3 +9,6 @@ const DROP_POS_X = -432
 const DROP_POS_Y = 304
 
 const DOOR_EXIT_OFFSET = 80
+
+const MAX_KEYS = 10
+const MAX_DOORS = 10
