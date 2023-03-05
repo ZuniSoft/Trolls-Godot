@@ -10,7 +10,7 @@ var is_throwing = false
 var in_ladder_area = false
 var on_ladder = false
 var has_fireballs = true
-var has_keys = GameState.has_keys
+var has_keys = true
 var mystery_items = ["res://Scenes/Fireballs.tscn", "res://Scenes/Heart.tscn", "res://Scenes/Coin.tscn"]
 
 const WALK_SPEED = 120
@@ -24,6 +24,10 @@ const FIREBALL = preload("res://Scenes/Fireball.tscn")
 const ATTACK_HIT_POINTS = 10
 const JUMP_HIT_POINTS = 2
 const SWORD_X_POS = 310
+
+func _ready():
+	has_fireballs = GameState.has_fireballs
+	has_keys = GameState.has_keys
 
 func _physics_process(_delta):
 	if not is_hit and not is_dying:

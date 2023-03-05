@@ -1,6 +1,6 @@
 extends Area2D
 
-signal coin_collected(coin_name)
+signal coin_collected()
 
 func _on_Coin_body_entered(_body):
 	$AnimationPlayer.play("Bounce")
@@ -9,8 +9,10 @@ func _on_Coin_body_entered(_body):
 	var room = self.get_node("../../")
 	if "Room" in room.name:
 		RoomState.coins_collected[name] = true
+	else:
+		GameState.coins_collected[name] = true
 	
-	emit_signal("coin_collected", name)
+	emit_signal("coin_collected")
 	set_collision_mask_bit(1, false)
 
 func _on_AnimationPlayer_animation_finished(_anim_name):

@@ -17,11 +17,10 @@ func _ready():
 	$Life.text = String(life)
 	$Keys.text = String(keys)
 	
-func _on_coin_collected(coin_name):
+func _on_coin_collected():
 	coins = coins + 1
 	
 	GameState.coins = coins
-	GameState.coins_collected[coin_name] = true
 		
 	if coins == Globals.COINS_FOR_EXTRA_LIFE:
 		if life + Globals.EXTRA_LIFE <= Globals.MAX_LIFE:
@@ -31,18 +30,13 @@ func _on_coin_collected(coin_name):
 		coins = 0
 	_ready()
 		
-func _on_fireball_collected(fireball_cnt, fireball_name, mystery_box):
+func _on_fireball_collected(fireball_cnt):
 	if fireballs + fireball_cnt <= Globals.MAX_FIREBALLS:
 		fireballs = fireballs + fireball_cnt
 	else:
 		fireballs = Globals.MAX_FIREBALLS
 		
 	GameState.fireballs = fireballs
-	
-	if not mystery_box:
-		var node_idx = fireball_name.lstrip(Globals.NODE_FIREBALLS_NAME)
-		GameState.set("fireball_" + str(node_idx) + "_collected", true)
-		GameState.save_config()
 	
 	emit_signal("has_fireballs")
 	_ready()
@@ -57,7 +51,7 @@ func _on_fireball_used():
 		
 	_ready()
 
-func _on_key_collected(_key_name):
+func _on_key_collected():
 	keys = keys + 1
 	
 	GameState.keys = keys
@@ -75,18 +69,13 @@ func _on_key_used():
 		
 	_ready()
 		
-func _on_heart_collected(life_cnt, heart_name, mystery_box):
+func _on_heart_collected(life_cnt):
 	if life + life_cnt <= Globals.MAX_LIFE:
 		life = life + life_cnt
 	else:
 		life = Globals.MAX_LIFE
 		
 	GameState.life = life
-	
-	if not mystery_box:
-		var node_idx = heart_name.lstrip(Globals.NODE_HEART_NAME)
-		GameState.set("heart_" + str(node_idx) + "_collected", true)
-		GameState.save_config()	
 		
 	_ready()
 		
