@@ -10,7 +10,7 @@ var is_throwing = false
 var in_ladder_area = false
 var on_ladder = false
 var has_fireballs = true
-var has_keys = false
+var has_keys = GameState.has_keys
 var mystery_items = ["res://Scenes/Fireballs.tscn", "res://Scenes/Heart.tscn", "res://Scenes/Coin.tscn"]
 
 const WALK_SPEED = 120

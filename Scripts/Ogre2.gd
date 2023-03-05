@@ -16,6 +16,7 @@ func _ready():
 func _on_DieTimer_timeout():
 	._on_DieTimer_timeout()
 	
+	# clear rooms here
 	GameState.clear()
 	GameState.current_level = 3
 	GameState.reset_hud()

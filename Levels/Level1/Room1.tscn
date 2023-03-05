@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PauseButton.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/CommonObjects/mystery-box.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/LockedDoorExit.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/RoomReady.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/Fireballs.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sound/Forest.mp3" type="AudioStream" id=15]
 [ext_resource path="res://Scenes/Hero.tscn" type="PackedScene" id=16]
@@ -70,6 +71,7 @@ extents = Vector2( 10.9375, 10.0625 )
 extents = Vector2( 317, 82 )
 
 [node name="Room1" type="Node2D"]
+script = ExtResource( 13 )
 
 [node name="FixedBackground" type="TextureRect" parent="."]
 margin_left = -704.0
@@ -92,13 +94,13 @@ position = Vector2( 96, 288 )
 position = Vector2( 160, 288 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 168, 992 )
+position = Vector2( -448, 991 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 232, 992 )
+position = Vector2( -384, 991 )
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 296, 992 )
+position = Vector2( -512, 991 )
 
 [node name="Coin7" parent="Coins" instance=ExtResource( 11 )]
 position = Vector2( 1752, 232 )
@@ -164,8 +166,8 @@ position = Vector2( -104, 992 )
 
 [node name="Keys" type="Node" parent="."]
 
-[node name="Key" parent="Keys" instance=ExtResource( 30 )]
-position = Vector2( -288, 696 )
+[node name="Key1" parent="Keys" instance=ExtResource( 30 )]
+position = Vector2( -304, 997 )
 
 [node name="MovingPlatforms" type="Node" parent="."]
 
@@ -265,7 +267,7 @@ z_index = 2
 collision_mask = 35
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( 125, 1004 )
+position = Vector2( 376, 1005 )
 scale = Vector2( 0.4, 0.4 )
 z_index = 1
 collision_mask = 35
@@ -389,7 +391,7 @@ autoplay = true
 [connection signal="body_exited" from="Ladders/Ladder2" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladders/Ladder3" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder3" to="Hero" method="_on_Ladder_body_exited"]
-[connection signal="key_collected" from="Keys/Key" to="HUD" method="_on_key_collected"]
+[connection signal="key_collected" from="Keys/Key1" to="HUD" method="_on_key_collected"]
 [connection signal="body_entered" from="FallZone" to="Hero" method="_on_FallZone_body_entered"]
 [connection signal="fireballs_empty" from="HUD" to="Hero" method="_on_HUD_fireballs_empty"]
 [connection signal="has_fireballs" from="HUD" to="Hero" method="_on_HUD_has_fireballs"]

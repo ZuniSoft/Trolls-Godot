@@ -18,7 +18,6 @@ func _on_MysteryBox_body_entered(_body):
 		scene_instance.connect("coin_collected", hud_instance, "_on_coin_collected")
 
 	var node_idx = name.lstrip(Globals.NODE_MYSTERY_NAME)
-	print(name)
 	
 	GameState.set("mystery_" + str(node_idx) + "_collected", true)
 	GameState.save_config()	

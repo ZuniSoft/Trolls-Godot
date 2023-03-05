@@ -33,6 +33,7 @@ config/macos_native_icon="res://icon.icns"
 
 Globals="*res://Scripts/Globals.gd"
 GameState="*res://Scripts/GameState.gd"
+RoomState="*res://Scripts/RoomState.gd"
 
 [display]
 

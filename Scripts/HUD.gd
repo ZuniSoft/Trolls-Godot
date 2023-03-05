@@ -22,7 +22,7 @@ func _on_coin_collected(coin_name):
 	
 	GameState.coins = coins
 	GameState.coins_collected[coin_name] = true
-	
+		
 	if coins == Globals.COINS_FOR_EXTRA_LIFE:
 		if life + Globals.EXTRA_LIFE <= Globals.MAX_LIFE:
 			life = life + Globals.EXTRA_LIFE
@@ -57,15 +57,10 @@ func _on_fireball_used():
 		
 	_ready()
 
-func _on_key_collected(key_name):
+func _on_key_collected(_key_name):
 	keys = keys + 1
 	
 	GameState.keys = keys
-	
-	var node_idx = key_name.lstrip(Globals.NODE_KEY_NAME)
-	GameState.set("key_" + str(node_idx) + "_collected", true)
-		
-	GameState.save_config()
 	
 	emit_signal("has_keys")
 	_ready()

@@ -15,44 +15,43 @@ func _ready():
 	var location = Vector2(GameState.last_position_x - offset, GameState.last_position_y)
 	hero.set_global_position(location)
 	
-	var key = null 
+	var key = null
+	var collected = null
 	
 	for idx in range(1, Globals.MAX_KEYS):
-		var collected = GameState.get("key_" + str(idx) + "_collected")
+		collected = GameState.get("key_" + str(idx) + "_collected")
 		if collected:
 			key = get_node("Keys/Key" + str(idx))
 			key.queue_free()
 	
-	var door = null
-	
 	for idx in range(1, Globals.MAX_DOORS):
-		door = get_node_or_null("Doors/LockedDoor" + str(idx))
-		if door:
+		key = get_node_or_null("Doors/LockedDoor" + str(idx))
+		if key:
 			if  GameState.get("door_" + str(idx) + "_locked"):
-				door.show_closed_door()
+				key.show_closed_door()
 			else:
-				door.show_open_door()
+				key.show_open_door()
 				
 	for idx in range(1, Globals.MAX_FIREBALLS):
-		var collected = GameState.get("fireball_" + str(idx) + "_collected")
+		collected = GameState.get("fireball_" + str(idx) + "_collected")
 		if collected:
 			key = get_node("Fireballs/Fireballs" + str(idx))
 			key.queue_free()
 			
 	for idx in range(1, Globals.MAX_LIFE):
-		var collected = GameState.get("heart_" + str(idx) + "_collected")
+		collected = GameState.get("heart_" + str(idx) + "_collected")
 		if collected:
 			key = get_node("Life/Heart" + str(idx))
 			key.queue_free()
 			
 	for idx in range(1, Globals.MAX_MYSTERY_BOXES):
-		var collected = GameState.get("mystery_" + str(idx) + "_collected")
+		collected = GameState.get("mystery_" + str(idx) + "_collected")
 		if collected:
 			key = get_node("MysteryBoxes/MysteryBox" + str(idx))
 			key.queue_free()
 			
 	for coin in GameState.coins_collected:
-		var collected = GameState.coins_collected[coin]
+		collected = GameState.coins_collected[coin]
 		if collected:
 			var coin_node = get_node("Coins/" + coin)
 			coin_node.queue_free()
