@@ -7,6 +7,8 @@ var keys = 0
 var fireballs = Globals.MAX_FIREBALLS
 var life = Globals.MAX_LIFE
 
+var enemies_killed = {}
+
 var coins_collected = {}
 
 var door_1_locked = true
@@ -51,6 +53,8 @@ func load_config():
 			keys = config.get_value(section, "keys")
 			fireballs = config.get_value(section, "fireballs")
 			life = config.get_value(section, "life")
+		if section == "enemies":
+			enemies_killed = config.get_value(section, "killed")
 		if section == "coins":
 			coins_collected = config.get_value(section, "collected")
 		if section == "doors":
@@ -74,6 +78,12 @@ func load_config():
 		if section == "hero":
 			last_position_x = config.get_value(section, "last_position_x")
 			last_position_y = config.get_value(section, "last_position_y")
+			
+	if keys > 0:
+		has_keys = true
+	
+	if fireballs > 0:
+		has_fireballs = true
 		
 func save_config():
 	var config = ConfigFile.new()
@@ -84,6 +94,8 @@ func save_config():
 	config.set_value("hud", "keys", keys)
 	config.set_value("hud", "fireballs", fireballs)
 	config.set_value("hud", "life", life)
+	
+	config.set_value("enemies", "killed", enemies_killed)
 	
 	config.set_value("coins", "collected", coins_collected)
 	
@@ -124,6 +136,8 @@ func clear():
 	fireballs = 0
 	life = 0
 
+	enemies_killed = {}
+
 	coins_collected = {}
 
 	door_1_locked = true
@@ -146,3 +160,8 @@ func clear():
 	
 	last_position_x = Globals.DROP_POS_X
 	last_position_y = Globals.DROP_POS_Y
+	
+func set_next_level(level):
+	clear()
+	current_level = level
+	reset_hud()

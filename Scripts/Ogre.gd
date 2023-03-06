@@ -16,13 +16,7 @@ func _ready():
 func _on_DieTimer_timeout():
 	._on_DieTimer_timeout()
 	
-	RoomState.clear()
-	RoomState.save_config("Room1")
-	RoomState.save_config("Room2")
-	
-	GameState.clear()
-	GameState.current_level = 2
-	GameState.reset_hud()
-	GameState.save_config()
+	RoomState.reset_rooms()
+	GameState.set_next_level(2)
 	
 	var _retval = get_tree().change_scene("res://Levels/Level2/Scene.tscn")

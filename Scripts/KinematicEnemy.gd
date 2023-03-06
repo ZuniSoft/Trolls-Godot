@@ -62,8 +62,15 @@ func _on_TopChecker_body_entered(body):
 
 func _on_SideChecker_body_entered(body):
 	if body.name == "DoorBlock":
-		hero = null
+		var heading = (global_transform.origin - body.global_transform.origin).normalized()
+		
+		if heading.x >= 0:
+			hero = null
+		else:
+			$AnimatedSprite.flip_h = true
+		 
 		return
+		
 	if not dying:
 		body.hit(position.x, HIT_POINTS)
 		body.bounce()

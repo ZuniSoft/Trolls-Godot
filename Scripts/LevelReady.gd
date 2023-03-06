@@ -3,6 +3,8 @@ extends Node2D
 func _ready():
 	GameState.load_config()
 	
+	$HUD.set_game_state_values()
+	
 	var hero = get_node("Hero")
 	var offset = Globals.DOOR_EXIT_OFFSET
 	
@@ -17,6 +19,7 @@ func _ready():
 	
 	var key = null
 	var collected = null
+	var killed = null
 	
 	for idx in range(1, Globals.MAX_KEYS):
 		collected = GameState.get("key_" + str(idx) + "_collected")
@@ -55,3 +58,12 @@ func _ready():
 		if collected:
 			var coin_node = get_node("Coins/" + coin)
 			coin_node.queue_free()
+			
+	for enemy in GameState.enemies_killed:
+		killed = GameState.enemies_killed[enemy]
+		if killed:
+			var enemy_node = get_node("Enemies/" + enemy)
+			enemy_node.queue_free()
+
+func _exit_tree():
+	GameState.save_config()

@@ -1,5 +1,7 @@
 extends Node
 
+var enemies_killed = {}
+
 var coins_collected = {}
 
 var fireball_1_collected = false
@@ -26,6 +28,8 @@ func load_config(room_name):
 		return
 		
 	for section in config.get_sections():
+		if section == "enemies":
+			enemies_killed = config.get_value(section, "killed")
 		if section == "coins":
 			coins_collected = config.get_value(section, "collected")
 		if section == "fireballs":
@@ -45,6 +49,8 @@ func load_config(room_name):
 		
 func save_config(room_name):
 	var config = ConfigFile.new()
+	
+	config.set_value("enemies", "killed", enemies_killed)
 	
 	config.set_value("coins", "collected", coins_collected)
 	
@@ -66,6 +72,7 @@ func save_config(room_name):
 	config.save("user://room_" + str(node_idx) + "_state.cfg")
 	
 func clear():
+	enemies_killed = {}
 	coins_collected = {}
 
 	fireball_1_collected = false
@@ -81,3 +88,8 @@ func clear():
 	mystery_3_collected = false
 	mystery_4_collected = false
 	mystery_5_collected = false
+	
+func reset_rooms():
+	clear()
+	save_config("Room1")
+	save_config("Room2")

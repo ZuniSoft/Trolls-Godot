@@ -4,14 +4,10 @@ func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	
 func _on_Control_confirmed():
-	GameState.clear()
-	GameState.current_level = 1
-	GameState.reset_hud()
+	RoomState.reset_rooms()
+	GameState.set_next_level(1)
 	GameState.save_config()
 	
-	RoomState.clear()
-	RoomState.save_config("Room1")
-	RoomState.save_config("Room2")
 	hide()
 
 func _on_Control_hide():

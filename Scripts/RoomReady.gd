@@ -5,6 +5,7 @@ func _ready():
 	
 	var key = null
 	var collected = null
+	var killed = null
 	
 	for idx in range(1, Globals.MAX_KEYS):
 		collected = RoomState.get("key_" + str(idx) + "_collected")
@@ -35,3 +36,9 @@ func _ready():
 		if collected:
 			var coin_node = get_node("Coins/" + coin)
 			coin_node.queue_free()
+			
+	for enemy in RoomState.enemies_killed:
+		killed = RoomState.enemies_killed[enemy]
+		if killed:
+			var enemy_node = get_node("Enemies/" + enemy)
+			enemy_node.queue_free()

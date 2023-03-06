@@ -17,6 +17,20 @@ func _ready():
 	$Life.text = String(life)
 	$Keys.text = String(keys)
 	
+func set_game_state_values():
+	coins = GameState.coins
+	life = GameState.life
+	fireballs = GameState.fireballs
+	keys = GameState.keys
+	
+	if fireballs > 0:
+		emit_signal("has_fireballs")
+		
+	if keys > 0:
+		emit_signal("has_keys")
+	
+	_ready()
+	
 func _on_coin_collected():
 	coins = coins + 1
 	

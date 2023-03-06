@@ -12,3 +12,12 @@ func _ready():
 	_retval = get_node("DetectArea").connect("body_exited", self, "_on_DetectArea_body_exited")
 	_retval = get_node("HitTimer").connect("timeout", self, "_on_HitTimer_timeout")
 	_retval = get_node("DieTimer").connect("timeout", self, "_on_DieTimer_timeout")
+	
+func _on_DieTimer_timeout():
+	._on_DieTimer_timeout()
+	
+	var room = self.get_node("../../")
+	if "Room" in room.name:
+		RoomState.enemies_killed[name] = true
+	else:
+		GameState.enemies_killed[name] = true

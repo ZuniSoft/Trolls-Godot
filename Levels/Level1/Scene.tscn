@@ -113,13 +113,13 @@ position = Vector2( 96, 288 )
 position = Vector2( 160, 288 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 168, 992 )
+position = Vector2( 176, 664 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 232, 992 )
+position = Vector2( 240, 664 )
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 296, 992 )
+position = Vector2( 301, 664 )
 
 [node name="Coin7" parent="Coins" instance=ExtResource( 11 )]
 position = Vector2( 1752, 232 )
@@ -187,19 +187,19 @@ position = Vector2( -640, 992 )
 position = Vector2( -176, 680 )
 
 [node name="SwitchedDoor1" parent="Doors" instance=ExtResource( 29 )]
-position = Vector2( 360, 984 )
+position = Vector2( 232, 984 )
 
 [node name="LockedDoor1" parent="Doors" instance=ExtResource( 31 )]
 position = Vector2( -216, 992 )
 
 [node name="LockedDoor2" parent="Doors" instance=ExtResource( 31 )]
-position = Vector2( -16, 992 )
+position = Vector2( 552, 456 )
 door_scene = "res://Levels/Level1/Room2.tscn"
 
 [node name="Switches" type="Node" parent="."]
 
 [node name="Switch1" parent="Switches" instance=ExtResource( 28 )]
-position = Vector2( -408, 1024 )
+position = Vector2( 40, 1024 )
 
 [node name="Keys" type="Node" parent="."]
 
@@ -207,7 +207,7 @@ position = Vector2( -408, 1024 )
 position = Vector2( -288, 696 )
 
 [node name="Key2" parent="Keys" instance=ExtResource( 30 )]
-position = Vector2( -496, 696 )
+position = Vector2( -224, 696 )
 
 [node name="MovingPlatforms" type="Node" parent="."]
 
@@ -304,10 +304,11 @@ z_index = 2
 collision_mask = 35
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( 488, 1008 )
+position = Vector2( 472, 1004 )
 scale = Vector2( 0.4, 0.4 )
 z_index = 1
 collision_mask = 35
+direction = 1
 
 [node name="Goblin3" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
 position = Vector2( 648, 472 )
@@ -331,7 +332,7 @@ position = Vector2( -192, 416 )
 position = Vector2( 928, 1096 )
 
 [node name="Saw" parent="Enemies" instance=ExtResource( 26 )]
-position = Vector2( -608, 480 )
+position = Vector2( -640, 640 )
 
 [node name="Stops" type="Node" parent="."]
 
