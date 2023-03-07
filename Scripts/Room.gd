@@ -42,3 +42,11 @@ func _ready():
 		if killed:
 			var enemy_node = get_node("Enemies/" + enemy)
 			enemy_node.queue_free()
+
+func _exit_tree():
+	RoomState.save_config(name)
+	RoomState.clear()
+	
+	GameState.set_hud_to_gs_values()
+	GameState.exit_from_door = true
+	GameState.save_config()

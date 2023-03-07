@@ -2,9 +2,8 @@ extends Node2D
 
 func _ready():
 	GameState.load_config()
-	
-	$HUD.set_game_state_values()
-	
+	GameState.set_hud_to_gs_values()
+		
 	var hero = get_node("Hero")
 	var offset = Globals.DOOR_EXIT_OFFSET
 	
@@ -66,4 +65,5 @@ func _ready():
 			enemy_node.queue_free()
 
 func _exit_tree():
+	GameState.set_gs_values_from_hud()
 	GameState.save_config()

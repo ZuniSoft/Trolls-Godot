@@ -17,11 +17,4 @@ func _ready():
 	sprite.set_texture(sprite_texture)
 
 func _on_LockedDoorExit_body_entered(_body):
-	var room = get_node("../../")
-	 
-	RoomState.save_config(room.name)
-	RoomState.clear() 
-	GameState.exit_from_door = true
-	GameState.save_config()
-	
 	var _retval = get_tree().change_scene(door_exit_scene)

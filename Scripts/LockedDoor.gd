@@ -61,7 +61,6 @@ func open_door_scene():
 	
 	GameState.last_position_x = hero.position.x
 	GameState.last_position_y = hero.position.y
-	GameState.save_config()
 	
 	var _retval = get_tree().change_scene(door_scene)
 

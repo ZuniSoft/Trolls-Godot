@@ -122,12 +122,22 @@ func save_config():
 	
 	config.save("user://game_state.cfg")
 
-func reset_hud():
+func reset_hud_values():
 	coins = 0
 	keys = 0
 	fireballs = Globals.MAX_FIREBALLS
 	life = Globals.MAX_LIFE	
-	
+
+func set_hud_to_gs_values():
+	var hud = get_tree().get_root().find_node("HUD", true, false) 
+	hud.set_display_from_game_state()
+	save_config()
+
+func set_gs_values_from_hud():
+	var hud = get_tree().get_root().find_node("HUD", true, false) 
+	hud.set_game_state_from_display()
+	save_config()
+
 func clear():
 	current_level = 0
 	
@@ -163,8 +173,8 @@ func clear():
 	
 	last_position_x = Globals.DROP_POS_X
 	last_position_y = Globals.DROP_POS_Y
-	
+
 func set_next_level(level):
 	clear()
-	reset_hud()
+	reset_hud_values()
 	current_level = level
