@@ -4,7 +4,7 @@ export var exit_door = 1
 export var door_type = "Wood"
 
 onready var hero = get_node("../../Hero")
-onready var door_exit = get_node("../DoorExit" + str(exit_door))
+onready var door_exit = get_node("../PortalDoorExit" + str(exit_door))
 
 func _ready():
 	var sprite_texture

@@ -130,6 +130,9 @@ func reset_hud():
 	
 func clear():
 	current_level = 0
+	
+	has_fireballs = false
+	has_keys = false
 
 	coins = 0
 	keys = 0
@@ -163,5 +166,5 @@ func clear():
 	
 func set_next_level(level):
 	clear()
-	current_level = level
 	reset_hud()
+	current_level = level

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/CommonObjects/portal.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/DoorExit.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/PortalDoorExit.gd" type="Script" id=2]
 [ext_resource path="res://Assets/CommonObjects/portal2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/CommonObjects/portal3.png" type="Texture" id=4]
 [ext_resource path="res://Assets/CommonObjects/portal4.png" type="Texture" id=5]
@@ -17,7 +17,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[node name="DoorExit" type="Area2D"]
+[node name="PortalDoorExit" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -26,6 +26,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CollisionShape2D"]
 frames = SubResource( 2 )
 animation = "rotating"
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

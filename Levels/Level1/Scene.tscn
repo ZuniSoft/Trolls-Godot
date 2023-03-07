@@ -15,13 +15,13 @@
 [ext_resource path="res://Scenes/Fireballs.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sound/Forest.mp3" type="AudioStream" id=15]
 [ext_resource path="res://Scenes/Hero.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/PortalDoor.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Cyclop.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Heart.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Levels/Level1/ladder.tres" type="TileSet" id=21]
 [ext_resource path="res://Assets/Background1/Layer1.png" type="Texture" id=22]
-[ext_resource path="res://Scenes/DoorExit.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/PortalDoorExit.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scenes/WoodSpikes.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Scenes/Liquid.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/Saw.tscn" type="PackedScene" id=26]
@@ -180,10 +180,10 @@ shape = SubResource( 11 )
 
 [node name="Doors" type="Node" parent="."]
 
-[node name="Door1" parent="Doors" instance=ExtResource( 17 )]
+[node name="PortalDoor1" parent="Doors" instance=ExtResource( 17 )]
 position = Vector2( -640, 992 )
 
-[node name="DoorExit1" parent="Doors" instance=ExtResource( 23 )]
+[node name="PortalDoorExit1" parent="Doors" instance=ExtResource( 23 )]
 position = Vector2( -176, 680 )
 
 [node name="SwitchedDoor1" parent="Doors" instance=ExtResource( 29 )]

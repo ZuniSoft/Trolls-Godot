@@ -1,12 +1,10 @@
 extends Button
 
 func _on_RetryButton_pressed():
-	var current_level = GameState.current_level
+	RoomState.reset_rooms()
 	
-	GameState.clear()
-	GameState.current_level = current_level
+	GameState.set_next_level(GameState.current_level)
 	GameState.exit_from_door = false
-	GameState.reset_hud()
 	GameState.save_config()
 	
 	var level = "res://Levels/Level" + str(GameState.current_level) + "/Scene.tscn"
