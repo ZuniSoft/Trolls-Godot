@@ -17,10 +17,13 @@ func _on_MysteryBox_body_entered(_body):
 	elif "Coin" in mystery_items[0]:
 		scene_instance.connect("coin_collected", hud_instance, "_on_coin_collected")
 
+	var room = self.get_node("../../")
 	var node_idx = name.lstrip(Globals.NODE_MYSTERY_NAME)
 	
-	GameState.set("mystery_" + str(node_idx) + "_collected", true)
-	GameState.save_config()	
+	if "Room" in room.name:
+		RoomState.set("mystery_" + str(node_idx) + "_collected", true)
+	else:
+		GameState.set("mystery_" + str(node_idx) + "_collected", true)
 
 	scene_instance.set_position(position)
 	get_parent().call_deferred("add_child", scene_instance)

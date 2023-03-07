@@ -34,7 +34,7 @@ var last_position_y = Globals.DROP_POS_Y
 
 var exit_from_door = false
 
-var has_fireballs = true
+var has_fireballs = false
 var has_keys = false
 
 func load_config():
