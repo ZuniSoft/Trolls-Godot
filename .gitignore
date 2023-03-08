@@ -9,3 +9,5 @@ export_presets.cfg
 data_*/
 *.dmg
 .DS_Store
+*.pck
+*.exe
