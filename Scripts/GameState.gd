@@ -16,8 +16,12 @@ var door_2_locked = true
 var door_3_locked = true
 
 var fireball_1_collected = false
+var fireball_2_collected = false
+var fireball_3_collected = false
 
 var heart_1_collected = false
+var heart_2_collected = false
+var heart_3_collected = false
 
 var key_1_collected = false
 var key_2_collected = false
@@ -63,8 +67,12 @@ func load_config():
 			door_3_locked = config.get_value(section, "door_3_locked")
 		if section == "fireballs":
 			fireball_1_collected = config.get_value(section, "fireball_1_collected")
+			fireball_2_collected = config.get_value(section, "fireball_2_collected")
+			fireball_3_collected = config.get_value(section, "fireball_3_collected")
 		if section == "hearts":
 			heart_1_collected = config.get_value(section, "heart_1_collected")
+			heart_2_collected = config.get_value(section, "heart_2_collected")
+			heart_3_collected = config.get_value(section, "heart_3_collected")
 		if section == "keys":
 			key_1_collected = config.get_value(section, "key_1_collected")
 			key_2_collected = config.get_value(section, "key_2_collected")
@@ -104,8 +112,12 @@ func save_config():
 	config.set_value("doors", "door_3_locked", door_3_locked)
 	
 	config.set_value("fireballs", "fireball_1_collected", fireball_1_collected)
+	config.set_value("fireballs", "fireball_2_collected", fireball_2_collected)
+	config.set_value("fireballs", "fireball_3_collected", fireball_3_collected)
 	
 	config.set_value("hearts", "heart_1_collected", heart_1_collected)
+	config.set_value("hearts", "heart_2_collected", heart_2_collected)
+	config.set_value("hearts", "heart_3_collected", heart_3_collected)
 	
 	config.set_value("keys", "key_1_collected", key_1_collected)
 	config.set_value("keys", "key_2_collected", key_2_collected)
@@ -158,8 +170,12 @@ func clear():
 	door_3_locked = true
 	
 	fireball_1_collected = false
-	
+	fireball_2_collected = false
+	fireball_3_collected = false
+
 	heart_1_collected = false
+	heart_2_collected = false
+	heart_3_collected = false
 	
 	key_1_collected = false
 	key_2_collected = false

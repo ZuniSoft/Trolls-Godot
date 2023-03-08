@@ -1,22 +1,19 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PauseButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Level1/one_way.tres" type="TileSet" id=3]
-[ext_resource path="res://Scenes/Ogre.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/MetalSpikes.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Level1/environment.tres" type="TileSet" id=6]
 [ext_resource path="res://Assets/Background1/Background.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Level1/platformer.tres" type="TileSet" id=8]
 [ext_resource path="res://Levels/Level1/bridge.tres" type="TileSet" id=9]
-[ext_resource path="res://Assets/CommonObjects/mystery-box.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/LockedDoorExit.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scripts/Room.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/Fireballs.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sound/Forest.mp3" type="AudioStream" id=15]
 [ext_resource path="res://Scenes/Hero.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Cyclop.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Heart.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Levels/Level1/ladder.tres" type="TileSet" id=21]
@@ -37,32 +34,6 @@ extents = Vector2( 31.5, 89.5 )
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 64.9062, 31.5 )
-
-[sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
-
-[sub_resource type="TileSet" id=14]
-0/name = "Cartoon Spooky Level Set_Platformer - Bonus.png 0"
-0/texture = ExtResource( 10 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 128, 128 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 13 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 13 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 10.9375, 10.0625 )
@@ -239,26 +210,7 @@ collision_layer = 128
 format = 1
 tile_data = PoolIntArray( 458770, 0, 0, 524306, 0, 0, 589842, 0, 0, 655385, 0, 0, 720903, 1, 0, 720921, 0, 0, 786439, 2, 0, 786457, 0, 0, 851975, 2, 0, 851993, 0, 0, 917511, 2, 0, 917529, 0, 0, 983047, 3, 0, 983065, 0, 0 )
 
-[node name="MysteryBox" type="TileMap" parent="Tilesets"]
-scale = Vector2( 0.5, 0.5 )
-tile_set = SubResource( 14 )
-cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
-collision_layer = 2
-format = 1
-tile_data = PoolIntArray( 589838, 0, 0, 1114102, 0, 0 )
-
 [node name="Enemies" type="Node" parent="."]
-
-[node name="Cyclop1" parent="Enemies" groups=["enemies"] instance=ExtResource( 18 )]
-position = Vector2( 1784, 1168 )
-scale = Vector2( 0.5, 0.5 )
-z_index = 5
-
-[node name="Cyclop2" parent="Enemies" groups=["enemies"] instance=ExtResource( 18 )]
-position = Vector2( 1912, 504 )
-scale = Vector2( 0.5, 0.5 )
-z_index = 5
-direction = 1
 
 [node name="Goblin1" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
 position = Vector2( 1536, 568 )
@@ -278,12 +230,6 @@ position = Vector2( 648, 472 )
 scale = Vector2( 0.4, 0.4 )
 collision_mask = 35
 direction = 1
-
-[node name="Ogre1" parent="Enemies" groups=["enemies"] instance=ExtResource( 4 )]
-position = Vector2( 1472, 776 )
-scale = Vector2( 0.5, 0.5 )
-z_index = 2
-collision_mask = 35
 
 [node name="MetalSpikes1" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( -264, 392 )

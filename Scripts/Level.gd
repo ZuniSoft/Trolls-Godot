@@ -26,7 +26,7 @@ func _ready():
 			key = get_node("Keys/Key" + str(idx))
 			key.queue_free()
 	
-	for idx in range(1, Globals.MAX_DOORS):
+	for idx in range(1, Globals.MAX_LOCKED_DOORS):
 		key = get_node_or_null("Doors/LockedDoor" + str(idx))
 		if key:
 			if  GameState.get("door_" + str(idx) + "_locked"):

@@ -1,7 +1,29 @@
 # Trolls
-Godot based platformer game with 3 levels.
+Godot based platformer game where you will kill enemies to adavnce to the next level. Along the way collect keys, fireballs, extra life, and coins. Open mystery boxes for more items. Climb ladders and teleport to unknown locations using portal doors. Flip switches and use keys to open doors to other areas. Finally avoid the hazards along the way.
 
 ![Level 1 Screenhot](/screenshot.png)
+
+## Level Design Considerations
+
+1. No limit on enemies
+2. No limit on coins
+3. No limit on switched doors
+4. No limit on portal doors
+5. Maximum of three locked doors w/ sub-levels
+6. Maximum of three keys
+7. Maximum of five mystery boxes
+8. Maximum of three hearts
+9. Maximum of three fireballs
+10. Sub-levels have no locked doors
+11. One Ogre as a boss that must be killed to advance to the next level
+
+## Config File Locations
+
+Config files can be found here:
+
+	Windows: %APPDATA%\Godot\app_userdata\Trolls  
+	macOS: ~/Library/Application Support/Godot/app_userdata/Trolls  
+	Linux: ~/.local/share/godot/app_userdata/Trolls
 
 ## Godot Export Notes
 
