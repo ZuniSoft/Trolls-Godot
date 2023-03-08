@@ -113,6 +113,75 @@ Config files can be found here:
 	texture_format/etc=false  
 	texture_format/etc2=false
 
-5. After the signing and notarization process has completed (e-mail notification), run “stapler staple ./Trolls.dmg”.
-6. Remember to export without Debug on the export file dialog.
+	\[preset.1\]
+
+	name="Windows Desktop"  
+	platform="Windows Desktop"  
+	runnable=true  
+	custom_features=""  
+	export_filter="all_resources"  
+	include_filter=""  
+	exclude_filter=""  
+	export_path="./Trolls.exe"  
+	script_export_mode=1  
+	script_encryption_key=""  
+
+	\[preset.1.options\]
+
+	custom_template/debug=""  
+	custom_template/release=""  
+	binary_format/64_bits=true  
+	binary_format/embed_pck=true  
+	texture_format/bptc=false  
+	texture_format/s3tc=true  
+	texture_format/etc=false  
+	texture_format/etc2=false  
+	texture_format/no_bptc_fallbacks=true  
+	codesign/enable=false  
+	codesign/identity_type=0  
+	codesign/identity=""  
+	codesign/password=""  
+	codesign/timestamp=true  
+	codesign/timestamp_server_url=""  
+	codesign/digest_algorithm=1  
+	codesign/description=""  
+	codesign/custom_options=PoolStringArray(  )  
+	application/modify_resources=true  
+	application/icon=""  
+	application/file_version=""  
+	application/product_version=""  
+	application/company_name="ZuniSoft"  
+	application/product_name="Trolls"  
+	application/file_description="Retro platform game"  
+	application/copyright="Copyright © 2023 Zunisoft All rights reserved."  
+	application/trademarks=""
+
+	\[preset.2\]
+
+	name="Linux/X11"  
+	platform="Linux/X11"  
+	runnable=true  
+	custom_features=""  
+	export_filter="all_resources"  
+	include_filter=""  
+	exclude_filter=""  
+	export_path="./Trolls.x86_64"  
+	script_export_mode=1  
+	script_encryption_key=""  
+
+	\[preset.2.options\]
+
+	custom_template/debug=""  
+	custom_template/release=""  
+	binary_format/64_bits=true  
+	binary_format/embed_pck=true  
+	texture_format/bptc=false  
+	texture_format/s3tc=true  
+	texture_format/etc=false  
+	texture_format/etc2=false  
+	texture_format/no_bptc_fallbacks=true  
+
+5. Mac: After the signing and notarization process has completed (e-mail notification), run “stapler staple ./Trolls.dmg”.
+6. Windows: .exe needs to have icon replaced, use app plugin to do this on the resulting .exe.
+7. Remember to export without Debug on the export file dialog.
 
