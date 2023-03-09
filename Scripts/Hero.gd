@@ -104,14 +104,17 @@ func _physics_process(_delta):
 				velocity.x = 0
 				$AnimatedSprite.play("idle")
 				
-	if not in_ladder_area:
-		velocity.y = velocity.y + GRAVITY
-	
 	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not in_ladder_area:
 		velocity.y = JUMPFORCE
 		$SoundJump.play()
 	
-	var snap = Vector2.DOWN * 16 if is_on_floor() else Vector2.ZERO		
+	var snap = Vector2.ZERO
+	
+	if not in_ladder_area:
+		velocity.y = velocity.y + GRAVITY
+		if is_on_floor():
+			snap = Vector2.DOWN * 16
+	
 	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
 	
 func bounce():
@@ -167,14 +170,12 @@ func _on_ThrowTimer_timeout():
 	emit_signal("fireball_used")
 	is_throwing = false
 
-func _on_Ladder_body_entered(body):
-	if body.name == "Hero":
-		in_ladder_area = true
-		velocity.y = 0
+func _on_Ladder_body_entered(_body):
+	in_ladder_area = true
+	velocity.y = 0
 			
-func _on_Ladder_body_exited(body):
-	if body.name == "Hero":
-		in_ladder_area = false
+func _on_Ladder_body_exited(_body):
+	in_ladder_area = false
 
 func _on_SwordHit_body_entered(body):
 	if body.is_in_group("enemies") and not $SwordHit/Sword.disabled:

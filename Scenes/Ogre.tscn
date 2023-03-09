@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Assets/Ogre1/Dying/Dying_001.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Ogre1/Dying/Dying_011.png" type="Texture" id=2]
@@ -47,9 +47,26 @@
 [ext_resource path="res://Assets/Ogre1/Hurt/Hurt_002.png" type="Texture" id=45]
 [ext_resource path="res://Assets/Ogre1/Walking/Walking_011.png" type="Texture" id=46]
 [ext_resource path="res://Assets/Ogre1/Walking/Walking_015.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_000.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_003.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_001.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_002.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_010.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_006.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_007.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_008.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_009.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_011.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_005.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_004.png" type="Texture" id=59]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "attacking",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 24 ), ExtResource( 1 ), ExtResource( 38 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 30 ), ExtResource( 42 ), ExtResource( 28 ), ExtResource( 2 ), ExtResource( 37 ), ExtResource( 16 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "dying",
@@ -87,7 +104,7 @@ script = ExtResource( 5 )
 position = Vector2( 2, 0 )
 frames = SubResource( 1 )
 animation = "walking"
-frame = 7
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

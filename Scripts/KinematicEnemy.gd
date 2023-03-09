@@ -50,10 +50,12 @@ func _physics_process(_delta):
 func _on_DetectArea_body_entered(body):
 	if body.name == "DoorBlock":
 		return
+	$AnimatedSprite.play("attacking")
 	hero = body
 	speed = RUN_SPEED
 
 func _on_DetectArea_body_exited(_body):
+	$AnimatedSprite.play("walking")
 	hero = null
 	speed = WALK_SPEED
 
