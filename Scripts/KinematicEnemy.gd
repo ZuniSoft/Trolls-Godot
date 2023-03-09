@@ -19,6 +19,7 @@ export var detect_cliffs = true
 func _ready():
 	if direction == -1:
 		$AnimatedSprite.flip_h = true
+		
 	$FloorChecker.cast_to.x = $CollisionShape2D.shape.get_extents().x * direction
 	$FloorChecker.enabled = detect_cliffs
 	
@@ -47,6 +48,8 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 func _on_DetectArea_body_entered(body):
+	if body.name == "DoorBlock":
+		return
 	hero = body
 	speed = RUN_SPEED
 
