@@ -10,7 +10,7 @@ const MAX_LOCKED_DOORS = 3
 const MAX_MYSTERY_BOXES = 5
 
 const DROP_POS_X = -432
-const DROP_POS_Y = 304
+const DROP_POS_Y = 720
 
 const DOOR_EXIT_OFFSET = 80
 

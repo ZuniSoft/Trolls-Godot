@@ -4,6 +4,7 @@ class_name KinematicEnemy
 
 var WALK_SPEED = 60
 var RUN_SPEED = 200
+var HIT_JUMP_VELOCITY = 50
 var HIT_POINTS = 2
 var LIFE = 10
 
@@ -46,7 +47,7 @@ func _physics_process(_delta):
 	
 	velocity.y += 20
 	velocity = move_and_slide(velocity, Vector2.UP)
-	
+
 func _on_DetectArea_body_entered(body):
 	if body.name == "DoorBlock":
 		return
@@ -76,11 +77,19 @@ func _on_SideChecker_body_entered(body):
 			$AnimatedSprite.flip_h = false
 		 
 		return
-		
-	if not dying:
-		body.hit(position.x, HIT_POINTS)
-		body.bounce()
-		speed = WALK_SPEED
+	elif body.name == "Hero":
+		if not dying:
+			
+			if position.x < body.position.x:
+				velocity.x = -HIT_JUMP_VELOCITY
+			elif position.x > body.position.x:
+				velocity.x = HIT_JUMP_VELOCITY
+			
+			move_and_collide(velocity)
+			
+			body.hit(position.x, HIT_POINTS)
+			body.bounce()
+			speed = WALK_SPEED
 
 func hit(var damage):
 	if life > 0:
