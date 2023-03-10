@@ -50,6 +50,7 @@ func _physics_process(_delta):
 func _on_DetectArea_body_entered(body):
 	if body.name == "DoorBlock":
 		return
+		
 	$AnimatedSprite.play("attacking")
 	hero = body
 	speed = RUN_SPEED
@@ -72,7 +73,7 @@ func _on_SideChecker_body_entered(body):
 		if heading.x >= 0:
 			hero = null
 		else:
-			$AnimatedSprite.flip_h = true
+			$AnimatedSprite.flip_h = false
 		 
 		return
 		

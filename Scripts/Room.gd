@@ -7,6 +7,11 @@ func _ready():
 	var collected = null
 	var killed = null
 	
+	var hero = get_node("Hero")
+	
+	if GameState.life <= 0:
+		hero.hero_died_cleanup()
+	
 	for idx in range(1, Globals.MAX_KEYS):
 		collected = RoomState.get("key_" + str(idx) + "_collected")
 		if collected:

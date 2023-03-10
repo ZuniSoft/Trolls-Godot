@@ -103,14 +103,15 @@ func _physics_process(_delta):
 			if not is_throwing:
 				velocity.x = 0
 				$AnimatedSprite.play("idle")
-				
-	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not in_ladder_area:
-		velocity.y = JUMPFORCE
-		$SoundJump.play()
 	
 	var snap = Vector2.ZERO
 	
-	if not in_ladder_area:
+	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not in_ladder_area:
+		velocity.y = JUMPFORCE
+		$SoundJump.play()
+	elif in_ladder_area:
+		velocity.y = 0
+	elif not in_ladder_area:
 		velocity.y = velocity.y + GRAVITY
 		if is_on_floor():
 			snap = Vector2.DOWN * 16
@@ -172,7 +173,6 @@ func _on_ThrowTimer_timeout():
 
 func _on_Ladder_body_entered(_body):
 	in_ladder_area = true
-	velocity.y = 0
 			
 func _on_Ladder_body_exited(_body):
 	in_ladder_area = false

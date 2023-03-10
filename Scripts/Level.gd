@@ -7,6 +7,9 @@ func _ready():
 	var hero = get_node("Hero")
 	var offset = Globals.DOOR_EXIT_OFFSET
 	
+	if GameState.life <= 0:
+		hero.hero_died_cleanup()
+	
 	if not GameState.exit_from_door:
 		GameState.exit_from_door = false
 		GameState.last_position_x = Globals.DROP_POS_X

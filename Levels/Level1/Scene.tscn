@@ -166,21 +166,21 @@ position = Vector2( -224, 696 )
 [node name="Ladders" type="Node" parent="."]
 
 [node name="Ladder1" type="Area2D" parent="Ladders"]
-collision_layer = 2
+collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1"]
 position = Vector2( 480, 880 )
 shape = SubResource( 9 )
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
-collision_layer = 2
+collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
 position = Vector2( 1633, 859.25 )
 shape = SubResource( 10 )
 
 [node name="Ladder3" type="Area2D" parent="Ladders"]
-collision_layer = 2
+collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
 position = Vector2( 1184.5, 573.5 )
@@ -245,30 +245,26 @@ direction = 1
 position = Vector2( 1536, 568 )
 scale = Vector2( 0.4, 0.4 )
 z_index = 2
-collision_mask = 35
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( 680, 1006 )
+position = Vector2( 341, 1004 )
 scale = Vector2( 0.4, 0.4 )
 z_index = 1
-collision_mask = 35
 
 [node name="Goblin3" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
 position = Vector2( 648, 472 )
 scale = Vector2( 0.4, 0.4 )
-collision_mask = 35
 direction = 1
 
 [node name="Ogre1" parent="Enemies" groups=["enemies"] instance=ExtResource( 4 )]
 position = Vector2( 2056, 840 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 2
-collision_mask = 35
+collision_mask = 163
 
 [node name="Wolf1" parent="Enemies" groups=["enemies"] instance=ExtResource( 10 )]
-position = Vector2( -424, 1000 )
+position = Vector2( -389, 997 )
 scale = Vector2( 0.4, 0.4 )
-collision_mask = 35
 direction = 1
 
 [node name="Traps" type="Node" parent="."]

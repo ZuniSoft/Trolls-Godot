@@ -73,6 +73,7 @@ ui_attack={
 2d_physics/layer_7="FallZone"
 2d_physics/layer_8="Stops"
 2d_physics/layer_9="SwitchedDoor"
+2d_physics/layer_10="Ladder"
 
 [physics]
 
