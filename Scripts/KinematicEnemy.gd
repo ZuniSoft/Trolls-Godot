@@ -85,7 +85,7 @@ func _on_SideChecker_body_entered(body):
 			elif position.x > body.position.x:
 				velocity.x = HIT_JUMP_VELOCITY
 			
-			move_and_collide(velocity)
+			velocity = move_and_collide(velocity)
 			
 			body.hit(position.x, HIT_POINTS)
 			body.bounce()
