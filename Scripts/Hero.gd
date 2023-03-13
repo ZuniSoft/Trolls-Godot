@@ -21,7 +21,7 @@ const JUMPFORCE = -1100
 const HIT_JUMP_VEL = 200 
 const LADDER_STEP_HT = 1
 const FIREBALL = preload("res://Scenes/Fireball.tscn")
-const ATTACK_HIT_POINTS = 10
+const ATTACK_HIT_POINTS = 5
 const JUMP_HIT_POINTS = 2
 const SWORD_X_POS = 310
 
@@ -46,7 +46,8 @@ func _physics_process(_delta):
 			else:
 				velocity.x = 0
 			$AnimatedSprite.play("jumping")
-		elif Input.is_action_just_pressed("ui_focus_next") and not on_ladder and has_fireballs:
+			
+		if Input.is_action_just_pressed("ui_focus_next") and not on_ladder and has_fireballs:
 			is_throwing = true
 			$ThrowTimer.start()
 			$AnimatedSprite.play("throwing")
@@ -100,7 +101,7 @@ func _physics_process(_delta):
 			global_transform.origin.y += LADDER_STEP_HT
 			$AnimatedSprite.play("climbing")
 		else:
-			if not is_throwing:
+			if not is_throwing and in_ladder_area or is_on_floor():
 				velocity.x = 0
 				$AnimatedSprite.play("idle")
 	

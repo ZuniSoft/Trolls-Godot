@@ -35,13 +35,13 @@
 [ext_resource path="res://Scenes/MysteryBox.tscn" type="PackedScene" id=33]
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 24, 186 )
+extents = Vector2( 24, 223.5 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 34, 182.25 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 31.5, 89.5 )
+extents = Vector2( 23.75, 160 )
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 64.9062, 31.5 )
@@ -55,7 +55,7 @@ extents = Vector2( 317, 82 )
 [node name="Level1" type="Node2D"]
 script = ExtResource( 32 )
 
-[node name="FixedBackground" type="TextureRect" parent="."]
+[node name="SkyBackground" type="TextureRect" parent="."]
 margin_left = -704.0
 margin_top = -512.0
 margin_right = 3392.0
@@ -63,6 +63,13 @@ margin_bottom = 688.0
 texture = ExtResource( 7 )
 expand = true
 stretch_mode = 2
+
+[node name="CaveBackground" type="ColorRect" parent="."]
+margin_left = 704.0
+margin_top = 1112.0
+margin_right = 1064.0
+margin_bottom = 1408.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -105,29 +112,29 @@ stretch_mode = 2
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 224, 288 )
+position = Vector2( 636, 296 )
 collision_layer = 8
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 96, 288 )
+position = Vector2( 508, 296 )
 collision_layer = 8
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 160, 288 )
+position = Vector2( 572, 296 )
 collision_layer = 8
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 416, 632 )
+position = Vector2( 416, 624 )
 z_index = 1
 collision_layer = 8
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 352, 632 )
+position = Vector2( 352, 624 )
 z_index = 1
 collision_layer = 8
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 288, 632 )
+position = Vector2( 288, 624 )
 z_index = 1
 collision_layer = 8
 
@@ -147,39 +154,39 @@ z_index = 1
 collision_layer = 8
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 1248, 424 )
+position = Vector2( 1248, 445 )
 z_index = 1
 collision_layer = 8
 
 [node name="Coin11" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 1312, 424 )
+position = Vector2( 1312, 445 )
 z_index = 1
 collision_layer = 8
 
 [node name="Coin12" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 1376, 424 )
+position = Vector2( 1376, 445 )
 z_index = 1
 collision_layer = 8
 
 [node name="Life" type="Node" parent="."]
 
 [node name="Heart1" parent="Life" instance=ExtResource( 19 )]
-position = Vector2( -192, 544 )
+position = Vector2( 816, 1328 )
 mystery_box = false
 
 [node name="Fireballs" type="Node" parent="."]
 
 [node name="Fireballs1" parent="Fireballs" instance=ExtResource( 14 )]
-position = Vector2( -544, 456 )
+position = Vector2( 301, 880 )
 mystery_box = false
 
 [node name="Keys" type="Node" parent="."]
 
 [node name="Key1" parent="Keys" instance=ExtResource( 30 )]
-position = Vector2( -464, 400 )
+position = Vector2( 16, 104 )
 
 [node name="Key2" parent="Keys" instance=ExtResource( 30 )]
-position = Vector2( -376, 403 )
+position = Vector2( -296, 274 )
 
 [node name="Ladders" type="Node" parent="."]
 
@@ -187,57 +194,60 @@ position = Vector2( -376, 403 )
 collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1"]
-position = Vector2( 200, 864 )
+position = Vector2( 1129, 823.5 )
 shape = SubResource( 9 )
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
 collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
-position = Vector2( 1633, 859.25 )
+position = Vector2( 1680, 430 )
 shape = SubResource( 10 )
 
 [node name="Ladder3" type="Area2D" parent="Ladders"]
 collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
-position = Vector2( 1184.5, 573.5 )
-z_index = 3
+position = Vector2( 928, 1208 )
 shape = SubResource( 11 )
 
 [node name="Switches" type="Node" parent="."]
 
 [node name="Switch1" parent="Switches" instance=ExtResource( 28 )]
-position = Vector2( -24, 480 )
+position = Vector2( 928, 567 )
+z_index = 3
 
 [node name="Doors" type="Node" parent="."]
 
 [node name="PortalDoor1" parent="Doors" instance=ExtResource( 17 )]
-position = Vector2( 440, 456 )
+position = Vector2( 1822, 993 )
+z_index = 3
 
 [node name="PortalDoorExit1" parent="Doors" instance=ExtResource( 23 )]
-position = Vector2( 326, 456 )
+position = Vector2( 1392, 288 )
 
 [node name="SwitchedDoor1" parent="Doors" instance=ExtResource( 29 )]
-position = Vector2( 48, 415 )
+position = Vector2( 1507, 981 )
+z_index = 3
 
 [node name="LockedDoor1" parent="Doors" instance=ExtResource( 31 )]
-position = Vector2( 704, 728 )
+position = Vector2( 1720, 736 )
+z_index = 2
 
 [node name="LockedDoor2" parent="Doors" instance=ExtResource( 31 )]
-position = Vector2( 552, 456 )
+position = Vector2( 1072, 253 )
 door_scene = "res://Levels/Level1/Room2.tscn"
 
 [node name="MovingPlatforms" type="Node" parent="."]
 
 [node name="MovingPlatform1" parent="MovingPlatforms" instance=ExtResource( 27 )]
-position = Vector2( -168, 840 )
+position = Vector2( 640, 136 )
 z_index = 3
 move_distance = 300
 speed = 5.0
 
 [node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource( 27 )]
-position = Vector2( 168, 456 )
+position = Vector2( 704, 7 )
 move_direction = "Vertical"
 move_distance = 300
 speed = 5.0
@@ -245,78 +255,93 @@ speed = 5.0
 [node name="OnewayPlatforms" type="Node" parent="."]
 
 [node name="Platform1" type="StaticBody2D" parent="OnewayPlatforms"]
-position = Vector2( -201, 168 )
+position = Vector2( 88, 376 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OnewayPlatforms/Platform1"]
-position = Vector2( 24, -50 )
 shape = SubResource( 15 )
 one_way_collision = true
 
 [node name="MysteryBoxes" type="Node" parent="."]
 
 [node name="MysteryBox1" parent="MysteryBoxes" instance=ExtResource( 33 )]
-position = Vector2( -288, 544 )
+position = Vector2( 1160, 128 )
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Cyclop1" parent="Enemies" groups=["enemies"] instance=ExtResource( 18 )]
-position = Vector2( 1784, 1168 )
-scale = Vector2( 0.5, 0.5 )
-z_index = 5
+position = Vector2( 1678, 979 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
 
 [node name="Cyclop2" parent="Enemies" groups=["enemies"] instance=ExtResource( 18 )]
-position = Vector2( 1912, 504 )
+position = Vector2( 2200, 1224 )
 scale = Vector2( 0.5, 0.5 )
-z_index = 5
+z_index = 10
 direction = 1
 
 [node name="Goblin1" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( 1536, 568 )
+position = Vector2( 128, 1005 )
 scale = Vector2( 0.4, 0.4 )
-z_index = 2
+z_index = 10
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( 712, 1176 )
+position = Vector2( 784, 1004 )
 scale = Vector2( 0.4, 0.4 )
-z_index = 1
+z_index = 10
 
 [node name="Goblin3" parent="Enemies" groups=["enemies"] instance=ExtResource( 20 )]
-position = Vector2( 648, 472 )
+position = Vector2( -464, 502 )
 scale = Vector2( 0.4, 0.4 )
+z_index = 10
 direction = 1
 
 [node name="Ogre1" parent="Enemies" groups=["enemies"] instance=ExtResource( 4 )]
-position = Vector2( 2056, 840 )
+position = Vector2( 2512, 1216 )
 scale = Vector2( 0.5, 0.5 )
-z_index = 2
+z_index = 10
 collision_mask = 163
 
 [node name="Wolf1" parent="Enemies" groups=["enemies"] instance=ExtResource( 10 )]
-position = Vector2( 32, 1000 )
+position = Vector2( 1216, 999 )
 scale = Vector2( 0.4, 0.4 )
-z_index = 3
+z_index = 10
 direction = 1
 
 [node name="Traps" type="Node" parent="."]
 
 [node name="MetalSpikes1" parent="Traps" instance=ExtResource( 5 )]
-position = Vector2( -168, 305 )
+position = Vector2( 184, 136 )
 
 [node name="WoodSpikes1" parent="Traps" instance=ExtResource( 24 )]
 position = Vector2( -672, 1032 )
 
 [node name="Water1" parent="Traps" instance=ExtResource( 25 )]
-position = Vector2( -224, 1144 )
+position = Vector2( -224, 1104 )
+z_index = 2
 
 [node name="Water2" parent="Traps" instance=ExtResource( 25 )]
-position = Vector2( -160, 1144 )
+position = Vector2( -160, 1104 )
+z_index = 2
 
 [node name="Water3" parent="Traps" instance=ExtResource( 25 )]
-position = Vector2( -96, 1144 )
+position = Vector2( -96, 1104 )
+z_index = 2
+
+[node name="Water4" parent="Traps" instance=ExtResource( 25 )]
+position = Vector2( 480, 1112 )
+z_index = 2
+
+[node name="Water5" parent="Traps" instance=ExtResource( 25 )]
+position = Vector2( 544, 1112 )
+z_index = 2
+
+[node name="Water6" parent="Traps" instance=ExtResource( 25 )]
+position = Vector2( 608, 1112 )
+z_index = 2
 
 [node name="Saw" parent="Traps" instance=ExtResource( 26 )]
-position = Vector2( -616, 397 )
+position = Vector2( 290, 168 )
 
 [node name="Stops" type="Node" parent="."]
 
@@ -325,7 +350,7 @@ collision_layer = 128
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stops/EnemyStop1"]
-position = Vector2( 1561, 1028 )
+position = Vector2( 1312, 552 )
 shape = SubResource( 12 )
 
 [node name="EnemyStop2" type="StaticBody2D" parent="Stops"]
@@ -333,7 +358,7 @@ collision_layer = 128
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stops/EnemyStop2"]
-position = Vector2( 1004, 1028 )
+position = Vector2( 1232, 616 )
 shape = SubResource( 12 )
 
 [node name="EnemyStop3" type="StaticBody2D" parent="Stops"]
@@ -349,13 +374,13 @@ collision_layer = 128
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stops/EnemyStop4"]
-position = Vector2( 88, 512 )
+position = Vector2( 1240, 552 )
 shape = SubResource( 12 )
 
 [node name="FallZones" type="Node" parent="."]
 
 [node name="FallZone1" type="Area2D" parent="FallZones"]
-position = Vector2( 792, 1248 )
+position = Vector2( 1774, 1440 )
 collision_layer = 0
 __meta__ = {
 "_edit_group_": true
@@ -367,17 +392,7 @@ shape = SubResource( 5 )
 
 [node name="Tilesets" type="Node" parent="."]
 
-[node name="PlatformBkg" type="TileMap" parent="Tilesets"]
-z_index = 1
-tile_set = ExtResource( 8 )
-cell_size = Vector2( 8, 8 )
-cell_quadrant_size = 8
-cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
-collision_layer = 2
-format = 1
-tile_data = PoolIntArray( -4391008, 8, 0, -3866720, 8, 0, -3342432, 8, 0, -2818144, 8, 0, -2293856, 8, 0, -1769568, 8, 0, -1245280, 8, 0, -720992, 8, 0, -196704, 8, 0, 327584, 8, 0, 851872, 8, 0, 1376160, 8, 0, 1900448, 8, 0, 2424736, 8, 0, 2949024, 8, 0, 3473312, 8, 0, 3997600, 8, 0, 4194368, 5, 0, 4194376, 5, 0, 4194384, 5, 0, 4194392, 5, 0, 4194400, 5, 0, 4521888, 8, 0, 5046176, 8, 0, 5570464, 8, 0, 5505052, 4, 0, 5505060, 5, 0, 5505068, 5, 0, 5505076, 5, 0, 5505084, 6, 0, 5701660, 10, 0, 5701668, 11, 0, 5701676, 11, 0, 5701684, 11, 0, 5701692, 12, 0, 6094752, 8, 0, 6619040, 8, 0, 7143328, 8, 0, 7536674, 3, 0, 7667616, 8, 0, 8060960, 3, 0, 8060968, 3, 0, 8191904, 8, 0, 8650664, 5, 0, 8650672, 5, 0, 8650680, 5, 0, 8650688, 5, 0, 8650696, 5, 0, 8650704, 5, 0, 8650712, 6, 0, 8650744, 4, 0, 8585216, 5, 0, 8585224, 5, 0, 8585232, 5, 0, 8585240, 5, 0, 8585248, 5, 0, 8585256, 5, 0, 8585264, 5, 0, 8585272, 5, 0, 8585280, 5, 0, 8585288, 5, 0, 8585296, 5, 0, 8585304, 5, 0, 8585312, 5, 0, 8585320, 5, 0, 8716192, 8, 0, 9174952, 8, 0, 9174960, 8, 0, 9174968, 8, 0, 9174976, 8, 0, 9174984, 8, 0, 9174992, 8, 0, 9175000, 21, 0, 9175032, 22, 0, 9109504, 8, 0, 9109512, 8, 0, 9699240, 8, 0, 9699248, 8, 0, 9699256, 8, 0, 9699264, 8, 0, 9699272, 8, 0, 9699280, 8, 0, 9699288, 21, 0, 9699320, 22, 0, 9633792, 8, 0, 9633800, 8, 0, 10223528, 8, 0, 10223536, 8, 0, 10223544, 8, 0, 10223552, 8, 0, 10223560, 8, 0, 10223568, 8, 0, 10223576, 21, 0, 10223608, 22, 0, 10158080, 8, 0, 10158088, 8, 0 )
-
-[node name="PlatformFore" type="TileMap" parent="Tilesets"]
+[node name="Platform" type="TileMap" parent="Tilesets"]
 z_index = 2
 tile_set = ExtResource( 8 )
 cell_size = Vector2( 8, 8 )
@@ -385,9 +400,10 @@ cell_quadrant_size = 8
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -4391008, 8, 0, -3866720, 8, 0, -3342432, 8, 0, -2818144, 8, 0, -2293856, 8, 0, -1769568, 8, 0, -1245280, 8, 0, -720992, 8, 0, -196704, 8, 0, 327584, 8, 0, 851872, 8, 0, 1376160, 8, 0, 1900448, 8, 0, 2424736, 8, 0, 2949024, 8, 0, 3473312, 8, 0, 3997600, 8, 0, 4194368, 5, 0, 4194376, 5, 0, 4194384, 5, 0, 4194392, 5, 0, 4194400, 5, 0, 4521888, 8, 0, 5046176, 8, 0, 5570464, 8, 0, 5505052, 4, 0, 5505060, 5, 0, 5505068, 5, 0, 5505076, 5, 0, 5505084, 6, 0, 6094752, 8, 0, 6619040, 8, 0, 7143328, 8, 0, 7667616, 8, 0, 8191904, 8, 0, 8650664, 5, 0, 8650672, 5, 0, 8650680, 5, 0, 8650688, 5, 0, 8650696, 5, 0, 8650704, 5, 0, 8650712, 6, 0, 8650744, 4, 0, 8585216, 5, 0, 8585224, 5, 0, 8585232, 5, 0, 8585240, 5, 0, 8585248, 5, 0, 8585256, 5, 0, 8585264, 5, 0, 8585272, 5, 0, 8585280, 5, 0, 8585288, 5, 0, 8585296, 5, 0, 8585304, 5, 0, 8585312, 5, 0, 8585320, 5, 0, 8716192, 8, 0, 9174952, 8, 0, 9174960, 8, 0, 9174968, 8, 0, 9174976, 8, 0, 9174984, 8, 0, 9174992, 8, 0, 9175000, 21, 0, 9175032, 22, 0, 9109504, 8, 0, 9109512, 8, 0, 9699240, 8, 0, 9699248, 8, 0, 9699256, 8, 0, 9699264, 8, 0, 9699272, 8, 0, 9699280, 8, 0, 9699288, 21, 0, 9699320, 22, 0, 9633792, 8, 0, 9633800, 8, 0, 10223528, 8, 0, 10223536, 8, 0, 10223544, 8, 0, 10223552, 8, 0, 10223560, 8, 0, 10223568, 8, 0, 10223576, 21, 0, 10223608, 22, 0, 10158080, 8, 0, 10158088, 8, 0 )
+tile_data = PoolIntArray( -4391008, 8, 0, -3866720, 8, 0, -3342432, 8, 0, -2818144, 8, 0, -2293856, 8, 0, -1769568, 8, 0, -1245280, 8, 0, -720992, 8, 0, -196704, 8, 0, 327584, 8, 0, 851872, 8, 0, 1376160, 8, 0, 1900448, 8, 0, 2424736, 8, 0, 2621392, 24, 0, 2621400, 24, 0, 2621408, 24, 0, 2752568, 4, 0, 2752576, 5, 0, 2752584, 5, 0, 2752592, 6, 0, 2949024, 8, 0, 3276856, 10, 0, 3276864, 11, 0, 3276872, 11, 0, 3276880, 12, 0, 3473312, 8, 0, 3997600, 8, 0, 4521888, 8, 0, 4521912, 24, 0, 4521920, 24, 0, 4521928, 24, 0, 4521936, 24, 0, 4849761, 4, 0, 4849769, 5, 0, 4849777, 5, 0, 4849785, 5, 0, 4849793, 6, 0, 5046176, 8, 0, 5374049, 10, 0, 5374057, 11, 0, 5374065, 11, 0, 5374073, 11, 0, 5374081, 12, 0, 5439516, 24, 0, 5439524, 24, 0, 5439532, 24, 0, 5439540, 24, 0, 5570464, 8, 0, 6094752, 8, 0, 6422451, 24, 0, 6422459, 24, 0, 6488244, 4, 0, 6488252, 5, 0, 6488260, 5, 0, 6488268, 5, 0, 6488276, 5, 0, 6488284, 5, 0, 6488292, 5, 0, 6488300, 5, 0, 6488308, 6, 0, 6619040, 8, 0, 6881256, 24, 0, 7012532, 10, 0, 7012540, 11, 0, 7012548, 11, 0, 7012556, 11, 0, 7012564, 11, 0, 7012572, 11, 0, 7012580, 11, 0, 7012588, 16, 0, 7012596, 9, 0, 7143328, 8, 0, 7536674, 3, 0, 7536876, 7, 0, 7536884, 9, 0, 7667616, 8, 0, 8060960, 3, 0, 8060968, 3, 0, 8061164, 7, 0, 8061172, 9, 0, 8191904, 8, 0, 8650664, 5, 0, 8650672, 5, 0, 8650680, 5, 0, 8650688, 5, 0, 8650696, 5, 0, 8650704, 5, 0, 8650712, 6, 0, 8650744, 4, 0, 8585216, 5, 0, 8585224, 5, 0, 8585232, 5, 0, 8585240, 5, 0, 8585248, 5, 0, 8585256, 5, 0, 8585264, 536870916, 0, 8585296, 536870918, 0, 8585304, 5, 0, 8585312, 5, 0, 8585320, 6, 0, 8585336, 4, 0, 8585344, 5, 0, 8585352, 5, 0, 8585360, 5, 0, 8585368, 5, 0, 8585376, 5, 0, 8585384, 5, 0, 8585392, 5, 0, 8585400, 5, 0, 8585408, 5, 0, 8585416, 5, 0, 8585424, 5, 0, 8585432, 5, 0, 8585440, 5, 0, 8585448, 5, 0, 8585456, 5, 0, 8585464, 5, 0, 8585472, 5, 0, 8716192, 8, 0, 9175000, 21, 0, 9175032, 22, 0, 9109504, 8, 0, 9109512, 8, 0, 9109552, 536870934, 0, 9109584, 536870933, 0, 9109592, 536870920, 0, 9109600, 536870920, 0, 9109608, 9, 0, 9109624, 7, 0, 9699288, 21, 0, 9699320, 22, 0, 9633792, 8, 0, 9633800, 8, 0, 9633840, 536870934, 0, 9633872, 536870933, 0, 9633880, 536870928, 0, 9633888, 11, 0, 9633896, 12, 0, 9633912, 7, 0, 10223576, 21, 0, 10223608, 22, 0, 10158080, 8, 0, 10158088, 8, 0, 10158128, 536870934, 0, 10158160, 536870933, 0, 10158168, 9, 0, 10158200, 7, 0, 10682416, 21, 0, 10682448, 22, 0, 10682456, 9, 0, 10682488, 7, 0, 11206704, 21, 0, 11206736, 22, 0, 11206744, 17, 0, 11206752, 1610612747, 0, 11206760, 1610612747, 0, 11206768, 1610612747, 0, 11206776, 18, 0, 11730992, 21, 0, 11731024, 22, 0 )
 
 [node name="Bridge" type="TileMap" parent="Tilesets"]
+z_index = 2
 tile_set = ExtResource( 9 )
 cell_size = Vector2( 8, 8 )
 cell_quadrant_size = 8
@@ -405,7 +421,7 @@ cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 0
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 131078, 30, 0, 131098, 30, 0, 393225, 31, 0, 393228, 30, 0, 524307, 31, 0, 524309, 30, 0, 524310, 12, 0, 524317, 31, 0, 524319, 12, 0, 524322, 12, 0, 524323, 31, 0, 589837, 12, 0, 655389, 37, 0, 655390, 37, 0, 655391, 37, 0, 655392, 37, 0, 655393, 37, 0, 655394, 37, 0, 655395, 37, 0, 720925, 37, 0, 720926, 37, 0, 720927, 37, 0, 720928, 37, 0, 720929, 37, 0, 720930, 37, 0, 720931, 37, 0, 786461, 37, 0, 786462, 37, 0, 786463, 37, 0, 786466, 37, 0, 786467, 37, 0, 851997, 37, 0, 851998, 37, 0, 851999, 37, 0, 852002, 37, 0, 852003, 37, 0, 917515, 12, 0, 917518, 30, 0, 917533, 37, 0, 917534, 37, 0, 917535, 37, 0, 917536, 37, 0, 917537, 37, 0, 917538, 37, 0, 917539, 37, 0, 1048567, 34, 0, 1048580, 19, 0, 1048593, 35, 0, 1048601, 34, 0, 1048609, 35, 0, 1179645, 34, 0, 1114117, 36, 0, 1179663, 34, 0, 1179664, 17, 0, 1179668, 18, 0, 1179669, 35, 0, 1179672, 34, 0, 1245199, 17, 0, 1245200, 19, 0, 1310734, 17, 0, 1310741, 20, 0, 2031641, 13, 0, 2031644, 13, 0, 7864272, 5, 0, 8126388, 11, 0, 8650718, 12, 0, 8650726, 12, 0, 8650734, 12, 0, 8650742, 12, 0, 8978403, 2, 0, 9109520, 12, 0, 9109528, 12, 0, 9109536, 12, 0, 9109544, 12, 0, 9699296, 13, 0, 9699304, 13, 0, 9699312, 13, 0, 9633808, 12, 0, 9633816, 12, 0, 9633824, 12, 0, 9633832, 12, 0, 10223584, 13, 0, 10223592, 13, 0, 10223600, 13, 0, 10158096, 12, 0, 10158104, 12, 0, 10158112, 12, 0, 10158120, 12, 0 )
+tile_data = PoolIntArray( 131078, 30, 0, 131098, 30, 0, 393225, 31, 0, 393228, 30, 0, 524307, 31, 0, 524309, 30, 0, 524317, 31, 0, 524323, 31, 0, 655389, 37, 0, 655390, 37, 0, 655391, 37, 0, 655392, 37, 0, 655393, 37, 0, 655394, 37, 0, 655395, 37, 0, 720925, 37, 0, 720926, 37, 0, 720927, 37, 0, 720928, 37, 0, 720929, 37, 0, 720930, 37, 0, 720931, 37, 0, 786461, 37, 0, 786462, 37, 0, 786463, 37, 0, 786466, 37, 0, 786467, 37, 0, 851997, 37, 0, 851998, 37, 0, 851999, 37, 0, 852002, 37, 0, 852003, 37, 0, 917536, 37, 0, 917537, 37, 0, 917538, 37, 0, 917539, 37, 0, 1048567, 34, 0, 1048609, 35, 0, 1179645, 34, 0, 1114117, 36, 0, 7864273, 5, 0, 8126388, 11, 0, 8650718, 12, 0, 8650726, 12, 0, 8650734, 12, 0, 8650742, 12, 0, 8585270, 536870924, 0, 8585278, 536870924, 0, 8585286, 536870924, 0, 8585294, 536870924, 0, 8585320, 12, 0, 8585327, 12, 0, 8585335, 12, 0, 9174952, 12, 0, 9174960, 12, 0, 9174968, 12, 0, 9174976, 12, 0, 9174984, 12, 0, 9174992, 12, 0, 9109520, 12, 0, 9109528, 12, 0, 9109536, 12, 0, 9109544, 12, 0, 9109632, 12, 0, 9109640, 12, 0, 9109648, 12, 0, 9109656, 12, 0, 9109664, 12, 0, 9109672, 12, 0, 9109680, 12, 0, 9109688, 12, 0, 9109696, 12, 0, 9109704, 12, 0, 9109712, 12, 0, 9109720, 12, 0, 9109728, 12, 0, 9109736, 12, 0, 9109744, 12, 0, 9109752, 12, 0, 9109760, 12, 0, 9371616, 13, 0, 9371624, 13, 0, 9371632, 13, 0, 9371704, 536870925, 0, 9371712, 536870925, 0, 9371720, 536870925, 0, 9699240, 12, 0, 9699248, 12, 0, 9699256, 12, 0, 9699264, 12, 0, 9699272, 12, 0, 9699280, 12, 0, 9633808, 12, 0, 9633816, 12, 0, 9633824, 12, 0, 9633832, 12, 0, 9633920, 12, 0, 9633928, 12, 0, 9633936, 12, 0, 9633944, 12, 0, 9633952, 12, 0, 9633960, 12, 0, 9633968, 12, 0, 9633976, 12, 0, 9633984, 12, 0, 9633992, 12, 0, 9634000, 12, 0, 9634008, 12, 0, 9634016, 12, 0, 9634024, 12, 0, 9634032, 12, 0, 9634040, 12, 0, 9634048, 12, 0, 9895904, 13, 0, 9895912, 13, 0, 9895920, 13, 0, 9895992, 536870925, 0, 9896000, 536870925, 0, 9896008, 536870925, 0, 10223528, 12, 0, 10223536, 12, 0, 10223544, 12, 0, 10223552, 12, 0, 10223560, 12, 0, 10223568, 12, 0, 10158096, 12, 0, 10158104, 12, 0, 10158112, 12, 0, 10158120, 12, 0, 10158208, 12, 0, 10158216, 12, 0, 10158224, 12, 0, 10158232, 12, 0, 10158240, 12, 0, 10158248, 536870924, 0, 10158256, 536870924, 0, 10158264, 536870924, 0, 10158272, 536870924, 0, 10158280, 536870924, 0, 10158288, 536870924, 0, 10158296, 536870924, 0, 10158304, 536870924, 0, 10158312, 536870924, 0, 10158320, 536870924, 0, 10158328, 536870924, 0, 10158336, 536870924, 0, 10420192, 13, 0, 10420200, 13, 0, 10420208, 13, 0, 10420280, 536870925, 0, 10420288, 536870925, 0, 10420296, 536870925, 0, 10682368, 12, 0, 10682376, 12, 0, 10682384, 12, 0, 10682392, 12, 0, 10682400, 12, 0, 10682408, 12, 0, 10682496, 12, 0, 10682504, 12, 0, 10682512, 12, 0, 10682520, 12, 0, 10682528, 12, 0, 10944568, 13, 0, 10944576, 13, 0, 10944584, 13, 0, 11206656, 12, 0, 11206664, 12, 0, 11206672, 12, 0, 11206680, 12, 0, 11206688, 12, 0, 11206696, 12, 0, 11206784, 12, 0, 11206792, 12, 0, 11206800, 12, 0, 11206808, 12, 0, 11206816, 12, 0, 11468856, 13, 0, 11468864, 13, 0, 11468872, 13, 0, 11730944, 12, 0, 11730952, 12, 0, 11730960, 12, 0, 11730968, 12, 0, 11730976, 12, 0, 11730984, 12, 0, 11731032, 12, 0, 11731040, 12, 0, 11731048, 12, 0, 11731056, 12, 0, 11731064, 12, 0, 11731072, 12, 0, 11731080, 12, 0, 11731088, 12, 0, 11731096, 12, 0, 11731104, 12, 0 )
 
 [node name="EnvironmentFore" type="TileMap" parent="Tilesets"]
 z_index = 3
@@ -413,7 +429,7 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 8, 8 )
 cell_quadrant_size = 8
 format = 1
-tile_data = PoolIntArray( 9109518, 4, 0, 9240494, 3, 0, 9240525, 4, 0, 9437184, 3, 0, 9568288, 3, 0, 9895870, 4, 0 )
+tile_data = PoolIntArray( 8650723, 2, 0, 8978606, 536870916, 0, 9109518, 4, 0, 9109595, 536870916, 0, 9109629, 536870915, 0, 9240494, 3, 0, 9240525, 4, 0, 9175287, 536870916, 0, 9437184, 3, 0, 9437400, 536870915, 0, 9568287, 536870915, 0, 9568451, 3, 0, 9764797, 536870916, 0, 9765014, 3, 0, 10879060, 4, 0, 11010174, 4, 0 )
 
 [node name="OneWay" type="TileMap" parent="Tilesets"]
 z_index = 2
@@ -432,7 +448,7 @@ cell_quadrant_size = 8
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 collision_layer = 128
 format = 1
-tile_data = PoolIntArray( 458770, 0, 0, 524306, 0, 0, 589842, 0, 0, 655385, 0, 0, 720921, 0, 0, 786457, 0, 0, 851993, 0, 0, 917529, 0, 0, 983065, 0, 0, 5439509, 1, 0, 5963797, 2, 0, 6488085, 2, 0, 7012373, 2, 0, 7536661, 2, 0, 8060949, 3, 0 )
+tile_data = PoolIntArray( 458770, 0, 0, 524306, 0, 0, 589842, 0, 0, 655385, 0, 0, 720921, 0, 0, 786457, 0, 0, 851993, 0, 0, 917529, 0, 0, 983065, 0, 0, 4915337, 1, 0, 5439625, 2, 0, 5963913, 2, 0, 6488201, 2, 0, 7012489, 2, 0, 7536777, 2, 0, 8061065, 3, 0, 8585328, 2, 0, 9109616, 2, 0, 9633904, 2, 0, 10158192, 2, 0, 10682480, 3, 0 )
 
 [node name="HUD" parent="." instance=ExtResource( 1 )]
 
@@ -450,7 +466,7 @@ current = true
 limit_left = -700
 limit_top = -320
 limit_right = 2298
-limit_bottom = 1300
+limit_bottom = 1450
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true

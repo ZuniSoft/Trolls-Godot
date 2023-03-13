@@ -4,7 +4,7 @@ class_name KinematicEnemy
 
 var WALK_SPEED = 60
 var RUN_SPEED = 200
-var HIT_JUMP_VELOCITY = 50
+var HIT_JUMP_VELOCITY = 10
 var HIT_POINTS = 2
 var LIFE = 10
 
