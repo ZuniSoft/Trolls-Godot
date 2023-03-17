@@ -13,3 +13,4 @@ data_*/
 *.pck
 *.exe
 Trolls.x86_64
+.godot/editor/filesystem_cache8
