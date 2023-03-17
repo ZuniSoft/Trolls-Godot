@@ -1,57 +1,86 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://bocb1wgvr8wti"]
 
-[ext_resource path="res://Assets/CommonObjects/gate-1.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/SwitchedDoor.gd" type="Script" id=2]
-[ext_resource path="res://Assets/CommonObjects/gate-2.png" type="Texture" id=3]
-[ext_resource path="res://Assets/CommonObjects/gate-3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/CommonObjects/gate-4.png" type="Texture" id=5]
+[ext_resource type="Texture2D" uid="uid://cccu6qre18rsb" path="res://Assets/CommonObjects/gate-1.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/SwitchedDoor.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://c2vfyjjqu3ib8" path="res://Assets/CommonObjects/gate-2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bjapcx7j16yvi" path="res://Assets/CommonObjects/gate-3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dn5xh4ewwm1ci" path="res://Assets/CommonObjects/gate-4.png" id="5"]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 32, 64 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(32, 112)
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "closed",
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": false,
+"name": &"closed",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "closing",
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": false,
+"name": &"closing",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "open",
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": false,
+"name": &"open",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "opening",
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": false,
+"name": &"opening",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id="4"]
 
 [node name="SwitchedDoor" type="Area2D"]
 collision_layer = 0
 gravity = 0.0
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="DoorBlock" type="StaticBody2D" parent="."]
 collision_layer = 257
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorBlock"]
-shape = SubResource( 3 )
+shape = SubResource("3")
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-animation = "closed"
-playing = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("2")
+animation = &"closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource("4")
 disabled = true
 
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite_animation_finished"]

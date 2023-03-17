@@ -140,13 +140,11 @@ func reset_hud_values():
 	fireballs = Globals.MAX_FIREBALLS
 	life = Globals.MAX_LIFE	
 
-func set_hud_to_gs_values():
-	var hud = get_tree().get_root().find_node("HUD", true, false) 
+func set_hud_to_gs_values(hud):
 	hud.set_display_from_game_state()
 	save_config()
 
-func set_gs_values_from_hud():
-	var hud = get_tree().get_root().find_node("HUD", true, false) 
+func set_gs_values_from_hud(hud):
 	hud.set_game_state_from_display()
 	save_config()
 

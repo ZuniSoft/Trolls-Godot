@@ -1,8 +1,21 @@
 extends Node2D
 
+@onready var timer = Timer.new()
+@onready var hud = get_node("HUD")
+@onready var pause = get_node("Pause")
+	
 func _ready():
 	GameState.load_config()
-	GameState.set_hud_to_gs_values()
+	
+	timer.name = "CanvasLayerTimer"
+	timer.wait_time = 1
+	
+	add_child(timer)
+	
+	timer.timeout.connect(_on_timer_timeout)
+	timer.start()
+	
+	GameState.set_hud_to_gs_values(hud)
 		
 	var hero = get_node("Hero")
 	var offset = Globals.DOOR_EXIT_OFFSET
@@ -68,5 +81,10 @@ func _ready():
 			enemy_node.queue_free()
 
 func _exit_tree():
-	GameState.set_gs_values_from_hud()
+	GameState.set_gs_values_from_hud(hud)
 	GameState.save_config()
+	
+func _on_timer_timeout():
+	timer.stop()
+	pause.layer = 1
+	hud.layer = 1

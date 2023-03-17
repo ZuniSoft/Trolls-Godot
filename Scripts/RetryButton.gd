@@ -8,4 +8,4 @@ func _on_RetryButton_pressed():
 	GameState.save_config()
 	
 	var level = "res://Levels/Level" + str(GameState.current_level) + "/Scene.tscn"
-	var _retval = get_tree().change_scene(level)
+	Game.change_scene(level, true, Globals.TRANSITION_SCENE)

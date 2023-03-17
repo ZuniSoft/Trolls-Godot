@@ -1,5 +1,7 @@
 extends Node
 
+const LEVEL_LEFT_LIMIT = -734
+
 const COINS_FOR_EXTRA_LIFE = 12
 const EXTRA_LIFE = 20
 
@@ -22,3 +24,5 @@ const NODE_HEART_NAME = "Heart"
 const NODE_KEY_NAME = "Key"
 const NODE_MYSTERY_NAME = "MysteryBox"
 const NODE_ROOM_NAME = "Room"
+
+const TRANSITION_SCENE = "res://Transitions/TransitionImage.tscn"

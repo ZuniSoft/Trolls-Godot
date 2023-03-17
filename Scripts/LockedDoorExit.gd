@@ -1,7 +1,7 @@
 extends Area2D
 
-export var door_exit_scene = "res://Levels/Level1/Scene.tscn"
-export var door_type = "Wood"
+@export var door_exit_scene = "res://Levels/Level1/Scene.tscn"
+@export var door_type = "Wood"
 
 func _ready():
 	var sprite_texture
@@ -13,8 +13,8 @@ func _ready():
 	else:
 		pass
 	
-	var sprite = get_node("CollisionShape2D/Sprite")
+	var sprite = get_node("CollisionShape2D/Sprite2D")
 	sprite.set_texture(sprite_texture)
 
 func _on_LockedDoorExit_body_entered(_body):
-	var _retval = get_tree().change_scene(door_exit_scene)
+	Game.change_scene(door_exit_scene, true, Globals.TRANSITION_SCENE)

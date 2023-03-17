@@ -2,8 +2,8 @@ extends Area2D
 
 signal key_used
 
-export var door_scene = "res://Levels/Level1/Room1.tscn"
-export var door_type = "Wood"
+@export var door_scene = "res://Levels/Level1/Room1.tscn"
+@export var door_type = "Wood"
 
 func _ready():
 	var path_items = door_scene.split("/", true)
@@ -38,7 +38,7 @@ func show_open_door():
 	elif door_type == "Metal":
 		sprite_texture = load("res://Assets/CommonObjects/metal-door.png")
 	
-	var sprite = get_node("CollisionShape2D/Sprite")
+	var sprite = get_node("CollisionShape2D/Sprite2D")
 	sprite.set_texture(sprite_texture)
 
 func show_closed_door():
@@ -49,7 +49,7 @@ func show_closed_door():
 	elif door_type == "Metal":
 		sprite_texture = load("res://Assets/CommonObjects/locked-metal-door.png")
 	
-	var sprite = get_node("CollisionShape2D/Sprite")
+	var sprite = get_node("CollisionShape2D/Sprite2D")
 	sprite.set_texture(sprite_texture)
 		
 func unlock_door():
@@ -62,7 +62,7 @@ func open_door_scene():
 	GameState.last_position_x = hero.position.x
 	GameState.last_position_y = hero.position.y
 	
-	var _retval = get_tree().change_scene(door_scene)
+	Game.change_scene(door_scene)
 
 func _on_SoundPlayTimer_timeout():
 	emit_signal("key_used")

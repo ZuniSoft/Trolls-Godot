@@ -1,23 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://cp3pmodlgbvgm"]
 
-[ext_resource path="res://Scripts/PauseButton.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
-
-[sub_resource type="DynamicFont" id=1]
-size = 29
-font_data = ExtResource( 2 )
+[ext_resource type="Script" path="res://Scripts/PauseButton.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://dkaujrdvyg0wr" path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" id="2"]
 
 [node name="PauseCanvasLayer" type="CanvasLayer"]
 
 [node name="PauseButton" type="Button" parent="."]
-margin_left = 912.0
-margin_top = 552.0
-margin_right = 1006.0
-margin_bottom = 594.0
+offset_left = 1032.0
+offset_top = 582.0
+offset_right = 1126.0
+offset_bottom = 624.0
 mouse_filter = 1
-custom_fonts/font = SubResource( 1 )
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 24
 text = "Pause"
 flat = true
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [connection signal="pressed" from="PauseButton" to="PauseButton" method="_on_PauseButton_pressed"]

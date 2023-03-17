@@ -1,548 +1,391 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=11 format=3 uid="uid://t57w1pfw71gt"]
 
-[ext_resource path="res://Assets/Fonts/Sniglet-ExtraBold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Ogre3/Idle/Idle_000.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Hero/Idle/Idle_000.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/PlayButton.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Menu/bg.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sound/Menu.mp3" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Fireball/Fireball.png" type="Texture" id=8]
-[ext_resource path="res://Assets/CommonObjects/heart.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Menu/tile-5.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Menu/tile-2.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Menu/hole.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Menu/water-1.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Menu/water-2.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Menu/tile-23.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Menu/tile-22.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Menu/pipe-4.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Menu/pipe-1.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Fonts/BalsamiqSans-Regular.ttf" type="DynamicFontData" id=19]
-[ext_resource path="res://Scripts/ResetButton.gd" type="Script" id=20]
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_d6dk6"]
+[ext_resource type="FontFile" uid="uid://b3cvj5rquooyu" path="res://Assets/Fonts/Sniglet-ExtraBold.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://u2c80jsts87i" path="res://Assets/Ogre3/Idle/Idle_000.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://6jsvw4bll1nb" path="res://Assets/Hero/Idle/Idle_000.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://syw7ngolbxny" path="res://Assets/Menu/bg.png" id="6"]
+[ext_resource type="AudioStream" uid="uid://caqhjqj5jgbb2" path="res://Assets/Sound/Menu.mp3" id="7"]
+[ext_resource type="Texture2D" uid="uid://ca7n5uktr48ta" path="res://Assets/Fireball/Fireball.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://b8tp4rjxb77ky" path="res://Assets/CommonObjects/heart.png" id="9"]
+[ext_resource type="FontFile" uid="uid://dkaujrdvyg0wr" path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" id="11_obvkp"]
+[ext_resource type="StyleBox" uid="uid://d0vraif731mwf" path="res://Themes/menu_box_flat.tres" id="12_txyb0"]
 
-[sub_resource type="DynamicFont" id=7]
-size = 15
-font_data = ExtResource( 19 )
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_d6dk6")
 
-[sub_resource type="DynamicFont" id=1]
-size = 144
-outline_size = 12
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.2, 0.196078, 0.203922, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="DynamicFont" id=3]
-size = 24
-font_data = ExtResource( 19 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="DynamicFont" id=5]
-size = 22
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 61
-outline_size = 5
-outline_color = Color( 0.113725, 0.611765, 0.0901961, 1 )
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 23
-font_data = ExtResource( 19 )
-
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Background" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
-texture = ExtResource( 6 )
-expand = true
+[node name="Background" type="TextureRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1154.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+expand_mode = 1
 stretch_mode = 1
 
-[node name="Tile-2" type="Sprite" parent="Background"]
-position = Vector2( 560, 440 )
-texture = ExtResource( 11 )
-
-[node name="Tile-3" type="Sprite" parent="Background"]
-position = Vector2( 624, 440 )
-texture = ExtResource( 11 )
-
-[node name="Tile-4" type="Sprite" parent="Background"]
-position = Vector2( 432, 440 )
-texture = ExtResource( 11 )
-
-[node name="Tile-5" type="Sprite" parent="Background"]
-position = Vector2( 368, 440 )
-texture = ExtResource( 11 )
-
-[node name="Tile-6" type="Sprite" parent="Background"]
-position = Vector2( 416, 504 )
-texture = ExtResource( 10 )
-
-[node name="Tile-7" type="Sprite" parent="Background"]
-position = Vector2( 480, 504 )
-texture = ExtResource( 10 )
-
-[node name="Tile-8" type="Sprite" parent="Background"]
-position = Vector2( 544, 504 )
-texture = ExtResource( 10 )
-
-[node name="Tile-9" type="Sprite" parent="Background"]
-position = Vector2( 608, 504 )
-texture = ExtResource( 10 )
-
-[node name="Tile-10" type="Sprite" parent="Background"]
-position = Vector2( 416, 568 )
-texture = ExtResource( 10 )
-
-[node name="Tile-11" type="Sprite" parent="Background"]
-position = Vector2( 608, 568 )
-texture = ExtResource( 10 )
-
-[node name="Tile-12" type="Sprite" parent="Background"]
-position = Vector2( 352, 608 )
-texture = ExtResource( 10 )
-
-[node name="Tile-13" type="Sprite" parent="Background"]
-position = Vector2( 416, 632 )
-texture = ExtResource( 10 )
-
-[node name="Tile-14" type="Sprite" parent="Background"]
-position = Vector2( 480, 632 )
-texture = ExtResource( 10 )
-
-[node name="Tile-15" type="Sprite" parent="Background"]
-position = Vector2( 480, 568 )
-texture = ExtResource( 10 )
-
-[node name="Tile-16" type="Sprite" parent="Background"]
-position = Vector2( 544, 568 )
-texture = ExtResource( 10 )
-
-[node name="Tile-17" type="Sprite" parent="Background"]
-position = Vector2( 544, 632 )
-texture = ExtResource( 10 )
-
-[node name="Tile-18" type="Sprite" parent="Background"]
-position = Vector2( 608, 632 )
-texture = ExtResource( 10 )
-
-[node name="Hole" type="Sprite" parent="Background"]
-position = Vector2( 496, 328 )
-texture = ExtResource( 12 )
-
-[node name="Water-1" type="Sprite" parent="Background"]
-position = Vector2( 492, 364 )
-texture = ExtResource( 13 )
-
-[node name="Water-2" type="Sprite" parent="Background"]
-position = Vector2( 492, 404 )
-texture = ExtResource( 14 )
-
-[node name="Tile-22" type="Sprite" parent="Background"]
-position = Vector2( 112, 40 )
-texture = ExtResource( 16 )
-
-[node name="Tile-23" type="Sprite" parent="Background"]
-position = Vector2( 112, 104 )
-texture = ExtResource( 15 )
-
-[node name="Tile-24" type="Sprite" parent="Background"]
-position = Vector2( 112, 168 )
-texture = ExtResource( 15 )
-
-[node name="Tile-25" type="Sprite" parent="Background"]
-position = Vector2( 112, 232 )
-texture = ExtResource( 15 )
-
-[node name="Tile-26" type="Sprite" parent="Background"]
-position = Vector2( 112, 296 )
-texture = ExtResource( 15 )
-
-[node name="Tile-27" type="Sprite" parent="Background"]
-position = Vector2( 112, 600 )
-texture = ExtResource( 15 )
-
-[node name="Pipe-4" type="Sprite" parent="Background"]
-position = Vector2( 776, 64 )
-rotation = 3.14159
-texture = ExtResource( 17 )
-
-[node name="Pipe-1" type="Sprite" parent="Background"]
-position = Vector2( 936, 392 )
-rotation = -1.5708
-scale = Vector2( 2.27809, 1.74336 )
-texture = ExtResource( 18 )
-
-[node name="Tile-19" type="Sprite" parent="Background"]
-position = Vector2( 496, 440 )
-texture = ExtResource( 11 )
-
-[node name="Version" type="Label" parent="."]
-margin_left = 912.0
-margin_top = 16.0
-margin_right = 1007.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 7 )
+[node name="Version" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 9.0
+offset_right = 1139.0
+offset_bottom = 35.0
 text = "Version 0.9.0"
-align = 2
 
-[node name="Title" type="Label" parent="."]
-margin_left = 192.0
-margin_top = 88.0
-margin_right = 844.0
-margin_bottom = 268.0
-custom_colors/font_color = Color( 0.0823529, 0.309804, 0.552941, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
+[node name="Title" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 88.0
+offset_right = 900.0
+offset_bottom = 268.0
+theme_override_colors/font_color = Color(0.364706, 0.356863, 0.878431, 1)
+theme_override_colors/font_outline_color = Color(0.0627451, 0.0823529, 0.364706, 1)
+theme_override_constants/outline_size = 72
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 120
 text = "TROLLS!"
-align = 1
-valign = 1
+horizontal_alignment = 1
 
-[node name="Copyright" type="Label" parent="."]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 328.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 7 )
+[node name="Copyright" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 367.0
+offset_bottom = 36.0
 text = "Copyright © 2023 ZuniSoft All rights reserved."
 
-[node name="Keys" type="Panel" parent="."]
-margin_left = 24.0
-margin_top = 320.0
-margin_right = 392.0
-margin_bottom = 578.0
-custom_styles/panel = SubResource( 2 )
+[node name="Keys" type="Panel" parent="Menu"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 320.0
+offset_right = 430.0
+offset_bottom = 578.0
 
-[node name="RunKey" type="Label" parent="Keys"]
-margin_left = 16.0
-margin_top = 112.0
-margin_right = 48.0
-margin_bottom = 144.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+[node name="RunKey" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 109.0
+offset_right = 48.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("12_txyb0")
 text = "R"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LeftKey" type="Label" parent="Keys"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 48.0
-margin_bottom = 48.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+[node name="LeftKey" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 48.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("12_txyb0")
 text = "<"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LeftKeyDesc" type="Label" parent="Keys"]
-margin_left = 56.0
-margin_top = 112.0
-margin_right = 112.0
-margin_bottom = 153.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="LeftKeyDesc" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 112.0
+offset_right = 112.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Run"
 
-[node name="RightKey" type="Label" parent="Keys"]
-margin_left = 176.0
-margin_top = 16.0
-margin_right = 208.0
-margin_bottom = 48.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+[node name="RightKey" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 13.0
+offset_right = 208.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("12_txyb0")
 text = ">"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="RightKeyDesc" type="Label" parent="Keys"]
-margin_left = 216.0
-margin_top = 16.0
-margin_right = 287.0
-margin_bottom = 57.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="RightKeyDesc" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 16.0
+offset_right = 287.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Right"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="UpKey" type="Label" parent="Keys"]
-margin_left = 16.0
-margin_top = 64.0
-margin_right = 48.0
-margin_bottom = 96.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+[node name="UpKey" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 62.0
+offset_right = 48.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("12_txyb0")
 text = "^"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="UpKeyDesc" type="Label" parent="Keys"]
-margin_left = 56.0
-margin_top = 64.0
-margin_right = 165.0
-margin_bottom = 105.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="UpKeyDesc" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 165.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Climb Up"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="RunKeyDesc" type="Label" parent="Keys"]
-margin_left = 56.0
-margin_top = 16.0
-margin_right = 113.0
-margin_bottom = 57.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="RunKeyDesc" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 16.0
+offset_right = 113.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Left"
 
-[node name="FightKey" type="Label" parent="Keys"]
-margin_left = 176.0
-margin_top = 112.0
-margin_right = 208.0
-margin_bottom = 144.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+[node name="FightKey" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 109.0
+offset_right = 208.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("12_txyb0")
 text = "A"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="FightKeyDesc" type="Label" parent="Keys"]
-margin_left = 216.0
-margin_top = 112.0
-margin_right = 305.0
-margin_bottom = 153.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="FightKeyDesc" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 112.0
+offset_right = 305.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Attack"
 
-[node name="SpaceKey" type="Label" parent="Keys"]
-margin_left = 16.0
-margin_top = 160.0
-margin_right = 116.0
-margin_bottom = 190.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+[node name="SpaceKey" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 116.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("12_txyb0")
 text = "SPACE"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TabKey" type="Label" parent="Keys"]
-margin_left = 16.0
-margin_top = 208.0
-margin_right = 92.0
-margin_bottom = 238.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+[node name="TabKey" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 208.0
+offset_right = 92.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("12_txyb0")
 text = "TAB"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="SpaceKeyDesc" type="Label" parent="Keys"]
-margin_left = 128.0
-margin_top = 160.0
-margin_right = 202.0
-margin_bottom = 201.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="SpaceKeyDesc" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 160.0
+offset_right = 202.0
+offset_bottom = 201.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Jump"
 
-[node name="TabKeyDesc" type="Label" parent="Keys"]
-margin_left = 104.0
-margin_top = 208.0
-margin_right = 178.0
-margin_bottom = 249.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="TabKeyDesc" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 208.0
+offset_right = 178.0
+offset_bottom = 249.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Shoot Fireballs"
 
-[node name="DownKey" type="Label" parent="Keys"]
-margin_left = 208.0
-margin_top = 96.0
-margin_right = 240.0
-margin_bottom = 128.0
-rect_rotation = -180.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+[node name="DownKey" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 93.0
+offset_right = 239.0
+offset_bottom = 125.0
+rotation = 3.14159
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("12_txyb0")
 text = "^"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="DownKeyDesc" type="Label" parent="Keys"]
-margin_left = 216.0
-margin_top = 64.0
-margin_right = 355.0
-margin_bottom = 105.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="DownKeyDesc" type="Label" parent="Menu/Keys"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 64.0
+offset_right = 355.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Climb Down"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Legend" type="Panel" parent="."]
-margin_left = 608.0
-margin_top = 368.0
-margin_right = 997.0
-margin_bottom = 573.0
-custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Legend" type="Panel" parent="Menu"]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 344.0
+offset_right = 1092.0
+offset_bottom = 549.0
 
-[node name="YouImage" type="TextureRect" parent="Legend"]
-margin_left = -32.0
-margin_top = -11.0
-margin_right = 128.0
-margin_bottom = 101.0
-rect_scale = Vector2( 0.9, 0.9 )
-texture = ExtResource( 4 )
-expand = true
+[node name="YouImage" type="TextureRect" parent="Menu/Legend"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 145.0
+offset_bottom = 115.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="BossImage" type="TextureRect" parent="Legend"]
-margin_left = -17.0
-margin_top = 49.0
-margin_right = 124.0
-margin_bottom = 165.0
-rect_scale = Vector2( 0.9, 0.9 )
-texture = ExtResource( 3 )
-expand = true
+[node name="BossImage" type="TextureRect" parent="Menu/Legend"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 54.0
+offset_right = 124.0
+offset_bottom = 170.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="YouDesc" type="Label" parent="Legend"]
-margin_left = 72.0
-margin_top = 24.0
-margin_right = 147.0
-margin_bottom = 65.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
-text = "= You"
+[node name="YouDesc" type="Label" parent="Menu/Legend"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 26.0
+offset_right = 147.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
+text = "= Player"
 
-[node name="YouImage2" type="TextureRect" parent="Legend"]
-margin_left = 17.0
-margin_top = 160.0
-margin_right = 60.0
-margin_bottom = 193.0
-texture = ExtResource( 8 )
-expand = true
+[node name="YouImage2" type="TextureRect" parent="Menu/Legend"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 161.0
+offset_right = 60.0
+offset_bottom = 204.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="YouImage3" type="TextureRect" parent="Legend"]
-margin_left = 57.0
-margin_top = 160.0
-margin_right = 101.0
-margin_bottom = 194.0
-texture = ExtResource( 9 )
-expand = true
+[node name="YouImage3" type="TextureRect" parent="Menu/Legend"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 164.0
+offset_right = 102.0
+offset_bottom = 198.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("9")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="YouDesc2" type="Label" parent="Legend"]
-margin_left = 105.0
-margin_top = 160.0
-margin_right = 231.0
-margin_bottom = 223.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="YouDesc2" type="Label" parent="Menu/Legend"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 165.0
+offset_right = 223.0
+offset_bottom = 228.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Power ups"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Text1" type="Label" parent="Legend"]
-margin_left = 89.0
-margin_top = 96.0
-margin_right = 366.0
-margin_bottom = 137.0
-custom_colors/font_color = Color( 0.101961, 0.568627, 0.819608, 1 )
-custom_fonts/font = SubResource( 5 )
+[node name="BossesDesc" type="Label" parent="Menu/Legend"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 99.0
+offset_right = 366.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 18
 text = "= Beat bosses to advance!"
 
-[node name="PlayButton" type="Button" parent="."]
-margin_left = 392.0
-margin_top = 424.0
-margin_right = 601.0
-margin_bottom = 520.0
-custom_colors/font_color_focus = Color( 0.0666667, 0.929412, 0.117647, 1 )
-custom_colors/font_color = Color( 0.236786, 1, 0.333769, 1 )
-custom_colors/font_color_hover = Color( 0.0666667, 0.929412, 0.117647, 1 )
-custom_colors/font_color_pressed = Color( 0.236786, 1, 0.333769, 1 )
-custom_fonts/font = SubResource( 6 )
+[node name="PlayButton" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 353.0
+offset_right = 665.0
+offset_bottom = 449.0
+theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.878431, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.878431, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.878431, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.25098, 0, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 48
 text = "PLAY!"
 flat = true
-script = ExtResource( 5 )
 
-[node name="ResetButton" type="Button" parent="."]
+[node name="ResetButton" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
 anchor_bottom = 0.027
-margin_left = 429.0
-margin_top = 519.0
-margin_right = 572.0
-margin_bottom = 536.8
-custom_colors/font_color_focus = Color( 0.972549, 0.266667, 0.266667, 1 )
-custom_colors/font_color = Color( 0.788235, 0.113725, 0.113725, 1 )
-custom_colors/font_color_hover = Color( 0.972549, 0.266667, 0.266667, 1 )
-custom_colors/font_color_pressed = Color( 0.694118, 0.133333, 0.25098, 1 )
-custom_fonts/font = SubResource( 8 )
+offset_left = 493.0
+offset_top = 495.0
+offset_right = 637.0
+offset_bottom = 515.504
+theme_override_colors/font_color = Color(0.596078, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.403922, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("11_obvkp")
+theme_override_font_sizes/font_size = 24
 text = "Reset Game"
 flat = true
-script = ExtResource( 20 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu"]
+stream = ExtResource("7")
 volume_db = -20.0
 autoplay = true
 
-[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="ResetButton" to="ResetButton" method="_on_ResetButton_pressed"]
+[connection signal="pressed" from="Menu/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Menu/ResetButton" to="." method="_on_ResetButton_pressed"]

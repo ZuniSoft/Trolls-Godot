@@ -1,16 +1,14 @@
 extends Node2D
 
-const IDLE_DURATION = 1.0
-
-export var move_direction = "Horizontal"
-export var move_distance = 192
-export var speed = 3.0
+@export var move_direction = "Horizontal"
+@export var move_distance = 192
+@export var speed = 3.0
 
 var move_to = null
 var follow = Vector2.ZERO
 
-onready var platform = $Platform
-onready var tween = $MoveTween
+@onready var platform = $Platform
+@onready var tween = create_tween()
 
 func _ready():
 	if "Horizontal" in move_direction:
@@ -23,10 +21,12 @@ func _ready():
 
 func _init_tween():
 	var duration = move_to.length() / float(speed * 128)
-	
-	tween.interpolate_property(self, "follow", Vector2.ZERO, move_to, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, IDLE_DURATION)
-	tween.interpolate_property(self, "follow", move_to, Vector2.ZERO, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, duration + IDLE_DURATION * 2)
-	tween.start()
+
+	tween.bind_node($Platform)
+	tween.set_loops()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "follow", move_to, duration).from(Vector2.ZERO)
+	tween.tween_property(self, "follow", Vector2.ZERO, duration).from(move_to)
 	
 func _process(_delta):
-	platform.position = platform.position.linear_interpolate(follow, 0.075)
+	platform.position = platform.position.lerp(follow, 0.075)

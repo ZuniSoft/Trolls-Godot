@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-export var liquid_type = "Swamp"
+@export var liquid_type = "Swamp"
 
 func _ready():
 	var sprite_texture
@@ -12,7 +12,7 @@ func _ready():
 	else:
 		pass
 	
-	var sprite = get_node("Sprite")
+	var sprite = get_node("Sprite2D")
 	sprite.set_texture(sprite_texture)
 	
 func _on_TopChecker_body_entered(body):

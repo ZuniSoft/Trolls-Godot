@@ -1,62 +1,69 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://cga6oeq6x1sxu"]
 
-[ext_resource path="res://Scripts/Fireballs.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fireball/Fireball.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sound/Fireball.mp3" type="AudioStream" id=3]
+[ext_resource type="Script" path="res://Scripts/Fireballs.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ca7n5uktr48ta" path="res://Assets/Fireball/Fireball.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://c38tca0c5ryka" path="res://Assets/Sound/Fireball.mp3" id="3"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 66.0303
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "Bounce"
 length = 0.6
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -182 ), Vector2( 0, -54 ) ]
+"values": [Vector2(0, 0), Vector2(0, -182), Vector2(0, -54)]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qaqtd"]
+_data = {
+"Bounce": SubResource("2"),
+"RESET": SubResource("3")
 }
 
 [node name="Fireballs" type="Area2D"]
-scale = Vector2( 0.5, 0.5 )
-collision_layer = 0
-script = ExtResource( 1 )
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -6 )
-shape = SubResource( 1 )
+position = Vector2(0, -6)
+shape = SubResource("1")
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.216192, 0.212521 )
-texture = ExtResource( 2 )
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.216192, 0.212521)
+texture = ExtResource("2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Bounce = SubResource( 2 )
-anims/RESET = SubResource( 3 )
+libraries = {
+"": SubResource("AnimationLibrary_qaqtd")
+}
 
 [node name="SoundFireball" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource("3")
 volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_Fireballs_body_entered"]

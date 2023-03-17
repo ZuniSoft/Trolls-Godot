@@ -12,10 +12,10 @@ var fireballs = GameState.fireballs
 var keys = GameState.keys
 
 func _ready():
-	$Coins.text = String(coins)
-	$Fireballs.text = String(fireballs)
-	$Life.text = String(life)
-	$Keys.text = String(keys)
+	$Coins.text = str(coins)
+	$Fireballs.text = str(fireballs)
+	$Life.text = str(life)
+	$Keys.text = str(keys)
 	
 func set_display_from_game_state():
 	coins = GameState.coins

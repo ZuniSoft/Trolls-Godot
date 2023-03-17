@@ -1,10 +1,10 @@
 extends Area2D
 
-export var exit_door = 1
-export var door_type = "Wood"
+@export var exit_door = 1
+@export var door_type = "Wood"
 
-onready var hero = get_node("../../Hero")
-onready var door_exit = get_node("../PortalDoorExit" + str(exit_door))
+@onready var hero = get_node("../../Hero")
+@onready var door_exit = get_node("../PortalDoorExit" + str(exit_door))
 
 func _ready():
 	var sprite_texture
@@ -16,7 +16,7 @@ func _ready():
 	else:
 		pass
 	
-	var sprite = get_node("CollisionShape2D/Sprite")
+	var sprite = get_node("CollisionShape2D/Sprite2D")
 	sprite.set_texture(sprite_texture)
 
 func _teleport_to_other_door(_body):

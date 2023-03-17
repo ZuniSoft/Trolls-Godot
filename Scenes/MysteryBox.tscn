@@ -1,67 +1,75 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://djsejs3ktkcxr"]
 
-[ext_resource path="res://Scripts/MysteryBox.gd" type="Script" id=1]
-[ext_resource path="res://Assets/CommonObjects/mystery-box.png" type="Texture" id=2]
+[ext_resource type="Script" path="res://Scripts/MysteryBox.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dn3lofjejpvpb" path="res://Assets/CommonObjects/mystery-box.png" id="2"]
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 24, 10 )
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(48, 14)
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id="5"]
 resource_name = "Bounce"
 length = 0.6
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id="6"]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 31, 28 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vok7l"]
+_data = {
+"Bounce": SubResource("5"),
+"RESET": SubResource("6")
+}
+
+[sub_resource type="RectangleShape2D" id="7"]
+size = Vector2(48, 40)
 
 [node name="MysteryBox" type="Area2D"]
 z_index = 3
 collision_layer = 0
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 23 )
-shape = SubResource( 4 )
+position = Vector2(0, 25)
+shape = SubResource("4")
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Bounce = SubResource( 5 )
-anims/RESET = SubResource( 6 )
+libraries = {
+"": SubResource("AnimationLibrary_vok7l")
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, -1 )
-shape = SubResource( 7 )
+position = Vector2(0, -4)
+shape = SubResource("7")
 
 [connection signal="body_entered" from="." to="." method="_on_MysteryBox_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

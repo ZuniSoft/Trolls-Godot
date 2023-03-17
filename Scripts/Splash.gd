@@ -1,7 +1,7 @@
-extends Node
+extends Node2D
 
 func _ready():
-	$Timer.start()
-	
+	$Control/Timer.start()
+
 func _on_Timer_timeout():
-	var _retval = get_tree().change_scene("res://Scenes/Menu.tscn")
+	Game.change_scene("res://Scenes/Menu.tscn")

@@ -1,44 +1,49 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://baid4qmix4g6y"]
 
-[ext_resource path="res://Assets/CommonObjects/saw2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/CommonObjects/saw.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Trap.gd" type="Script" id=4]
+[ext_resource type="Texture2D" uid="uid://iw645n1v5o8d" path="res://Assets/CommonObjects/saw2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://chox5rr481i34" path="res://Assets/CommonObjects/saw.png" id="3"]
+[ext_resource type="Script" path="res://Scripts/Trap.gd" id="4"]
 
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
 "loop": true,
-"name": "rotating",
+"name": &"rotating",
 "speed": 10.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 63.5, 56 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(112, 79)
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 63.5, 28.125 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(120, 54.0625)
 
 [node name="Saw" type="StaticBody2D"]
 collision_layer = 16
-script = ExtResource( 4 )
+script = ExtResource("4")
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -28.5 )
-scale = Vector2( 1, 0.867188 )
-frames = SubResource( 3 )
-animation = "rotating"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -28.5)
+scale = Vector2(1, 0.867188)
+sprite_frames = SubResource("3")
+animation = &"rotating"
 frame = 1
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, -27 )
-shape = SubResource( 1 )
+position = Vector2(0, -15.5)
+shape = SubResource("1")
 
 [node name="TopChecker" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopChecker"]
-position = Vector2( 0, -55.125 )
-shape = SubResource( 2 )
+position = Vector2(4, -51.0312)
+shape = SubResource("2")
 
 [connection signal="body_entered" from="TopChecker" to="." method="_on_TopChecker_body_entered"]

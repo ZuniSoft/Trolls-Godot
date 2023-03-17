@@ -2,7 +2,7 @@ extends Area2D
 
 signal heart_collected(life_cnt)
 
-export var mystery_box = true
+@export var mystery_box = true
 
 func _on_Heart_body_entered(_body):
 	$AnimationPlayer.play("Bounce")
@@ -17,7 +17,7 @@ func _on_Heart_body_entered(_body):
 		GameState.set("heart_" + str(node_idx) + "_collected", true)
 	
 	emit_signal("heart_collected", 5)
-	set_collision_mask_bit(1, false)
+	set_collision_mask_value(1, false)
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
 	queue_free()

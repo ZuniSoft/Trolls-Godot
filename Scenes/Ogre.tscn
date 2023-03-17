@@ -1,143 +1,312 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=65 format=3 uid="uid://r5t48us70mr"]
 
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_001.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_011.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_003.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_012.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Ogre.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_014.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_000.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_005.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_006.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_004.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_016.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_007.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_003.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_011.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_004.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_013.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_009.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_005.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_013.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_006.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_014.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_007.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_007.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_000.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_000.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_010.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_010.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_010.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_004.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_008.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_001.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Sound/Hit.mp3" type="AudioStream" id=32]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_008.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_006.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_009.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_005.png" type="Texture" id=36]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_012.png" type="Texture" id=37]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_002.png" type="Texture" id=38]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_003.png" type="Texture" id=39]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_017.png" type="Texture" id=40]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_008.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Ogre1/Dying/Dying_009.png" type="Texture" id=42]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_001.png" type="Texture" id=43]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_002.png" type="Texture" id=44]
-[ext_resource path="res://Assets/Ogre1/Hurt/Hurt_002.png" type="Texture" id=45]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_011.png" type="Texture" id=46]
-[ext_resource path="res://Assets/Ogre1/Walking/Walking_015.png" type="Texture" id=47]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_000.png" type="Texture" id=48]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_003.png" type="Texture" id=49]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_001.png" type="Texture" id=50]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_002.png" type="Texture" id=51]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_010.png" type="Texture" id=52]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_006.png" type="Texture" id=53]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_007.png" type="Texture" id=54]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_008.png" type="Texture" id=55]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_009.png" type="Texture" id=56]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_011.png" type="Texture" id=57]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_005.png" type="Texture" id=58]
-[ext_resource path="res://Assets/Ogre1/Attacking/Attacking_004.png" type="Texture" id=59]
+[ext_resource type="Texture2D" uid="uid://d0o3g4serfh0a" path="res://Assets/Ogre1/Dying/Dying_001.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://x3vcdm5ol25q" path="res://Assets/Ogre1/Dying/Dying_011.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://c1qm3yhpyegvu" path="res://Assets/Ogre1/Walking/Walking_003.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c2fxryyx014a6" path="res://Assets/Ogre1/Walking/Walking_012.png" id="4"]
+[ext_resource type="Script" path="res://Scripts/Ogre.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://bxs8ntvs3bqrl" path="res://Assets/Ogre1/Dying/Dying_014.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://ccotfxa2450cd" path="res://Assets/Ogre1/Hurt/Hurt_000.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bnych1cy4kk6" path="res://Assets/Ogre1/Walking/Walking_005.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cvhptm3tk8rgj" path="res://Assets/Ogre1/Dying/Dying_006.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dh7ue385w4hox" path="res://Assets/Ogre1/Dying/Dying_004.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://7jct0tcl3l4p" path="res://Assets/Ogre1/Walking/Walking_016.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dnkeb5mehtfvg" path="res://Assets/Ogre1/Dying/Dying_007.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dul8agvlf0yvj" path="res://Assets/Ogre1/Dying/Dying_003.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://bmkqs71veqj7f" path="res://Assets/Ogre1/Hurt/Hurt_011.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://cv1tn68oyo240" path="res://Assets/Ogre1/Walking/Walking_004.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dbkoiwr0r6acj" path="res://Assets/Ogre1/Dying/Dying_013.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://dgoleh8rjrjom" path="res://Assets/Ogre1/Walking/Walking_009.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://creyvxmexmqxb" path="res://Assets/Ogre1/Dying/Dying_005.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://r523vo0sih7i" path="res://Assets/Ogre1/Walking/Walking_013.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://ddnvimdcjx0pi" path="res://Assets/Ogre1/Walking/Walking_006.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://beakqa0j5bcod" path="res://Assets/Ogre1/Walking/Walking_014.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cntpbmpp68ea8" path="res://Assets/Ogre1/Hurt/Hurt_007.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://df0ldoq1n84ml" path="res://Assets/Ogre1/Walking/Walking_007.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://dbb8davgb6gsb" path="res://Assets/Ogre1/Dying/Dying_000.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://bygcake23iykf" path="res://Assets/Ogre1/Walking/Walking_000.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://b4y1nu2bl5ml0" path="res://Assets/Ogre1/Walking/Walking_010.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://c5w1v7t2a2ct3" path="res://Assets/Ogre1/Hurt/Hurt_010.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://bt82sx3lyyu3q" path="res://Assets/Ogre1/Dying/Dying_010.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://ck1uwqkiamyel" path="res://Assets/Ogre1/Hurt/Hurt_004.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://c860ujy3wtr65" path="res://Assets/Ogre1/Dying/Dying_008.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://cm878gevr7i5m" path="res://Assets/Ogre1/Walking/Walking_001.png" id="31"]
+[ext_resource type="AudioStream" uid="uid://ba8gu4c4h6vs8" path="res://Assets/Sound/Hit.mp3" id="32"]
+[ext_resource type="Texture2D" uid="uid://cdwkp2yadyi8e" path="res://Assets/Ogre1/Hurt/Hurt_008.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://bw5yc0ucluu1p" path="res://Assets/Ogre1/Hurt/Hurt_006.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://cgochxuud58t7" path="res://Assets/Ogre1/Hurt/Hurt_009.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://bsajph64yambn" path="res://Assets/Ogre1/Hurt/Hurt_005.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://bbw1m073bon1x" path="res://Assets/Ogre1/Dying/Dying_012.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://cauci3h3b1f4r" path="res://Assets/Ogre1/Dying/Dying_002.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://w8kxlvr67lv5" path="res://Assets/Ogre1/Hurt/Hurt_003.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://dve1mkm06hea0" path="res://Assets/Ogre1/Walking/Walking_017.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://dvher4kv5tssp" path="res://Assets/Ogre1/Walking/Walking_008.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://7a2qw2q2xs2n" path="res://Assets/Ogre1/Dying/Dying_009.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://cw1xpayselqo2" path="res://Assets/Ogre1/Hurt/Hurt_001.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://wyn07ekwo71w" path="res://Assets/Ogre1/Walking/Walking_002.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://d1bbw50ajnqmu" path="res://Assets/Ogre1/Hurt/Hurt_002.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://bj6s6nj0v1oob" path="res://Assets/Ogre1/Walking/Walking_011.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://bdlq3q10qcxd8" path="res://Assets/Ogre1/Walking/Walking_015.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://i6ki7rlbtvht" path="res://Assets/Ogre1/Attacking/Attacking_000.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://50gj0qmxs4rn" path="res://Assets/Ogre1/Attacking/Attacking_003.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://dfmyejnl0i7ib" path="res://Assets/Ogre1/Attacking/Attacking_001.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://dt37bhk48oq7k" path="res://Assets/Ogre1/Attacking/Attacking_002.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://b5ca6ioqeoso" path="res://Assets/Ogre1/Attacking/Attacking_010.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://bawdoc08250x3" path="res://Assets/Ogre1/Attacking/Attacking_006.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://bsxqrmma1rper" path="res://Assets/Ogre1/Attacking/Attacking_007.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://bvsfowwyx8svk" path="res://Assets/Ogre1/Attacking/Attacking_008.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://bix4154ruhkm5" path="res://Assets/Ogre1/Attacking/Attacking_009.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://dxuflvn704w06" path="res://Assets/Ogre1/Attacking/Attacking_011.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://sda2d7nx5btr" path="res://Assets/Ogre1/Attacking/Attacking_005.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://cut6wgkbr0mqp" path="res://Assets/Ogre1/Attacking/Attacking_004.png" id="59"]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ) ],
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}],
 "loop": true,
-"name": "attacking",
+"name": &"attacking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 1 ), ExtResource( 38 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 30 ), ExtResource( 42 ), ExtResource( 28 ), ExtResource( 2 ), ExtResource( 37 ), ExtResource( 16 ), ExtResource( 6 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
 "loop": true,
-"name": "dying",
+"name": &"dying",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 22 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 27 ), ExtResource( 14 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}],
 "loop": true,
-"name": "hurt",
+"name": &"hurt",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ), ExtResource( 31 ), ExtResource( 44 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 41 ), ExtResource( 17 ), ExtResource( 26 ), ExtResource( 46 ), ExtResource( 4 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 47 ), ExtResource( 11 ), ExtResource( 40 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}],
 "loop": true,
-"name": "walking",
+"name": &"walking",
 "speed": 10.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 120, 184 )
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(232, 392)
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 91, 21.125 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(232, 35.6875)
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 254, 146 )
+[sub_resource type="RectangleShape2D" id="5"]
+size = Vector2(360, 207)
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 448, 85.5 )
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(640, 85.5)
 
-[node name="Ogre" type="KinematicBody2D"]
+[node name="Ogre" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 51
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 2, 0 )
-frames = SubResource( 1 )
-animation = "walking"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
+sprite_frames = SubResource("1")
+animation = &"walking"
 frame = 2
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 5, 66 )
-shape = SubResource( 4 )
+position = Vector2(-4, 60)
+shape = SubResource("4")
 
 [node name="FloorChecker" type="RayCast2D" parent="."]
-enabled = true
-cast_to = Vector2( 0, 350 )
+target_position = Vector2(0, 350)
 collision_mask = 2
 
 [node name="TopChecker" type="Area2D" parent="."]
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopChecker"]
-position = Vector2( 10, -142.875 )
-shape = SubResource( 3 )
+position = Vector2(-4, -150.156)
+shape = SubResource("3")
 
 [node name="SideChecker" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideChecker"]
-position = Vector2( 2, 26 )
-shape = SubResource( 5 )
+position = Vector2(-4, 56.5)
+shape = SubResource("5")
 
 [node name="DetectArea" type="Area2D" parent="."]
-position = Vector2( 0, -1 )
+position = Vector2(0, -1)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
-position = Vector2( 0, 75.5 )
-shape = SubResource( 6 )
+position = Vector2(0, 75.5)
+shape = SubResource("6")
 
 [node name="HitTimer" type="Timer" parent="."]
 one_shot = true
@@ -147,4 +316,4 @@ wait_time = 2.0
 one_shot = true
 
 [node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 32 )
+stream = ExtResource("32")

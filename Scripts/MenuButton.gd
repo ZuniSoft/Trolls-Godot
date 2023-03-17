@@ -1,10 +1,10 @@
 extends Button
 
 func _ready():
-	pause_mode = Node.PAUSE_MODE_PROCESS
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_MenuButton_pressed():
 	if get_tree().paused:
 		get_tree().paused = false	
-		
-	var _retval = get_tree().change_scene("res://Scenes/Menu.tscn")
+	
+	Game.change_scene("res://Scenes/Menu.tscn")

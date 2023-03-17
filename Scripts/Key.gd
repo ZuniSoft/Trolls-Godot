@@ -17,7 +17,7 @@ func _on_Key_body_entered(_body):
 	GameState.has_keys = true
 	
 	emit_signal("key_collected")
-	set_collision_mask_bit(1, false)
+	set_collision_mask_value(1, false)
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
 	queue_free()
