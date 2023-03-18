@@ -11,9 +11,9 @@ func _on_Heart_body_entered(_body):
 	var room = self.get_node("../../")
 	var node_idx = name.lstrip(Globals.NODE_HEART_NAME)
 	
-	if "Room" in room.name:
+	if "Room" in room.name and name != "Heart":
 		RoomState.set("heart_" + str(node_idx) + "_collected", true)
-	else:
+	elif "Level" in room.name and name != "Heart":
 		GameState.set("heart_" + str(node_idx) + "_collected", true)
 	
 	emit_signal("heart_collected", 5)

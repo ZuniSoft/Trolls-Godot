@@ -11,9 +11,9 @@ func _on_Fireballs_body_entered(_body):
 	var room = self.get_node("../../")
 	var node_idx = name.lstrip(Globals.NODE_FIREBALLS_NAME)
 	
-	if "Room" in room.name:
+	if "Room" in room.name and name != "Fireballs":
 		RoomState.set("fireball_" + str(node_idx) + "_collected", true)
-	else:
+	elif "Level" in room.name and name != "Fireballs":
 		GameState.set("fireball_" + str(node_idx) + "_collected", true)
 		
 	GameState.has_fireballs = true
