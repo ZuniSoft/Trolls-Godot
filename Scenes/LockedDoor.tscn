@@ -1,23 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://68551cgidu0t"]
 
-[ext_resource path="res://Assets/CommonObjects/locked-wood-door.png" type="Texture2D" id=1]
-[ext_resource path="res://Scripts/LockedDoor.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Sound/DoorLock.mp3" type="AudioStream" id=3]
+[ext_resource type="Texture2D" uid="uid://f2ym4ophxerw" path="res://Assets/CommonObjects/locked-wood-door.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/LockedDoor.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://dhjg2guqpy3q3" path="res://Assets/Sound/DoorLock.mp3" id="3"]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id="1"]
 
 [node name="LockedDoor" type="Area2D"]
 collision_layer = 0
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 
 [node name="SoundUnlockDoor" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource("3")
 volume_db = 10.0
 
 [node name="SoundPlayTimer" type="Timer" parent="."]

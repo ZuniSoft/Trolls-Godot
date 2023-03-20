@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://bpj2b4gvywh32"]
 
-[ext_resource path="res://Assets/CommonObjects/wood-door.png" type="Texture2D" id=1]
-[ext_resource path="res://Scripts/LockedDoorExit.gd" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://p00p36j5v5dw" path="res://Assets/CommonObjects/wood-door.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/LockedDoorExit.gd" id="2"]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id="1"]
 
 [node name="LockedDoorExit" type="Area2D"]
 collision_layer = 0
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 
 [connection signal="body_entered" from="." to="." method="_on_LockedDoorExit_body_entered"]

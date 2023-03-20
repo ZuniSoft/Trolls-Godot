@@ -61,8 +61,6 @@ func _ready():
 			enemy_node.queue_free()
 
 func _exit_tree():
-	var hud = get_node("HUD")
-	
 	RoomState.save_config(name)
 	RoomState.clear()
 	

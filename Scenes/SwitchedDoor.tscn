@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dn5xh4ewwm1ci" path="res://Assets/CommonObjects/gate-4.png" id="5"]
 
 [sub_resource type="RectangleShape2D" id="3"]
-size = Vector2(32, 112)
+size = Vector2(64, 128)
 
 [sub_resource type="SpriteFrames" id="2"]
 animations = [{
@@ -66,11 +66,13 @@ animations = [{
 
 [node name="SwitchedDoor" type="Area2D"]
 collision_layer = 0
+collision_mask = 0
 gravity = 0.0
 script = ExtResource("2")
 
 [node name="DoorBlock" type="StaticBody2D" parent="."]
-collision_layer = 257
+collision_layer = 256
+collision_mask = 49
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorBlock"]
 shape = SubResource("3")
