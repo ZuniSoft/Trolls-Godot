@@ -43,7 +43,7 @@ Config files can be found here:
  	<long-C> "Developer ID Application: Your Name (<short-2>)"  
  	3 valid identities found
 4. For notarytool create a credential in your keychain using “DMG Notarization” as the name and the app specific password by following the prompts after running:
- 	`xcrun notarytool store-credentials --apple-id "keithrdavis.krd@gmail.com" --team-id "S63L4926ND"`  
+ 	`xcrun notarytool store-credentials --apple-id "<email>" --team-id "<team-id>"`  
 5. Windows .exe needs to have icon replaced.
 6. Remember to export without Debug on the export file dialog.
 
