@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=31 format=3 uid="uid://bhcpxu0o8mq8v"]
+[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://bhcpxu0o8mq8v"]
 
 [ext_resource type="Texture2D" uid="uid://b4ymmjg1rnr44" path="res://Assets/Environment1/lotus.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://ctqurmwnivl4c" path="res://Assets/Environment1/bush-2.png" id="2"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://h4w0b4fb6hwd" path="res://Assets/Environment1/sign.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://cxmtdvfjpwtlt" path="res://Assets/Environment1/tree-1.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://bil5vluaux2hk" path="res://Assets/Environment1/tree-2.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://c8tx4f28falcg" path="res://Assets/Platformer1/tile-4.png" id="7_6ruyi"]
 [ext_resource type="Texture2D" uid="uid://di4oy01skcf4o" path="res://Assets/Environment1/trunk-1.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://b40hv2gr6yi2w" path="res://Assets/Environment1/trunk-2.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://ytgvavilutui" path="res://Assets/Environment1/root-1.png" id="10"]
@@ -165,14 +164,6 @@ texture_region_size = Vector2i(64, 64)
 0:0/7/flip_h = true
 0:0/7/flip_v = true
 0:0/7/transpose = true
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukfq1"]
-texture = ExtResource("7_6ruyi")
-texture_region_size = Vector2i(64, 64)
-0:0/next_alternative_id = 2
-0:0/0 = 0
-0:0/1 = 1
-0:0/1/flip_h = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twf3d"]
 texture = ExtResource("1")
@@ -390,4 +381,3 @@ sources/10 = SubResource("TileSetAtlasSource_qfnth")
 sources/11 = SubResource("TileSetAtlasSource_hjc1m")
 sources/12 = SubResource("TileSetAtlasSource_s4dhv")
 sources/13 = SubResource("TileSetAtlasSource_iibxo")
-sources/16 = SubResource("TileSetAtlasSource_ukfq1")

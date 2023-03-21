@@ -6,7 +6,7 @@ func _ready():
 	WALK_SPEED = 60
 	RUN_SPEED = 300
 	HIT_POINTS = 20
-	LIFE = 100
+	LIFE = 300
 	
 	var _retval = get_node("TopChecker").connect("body_entered",Callable(self,"_on_TopChecker_body_entered"))
 	_retval = get_node("SideChecker").connect("body_entered",Callable(self,"_on_SideChecker_body_entered"))
