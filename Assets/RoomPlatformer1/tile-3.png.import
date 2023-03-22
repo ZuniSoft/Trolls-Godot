@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jiefnshqkq7u"
-path="res://.godot/imported/platform-float.png-dd99425e78d2f1f4860d6ca94e2c487e.ctex"
+uid="uid://b2erhftk1nvfb"
+path="res://.godot/imported/tile-3.png-d1d2306bf1ddd1da94a7b3779fac18ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CommonObjects/platform-float.png"
-dest_files=["res://.godot/imported/platform-float.png-dd99425e78d2f1f4860d6ca94e2c487e.ctex"]
+source_file="res://Assets/RoomPlatformer1/tile-3.png"
+dest_files=["res://.godot/imported/tile-3.png-d1d2306bf1ddd1da94a7b3779fac18ef.ctex"]
 
 [params]
 

@@ -6,6 +6,7 @@ var _target_path : String = ""
 var _target_resource : Resource = null
 
 func _ready():
+	z_index = 100
 	%AnimationPlayer.play("intro")
 
 func _on_loader_updated(_path: String, progress: float):
@@ -22,6 +23,4 @@ func remove_old_scene():
 
 func set_new_scene():
 	transignal.set_new_scene_requested.emit(_target_path, _target_resource)
-	z_index = 100
-	position = Vector2(Globals.LEVEL_LEFT_LIMIT, 0)
 	move_to_front()

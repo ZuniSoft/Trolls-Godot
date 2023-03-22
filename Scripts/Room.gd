@@ -21,6 +21,8 @@ func _ready():
 	
 	var hero = get_node("Hero")
 	
+	hero.process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	if GameState.life <= 0:
 		hero.hero_died_cleanup()
 	
@@ -64,11 +66,10 @@ func _exit_tree():
 	RoomState.save_config(name)
 	RoomState.clear()
 	
-	GameState.set_hud_to_gs_values(hud)
 	GameState.exit_from_door = true
 	GameState.save_config()
 	
 func _on_timer_timeout():
 	timer.stop()
-	pause.layer = 1
-	hud.layer = 1
+	pause.visible = true
+	hud.visible = true

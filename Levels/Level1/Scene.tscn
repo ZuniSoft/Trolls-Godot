@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ca3p5rrcd0ys4"]
+[gd_scene load_steps=39 format=3 uid="uid://ca3p5rrcd0ys4"]
 
 [ext_resource type="PackedScene" uid="uid://u25i8e0a1jqq" path="res://Scenes/HUD.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://cp3pmodlgbvgm" path="res://Scenes/PauseButton.tscn" id="2"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://da1dsw6ys1sfx" path="res://Scenes/PortalDoorExit.tscn" id="23"]
 [ext_resource type="PackedScene" uid="uid://binss448tnurf" path="res://Scenes/WoodSpikes.tscn" id="24"]
 [ext_resource type="PackedScene" uid="uid://c57kwgfxcm236" path="res://Scenes/Liquid.tscn" id="25"]
-[ext_resource type="PackedScene" uid="uid://baid4qmix4g6y" path="res://Scenes/Saw.tscn" id="26"]
 [ext_resource type="PackedScene" uid="uid://dg74ueliksysr" path="res://Scenes/Switch.tscn" id="28"]
 [ext_resource type="PackedScene" uid="uid://bocb1wgvr8wti" path="res://Scenes/SwitchedDoor.tscn" id="29"]
 [ext_resource type="PackedScene" uid="uid://d12gvcf41fq7a" path="res://Scenes/Key.tscn" id="30"]
@@ -69,10 +68,9 @@ metadata/_edit_lock_ = true
 offset_left = -732.0
 offset_top = 1024.0
 offset_right = 7464.0
-offset_bottom = 2143.0
+offset_bottom = 1568.0
 texture = ExtResource("3_4glpu")
 expand_mode = 1
-stretch_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -241,6 +239,9 @@ mystery_box = false
 [node name="Key1" parent="Keys" instance=ExtResource("30")]
 position = Vector2(160, -70)
 
+[node name="Key2" parent="Keys" instance=ExtResource("30")]
+position = Vector2(-456, 984)
+
 [node name="Ladders" type="Node" parent="."]
 
 [node name="Ladder1" type="Area2D" parent="Ladders"]
@@ -304,7 +305,7 @@ collision_mask = 49
 
 [node name="LockedDoor1" parent="Doors" instance=ExtResource("31")]
 z_index = 2
-position = Vector2(5648, 900)
+position = Vector2(-544, 968)
 collision_layer = 1024
 
 [node name="OnewayPlatforms" type="Node" parent="."]
@@ -551,9 +552,6 @@ position = Vector2(5228, 1136)
 z_index = 2
 position = Vector2(5324, 1136)
 
-[node name="Saw" parent="Traps" instance=ExtResource("26")]
-position = Vector2(2536, 560)
-
 [node name="Stops" type="Node" parent="."]
 
 [node name="EnemyStop1" type="StaticBody2D" parent="Stops"]
@@ -625,10 +623,10 @@ layer_0/name = "Ladder"
 layer_0/tile_data = PackedInt32Array(4915337, 0, 0, 5439625, 1, 0, 5963913, 1, 0, 6488201, 1, 0, 7012489, 1, 0, 7536777, 1, 0, 8061065, 2, 0, 9109616, 1, 0, 9633904, 1, 0, 10158192, 1, 0, 10682480, 2, 0, 8585328, 0, 0, 8585604, 0, 0, 9109892, 1, 0, 9634180, 1, 0, 10158468, 1, 0, 10682756, 1, 0, 8585652, 0, 0, 9109940, 1, 0, 9634228, 1, 0, 10158516, 1, 0, 10682804, 2, 0)
 
 [node name="HUD" parent="." instance=ExtResource("1")]
-layer = -1
+visible = false
 
 [node name="Pause" parent="." instance=ExtResource("2")]
-layer = -1
+visible = false
 
 [node name="Hero" parent="." instance=ExtResource("16")]
 z_index = 10
@@ -637,8 +635,8 @@ scale = Vector2(0.2, 0.2)
 collision_mask = 1886
 
 [node name="Camera2D" type="Camera2D" parent="Hero"]
-position = Vector2(10, 40)
-limit_left = -700
+position = Vector2(2.08165e-12, 2.08165e-12)
+limit_left = -730
 limit_top = -400
 limit_right = 7168
 limit_bottom = 1450
@@ -677,6 +675,7 @@ autoplay = true
 [connection signal="fireball_collected" from="Fireballs/Fireballs1" to="HUD" method="_on_fireball_collected"]
 [connection signal="fireball_collected" from="Fireballs/Fireballs2" to="HUD" method="_on_fireball_collected"]
 [connection signal="key_collected" from="Keys/Key1" to="HUD" method="_on_key_collected"]
+[connection signal="key_collected" from="Keys/Key2" to="HUD" method="_on_key_collected"]
 [connection signal="body_entered" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladders/Ladder2" to="Hero" method="_on_Ladder_body_entered"]

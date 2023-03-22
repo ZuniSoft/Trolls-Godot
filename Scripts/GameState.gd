@@ -41,6 +41,9 @@ var exit_from_door = false
 var has_fireballs = false
 var has_keys = false
 
+var transition_x = 0
+var transition_y = 0
+
 func load_config():
 	var config = ConfigFile.new()
 	

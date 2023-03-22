@@ -18,6 +18,9 @@ func _ready():
 	GameState.set_hud_to_gs_values(hud)
 		
 	var hero = get_node("Hero")
+	
+	hero.process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	var offset = Globals.DOOR_EXIT_OFFSET
 	
 	if GameState.life <= 0:
@@ -86,5 +89,5 @@ func _exit_tree():
 	
 func _on_timer_timeout():
 	timer.stop()
-	pause.layer = 1
-	hud.layer = 1
+	pause.visible = true
+	hud.visible = true

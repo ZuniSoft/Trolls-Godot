@@ -9,6 +9,8 @@ func _ready():
 		sprite_texture = load("res://Assets/CommonObjects/swamp-water-surface.png")
 	elif liquid_type == "Toxic":
 		sprite_texture = load("res://Assets/CommonObjects/toxic-water-surface.png")
+	elif liquid_type == "Dungeon":
+		sprite_texture = load("res://Assets/CommonObjects/dungeon-water-surface.png")
 	else:
 		pass
 	

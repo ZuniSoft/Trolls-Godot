@@ -1,7 +1,5 @@
 extends Node
 
-const LEVEL_LEFT_LIMIT = -734
-
 const COINS_FOR_EXTRA_LIFE = 12
 const EXTRA_LIFE = 20
 
@@ -11,8 +9,8 @@ const MAX_KEYS = 3
 const MAX_LOCKED_DOORS = 3
 const MAX_MYSTERY_BOXES = 5
 
-const DROP_POS_X = -432
-const DROP_POS_Y = 720
+const DROP_POS_X = -435
+const DROP_POS_Y = 696
 
 const DOOR_EXIT_OFFSET = 80
 
