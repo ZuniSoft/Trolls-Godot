@@ -93,3 +93,4 @@ func reset_rooms():
 	clear()
 	save_config("Room1")
 	save_config("Room2")
+	save_config("Room3")
