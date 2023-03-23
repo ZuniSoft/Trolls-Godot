@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_x7uu1")
 expand_mode = 1
-stretch_mode = 1
+stretch_mode = 4
 
 [node name="Version" type="Label" parent="Menu"]
 layout_mode = 0
