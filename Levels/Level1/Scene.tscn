@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cnx64gjfkbndi" path="res://Assets/Background1/Layer3.png" id="12"]
 [ext_resource type="Texture2D" uid="uid://dwxlh6rkl52tn" path="res://Assets/Background1/Layer2.png" id="13"]
 [ext_resource type="PackedScene" uid="uid://cga6oeq6x1sxu" path="res://Scenes/Fireballs.tscn" id="14"]
-[ext_resource type="AudioStream" uid="uid://duxxcer38iymi" path="res://Assets/Sound/Forest.mp3" id="15"]
 [ext_resource type="PackedScene" uid="uid://bxah6utiyxi51" path="res://Scenes/Hero.tscn" id="16"]
 [ext_resource type="PackedScene" uid="uid://clg6to70k5c2g" path="res://Scenes/PortalDoor.tscn" id="17"]
 [ext_resource type="PackedScene" uid="uid://dus5yey180oyn" path="res://Scenes/Cyclop.tscn" id="18"]
@@ -31,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://d12gvcf41fq7a" path="res://Scenes/Key.tscn" id="30"]
 [ext_resource type="PackedScene" uid="uid://68551cgidu0t" path="res://Scenes/LockedDoor.tscn" id="31"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="32"]
+[ext_resource type="AudioStream" uid="uid://cjjia3p058ims" path="res://Assets/Sound/Swamp.mp3" id="32_v3tak"]
 [ext_resource type="PackedScene" uid="uid://djsejs3ktkcxr" path="res://Scenes/MysteryBox.tscn" id="33"]
 
 [sub_resource type="RectangleShape2D" id="9"]
@@ -647,7 +647,7 @@ editor_draw_limits = true
 [node name="SoundBackground" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2(-664, 1456)
-stream = ExtResource("15")
+stream = ExtResource("32_v3tak")
 volume_db = -20.0
 autoplay = true
 
