@@ -19,7 +19,7 @@ func _ready():
 		
 	var hero = get_node("Hero")
 	
-	hero.process_mode = Node.PROCESS_MODE_ALWAYS
+	hero.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	var offset = Globals.DOOR_EXIT_OFFSET
 	

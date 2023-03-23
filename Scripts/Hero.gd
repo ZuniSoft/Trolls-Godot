@@ -115,6 +115,7 @@ func _physics_process(_delta):
 	elif not in_ladder_area:
 		calc_velocity.y = calc_velocity.y + GRAVITY
 		if is_on_floor():
+			# snap setting, does not appear to work
 			#var snap = Vector2.DOWN * 16
 			set_floor_snap_length(1.0)
 	
@@ -152,7 +153,9 @@ func dying():
 		$DieTimer.start()
 
 func hero_died_cleanup():
-	Game.change_scene("res://Scenes/GameOver.tscn")
+	get_node("../HUD").visible = false
+	get_node("../Pause").visible = false
+	Game.change_scene("res://Scenes/GameOver.tscn", false, Globals.TRANSITION_SCENE)
 
 func _on_HitTimer_timeout():
 	set_modulate(Color(1, 1, 1, 1))

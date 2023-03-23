@@ -9,8 +9,6 @@ var fireball_1_collected = false
 var heart_1_collected = false
 
 var key_1_collected = false
-var key_2_collected = false
-var key_3_collected = false
 
 var mystery_1_collected = false
 var mystery_2_collected = false
@@ -38,8 +36,6 @@ func load_config(room_name):
 			heart_1_collected = config.get_value(section, "heart_1_collected")
 		if section == "keys":
 			key_1_collected = config.get_value(section, "key_1_collected")
-			key_2_collected = config.get_value(section, "key_2_collected")
-			key_3_collected = config.get_value(section, "key_3_collected")
 		if section == "mystery":
 			mystery_1_collected = config.get_value(section, "mystery_1_collected")
 			mystery_2_collected = config.get_value(section, "mystery_2_collected")
@@ -59,8 +55,6 @@ func save_config(room_name):
 	config.set_value("hearts", "heart_1_collected", heart_1_collected)
 	
 	config.set_value("keys", "key_1_collected", key_1_collected)
-	config.set_value("keys", "key_2_collected", key_2_collected)
-	config.set_value("keys", "key_3_collected", key_3_collected)
 	
 	config.set_value("mystery", "mystery_1_collected", mystery_1_collected)
 	config.set_value("mystery", "mystery_2_collected", mystery_2_collected)
@@ -80,8 +74,6 @@ func clear():
 	heart_1_collected = false
 	
 	key_1_collected = false
-	key_2_collected = false
-	key_3_collected = false
 	
 	mystery_1_collected = false
 	mystery_2_collected = false

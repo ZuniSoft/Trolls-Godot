@@ -27,4 +27,4 @@ func _on_LockedDoorExit_body_entered(_body):
 	pause.visible = false
 	hud.visible = false
 	
-	Game.change_scene(door_exit_scene, true, Globals.TRANSITION_SCENE)
+	Game.change_scene(door_exit_scene, true, Globals.TRANSITION_IMAGE_SCENE)

@@ -21,7 +21,7 @@ func _ready():
 	
 	var hero = get_node("Hero")
 	
-	hero.process_mode = Node.PROCESS_MODE_ALWAYS
+	hero.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	if GameState.life <= 0:
 		hero.hero_died_cleanup()
