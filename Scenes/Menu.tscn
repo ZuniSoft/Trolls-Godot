@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_d6dk6"]
 [ext_resource type="FontFile" uid="uid://b3cvj5rquooyu" path="res://Assets/Fonts/Sniglet-ExtraBold.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://rpuexw66yk4" path="res://Assets/Menu/trolls.png" id="2_x7uu1"]
 [ext_resource type="Texture2D" uid="uid://u2c80jsts87i" path="res://Assets/Ogre3/Idle/Idle_000.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://6jsvw4bll1nb" path="res://Assets/Hero/Idle/Idle_000.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://syw7ngolbxny" path="res://Assets/Menu/bg.png" id="6"]
 [ext_resource type="AudioStream" uid="uid://caqhjqj5jgbb2" path="res://Assets/Sound/Menu.mp3" id="7"]
 [ext_resource type="Texture2D" uid="uid://ca7n5uktr48ta" path="res://Assets/Fireball/Fireball.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://b8tp4rjxb77ky" path="res://Assets/CommonObjects/heart.png" id="9"]
@@ -31,7 +31,7 @@ offset_right = 1154.0
 offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6")
+texture = ExtResource("2_x7uu1")
 expand_mode = 1
 stretch_mode = 1
 
@@ -49,8 +49,8 @@ offset_left = 248.0
 offset_top = 88.0
 offset_right = 900.0
 offset_bottom = 268.0
-theme_override_colors/font_color = Color(0.364706, 0.356863, 0.878431, 1)
-theme_override_colors/font_outline_color = Color(0.0627451, 0.0823529, 0.364706, 1)
+theme_override_colors/font_color = Color(0, 0.305882, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(0, 0.113725, 0.309804, 1)
 theme_override_constants/outline_size = 72
 theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 120
