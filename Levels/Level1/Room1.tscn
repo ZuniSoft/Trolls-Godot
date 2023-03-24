@@ -19,13 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://cano337k816lv" path="res://Scenes/MetalSpikes.tscn" id="21_uqm4l"]
 [ext_resource type="PackedScene" uid="uid://c57kwgfxcm236" path="res://Scenes/Liquid.tscn" id="23_qjh5l"]
 [ext_resource type="PackedScene" uid="uid://baid4qmix4g6y" path="res://Scenes/Saw.tscn" id="24_0hn6x"]
+[ext_resource type="AudioStream" uid="uid://dy82vj0j2hyg7" path="res://Assets/Sound/Room.mp3" id="26_yk7vc"]
 [ext_resource type="TileSet" uid="uid://bcv425ttsyyr6" path="res://Levels/Level1/bridge.tres" id="26_yknec"]
 [ext_resource type="TileSet" uid="uid://do78o3wsfanxd" path="res://Levels/Level1/ladder.tres" id="29_jp8it"]
 [ext_resource type="TileSet" uid="uid://dqe4oldm5ptd5" path="res://Levels/Level1/room.tres" id="30_r83s1"]
 [ext_resource type="PackedScene" uid="uid://u25i8e0a1jqq" path="res://Scenes/HUD.tscn" id="30_y84gh"]
 [ext_resource type="PackedScene" uid="uid://cp3pmodlgbvgm" path="res://Scenes/PauseButton.tscn" id="31_81v5d"]
 [ext_resource type="PackedScene" uid="uid://bxah6utiyxi51" path="res://Scenes/Hero.tscn" id="32_n3err"]
-[ext_resource type="AudioStream" uid="uid://duxxcer38iymi" path="res://Assets/Sound/Forest.mp3" id="33_uneh6"]
 
 [sub_resource type="RectangleShape2D" id="9"]
 size = Vector2(36, 448)
@@ -498,7 +498,7 @@ editor_draw_limits = true
 [node name="SoundBackground" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2(-664, 1456)
-stream = ExtResource("33_uneh6")
+stream = ExtResource("26_yk7vc")
 volume_db = -20.0
 autoplay = true
 
