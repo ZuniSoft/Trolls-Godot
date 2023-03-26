@@ -643,6 +643,7 @@ limit_bottom = 1450
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="SoundBackground" type="AudioStreamPlayer2D" parent="."]
 visible = false
