@@ -105,8 +105,6 @@ func _physics_process(_delta):
 				calc_velocity.x = 0
 				$AnimatedSprite2D.play("idle")
 	
-	set_floor_snap_length(0.0)
-	
 	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and not in_ladder_area:
 		calc_velocity.y = JUMPFORCE
 		$SoundJump.play()
@@ -114,8 +112,6 @@ func _physics_process(_delta):
 		calc_velocity.y = 0
 	else:
 		calc_velocity.y = calc_velocity.y + GRAVITY
-		if is_on_floor():
-			set_floor_snap_length(0.1)
 			
 	set_up_direction(Vector2.UP)
 	velocity = calc_velocity
