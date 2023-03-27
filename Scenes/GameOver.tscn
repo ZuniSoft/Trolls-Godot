@@ -30,14 +30,14 @@ theme_override_colors/font_outline_color = Color(0.403922, 0, 0, 1)
 theme_override_constants/outline_size = 48
 theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 90
-text = "GAME OVER!"
+text = "GAME_OVER"
 horizontal_alignment = 1
 
 [node name="MenuButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 480.0
+offset_left = 24.0
 offset_top = 344.0
-offset_right = 651.0
+offset_right = 1128.0
 offset_bottom = 391.0
 theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0, 0, 1)
@@ -45,15 +45,15 @@ theme_override_colors/font_hover_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.819608, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_vg72p")
 theme_override_font_sizes/font_size = 32
-text = "Main Menu"
+text = "BTN_MENU"
 flat = true
 script = ExtResource("3")
 
 [node name="RetryButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 480.0
+offset_left = 24.0
 offset_top = 408.0
-offset_right = 642.0
+offset_right = 1128.0
 offset_bottom = 455.0
 theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0, 0, 1)
@@ -61,7 +61,7 @@ theme_override_colors/font_hover_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.819608, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_vg72p")
 theme_override_font_sizes/font_size = 32
-text = "Retry"
+text = "BTN_RETRY"
 flat = true
 script = ExtResource("4")
 

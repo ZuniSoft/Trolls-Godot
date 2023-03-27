@@ -28,10 +28,10 @@ Godot based platformer game where you will kill enemies to advance to the next l
 8. Maximum of one heart
 9. Maximum of one fireball
 
-#### Items of Note
-1. Remember that running the scene directly messes up screen transitions. No previous scene to remove.
-2. Make.sure that enemies are assigned to the “enemies ” group.
-3. When instantiating a new enemy, trap, etc. make sure collision layers and masks are set correctly.
+### Items of Note
+1. Remember that running the scene directly messes up screen transitions. No previous scene to remove
+2. Make.sure that enemies are assigned to the “enemies ” group
+3. When instantiating a new enemy, trap, etc. make sure collision layers and masks are set correctly
 
 ## Config File Locations
 Config files can be found here:
@@ -39,3 +39,9 @@ Config files can be found here:
 	Windows: %APPDATA%\Godot\app_userdata\Trolls  
 	macOS: ~/Library/Application Support/Godot/app_userdata/Trolls  
 	Linux: ~/.local/share/godot/app_userdata/Trolls
+
+## Export Notes
+1. Set version number in localization file
+2. Set version number in export templates
+3. Export without debug information
+4. Sign macOS and Windows executables

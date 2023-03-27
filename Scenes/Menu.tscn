@@ -41,7 +41,7 @@ offset_left = 1040.0
 offset_top = 9.0
 offset_right = 1139.0
 offset_bottom = 35.0
-text = "Version 0.9.0"
+text = "VERSION"
 
 [node name="Title" type="Label" parent="Menu"]
 layout_mode = 0
@@ -54,7 +54,7 @@ theme_override_colors/font_outline_color = Color(0, 0.113725, 0.309804, 1)
 theme_override_constants/outline_size = 72
 theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 120
-text = "TROLLS!"
+text = "TITLE"
 horizontal_alignment = 1
 
 [node name="Copyright" type="Label" parent="Menu"]
@@ -63,7 +63,7 @@ offset_left = 16.0
 offset_top = 10.0
 offset_right = 367.0
 offset_bottom = 36.0
-text = "Copyright © 2023 ZuniSoft All rights reserved."
+text = "COPYRIGHT"
 
 [node name="Keys" type="Panel" parent="Menu"]
 layout_mode = 0
@@ -82,7 +82,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("12_txyb0")
-text = "R"
+text = "LEGEND_R"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -108,7 +108,7 @@ offset_right = 112.0
 offset_bottom = 153.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Run"
+text = "LEGEND_RUN"
 
 [node name="RightKey" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -132,7 +132,7 @@ offset_right = 287.0
 offset_bottom = 57.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Right"
+text = "LEGEND_RIGHT"
 
 [node name="UpKey" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -156,7 +156,7 @@ offset_right = 165.0
 offset_bottom = 105.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Climb Up"
+text = "LEGEND_CLIMB_UP"
 
 [node name="RunKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -166,7 +166,7 @@ offset_right = 113.0
 offset_bottom = 57.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Left"
+text = "LEGEND_LEFT"
 
 [node name="FightKey" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -178,7 +178,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("12_txyb0")
-text = "A"
+text = "LEGEND_A"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -190,7 +190,7 @@ offset_right = 305.0
 offset_bottom = 153.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Attack"
+text = "LEGEND_ATTACK"
 
 [node name="SpaceKey" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -202,7 +202,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("12_txyb0")
-text = "SPACE"
+text = "LEGEND_SPACE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -216,7 +216,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("12_txyb0")
-text = "TAB"
+text = "LEGEND_TAB"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -228,7 +228,7 @@ offset_right = 202.0
 offset_bottom = 201.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Jump"
+text = "LEGEND_JUMP"
 
 [node name="TabKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -238,7 +238,7 @@ offset_right = 178.0
 offset_bottom = 249.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Shoot Fireballs"
+text = "LEGEND_SHOOT_FIREBALLS"
 
 [node name="DownKey" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -263,7 +263,7 @@ offset_right = 355.0
 offset_bottom = 105.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Climb Down"
+text = "LEGEND_CLIMB_DOWN"
 
 [node name="Legend" type="Panel" parent="Menu"]
 layout_mode = 0
@@ -302,9 +302,9 @@ offset_right = 147.0
 offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Player"
+text = "LEGEND_PLAYER"
 
-[node name="YouImage2" type="TextureRect" parent="Menu/Legend"]
+[node name="FireballImage" type="TextureRect" parent="Menu/Legend"]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 161.0
@@ -315,7 +315,7 @@ texture = ExtResource("8")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="YouImage3" type="TextureRect" parent="Menu/Legend"]
+[node name="HeartImage" type="TextureRect" parent="Menu/Legend"]
 layout_mode = 0
 offset_left = 58.0
 offset_top = 164.0
@@ -326,7 +326,7 @@ texture = ExtResource("9")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="YouDesc2" type="Label" parent="Menu/Legend"]
+[node name="PowerUpDesc" type="Label" parent="Menu/Legend"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = 165.0
@@ -334,7 +334,7 @@ offset_right = 223.0
 offset_bottom = 228.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Power ups"
+text = "LEGEND_POWERUPS"
 
 [node name="BossesDesc" type="Label" parent="Menu/Legend"]
 layout_mode = 0
@@ -344,7 +344,7 @@ offset_right = 366.0
 offset_bottom = 140.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-text = "= Beat bosses to advance!"
+text = "LEGEND_BOSS"
 
 [node name="PlayButton" type="Button" parent="Menu"]
 layout_mode = 0
@@ -360,7 +360,7 @@ theme_override_colors/font_outline_color = Color(0, 0.25098, 0, 1)
 theme_override_constants/outline_size = 48
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 48
-text = "PLAY!"
+text = "BTN_PLAY"
 flat = true
 
 [node name="ResetButton" type="Button" parent="Menu"]
@@ -379,7 +379,7 @@ theme_override_colors/font_outline_color = Color(0.403922, 0, 0, 1)
 theme_override_constants/outline_size = 24
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 24
-text = "Reset Game"
+text = "BTN_RESET"
 flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu"]

@@ -13,7 +13,7 @@ offset_bottom = 624.0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 24
-text = "Pause"
+text = "BTN_PAUSE"
 flat = true
 script = ExtResource("1")
 

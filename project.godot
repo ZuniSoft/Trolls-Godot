@@ -54,6 +54,10 @@ ui_attack={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Assets/Translations/Localizations.en.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Hero"

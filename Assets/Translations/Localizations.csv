@@ -1,0 +1,33 @@
+﻿keys,en
+TITLE,TROLLS
+VERSION,Version 0.9.0
+COPYRIGHT,Copyright © 2023 ZuniSoft All rights reserved.
+LEGEND_PLAYER,= Player
+LEGEND_BOSS,= Beat bosses to advance
+LEGEND_POWERUPS,= Power ups
+LEGEND_LEFT,= Left
+LEGEND_RIGHT,= Right
+LEGEND_CLIMB_UP,= Climb Up
+LEGEND_CLIMB_DOWN,= Climb Down
+LEGEND_RUN,= Run
+LEGEND_ATTACK,= Attack
+LEGEND_JUMP,= Jump
+LEGEND_SHOOT_FIREBALLS,= Shoot Fireballs
+LEGEND_SPACE,SPACE
+LEGEND_TAB,TAB
+LEGEND_A,A
+LEGEND_R,R
+BTN_OK,OK
+BTN_CANCEL,Cancel
+BTN_PLAY,PLAY!
+BTN_RESET,Reset Game
+BTN_MENU,Main Menu
+BTN_RETRY,Retry
+BTN_RESUME,Resume
+BTN_PAUSE,Pause
+RESET_DLG_TITLE,Please Confirm…
+RESET_DLG_TXT_1,This action will set your current progress to the beginning of the game!
+RESET_DLG_TXT_2,Proceed?
+GAME_OVER,GAME OVER!
+GAME_WIN,YOU WIN!
+GAME_PAUSE,PAUSED
