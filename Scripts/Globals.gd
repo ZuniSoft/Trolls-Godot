@@ -12,8 +12,6 @@ const MAX_MYSTERY_BOXES = 5
 const DROP_POS_X = -435
 const DROP_POS_Y = 696
 
-const DOOR_EXIT_OFFSET = 80
-
 const SCENE_FILE_NAME_IDX = 4
 const SCENE_FILE_NAME_EXT = ".tscn"
 

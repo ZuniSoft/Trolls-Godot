@@ -11,13 +11,15 @@ func _ready():
 	var node_idx = door.lstrip(Globals.NODE_ROOM_NAME)
 	var locked = GameState.get("door_" + str(node_idx) + "_locked")
 	
+	var _retval = get_node("../../Hero").connect("activate_door", Callable(self, "_on_activate_door"))
+	
 	if locked:
 		show_closed_door()
 	else	:
 		show_open_door()
 
-func _on_LockedDoor_body_entered(body):
-	if body.name == "Hero":
+func _on_activate_door(hero, door_name):
+	if name == door_name:
 		var path_items = door_scene.split("/", true)
 		var door = path_items[Globals.SCENE_FILE_NAME_IDX].rstrip(Globals.SCENE_FILE_NAME_EXT)
 		var node_idx = door.lstrip(Globals.NODE_ROOM_NAME)
@@ -25,8 +27,8 @@ func _on_LockedDoor_body_entered(body):
 		
 		if not locked:
 			open_door_scene()
-		else	:
-			if body.has_keys:
+		else:
+			if hero.has_keys:
 				unlock_door()
 				GameState.set("door_" + str(node_idx) + "_locked", false)
 
@@ -73,3 +75,9 @@ func open_door_scene():
 func _on_SoundPlayTimer_timeout():
 	emit_signal("key_used")
 	open_door_scene()
+
+func _on_LockedDoor_body_entered(body):
+	body.door_area_entered(name)
+
+func _on_LockedDoor_body_exited(body):
+	body.door_area_exited()

@@ -10,6 +10,7 @@ offset_left = 1032.0
 offset_top = 582.0
 offset_right = 1126.0
 offset_bottom = 624.0
+focus_mode = 0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 24

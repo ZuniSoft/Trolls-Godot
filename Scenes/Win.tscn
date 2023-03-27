@@ -38,6 +38,7 @@ offset_left = 24.0
 offset_top = 384.0
 offset_right = 1128.0
 offset_bottom = 443.0
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0.25098, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.74902, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0.74902, 0, 1)

@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="1"]
 
 [node name="PortalDoor" type="Area2D"]
-collision_layer = 0
+collision_layer = 1024
 script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,4 +21,5 @@ position = Vector2(0, 16)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3")
 
-[connection signal="body_entered" from="." to="." method="_teleport_to_other_door"]
+[connection signal="body_entered" from="." to="." method="_on_PortalDoor_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_PortalDoor_body_exited"]

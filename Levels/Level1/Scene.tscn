@@ -288,7 +288,10 @@ switch_door = 2
 [node name="PortalDoor1" parent="Doors" instance=ExtResource("17")]
 z_index = 3
 position = Vector2(1794, 964)
-collision_layer = 1024
+
+[node name="PortalDoor2" parent="Doors" instance=ExtResource("17")]
+z_index = 3
+position = Vector2(-584, 688)
 
 [node name="PortalDoorExit1" parent="Doors" instance=ExtResource("23")]
 position = Vector2(4160, 960)
@@ -306,7 +309,11 @@ collision_mask = 49
 [node name="LockedDoor1" parent="Doors" instance=ExtResource("31")]
 z_index = 2
 position = Vector2(-544, 968)
-collision_layer = 1024
+
+[node name="LockedDoor2" parent="Doors" instance=ExtResource("31")]
+z_index = 2
+position = Vector2(-352, 968)
+door_scene = "res://Levels/Level1/Room2.tscn"
 
 [node name="OnewayPlatforms" type="Node" parent="."]
 
@@ -686,6 +693,7 @@ autoplay = true
 [connection signal="body_entered" from="Ladders/Ladder4" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder4" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="key_used" from="Doors/LockedDoor1" to="HUD" method="_on_key_used"]
+[connection signal="key_used" from="Doors/LockedDoor2" to="HUD" method="_on_key_used"]
 [connection signal="body_entered" from="FallZones/FallZone1" to="Hero" method="_on_FallZone_body_entered"]
 [connection signal="fireballs_empty" from="HUD" to="Hero" method="_on_HUD_fireballs_empty"]
 [connection signal="has_fireballs" from="HUD" to="Hero" method="_on_HUD_has_fireballs"]

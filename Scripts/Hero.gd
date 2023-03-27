@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal life_lost(hit_points)
 signal fireball_used
+signal activate_door(hero, door_name)
 
 var calc_velocity = Vector2(0, 0)
 var is_hit = false
@@ -9,6 +10,8 @@ var is_dying = false
 var is_throwing = false
 var in_ladder_area = false
 var on_ladder = false
+var in_door_area = false
+var door_name = ""
 var has_fireballs = true
 var has_keys = false
 var mystery_items = ["res://Scenes/Fireballs.tscn", "res://Scenes/Heart.tscn", "res://Scenes/Coin.tscn"]
@@ -28,7 +31,7 @@ const SWORD_X_POS = 310
 func _ready():
 	has_fireballs = GameState.has_fireballs
 	has_keys = GameState.has_keys
-
+	
 func _physics_process(_delta):
 	if not is_hit and not is_dying:
 		$SwordHit/Sword.disabled = true
@@ -92,6 +95,9 @@ func _physics_process(_delta):
 			if sign($Marker2D.position.x) == 1:
 					$Marker2D.position.x *= -1
 			$AnimatedSprite2D.play("walking")
+		elif Input.is_action_pressed("ui_up") and in_door_area:
+			emit_signal("activate_door", self, door_name)
+			return
 		elif Input.is_action_pressed("ui_up") and in_ladder_area:
 			on_ladder = true
 			global_transform.origin.y -= LADDER_STEP_HT
@@ -178,6 +184,13 @@ func _on_Ladder_body_entered(_body):
 			
 func _on_Ladder_body_exited(_body):
 	in_ladder_area = false
+	
+func door_area_entered(door_entered_name):
+	in_door_area = true
+	self.door_name = door_entered_name
+			
+func door_area_exited():
+	in_door_area = false
 
 func _on_SwordHit_body_entered(body):
 	if body.is_in_group("enemies") and not $SwordHit/Sword.disabled:

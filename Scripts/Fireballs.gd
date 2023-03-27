@@ -15,8 +15,6 @@ func _on_Fireballs_body_entered(_body):
 		RoomState.set("fireball_" + str(node_idx) + "_collected", true)
 	elif "Level" in room.name and name != "Fireballs":
 		GameState.set("fireball_" + str(node_idx) + "_collected", true)
-		
-	GameState.has_fireballs = true
 	
 	emit_signal("fireball_collected", 5)
 	set_collision_mask_value(1, false)

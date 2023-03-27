@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="1"]
 
 [node name="LockedDoorExit" type="Area2D"]
-collision_layer = 0
+collision_layer = 2048
 script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,3 +16,4 @@ shape = SubResource("1")
 texture = ExtResource("1")
 
 [connection signal="body_entered" from="." to="." method="_on_LockedDoorExit_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_LockedDoorExit_body_exited"]

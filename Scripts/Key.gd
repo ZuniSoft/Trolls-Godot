@@ -13,8 +13,6 @@ func _on_Key_body_entered(_body):
 		RoomState.set("key_" + str(node_idx) + "_collected", true)
 	else:
 		GameState.set("key_" + str(node_idx) + "_collected", true)
-		
-	GameState.has_keys = true
 	
 	emit_signal("key_collected")
 	set_collision_mask_value(1, false)
