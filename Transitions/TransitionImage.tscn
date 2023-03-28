@@ -184,7 +184,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Controls/VBoxProgress"]
 layout_mode = 2
-text = "Loading"
+text = "LOADING_MSG"
 label_settings = SubResource("LabelSettings_k2nme")
 horizontal_alignment = 1
 vertical_alignment = 1

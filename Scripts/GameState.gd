@@ -92,9 +92,13 @@ func load_config():
 			
 	if keys > 0:
 		has_keys = true
-	
+	elif keys == 0:
+		has_keys = false
+		
 	if fireballs > 0:
 		has_fireballs = true
+	elif fireballs == 0:
+		has_fireballs = false
 		
 func save_config():
 	var config = ConfigFile.new()

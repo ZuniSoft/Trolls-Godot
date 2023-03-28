@@ -14,7 +14,6 @@ var in_door_area = false
 var door_name = ""
 var has_fireballs = true
 var has_keys = false
-var mystery_items = ["res://Scenes/Fireballs.tscn", "res://Scenes/Heart.tscn", "res://Scenes/Coin.tscn"]
 
 const WALK_SPEED = 120
 const RUN_SPEED = 500
