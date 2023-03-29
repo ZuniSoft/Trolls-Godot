@@ -162,22 +162,10 @@ collision_layer = 8
 position = Vector2(780, 1301)
 mystery_box = false
 
-[node name="Heart2" parent="Life" instance=ExtResource("8_fj75g")]
-position = Vector2(4192, 352)
-mystery_box = false
-
-[node name="Heart3" parent="Life" instance=ExtResource("8_fj75g")]
-position = Vector2(6240, 544)
-mystery_box = false
-
 [node name="Fireballs" type="Node" parent="."]
 
 [node name="Fireballs1" parent="Fireballs" instance=ExtResource("9_xo8ip")]
 position = Vector2(271, 856)
-mystery_box = false
-
-[node name="Fireballs2" parent="Fireballs" instance=ExtResource("9_xo8ip")]
-position = Vector2(3316, 1304)
 mystery_box = false
 
 [node name="Keys" type="Node" parent="."]
@@ -528,10 +516,7 @@ autoplay = true
 [connection signal="coin_collected" from="Coins/Coin17" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin18" to="HUD" method="_on_coin_collected"]
 [connection signal="heart_collected" from="Life/Heart1" to="HUD" method="_on_heart_collected"]
-[connection signal="heart_collected" from="Life/Heart2" to="HUD" method="_on_heart_collected"]
-[connection signal="heart_collected" from="Life/Heart3" to="HUD" method="_on_heart_collected"]
 [connection signal="fireball_collected" from="Fireballs/Fireballs1" to="HUD" method="_on_fireball_collected"]
-[connection signal="fireball_collected" from="Fireballs/Fireballs2" to="HUD" method="_on_fireball_collected"]
 [connection signal="key_collected" from="Keys/Key1" to="HUD" method="_on_key_collected"]
 [connection signal="body_entered" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]

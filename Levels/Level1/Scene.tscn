@@ -239,9 +239,6 @@ mystery_box = false
 [node name="Key1" parent="Keys" instance=ExtResource("30")]
 position = Vector2(160, -70)
 
-[node name="Key2" parent="Keys" instance=ExtResource("30")]
-position = Vector2(-456, 984)
-
 [node name="Ladders" type="Node" parent="."]
 
 [node name="Ladder1" type="Area2D" parent="Ladders"]
@@ -280,7 +277,7 @@ position = Vector2(928, 540)
 
 [node name="Switch2" parent="Switches" instance=ExtResource("28")]
 z_index = 3
-position = Vector2(4619, 617)
+position = Vector2(4648, 618)
 switch_door = 2
 
 [node name="Doors" type="Node" parent="."]
@@ -288,10 +285,6 @@ switch_door = 2
 [node name="PortalDoor1" parent="Doors" instance=ExtResource("17")]
 z_index = 3
 position = Vector2(1794, 964)
-
-[node name="PortalDoor2" parent="Doors" instance=ExtResource("17")]
-z_index = 3
-position = Vector2(-584, 688)
 
 [node name="PortalDoorExit1" parent="Doors" instance=ExtResource("23")]
 position = Vector2(4160, 960)
@@ -308,12 +301,7 @@ collision_mask = 49
 
 [node name="LockedDoor1" parent="Doors" instance=ExtResource("31")]
 z_index = 2
-position = Vector2(-544, 968)
-
-[node name="LockedDoor2" parent="Doors" instance=ExtResource("31")]
-z_index = 2
-position = Vector2(-352, 968)
-door_scene = "res://Levels/Level1/Room2.tscn"
+position = Vector2(5656, 900)
 
 [node name="OnewayPlatforms" type="Node" parent="."]
 
@@ -683,7 +671,6 @@ autoplay = true
 [connection signal="fireball_collected" from="Fireballs/Fireballs1" to="HUD" method="_on_fireball_collected"]
 [connection signal="fireball_collected" from="Fireballs/Fireballs2" to="HUD" method="_on_fireball_collected"]
 [connection signal="key_collected" from="Keys/Key1" to="HUD" method="_on_key_collected"]
-[connection signal="key_collected" from="Keys/Key2" to="HUD" method="_on_key_collected"]
 [connection signal="body_entered" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladders/Ladder2" to="Hero" method="_on_Ladder_body_entered"]
@@ -693,7 +680,6 @@ autoplay = true
 [connection signal="body_entered" from="Ladders/Ladder4" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder4" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="key_used" from="Doors/LockedDoor1" to="HUD" method="_on_key_used"]
-[connection signal="key_used" from="Doors/LockedDoor2" to="HUD" method="_on_key_used"]
 [connection signal="body_entered" from="FallZones/FallZone1" to="Hero" method="_on_FallZone_body_entered"]
 [connection signal="fireballs_empty" from="HUD" to="Hero" method="_on_HUD_fireballs_empty"]
 [connection signal="has_fireballs" from="HUD" to="Hero" method="_on_HUD_has_fireballs"]
