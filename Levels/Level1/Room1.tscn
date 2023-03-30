@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bk8v12681jgds"]
+[gd_scene load_steps=34 format=3 uid="uid://bk8v12681jgds"]
 
 [ext_resource type="Script" path="res://Scripts/Room.gd" id="1_m83yf"]
 [ext_resource type="Texture2D" uid="uid://dmpmfet73iqks" path="res://Assets/RoomBackground1/bg.png" id="2_le3u4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dg74ueliksysr" path="res://Scenes/Switch.tscn" id="11_f6ilf"]
 [ext_resource type="PackedScene" uid="uid://clg6to70k5c2g" path="res://Scenes/PortalDoor.tscn" id="12_uk0wh"]
 [ext_resource type="PackedScene" uid="uid://da1dsw6ys1sfx" path="res://Scenes/PortalDoorExit.tscn" id="13_1etiy"]
+[ext_resource type="PackedScene" uid="uid://bmnmbwygj3fnm" path="res://Scenes/Spring.tscn" id="13_p3esw"]
 [ext_resource type="PackedScene" uid="uid://bocb1wgvr8wti" path="res://Scenes/SwitchedDoor.tscn" id="14_423pv"]
 [ext_resource type="PackedScene" uid="uid://bpj2b4gvywh32" path="res://Scenes/LockedDoorExit.tscn" id="15_0hd2j"]
 [ext_resource type="PackedScene" uid="uid://djsejs3ktkcxr" path="res://Scenes/MysteryBox.tscn" id="16_lmcv2"]
@@ -165,13 +166,13 @@ mystery_box = false
 [node name="Fireballs" type="Node" parent="."]
 
 [node name="Fireballs1" parent="Fireballs" instance=ExtResource("9_xo8ip")]
-position = Vector2(271, 856)
+position = Vector2(272, 744)
 mystery_box = false
 
 [node name="Keys" type="Node" parent="."]
 
 [node name="Key1" parent="Keys" instance=ExtResource("10_xrrwr")]
-position = Vector2(120, 912)
+position = Vector2(168, 744)
 
 [node name="Ladders" type="Node" parent="."]
 
@@ -217,7 +218,7 @@ switch_door = 2
 [node name="MovingPlatforms" type="Node" parent="."]
 
 [node name="MovingPlatform1" parent="MovingPlatforms" instance=ExtResource("27_x0sym")]
-position = Vector2(-536, 912)
+position = Vector2(-408, 208)
 move_distance = 600
 
 [node name="Doors" type="Node" parent="."]
@@ -241,6 +242,14 @@ collision_mask = 49
 
 [node name="LockedDoorExit" parent="Doors" instance=ExtResource("15_0hd2j")]
 position = Vector2(496, 968)
+
+[node name="Springs" type="Node" parent="."]
+
+[node name="Spring1" parent="Springs" instance=ExtResource("13_p3esw")]
+z_index = 2
+position = Vector2(-88, 988)
+collision_layer = 4096
+collision_mask = 1
 
 [node name="MysteryBoxes" type="Node" parent="."]
 
@@ -477,7 +486,7 @@ visible = false
 z_index = 10
 position = Vector2(496, 960)
 scale = Vector2(0.2, 0.2)
-collision_mask = 1886
+collision_mask = 8158
 
 [node name="Camera2D" type="Camera2D" parent="Hero"]
 position = Vector2(2.08165e-12, 2.08165e-12)
