@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://4fm8xh2mwxw0"]
+[gd_scene load_steps=6 format=3 uid="uid://4fm8xh2mwxw0"]
 
+[ext_resource type="Script" path="res://Scripts/GameOver.gd" id="1_0tsy5"]
 [ext_resource type="FontFile" uid="uid://b3cvj5rquooyu" path="res://Assets/Fonts/Sniglet-ExtraBold.ttf" id="2"]
 [ext_resource type="FontFile" uid="uid://dkaujrdvyg0wr" path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" id="2_vg72p"]
 [ext_resource type="Script" path="res://Scripts/MenuButton.gd" id="3"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0tsy5")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -35,11 +37,11 @@ horizontal_alignment = 1
 
 [node name="MenuButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 256.0
 offset_top = 344.0
-offset_right = 1128.0
+offset_right = 896.0
 offset_bottom = 391.0
-focus_mode = 0
+focus_next = NodePath("../RetryButton")
 theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.819608, 0, 0, 1)
@@ -52,11 +54,11 @@ script = ExtResource("3")
 
 [node name="RetryButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 256.0
 offset_top = 408.0
-offset_right = 1128.0
+offset_right = 896.0
 offset_bottom = 455.0
-focus_mode = 0
+focus_next = NodePath("../MenuButton")
 theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.819608, 0, 0, 1)

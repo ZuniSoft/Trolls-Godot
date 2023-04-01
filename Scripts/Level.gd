@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var timer = Timer.new()
 @onready var hud = get_node("HUD")
-@onready var pause = get_node("Pause")
 	
 func _ready():
 	GameState.load_config()
@@ -86,5 +85,4 @@ func _exit_tree():
 	
 func _on_timer_timeout():
 	timer.stop()
-	pause.visible = true
 	hud.visible = true

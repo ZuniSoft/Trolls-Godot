@@ -21,12 +21,10 @@ func _ready():
 func _on_activate_door(hero, door_name):
 	if name == door_name:
 		var hud = get_tree().get_root().find_child("HUD", true, false)
-		var pause = get_tree().get_root().find_child("Pause", true, false)
 		
 		GameState.set_hud_to_gs_values(hud)
 		
 		hero.process_mode = Node.PROCESS_MODE_DISABLED
-		pause.visible = false
 		hud.visible = false
 		
 		Game.change_scene(door_exit_scene, true, Globals.TRANSITION_SCENE)

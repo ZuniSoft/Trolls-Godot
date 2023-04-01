@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://co08f53biwb32"]
+[gd_scene load_steps=5 format=3 uid="uid://co08f53biwb32"]
 
 [ext_resource type="Script" path="res://Scripts/MenuButton.gd" id="1"]
+[ext_resource type="Script" path="res://Scripts/Win.gd" id="1_hcg4a"]
 [ext_resource type="FontFile" uid="uid://dkaujrdvyg0wr" path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" id="2_glatg"]
 [ext_resource type="FontFile" uid="uid://b3cvj5rquooyu" path="res://Assets/Fonts/Sniglet-ExtraBold.ttf" id="3"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hcg4a")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -34,11 +36,10 @@ horizontal_alignment = 1
 
 [node name="MenuButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 320.0
 offset_top = 384.0
-offset_right = 1128.0
+offset_right = 856.0
 offset_bottom = 443.0
-focus_mode = 0
 theme_override_colors/font_color = Color(0, 0.25098, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.74902, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0.74902, 0, 1)

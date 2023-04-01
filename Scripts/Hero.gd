@@ -49,7 +49,12 @@ func _physics_process(_delta):
 				calc_velocity.x = 0
 			$AnimatedSprite2D.play("jumping")
 			
-		if Input.is_action_just_pressed("ui_focus_next") and not on_ladder and has_fireballs:
+		if Input.is_action_just_pressed("ui_pause"):
+			var pause_menu = load("res://Scenes/PauseMenu.tscn")
+			var pause_menu_instance = pause_menu.instantiate()
+			get_tree().paused = true
+			add_child(pause_menu_instance)
+		elif Input.is_action_just_pressed("ui_shoot") and not on_ladder and has_fireballs:
 			is_throwing = true
 			$ThrowTimer.start()
 			$AnimatedSprite2D.play("throwing")
@@ -153,7 +158,6 @@ func dying():
 
 func hero_died_cleanup():
 	get_node("../HUD").visible = false
-	get_node("../Pause").visible = false
 	Game.change_scene("res://Scenes/GameOver.tscn", false, Globals.TRANSITION_SCENE)
 
 func _on_HitTimer_timeout():

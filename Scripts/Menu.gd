@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	get_node("Menu/PlayButton").grab_focus()
+
 func _on_PlayButton_pressed():
 	GameState.load_config()
 	var level = "res://Levels/Level" + str(GameState.current_level) + "/Scene.tscn"

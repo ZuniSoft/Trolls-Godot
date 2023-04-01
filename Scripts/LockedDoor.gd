@@ -61,10 +61,8 @@ func unlock_door():
 func open_door_scene():
 	var hero = get_node("../../Hero")
 	var hud = get_node("../../HUD")
-	var pause = get_node("../../Pause")
 	
 	hero.process_mode = Node.PROCESS_MODE_DISABLED
-	pause.visible = false
 	hud.visible = false
 	
 	GameState.last_position_x = hero.position.x

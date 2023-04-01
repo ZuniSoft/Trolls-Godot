@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://t57w1pfw71gt"]
+[gd_scene load_steps=12 format=3 uid="uid://t57w1pfw71gt"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_d6dk6"]
 [ext_resource type="FontFile" uid="uid://b3cvj5rquooyu" path="res://Assets/Fonts/Sniglet-ExtraBold.ttf" id="2"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ca7n5uktr48ta" path="res://Assets/Fireball/Fireball.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://b8tp4rjxb77ky" path="res://Assets/CommonObjects/heart.png" id="9"]
 [ext_resource type="FontFile" uid="uid://dkaujrdvyg0wr" path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" id="11_obvkp"]
-[ext_resource type="StyleBox" uid="uid://d0vraif731mwf" path="res://Themes/menu_box_flat.tres" id="12_txyb0"]
+[ext_resource type="Texture2D" uid="uid://b2mwjgpkajbe" path="res://addons/ActionIcon/Keyboard/Blank.png" id="11_tku4s"]
+[ext_resource type="Script" path="res://addons/ActionIcon/ActionIcon.gd" id="12_f53p2"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_d6dk6")
@@ -68,85 +69,39 @@ text = "COPYRIGHT"
 [node name="Keys" type="Panel" parent="Menu"]
 layout_mode = 0
 offset_left = 62.0
-offset_top = 320.0
+offset_top = 308.0
 offset_right = 430.0
-offset_bottom = 578.0
-
-[node name="RunKey" type="Label" parent="Menu/Keys"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 109.0
-offset_right = 48.0
-offset_bottom = 141.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_obvkp")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("12_txyb0")
-text = "LEGEND_R"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LeftKey" type="Label" parent="Menu/Keys"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 13.0
-offset_right = 48.0
-offset_bottom = 45.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_obvkp")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("12_txyb0")
-text = "<"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_bottom = 569.0
 
 [node name="LeftKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
 offset_left = 56.0
-offset_top = 112.0
-offset_right = 112.0
-offset_bottom = 153.0
+offset_top = 110.0
+offset_right = 178.0
+offset_bottom = 151.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 text = "LEGEND_RUN"
 
-[node name="RightKey" type="Label" parent="Menu/Keys"]
+[node name="PauseKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 13.0
-offset_right = 208.0
-offset_bottom = 45.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 160.0
+offset_top = 217.0
+offset_right = 300.0
+offset_bottom = 258.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("12_txyb0")
-text = ">"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "LEGEND_PAUSE"
 
 [node name="RightKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
 offset_left = 216.0
-offset_top = 16.0
-offset_right = 287.0
-offset_bottom = 57.0
+offset_top = 17.0
+offset_right = 355.0
+offset_bottom = 58.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 text = "LEGEND_RIGHT"
-
-[node name="UpKey" type="Label" parent="Menu/Keys"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 62.0
-offset_right = 48.0
-offset_bottom = 94.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_obvkp")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("12_txyb0")
-text = "^"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="UpKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -161,109 +116,160 @@ text = "LEGEND_CLIMB_UP"
 [node name="RunKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
 offset_left = 56.0
-offset_top = 16.0
-offset_right = 113.0
-offset_bottom = 57.0
+offset_top = 17.0
+offset_right = 183.0
+offset_bottom = 58.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 text = "LEGEND_LEFT"
 
-[node name="FightKey" type="Label" parent="Menu/Keys"]
-layout_mode = 0
-offset_left = 176.0
-offset_top = 109.0
-offset_right = 208.0
-offset_bottom = 141.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_obvkp")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("12_txyb0")
-text = "LEGEND_A"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="FightKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
 offset_left = 216.0
-offset_top = 112.0
-offset_right = 305.0
-offset_bottom = 153.0
+offset_top = 110.0
+offset_right = 364.0
+offset_bottom = 151.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 text = "LEGEND_ATTACK"
 
-[node name="SpaceKey" type="Label" parent="Menu/Keys"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 160.0
-offset_right = 116.0
-offset_bottom = 190.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_obvkp")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("12_txyb0")
-text = "LEGEND_SPACE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TabKey" type="Label" parent="Menu/Keys"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 208.0
-offset_right = 92.0
-offset_bottom = 238.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_obvkp")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("12_txyb0")
-text = "LEGEND_TAB"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="SpaceKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 160.0
-offset_right = 202.0
-offset_bottom = 201.0
+offset_left = 60.0
+offset_top = 158.0
+offset_right = 193.0
+offset_bottom = 199.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 text = "LEGEND_JUMP"
 
 [node name="TabKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
-offset_left = 104.0
-offset_top = 208.0
-offset_right = 178.0
-offset_bottom = 249.0
+offset_left = 217.0
+offset_top = 158.0
+offset_right = 468.0
+offset_bottom = 199.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 text = "LEGEND_SHOOT_FIREBALLS"
 
-[node name="DownKey" type="Label" parent="Menu/Keys"]
-layout_mode = 0
-offset_left = 207.0
-offset_top = 93.0
-offset_right = 239.0
-offset_bottom = 125.0
-rotation = 3.14159
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_obvkp")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("12_txyb0")
-text = "^"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="DownKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
 offset_left = 216.0
-offset_top = 64.0
-offset_right = 355.0
-offset_bottom = 105.0
+offset_top = 63.0
+offset_right = 423.0
+offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
 text = "LEGEND_CLIMB_DOWN"
+
+[node name="MoveLeft" type="TextureRect" parent="Menu/Keys"]
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 57.0
+offset_bottom = 53.0
+texture = ExtResource("11_tku4s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("12_f53p2")
+action_name = &"ui_left"
+favor_mouse = false
+
+[node name="MoveRight" type="TextureRect" parent="Menu/Keys"]
+offset_left = 169.0
+offset_top = 5.0
+offset_right = 217.0
+offset_bottom = 53.0
+texture = ExtResource("11_tku4s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("12_f53p2")
+action_name = &"ui_right"
+favor_mouse = false
+
+[node name="MoveUp" type="TextureRect" parent="Menu/Keys"]
+offset_left = 10.0
+offset_top = 51.0
+offset_right = 58.0
+offset_bottom = 99.0
+texture = ExtResource("11_tku4s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("12_f53p2")
+action_name = &"ui_up"
+favor_mouse = false
+
+[node name="MoveDown" type="TextureRect" parent="Menu/Keys"]
+offset_left = 170.0
+offset_top = 51.0
+offset_right = 218.0
+offset_bottom = 99.0
+texture = ExtResource("11_tku4s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("12_f53p2")
+action_name = &"ui_down"
+favor_mouse = false
+
+[node name="Run" type="TextureRect" parent="Menu/Keys"]
+offset_left = 11.0
+offset_top = 98.0
+offset_right = 59.0
+offset_bottom = 146.0
+texture = ExtResource("11_tku4s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("12_f53p2")
+action_name = &"ui_run"
+favor_mouse = false
+
+[node name="Attack" type="TextureRect" parent="Menu/Keys"]
+offset_left = 171.0
+offset_top = 98.0
+offset_right = 219.0
+offset_bottom = 146.0
+texture = ExtResource("11_tku4s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("12_f53p2")
+action_name = &"ui_attack"
+favor_mouse = false
+
+[node name="Jump" type="TextureRect" parent="Menu/Keys"]
+offset_left = 11.0
+offset_top = 146.0
+offset_right = 59.0
+offset_bottom = 194.0
+texture = ExtResource("11_tku4s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("12_f53p2")
+action_name = &"ui_jump"
+favor_mouse = false
+
+[node name="Shoot" type="TextureRect" parent="Menu/Keys"]
+offset_left = 171.0
+offset_top = 145.0
+offset_right = 219.0
+offset_bottom = 193.0
+texture = ExtResource("11_tku4s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("12_f53p2")
+action_name = &"ui_shoot"
+favor_mouse = false
+
+[node name="Pause" type="TextureRect" parent="Menu/Keys"]
+offset_left = 114.0
+offset_top = 205.0
+offset_right = 162.0
+offset_bottom = 253.0
+texture = ExtResource("11_tku4s")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("12_f53p2")
+action_name = &"ui_pause"
+favor_mouse = false
 
 [node name="Legend" type="Panel" parent="Menu"]
 layout_mode = 0
@@ -352,7 +358,7 @@ offset_left = 456.0
 offset_top = 353.0
 offset_right = 665.0
 offset_bottom = 449.0
-focus_mode = 0
+focus_next = NodePath("../ResetButton")
 theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.878431, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0.878431, 0, 1)
@@ -372,7 +378,7 @@ offset_left = 493.0
 offset_top = 495.0
 offset_right = 637.0
 offset_bottom = 515.504
-focus_mode = 0
+focus_next = NodePath("../PlayButton")
 theme_override_colors/font_color = Color(0.596078, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.819608, 0, 0, 1)
