@@ -69,9 +69,9 @@ text = "COPYRIGHT"
 [node name="Keys" type="Panel" parent="Menu"]
 layout_mode = 0
 offset_left = 62.0
-offset_top = 308.0
+offset_top = 313.0
 offset_right = 430.0
-offset_bottom = 569.0
+offset_bottom = 574.0
 
 [node name="LeftKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -125,9 +125,9 @@ text = "LEGEND_LEFT"
 
 [node name="FightKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
-offset_left = 216.0
+offset_left = 217.0
 offset_top = 110.0
-offset_right = 364.0
+offset_right = 365.0
 offset_bottom = 151.0
 theme_override_fonts/font = ExtResource("11_obvkp")
 theme_override_font_sizes/font_size = 18
@@ -164,6 +164,7 @@ theme_override_font_sizes/font_size = 18
 text = "LEGEND_CLIMB_DOWN"
 
 [node name="MoveLeft" type="TextureRect" parent="Menu/Keys"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 5.0
 offset_right = 57.0
@@ -176,6 +177,7 @@ action_name = &"ui_left"
 favor_mouse = false
 
 [node name="MoveRight" type="TextureRect" parent="Menu/Keys"]
+layout_mode = 0
 offset_left = 169.0
 offset_top = 5.0
 offset_right = 217.0
@@ -188,6 +190,7 @@ action_name = &"ui_right"
 favor_mouse = false
 
 [node name="MoveUp" type="TextureRect" parent="Menu/Keys"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 51.0
 offset_right = 58.0
@@ -200,6 +203,7 @@ action_name = &"ui_up"
 favor_mouse = false
 
 [node name="MoveDown" type="TextureRect" parent="Menu/Keys"]
+layout_mode = 0
 offset_left = 170.0
 offset_top = 51.0
 offset_right = 218.0
@@ -212,9 +216,10 @@ action_name = &"ui_down"
 favor_mouse = false
 
 [node name="Run" type="TextureRect" parent="Menu/Keys"]
-offset_left = 11.0
+layout_mode = 0
+offset_left = 10.0
 offset_top = 98.0
-offset_right = 59.0
+offset_right = 58.0
 offset_bottom = 146.0
 texture = ExtResource("11_tku4s")
 expand_mode = 1
@@ -224,6 +229,7 @@ action_name = &"ui_run"
 favor_mouse = false
 
 [node name="Attack" type="TextureRect" parent="Menu/Keys"]
+layout_mode = 0
 offset_left = 171.0
 offset_top = 98.0
 offset_right = 219.0
@@ -236,9 +242,10 @@ action_name = &"ui_attack"
 favor_mouse = false
 
 [node name="Jump" type="TextureRect" parent="Menu/Keys"]
-offset_left = 11.0
+layout_mode = 0
+offset_left = 10.0
 offset_top = 146.0
-offset_right = 59.0
+offset_right = 58.0
 offset_bottom = 194.0
 texture = ExtResource("11_tku4s")
 expand_mode = 1
@@ -248,9 +255,10 @@ action_name = &"ui_jump"
 favor_mouse = false
 
 [node name="Shoot" type="TextureRect" parent="Menu/Keys"]
-offset_left = 171.0
+layout_mode = 0
+offset_left = 172.0
 offset_top = 145.0
-offset_right = 219.0
+offset_right = 220.0
 offset_bottom = 193.0
 texture = ExtResource("11_tku4s")
 expand_mode = 1
@@ -260,6 +268,7 @@ action_name = &"ui_shoot"
 favor_mouse = false
 
 [node name="Pause" type="TextureRect" parent="Menu/Keys"]
+layout_mode = 0
 offset_left = 114.0
 offset_top = 205.0
 offset_right = 162.0
@@ -353,11 +362,13 @@ theme_override_font_sizes/font_size = 18
 text = "LEGEND_BOSS"
 
 [node name="PlayButton" type="Button" parent="Menu"]
-layout_mode = 0
-offset_left = 456.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 443.0
 offset_top = 353.0
-offset_right = 665.0
-offset_bottom = 449.0
+offset_right = 686.0
+offset_bottom = 440.0
+grow_horizontal = 2
 focus_next = NodePath("../ResetButton")
 theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.878431, 0, 1)
@@ -378,6 +389,7 @@ offset_left = 493.0
 offset_top = 495.0
 offset_right = 637.0
 offset_bottom = 515.504
+grow_horizontal = 2
 focus_next = NodePath("../PlayButton")
 theme_override_colors/font_color = Color(0.596078, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.819608, 0, 0, 1)
