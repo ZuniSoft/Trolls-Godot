@@ -23,3 +23,5 @@ const NODE_ROOM_NAME = "Room"
 
 const TRANSITION_IMAGE_SCENE = "res://Transitions/TransitionImage.tscn"
 const TRANSITION_SCENE = "res://Transitions/Transition.tscn"
+
+var breakable_initialized = false

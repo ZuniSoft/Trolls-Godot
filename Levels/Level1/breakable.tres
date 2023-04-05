@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cf0p31jnsougx"]
+
+[ext_resource type="Texture2D" uid="uid://dui6slerr0urg" path="res://Assets/CommonObjects/breakable.png" id="1_4k1xy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rflw"]
+texture = ExtResource("1_4k1xy")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[resource]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 49
+sources/3 = SubResource("TileSetAtlasSource_3rflw")
