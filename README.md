@@ -11,12 +11,13 @@ Godot based platformer game where you will kill enemies to advance to the next l
 3. No limit on switched doors
 4. No limit on portal doors
 5. No limit on springs
-6. Maximum of three locked doors w/ rooms
-7. Maximum of three keys
-8. Maximum of five mystery boxes
-9. Maximum of three hearts
-10. Maximum of three fireballs
-11. One Ogre as a boss that must be killed to advance to the next level
+6. No limit on breakable tiles
+7. Maximum of three locked doors w/ rooms
+8. Maximum of three keys
+9. Maximum of five mystery boxes
+10. Maximum of three hearts
+11. Maximum of three fireballs
+12. One Ogre as a boss that must be killed to advance to the next level
 
 ### Room Limits
 1. No limit on enemies
@@ -24,11 +25,12 @@ Godot based platformer game where you will kill enemies to advance to the next l
 3. No limit on switched doors
 4. No limit on portal doors
 5. No limit on springs
-6. No locked doors w/ rooms
-7. Maximum of one key
-8. Maximum of five mystery boxes
-9. Maximum of one heart
-10. Maximum of one fireball
+6. No limit on breakable tiles
+7. No locked doors w/ rooms
+8. Maximum of one key
+9. Maximum of five mystery boxes
+10. Maximum of one heart
+11. Maximum of one fireball
 
 ### Items of Note
 1. Remember that running the scene directly messes up screen transitions. No previous scene to remove

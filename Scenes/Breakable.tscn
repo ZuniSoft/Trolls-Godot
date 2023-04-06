@@ -8,11 +8,12 @@ size = Vector2(64, 64)
 
 [node name="Breakable" type="RigidBody2D"]
 z_index = 2
-collision_layer = 0
-collision_mask = 0
+collision_layer = 8192
+collision_mask = 2
 script = ExtResource("1_b37ng")
 blocks_per_side = 4
 blocks_impulse = 400
+debris_max_time = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_sbwfr")

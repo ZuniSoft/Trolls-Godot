@@ -133,6 +133,7 @@ locale/translations=PackedStringArray("res://Assets/Translations/Localizations.e
 2d_physics/layer_11="PortalDoor"
 2d_physics/layer_12="LockedDoor"
 2d_physics/layer_13="Spring"
+2d_physics/layer_14="Breakable"
 
 [physics]
 

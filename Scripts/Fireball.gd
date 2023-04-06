@@ -24,10 +24,10 @@ func _physics_process(delta):
 			var tile = body.get_coords_for_body_rid(collision.get_collider_rid())
 			body.erase_cell(0, tile)
 			
-			Globals.breakable_initialized = false
 			var scene = load("res://Scenes/Breakable.tscn")
 			var scene_instance = scene.instantiate()
 			scene_instance.set_position(position)
+			scene_instance.initialize(get_parent())
 			get_parent().call_deferred("add_child", scene_instance)
 					
 		queue_free()

@@ -24,4 +24,4 @@ func _on_DieTimer_timeout():
 	# test code for ogre death, hide HUD node
 	get_node("../../HUD").visible = false
 	
-	Game.change_scene("res://Levels/Level2/Scene.tscn", true, Globals.TRANSITION_IMAGE_SCENE)
+	Game.change_scene("res://Levels/Level2/Scene.tscn", Globals.TRANSITION_USE_SUB_THREADS, Globals.TRANSITION_IMAGE_SCENE)

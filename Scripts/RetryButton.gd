@@ -8,4 +8,4 @@ func _on_RetryButton_pressed():
 	GameState.save_config()
 	
 	var level = "res://Levels/Level" + str(GameState.current_level) + "/Scene.tscn"
-	Game.change_scene(level, true, Globals.TRANSITION_IMAGE_SCENE)
+	Game.change_scene(level, Globals.TRANSITION_USE_SUB_THREADS, Globals.TRANSITION_IMAGE_SCENE)
