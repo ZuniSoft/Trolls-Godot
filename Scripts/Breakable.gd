@@ -159,6 +159,7 @@ func initialize(parent_node):
 	
 func _integrate_forces(_state):
 	if object != {} and object.can_detonate and object.detonate:
+		$SoundBricks.play()
 		explosion()
 
 func add_children(child_object):
@@ -170,7 +171,7 @@ func add_children(child_object):
 func explosion():
 	if debug_mode: print("'%s' object exploded!" % self.name)
 
-	object.can_detonate = false
+	object.can_detonate = false	
 	
 	self.visible = false
 
