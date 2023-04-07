@@ -21,6 +21,7 @@ const NODE_KEY_NAME = "Key"
 const NODE_MYSTERY_NAME = "MysteryBox"
 const NODE_ROOM_NAME = "Room"
 
+const TRANSITION_LIGHT_WEIGHT_USE_SUB_THREADS = false
 const TRANSITION_USE_SUB_THREADS = false
 const TRANSITION_IMAGE_SCENE = "res://Transitions/TransitionImage.tscn"
 const TRANSITION_SCENE = "res://Transitions/Transition.tscn"

@@ -2,8 +2,6 @@ extends Area2D
 
 signal fireball_collected(fireball_cnt)
 
-@export var mystery_box = true
-
 func _on_Fireballs_body_entered(_body):
 	$AnimationPlayer.play("Bounce")
 	$SoundFireball.play()

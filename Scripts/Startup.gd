@@ -8,4 +8,4 @@ func _ready():
 	DisplayServer.window_set_position(Vector2(screen_position) + screen_size * 0.5 - get_window().size * 0.5)
 	
 	Game.current_scene = self
-	Game.change_scene("res://Scenes/Splash.tscn", false, Globals.TRANSITION_SCENE)
+	Game.change_scene("res://Scenes/Splash.tscn", Globals.TRANSITION_LIGHT_WEIGHT_USE_SUB_THREADS, Globals.TRANSITION_SCENE)

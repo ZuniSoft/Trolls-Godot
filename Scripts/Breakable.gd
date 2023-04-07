@@ -170,7 +170,7 @@ func add_children(child_object):
 func explosion():
 	if debug_mode: print("'%s' object exploded!" % self.name)
 
-	object.detonate = false
+	object.can_detonate = false
 	
 	self.visible = false
 

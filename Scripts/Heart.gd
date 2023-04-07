@@ -2,8 +2,6 @@ extends Area2D
 
 signal heart_collected(life_cnt)
 
-@export var mystery_box = true
-
 func _on_Heart_body_entered(_body):
 	$AnimationPlayer.play("Bounce")
 	$SoundHeart.play()

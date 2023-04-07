@@ -21,4 +21,4 @@ func _on_DieTimer_timeout():
 	RoomState.reset_rooms()
 	GameState.set_next_level(1)
 	
-	Game.change_scene("res://Scenes/Win.tscn", false, Globals.TRANSITION_SCENE)
+	Game.change_scene("res://Scenes/Win.tscn", Globals.TRANSITION_LIGHT_WEIGHT_USE_SUB_THREADS, Globals.TRANSITION_SCENE)

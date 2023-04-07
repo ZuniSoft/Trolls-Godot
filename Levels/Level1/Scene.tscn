@@ -214,25 +214,20 @@ collision_layer = 8
 
 [node name="Heart1" parent="Life" instance=ExtResource("19")]
 position = Vector2(780, 1301)
-mystery_box = false
 
 [node name="Heart2" parent="Life" instance=ExtResource("19")]
 position = Vector2(4192, 352)
-mystery_box = false
 
 [node name="Heart3" parent="Life" instance=ExtResource("19")]
 position = Vector2(6240, 544)
-mystery_box = false
 
 [node name="Fireballs" type="Node" parent="."]
 
 [node name="Fireballs1" parent="Fireballs" instance=ExtResource("14")]
 position = Vector2(271, 856)
-mystery_box = false
 
 [node name="Fireballs2" parent="Fireballs" instance=ExtResource("14")]
 position = Vector2(3316, 1304)
-mystery_box = false
 
 [node name="Keys" type="Node" parent="."]
 
