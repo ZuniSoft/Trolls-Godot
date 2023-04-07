@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmnmbwygj3fnm"]
+[gd_scene load_steps=10 format=3 uid="uid://bmnmbwygj3fnm"]
 
 [ext_resource type="Script" path="res://Scripts/Spring.gd" id="1_nchem"]
 [ext_resource type="Texture2D" uid="uid://l0ih2j1wetak" path="res://Assets/CommonObjects/spring-1.png" id="2_d2ttk"]
 [ext_resource type="Texture2D" uid="uid://bfnl8rvw0l52k" path="res://Assets/CommonObjects/spring-2.png" id="3_t8480"]
 [ext_resource type="Texture2D" uid="uid://bpf3drxgmq6jn" path="res://Assets/CommonObjects/spring-3.png" id="4_hvtl0"]
+[ext_resource type="AudioStream" uid="uid://bx6pthn4xyf6p" path="res://Assets/Sound/Spring.mp3" id="5_l37hj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8sx1x"]
 size = Vector2(64, 42)
@@ -66,6 +67,10 @@ shape = SubResource("RectangleShape2D_c168p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_2a5k5")
+
+[node name="SoundSpring" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_l37hj")
+volume_db = -30.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_TopChecker_body_entered"]

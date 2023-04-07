@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var blocks_per_side = 6
+@export_enum("2:2", "4:4", "6:6", "8:8", "10:10") var blocks_per_side: int = 6
 @export var blocks_impulse = 600
 @export var blocks_gravity_scale = 10
 @export var debris_max_time = 5

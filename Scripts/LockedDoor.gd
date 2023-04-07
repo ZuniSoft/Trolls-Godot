@@ -3,7 +3,7 @@ extends Area2D
 signal key_used
 
 @export var door_scene = "res://Levels/Level1/Room1.tscn"
-@export var door_type = "Wood"
+@export_enum("Metal", "Wood") var door_type: String = "Metal"
 
 func _ready():
 	var path_items = door_scene.split("/", true)

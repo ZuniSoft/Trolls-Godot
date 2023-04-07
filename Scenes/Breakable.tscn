@@ -12,7 +12,6 @@ z_index = 2
 collision_layer = 8192
 collision_mask = 2
 script = ExtResource("1_b37ng")
-blocks_per_side = 4
 blocks_impulse = 400
 debris_max_time = 2
 

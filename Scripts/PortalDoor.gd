@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var exit_door = 1
-@export var door_type = "Wood"
+@export_enum("Metal", "Wood") var door_type: String = "Metal"
 
 @onready var door_exit = get_node("../PortalDoorExit" + str(exit_door))
 

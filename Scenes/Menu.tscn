@@ -404,7 +404,7 @@ flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource("7")
-volume_db = -20.0
+volume_db = -10.0
 autoplay = true
 
 [connection signal="pressed" from="Menu/PlayButton" to="." method="_on_PlayButton_pressed"]

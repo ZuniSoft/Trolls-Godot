@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var door_exit_scene = "res://Levels/Level1/Scene.tscn"
-@export var door_type = "Wood"
+@export_enum("Metal", "Wood") var door_type: String = "Metal"
 
 func _ready():
 	var _retval = get_node("../../Hero").connect("activate_door", Callable(self, "_on_activate_door"))

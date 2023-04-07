@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var liquid_type = "Swamp"
+@export_enum("Dungeon", "Swamp", "Toxic") var liquid_type: String = "Dungeon"
 
 func _ready():
 	var sprite_texture
