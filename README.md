@@ -1,5 +1,5 @@
 # Trolls
-Godot based platformer where you will kill enemies to advance to the next level. Along the way collect keys, fireballs, extra life, and coins. Open mystery boxes for more items. Climb ladders and teleport to unknown locations using portal doors. Flip switches and use keys to open doors other areas. Some blocks can be broken, clearing the path to your journey. Jump on spring pads to reach high platforms. Finally, avoid the hazards along the way.
+A Godot based platformer where you will kill enemies to advance to the next level. Along the way collect keys, fireballs, extra life, and coins. Open mystery boxes for more items. Climb ladders and teleport to unknown locations using portal doors. Flip switches and use keys to open doors to other areas. Some blocks can be broken, clearing the path ahead. Jump on spring pads to reach high platforms. Finally, avoid the hazards along the way.
 
 ![Level 1 Screenhot](/screenshot.png)
 
