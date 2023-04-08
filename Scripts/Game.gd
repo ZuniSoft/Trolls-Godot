@@ -1,18 +1,6 @@
 extends Node
 
-@onready var viewport_size : Vector2 = _get_viewport_size()
-@onready var screen_size : Vector2 = DisplayServer.screen_get_size()
-
 var current_scene : Node = null
-
-func _ready():
-	get_viewport().size_changed.connect(_on_viewport_size_changed)
-
-func _on_viewport_size_changed():
-	viewport_size = _get_viewport_size()
-
-func _get_viewport_size() -> Vector2:
-	return get_viewport().get_visible_rect().size
 
 func change_scene(path: String, use_sub_threads: bool = true, transition: String = ""):
 	if transition.is_empty():
