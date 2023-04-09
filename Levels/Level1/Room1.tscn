@@ -45,6 +45,7 @@ size = Vector2(192, 82)
 
 [node name="Room1" type="Node2D"]
 script = ExtResource("1_m83yf")
+debug_mode = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true

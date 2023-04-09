@@ -232,7 +232,7 @@ position = Vector2(3316, 1304)
 [node name="Keys" type="Node" parent="."]
 
 [node name="Key1" parent="Keys" instance=ExtResource("30")]
-position = Vector2(160, -70)
+position = Vector2(-584, 712)
 
 [node name="Ladders" type="Node" parent="."]
 
@@ -299,7 +299,7 @@ collision_mask = 49
 
 [node name="LockedDoor1" parent="Doors" instance=ExtResource("31")]
 z_index = 2
-position = Vector2(5656, 900)
+position = Vector2(-368, 965)
 door_type = "Wood"
 
 [node name="OnewayPlatforms" type="Node" parent="."]
@@ -407,7 +407,7 @@ direction = 1
 
 [node name="Cyclop5" parent="Enemies" groups=["enemies"] instance=ExtResource("18")]
 z_index = 10
-position = Vector2(5000, 952)
+position = Vector2(3944, 912)
 scale = Vector2(0.35, 0.35)
 collision_mask = 419
 
