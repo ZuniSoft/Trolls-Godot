@@ -1,12 +1,12 @@
 extends Node2D
 
-@export var debug_mode = false
+@export var design_mode = false
 
 @onready var timer = Timer.new()
 @onready var hud = get_node("HUD")
 
 func _ready():
-	if debug_mode:
+	if design_mode:
 		GameState.load_config()
 		GameState.set_hud_to_gs_values(hud)
 	

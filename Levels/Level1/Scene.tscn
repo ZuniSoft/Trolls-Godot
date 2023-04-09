@@ -229,10 +229,13 @@ position = Vector2(271, 856)
 [node name="Fireballs2" parent="Fireballs" instance=ExtResource("14")]
 position = Vector2(3316, 1304)
 
+[node name="Fireballs3" parent="Fireballs" instance=ExtResource("14")]
+position = Vector2(4648, 608)
+
 [node name="Keys" type="Node" parent="."]
 
 [node name="Key1" parent="Keys" instance=ExtResource("30")]
-position = Vector2(-584, 712)
+position = Vector2(160, -64)
 
 [node name="Ladders" type="Node" parent="."]
 
@@ -270,11 +273,6 @@ shape = SubResource("10")
 z_index = 3
 position = Vector2(928, 540)
 
-[node name="Switch2" parent="Switches" instance=ExtResource("28")]
-z_index = 3
-position = Vector2(4648, 618)
-switch_door = 2
-
 [node name="Doors" type="Node" parent="."]
 
 [node name="PortalDoor1" parent="Doors" instance=ExtResource("17")]
@@ -291,15 +289,9 @@ position = Vector2(1507, 954)
 collision_layer = 256
 collision_mask = 49
 
-[node name="SwitchedDoor2" parent="Doors" instance=ExtResource("29")]
-z_index = 3
-position = Vector2(6637, 953)
-collision_layer = 256
-collision_mask = 49
-
 [node name="LockedDoor1" parent="Doors" instance=ExtResource("31")]
 z_index = 2
-position = Vector2(-368, 965)
+position = Vector2(5659, 900)
 door_type = "Wood"
 
 [node name="OnewayPlatforms" type="Node" parent="."]
@@ -393,7 +385,7 @@ direction = 1
 
 [node name="Cyclop3" parent="Enemies" groups=["enemies"] instance=ExtResource("18")]
 z_index = 10
-position = Vector2(3303, 1272)
+position = Vector2(3234, 1272)
 scale = Vector2(0.35, 0.35)
 collision_mask = 419
 direction = 1
@@ -407,7 +399,7 @@ direction = 1
 
 [node name="Cyclop5" parent="Enemies" groups=["enemies"] instance=ExtResource("18")]
 z_index = 10
-position = Vector2(3944, 912)
+position = Vector2(5056, 951)
 scale = Vector2(0.35, 0.35)
 collision_mask = 419
 
@@ -477,7 +469,7 @@ collision_mask = 419
 
 [node name="Wolf3" parent="Enemies" groups=["enemies"] instance=ExtResource("10")]
 z_index = 10
-position = Vector2(3925, 906)
+position = Vector2(3896, 908)
 scale = Vector2(0.4, 0.4)
 collision_mask = 419
 
@@ -581,7 +573,7 @@ tile_set = ExtResource("24_p4slt")
 cell_quadrant_size = 8
 format = 2
 layer_0/name = "Breakable"
-layer_0/tile_data = PackedInt32Array(7864283, 0, 0, 8126390, 3, 0, 8126398, 3, 0, 7602110, 3, 0, 7602102, 3, 0)
+layer_0/tile_data = PackedInt32Array(7864283, 0, 0, 8061747, 3, 0, 7537459, 3, 0, 7537467, 3, 0, 8061755, 3, 0)
 
 [node name="Bridge" type="TileMap" parent="Tilesets"]
 z_index = 2
@@ -682,6 +674,7 @@ autoplay = true
 [connection signal="heart_collected" from="Life/Heart3" to="HUD" method="_on_heart_collected"]
 [connection signal="fireball_collected" from="Fireballs/Fireballs1" to="HUD" method="_on_fireball_collected"]
 [connection signal="fireball_collected" from="Fireballs/Fireballs2" to="HUD" method="_on_fireball_collected"]
+[connection signal="fireball_collected" from="Fireballs/Fireballs3" to="HUD" method="_on_fireball_collected"]
 [connection signal="key_collected" from="Keys/Key1" to="HUD" method="_on_key_collected"]
 [connection signal="body_entered" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]

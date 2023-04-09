@@ -1,11 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://bk8v12681jgds"]
+[gd_scene load_steps=31 format=3 uid="uid://bk8v12681jgds"]
 
 [ext_resource type="Script" path="res://Scripts/Room.gd" id="1_m83yf"]
 [ext_resource type="Texture2D" uid="uid://dmpmfet73iqks" path="res://Assets/RoomBackground1/bg.png" id="2_le3u4"]
 [ext_resource type="PackedScene" uid="uid://dxwijstdet8lf" path="res://Scenes/Coin.tscn" id="7_7umv2"]
 [ext_resource type="PackedScene" uid="uid://b2os386wnhwja" path="res://Scenes/Heart.tscn" id="8_fj75g"]
 [ext_resource type="PackedScene" uid="uid://cga6oeq6x1sxu" path="res://Scenes/Fireballs.tscn" id="9_xo8ip"]
-[ext_resource type="PackedScene" uid="uid://d12gvcf41fq7a" path="res://Scenes/Key.tscn" id="10_xrrwr"]
 [ext_resource type="PackedScene" uid="uid://dg74ueliksysr" path="res://Scenes/Switch.tscn" id="11_f6ilf"]
 [ext_resource type="PackedScene" uid="uid://clg6to70k5c2g" path="res://Scenes/PortalDoor.tscn" id="12_uk0wh"]
 [ext_resource type="PackedScene" uid="uid://da1dsw6ys1sfx" path="res://Scenes/PortalDoorExit.tscn" id="13_1etiy"]
@@ -40,12 +39,9 @@ size = Vector2(43.875, 320)
 [sub_resource type="RectangleShape2D" id="12"]
 size = Vector2(20, 18.7422)
 
-[sub_resource type="RectangleShape2D" id="5"]
-size = Vector2(192, 82)
-
 [node name="Room1" type="Node2D"]
 script = ExtResource("1_m83yf")
-debug_mode = true
+design_mode = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
@@ -166,11 +162,6 @@ position = Vector2(780, 1301)
 
 [node name="Fireballs1" parent="Fireballs" instance=ExtResource("9_xo8ip")]
 position = Vector2(272, 744)
-
-[node name="Keys" type="Node" parent="."]
-
-[node name="Key1" parent="Keys" instance=ExtResource("10_xrrwr")]
-position = Vector2(168, 744)
 
 [node name="Ladders" type="Node" parent="."]
 
@@ -436,15 +427,6 @@ collision_mask = 16
 position = Vector2(1344, 1006.63)
 shape = SubResource("12")
 
-[node name="FallZones" type="Node" parent="."]
-
-[node name="FallZone1" type="Area2D" parent="FallZones"]
-position = Vector2(2168, 1184)
-collision_layer = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallZones/FallZone1"]
-shape = SubResource("5")
-
 [node name="Tilesets" type="Node" parent="."]
 
 [node name="Room" type="TileMap" parent="Tilesets"]
@@ -517,7 +499,6 @@ autoplay = true
 [connection signal="coin_collected" from="Coins/Coin18" to="HUD" method="_on_coin_collected"]
 [connection signal="heart_collected" from="Life/Heart1" to="HUD" method="_on_heart_collected"]
 [connection signal="fireball_collected" from="Fireballs/Fireballs1" to="HUD" method="_on_fireball_collected"]
-[connection signal="key_collected" from="Keys/Key1" to="HUD" method="_on_key_collected"]
 [connection signal="body_entered" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladders/Ladder2" to="Hero" method="_on_Ladder_body_entered"]
@@ -526,7 +507,6 @@ autoplay = true
 [connection signal="body_exited" from="Ladders/Ladder3" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladders/Ladder4" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder4" to="Hero" method="_on_Ladder_body_exited"]
-[connection signal="body_entered" from="FallZones/FallZone1" to="Hero" method="_on_FallZone_body_entered"]
 [connection signal="fireballs_empty" from="HUD" to="Hero" method="_on_HUD_fireballs_empty"]
 [connection signal="has_fireballs" from="HUD" to="Hero" method="_on_HUD_has_fireballs"]
 [connection signal="has_keys" from="HUD" to="Hero" method="_on_HUD_has_keys"]
