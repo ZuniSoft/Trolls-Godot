@@ -4,6 +4,11 @@ extends Node2D
 @onready var hud = get_node("HUD")
 
 func _ready():
+	##### debugging only #####
+	GameState.load_config()
+	GameState.set_hud_to_gs_values(hud)
+	##########################
+	
 	RoomState.load_config(name)
 	
 	timer.name = "CanvasLayerTimer"

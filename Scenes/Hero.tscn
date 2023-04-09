@@ -1,8 +1,10 @@
-[gd_scene load_steps=121 format=3 uid="uid://bxah6utiyxi51"]
+[gd_scene load_steps=123 format=3 uid="uid://bxah6utiyxi51"]
 
 [ext_resource type="Script" path="res://Scripts/Hero.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://b51bypy3ktkri" path="res://Assets/Hero/Idle Blinking/Idle Blinking_008.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bfopgofjlhsem" path="res://Assets/Hero/Climbing/Climbing_000.png" id="2_xy3sn"]
 [ext_resource type="Texture2D" uid="uid://ccqkarayber24" path="res://Assets/Hero/Idle Blinking/Idle Blinking_004.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bjhfgfe6hjqxw" path="res://Assets/Hero/Climbing/Climbing_001.png" id="3_ba6e5"]
 [ext_resource type="Texture2D" uid="uid://dpnjfe4bk7d67" path="res://Assets/Hero/Idle Blinking/Idle Blinking_006.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://dg4p4ul1482dc" path="res://Assets/Hero/Idle Blinking/Idle Blinking_016.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://2108drtucjoc" path="res://Assets/Hero/Idle Blinking/Idle Blinking_005.png" id="6"]
@@ -122,22 +124,16 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("51")
+"texture": ExtResource("2_xy3sn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44")
+"texture": ExtResource("2_xy3sn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47")
+"texture": ExtResource("3_ba6e5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46")
+"texture": ExtResource("3_ba6e5")
 }],
 "loop": true,
 "name": &"climbing",
@@ -531,7 +527,6 @@ script = ExtResource("1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("2")
 animation = &"idle"
-frame = 9
 speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

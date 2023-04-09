@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://bxah6utiyxi51" path="res://Scenes/Hero.tscn" id="32_n3err"]
 
 [sub_resource type="RectangleShape2D" id="9"]
-size = Vector2(36, 448)
+size = Vector2(36, 440)
 
 [sub_resource type="RectangleShape2D" id="10"]
 size = Vector2(34, 311.125)
@@ -177,7 +177,7 @@ position = Vector2(168, 744)
 collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1"]
-position = Vector2(1100, 792)
+position = Vector2(1100, 796)
 shape = SubResource("9")
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
