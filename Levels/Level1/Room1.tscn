@@ -161,7 +161,7 @@ position = Vector2(780, 1301)
 [node name="Fireballs" type="Node" parent="."]
 
 [node name="Fireballs1" parent="Fireballs" instance=ExtResource("9_xo8ip")]
-position = Vector2(272, 744)
+position = Vector2(88, 736)
 
 [node name="Ladders" type="Node" parent="."]
 

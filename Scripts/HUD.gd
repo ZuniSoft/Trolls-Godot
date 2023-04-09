@@ -42,7 +42,7 @@ func _on_coin_collected():
 	
 	GameState.coins = coins
 		
-	if coins == Globals.COINS_FOR_EXTRA_LIFE:
+	if coins % Globals.COINS_FOR_EXTRA_LIFE == 0:
 		if life + Globals.EXTRA_LIFE <= Globals.MAX_LIFE:
 			life = life + Globals.EXTRA_LIFE
 		else:
