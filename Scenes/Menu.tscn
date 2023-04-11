@@ -28,8 +28,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1154.0
-offset_bottom = 648.0
+offset_right = 1928.0
+offset_bottom = 1088.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_x7uu1")
@@ -38,23 +38,23 @@ stretch_mode = 4
 
 [node name="Version" type="Label" parent="Menu"]
 layout_mode = 0
-offset_left = 1040.0
+offset_left = 1805.0
 offset_top = 9.0
-offset_right = 1139.0
+offset_right = 1904.0
 offset_bottom = 35.0
 text = "VERSION"
 
 [node name="Title" type="Label" parent="Menu"]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 88.0
-offset_right = 900.0
-offset_bottom = 268.0
+offset_left = 440.0
+offset_top = 193.0
+offset_right = 1448.0
+offset_bottom = 496.0
 theme_override_colors/font_color = Color(0, 0.305882, 0.309804, 1)
 theme_override_colors/font_outline_color = Color(0, 0.113725, 0.309804, 1)
 theme_override_constants/outline_size = 72
 theme_override_fonts/font = ExtResource("2")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 240
 text = "TITLE"
 horizontal_alignment = 1
 
@@ -68,10 +68,10 @@ text = "COPYRIGHT"
 
 [node name="Keys" type="Panel" parent="Menu"]
 layout_mode = 0
-offset_left = 62.0
-offset_top = 313.0
-offset_right = 430.0
-offset_bottom = 574.0
+offset_left = 127.0
+offset_top = 697.0
+offset_right = 495.0
+offset_bottom = 958.0
 
 [node name="LeftKeyDesc" type="Label" parent="Menu/Keys"]
 layout_mode = 0
@@ -282,10 +282,10 @@ favor_mouse = false
 
 [node name="Legend" type="Panel" parent="Menu"]
 layout_mode = 0
-offset_left = 703.0
-offset_top = 344.0
-offset_right = 1092.0
-offset_bottom = 549.0
+offset_left = 1402.0
+offset_top = 731.0
+offset_right = 1791.0
+offset_bottom = 936.0
 
 [node name="YouImage" type="TextureRect" parent="Menu/Legend"]
 layout_mode = 0
@@ -364,10 +364,10 @@ text = "LEGEND_BOSS"
 [node name="PlayButton" type="Button" parent="Menu"]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 443.0
-offset_top = 353.0
-offset_right = 686.0
-offset_bottom = 440.0
+offset_left = 839.0
+offset_top = 735.0
+offset_right = 1082.0
+offset_bottom = 822.0
 grow_horizontal = 2
 focus_next = NodePath("../ResetButton")
 theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
@@ -377,7 +377,7 @@ theme_override_colors/font_focus_color = Color(0, 0.878431, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0.25098, 0, 1)
 theme_override_constants/outline_size = 48
 theme_override_fonts/font = ExtResource("11_obvkp")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 50
 text = "BTN_PLAY"
 flat = true
 
@@ -385,10 +385,10 @@ flat = true
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.027
-offset_left = 493.0
-offset_top = 495.0
-offset_right = 637.0
-offset_bottom = 515.504
+offset_left = 889.0
+offset_top = 878.0
+offset_right = 1037.0
+offset_bottom = 916.0
 grow_horizontal = 2
 focus_next = NodePath("../PlayButton")
 theme_override_colors/font_color = Color(0.596078, 0, 0, 1)
@@ -398,7 +398,7 @@ theme_override_colors/font_focus_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.403922, 0, 0, 1)
 theme_override_constants/outline_size = 24
 theme_override_fonts/font = ExtResource("11_obvkp")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "BTN_RESET"
 flat = true
 

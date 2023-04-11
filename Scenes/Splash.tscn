@@ -21,37 +21,37 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 272.0
-offset_right = 464.0
-offset_bottom = 359.0
+offset_left = 761.0
+offset_top = 472.0
+offset_right = 841.0
+offset_bottom = 559.0
 texture = ExtResource("1")
 stretch_mode = 5
 
 [node name="Tagline" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 323.0
-offset_right = 785.0
-offset_bottom = 349.0
+offset_left = 857.0
+offset_top = 523.0
+offset_right = 1162.0
+offset_bottom = 549.0
 theme_override_fonts/font = ExtResource("3_2ml8t")
 theme_override_font_sizes/font_size = 18
 text = "Explorations in Software Development"
 
 [node name="Company" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 286.0
-offset_right = 705.0
-offset_bottom = 330.0
+offset_left = 857.0
+offset_top = 486.0
+offset_right = 1082.0
+offset_bottom = 530.0
 theme_override_fonts/font = ExtResource("3_2ml8t")
 theme_override_font_sizes/font_size = 32
 text = "ZuniSoft"

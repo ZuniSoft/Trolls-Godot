@@ -16,16 +16,16 @@ script = ExtResource("1_hcg4a")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1168.0
-offset_bottom = 656.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.0823529, 0.478431, 0.109804, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 208.0
-offset_right = 1152.0
-offset_bottom = 325.0
+offset_left = 384.0
+offset_top = 432.0
+offset_right = 1520.0
+offset_bottom = 549.0
 theme_override_colors/font_color = Color(0, 0.74902, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0.372549, 0, 1)
 theme_override_constants/outline_size = 48
@@ -37,10 +37,10 @@ horizontal_alignment = 1
 [node name="MenuButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 489.0
-offset_top = 368.0
-offset_right = 676.0
-offset_bottom = 427.0
+offset_left = 857.0
+offset_top = 592.0
+offset_right = 1044.0
+offset_bottom = 651.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0.25098, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.74902, 0, 1)
