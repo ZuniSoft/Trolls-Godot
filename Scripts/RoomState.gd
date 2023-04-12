@@ -1,13 +1,11 @@
 extends Node
 
 var enemies_killed = {}
-
 var coins_collected = {}
+var blocks_broken = {}
 
 var fireball_1_collected = false
-
 var heart_1_collected = false
-
 var key_1_collected = false
 
 var mystery_1_collected = false
@@ -30,6 +28,8 @@ func load_config(room_name):
 			enemies_killed = config.get_value(section, "killed")
 		if section == "coins":
 			coins_collected = config.get_value(section, "collected")
+		if section == "blocks":
+			blocks_broken = config.get_value(section, "broken")
 		if section == "fireballs":
 			fireball_1_collected = config.get_value(section, "fireball_1_collected")
 		if section == "hearts":
@@ -47,8 +47,8 @@ func save_config(room_name):
 	var config = ConfigFile.new()
 	
 	config.set_value("enemies", "killed", enemies_killed)
-	
 	config.set_value("coins", "collected", coins_collected)
+	config.set_value("blocks", "broken", blocks_broken)
 	
 	config.set_value("fireballs", "fireball_1_collected", fireball_1_collected)
 	
@@ -68,6 +68,7 @@ func save_config(room_name):
 func clear():
 	enemies_killed = {}
 	coins_collected = {}
+	blocks_broken = {}
 
 	fireball_1_collected = false
 	

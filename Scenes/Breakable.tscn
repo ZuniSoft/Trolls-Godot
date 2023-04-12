@@ -10,7 +10,9 @@ size = Vector2(64, 64)
 [node name="Breakable" type="RigidBody2D"]
 z_index = 2
 collision_layer = 8192
-collision_mask = 2
+collision_mask = 8226
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_b37ng")
 blocks_impulse = 400
 debris_max_time = 2
@@ -24,3 +26,5 @@ shape = SubResource("RectangleShape2D_kco32")
 [node name="SoundBricks" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_47smb")
 volume_db = -25.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

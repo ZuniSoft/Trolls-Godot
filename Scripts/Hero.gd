@@ -55,8 +55,6 @@ func _physics_process(_delta):
 			get_tree().paused = true
 			add_child(pause_menu_instance)
 		elif Input.is_action_just_pressed("ui_shoot") and not on_ladder and has_fireballs:
-			is_throwing = true
-			$ThrowTimer.start()
 			$AnimatedSprite2D.play("throwing")
 		elif Input.is_action_pressed("ui_right") and not on_ladder and Input.is_action_pressed("ui_attack"):
 			$SoundSword.play()
@@ -111,7 +109,7 @@ func _physics_process(_delta):
 			global_transform.origin.y += LADDER_STEP_HT
 			$AnimatedSprite2D.play("climbing")
 		else:
-			if not is_throwing and in_ladder_area or is_on_floor():
+			if not is_throwing and is_on_floor() or in_ladder_area:
 				calc_velocity.x = 0
 				$AnimatedSprite2D.play("idle")
 	
@@ -170,13 +168,14 @@ func _on_DieTimer_timeout():
 
 func _on_ThrowTimer_timeout():
 	var fireball = FIREBALL.instantiate()
-		
+	
 	if sign($Marker2D.position.x) == 1:
 		fireball.set_fireball_dir(1)
 	else:
 		fireball.set_fireball_dir(-1)
 	
-	get_parent().add_child(fireball)
+	get_parent().add_sibling(fireball)
+	
 	fireball.position = $Marker2D.global_position
 	$SoundFireball.play()
 	emit_signal("fireball_used")
@@ -216,3 +215,8 @@ func _on_HUD_has_keys():
 
 func _on_FallZone_body_entered(_body):
 	hero_died_cleanup()
+
+func _on_AnimatedSprite2D_animation_changed():
+	if $AnimatedSprite2D.animation == "throwing":
+		is_throwing = true
+		$ThrowTimer.start()

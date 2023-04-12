@@ -23,6 +23,7 @@ func _ready():
 	var key = null
 	var collected = null
 	var killed = null
+	var broken = null
 	
 	var hero = get_node("Hero")
 	
@@ -60,6 +61,12 @@ func _ready():
 		if collected:
 			var coin_node = get_node("Coins/" + coin)
 			coin_node.queue_free()
+			
+	for block in RoomState.blocks_broken:
+		broken = RoomState.blocks_broken[block]
+		if broken:
+			var block_node = get_node("Breakables/" + block)
+			block_node.queue_free()
 			
 	for enemy in RoomState.enemies_killed:
 		killed = RoomState.enemies_killed[enemy]

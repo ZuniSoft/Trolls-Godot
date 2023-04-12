@@ -8,8 +8,8 @@ var fireballs = Globals.MAX_FIREBALLS
 var life = Globals.MAX_LIFE
 
 var enemies_killed = {}
-
 var coins_collected = {}
+var blocks_broken = {}
 
 var door_1_locked = true
 var door_2_locked = true
@@ -64,6 +64,8 @@ func load_config():
 			enemies_killed = config.get_value(section, "killed")
 		if section == "coins":
 			coins_collected = config.get_value(section, "collected")
+		if section == "blocks":
+			blocks_broken = config.get_value(section, "broken")
 		if section == "doors":
 			door_1_locked = config.get_value(section, "door_1_locked")
 			door_2_locked = config.get_value(section, "door_2_locked")
@@ -111,8 +113,8 @@ func save_config():
 	config.set_value("hud", "life", life)
 	
 	config.set_value("enemies", "killed", enemies_killed)
-	
 	config.set_value("coins", "collected", coins_collected)
+	config.set_value("blocks", "broken", blocks_broken)
 	
 	config.set_value("doors", "door_1_locked", door_1_locked)
 	config.set_value("doors", "door_2_locked", door_2_locked)
@@ -167,8 +169,8 @@ func clear():
 	life = 0
 
 	enemies_killed = {}
-
 	coins_collected = {}
+	blocks_broken = {}
 
 	door_1_locked = true
 	door_2_locked = true

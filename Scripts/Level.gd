@@ -34,6 +34,7 @@ func _ready():
 	var key = null
 	var collected = null
 	var killed = null
+	var broken = null
 	
 	for idx in range(1, Globals.MAX_KEYS):
 		collected = GameState.get("key_" + str(idx) + "_collected")
@@ -72,6 +73,12 @@ func _ready():
 		if collected:
 			var coin_node = get_node("Coins/" + coin)
 			coin_node.queue_free()
+	
+	for block in GameState.blocks_broken:
+		broken = GameState.blocks_broken[block]
+		if broken:
+			var block_node = get_node("Breakables/" + block)
+			block_node.queue_free()
 			
 	for enemy in GameState.enemies_killed:
 		killed = GameState.enemies_killed[enemy]

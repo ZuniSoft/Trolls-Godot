@@ -10,7 +10,7 @@ extends RigidBody2D
 
 var object = {}
 	
-func initialize(parent_node):
+func initialize():
 	object = {
 		blocks = [],
 		blocks_container = Node2D.new(),
@@ -29,7 +29,7 @@ func initialize(parent_node):
 		height = 0,
 		hframes = 1,
 		offset = Vector2(),
-		parent = parent_node,
+		parent = get_parent(),
 		sprite_name = null,
 		vframes = 1,
 		width = 0
@@ -152,11 +152,9 @@ func initialize(parent_node):
 			object.frame += 1
 
 	call_deferred("add_children", object)
-
-	object.detonate = true
 	
 	if debug_mode: print("--------------------------------")
-	
+
 func _integrate_forces(_state):
 	if object != {} and object.can_detonate and object.detonate:
 		$SoundBricks.play()
@@ -212,3 +210,15 @@ func _on_opacity_tween_completed(child):
 		
 		node.free()
 		self.queue_free()
+
+func _on_body_entered(body):
+	if "Fireball" in body.name and object == {}:
+		initialize()
+		body.queue_free()
+		object.detonate = true
+		
+		var room = self.get_node("../../")
+		if "Room" in room.name and name != "Breakable":
+			RoomState.blocks_broken[name] = true
+		elif "Level" in room.name and name != "Breakable":
+			GameState.blocks_broken[name] = true

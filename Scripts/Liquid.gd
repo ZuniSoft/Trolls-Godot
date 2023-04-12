@@ -18,4 +18,5 @@ func _ready():
 	sprite.set_texture(sprite_texture)
 	
 func _on_TopChecker_body_entered(body):
-	body.dying()
+	if body.name == "Hero":
+		body.dying()

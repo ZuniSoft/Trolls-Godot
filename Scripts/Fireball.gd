@@ -17,19 +17,9 @@ func _physics_process(delta):
 	if collision != null and !collided:
 		collided = true
 		var body = collision.get_collider()
-		
 		if body.is_in_group("enemies"):
 			body.hit(HIT_POINTS)
-		elif body.name == "Breakable":
-			var tile = body.get_coords_for_body_rid(collision.get_collider_rid())
-			body.erase_cell(0, tile)
-			
-			var scene = load("res://Scenes/Breakable.tscn")
-			var scene_instance = scene.instantiate()
-			scene_instance.set_position(position)
-			scene_instance.initialize(get_parent())
-			get_parent().call_deferred("add_child", scene_instance)
-					
+		
 		queue_free()
 		
 func _on_VisibilityNotifier2D_screen_exited():

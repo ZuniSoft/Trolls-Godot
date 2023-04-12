@@ -135,7 +135,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_ba6e5")
 }],
-"loop": true,
+"loop": false,
 "name": &"climbing",
 "speed": 3.0
 }, {
@@ -185,7 +185,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("81")
 }],
-"loop": true,
+"loop": false,
 "name": &"dying",
 "speed": 5.0
 }, {
@@ -208,7 +208,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("61")
 }],
-"loop": true,
+"loop": false,
 "name": &"falling",
 "speed": 5.0
 }, {
@@ -249,7 +249,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("96")
 }],
-"loop": true,
+"loop": false,
 "name": &"fighting",
 "speed": 10.0
 }, {
@@ -349,7 +349,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("55")
 }],
-"loop": true,
+"loop": false,
 "name": &"jumping",
 "speed": 5.0
 }, {
@@ -390,7 +390,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("68")
 }],
-"loop": true,
+"loop": false,
 "name": &"running",
 "speed": 5.0
 }, {
@@ -431,9 +431,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("108")
 }],
-"loop": true,
+"loop": false,
 "name": &"throwing",
-"speed": 15.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -508,7 +508,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("30")
 }],
-"loop": true,
+"loop": false,
 "name": &"walking",
 "speed": 5.0
 }]
@@ -549,7 +549,7 @@ shape = SubResource("3")
 disabled = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(380, 70)
+position = Vector2(140, 70)
 
 [node name="HitTimer" type="Timer" parent="."]
 wait_time = 0.581
@@ -583,6 +583,7 @@ volume_db = -10.0
 stream = ExtResource("117")
 volume_db = -10.0
 
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite2D_animation_changed"]
 [connection signal="body_entered" from="SwordHit" to="." method="_on_SwordHit_body_entered"]
 [connection signal="timeout" from="HitTimer" to="." method="_on_HitTimer_timeout"]
 [connection signal="timeout" from="DieTimer" to="." method="_on_DieTimer_timeout"]

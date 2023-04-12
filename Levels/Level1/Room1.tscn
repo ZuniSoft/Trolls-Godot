@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bk8v12681jgds"]
+[gd_scene load_steps=32 format=3 uid="uid://bk8v12681jgds"]
 
 [ext_resource type="Script" path="res://Scripts/Room.gd" id="1_m83yf"]
 [ext_resource type="Texture2D" uid="uid://dmpmfet73iqks" path="res://Assets/RoomBackground1/bg.png" id="2_le3u4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://clg6to70k5c2g" path="res://Scenes/PortalDoor.tscn" id="12_uk0wh"]
 [ext_resource type="PackedScene" uid="uid://da1dsw6ys1sfx" path="res://Scenes/PortalDoorExit.tscn" id="13_1etiy"]
 [ext_resource type="PackedScene" uid="uid://bmnmbwygj3fnm" path="res://Scenes/Spring.tscn" id="13_p3esw"]
+[ext_resource type="PackedScene" uid="uid://qf67dyjrwlkv" path="res://Scenes/Breakable.tscn" id="14_63k00"]
 [ext_resource type="PackedScene" uid="uid://bocb1wgvr8wti" path="res://Scenes/SwitchedDoor.tscn" id="14_423pv"]
 [ext_resource type="PackedScene" uid="uid://bpj2b4gvywh32" path="res://Scenes/LockedDoorExit.tscn" id="15_0hd2j"]
 [ext_resource type="PackedScene" uid="uid://djsejs3ktkcxr" path="res://Scenes/MysteryBox.tscn" id="16_lmcv2"]
@@ -267,6 +268,20 @@ collision_layer = 8
 position = Vector2(5716, 1348)
 collision_layer = 8
 
+[node name="Breakables" type="Node" parent="."]
+
+[node name="Breakable1" parent="Breakables" instance=ExtResource("14_63k00")]
+position = Vector2(824, 1473)
+
+[node name="Breakable2" parent="Breakables" instance=ExtResource("14_63k00")]
+position = Vector2(824, 1538)
+
+[node name="Breakable3" parent="Breakables" instance=ExtResource("14_63k00")]
+position = Vector2(888, 1537)
+
+[node name="Breakable4" parent="Breakables" instance=ExtResource("14_63k00")]
+position = Vector2(888, 1473)
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Cyclop1" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
@@ -470,7 +485,7 @@ visible = false
 z_index = 10
 position = Vector2(496, 984)
 scale = Vector2(0.2, 0.2)
-collision_mask = 8030
+collision_mask = 16222
 
 [node name="Camera2D" type="Camera2D" parent="Hero"]
 position = Vector2(2.08165e-12, 2.08165e-12)
