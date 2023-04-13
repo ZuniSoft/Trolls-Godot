@@ -213,6 +213,7 @@ func _on_opacity_tween_completed(child):
 
 func _on_body_entered(body):
 	if "Fireball" in body.name and object == {}:
+		self.set_collision_layer_value(14, false)
 		initialize()
 		body.queue_free()
 		object.detonate = true
