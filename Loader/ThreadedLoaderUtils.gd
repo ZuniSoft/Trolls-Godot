@@ -2,7 +2,7 @@ extends Node
 
 @onready var loader = load("res://Loader/ThreadedLoader.gd").new()
 
-var LOADER_WAIT_TIME : float = 0.25
+var LOADER_WAIT_TIME : float = 0.5
 
 func _ready():
 	var timer = Timer.new()

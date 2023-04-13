@@ -288,110 +288,110 @@ position = Vector2(888, 1473)
 z_index = 10
 position = Vector2(2540, 1892)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Cyclop2" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
 z_index = 10
 position = Vector2(3212, 1756)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Cyclop3" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
 z_index = 10
 position = Vector2(3995, 1820)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Cyclop4" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
 z_index = 10
 position = Vector2(5108, 1501)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Cyclop5" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
 z_index = 10
 position = Vector2(5692, 1500)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin1" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
 position = Vector2(172, 1716)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
 position = Vector2(1420, 1524)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin3" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
 position = Vector2(156, 1868)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Goblin4" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
 position = Vector2(868, 1772)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin5" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
 position = Vector2(4044, 1524)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin6" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
 position = Vector2(4644, 1116)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Goblin7" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
 position = Vector2(6316, 1020)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Ogre1" parent="Enemies" groups=["enemies"] instance=ExtResource("19_rll08")]
 z_index = 10
 position = Vector2(7588, 1481)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Wolf1" parent="Enemies" groups=["enemies"] instance=ExtResource("20_d3h0w")]
 z_index = 10
 position = Vector2(1868, 1772)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Wolf2" parent="Enemies" groups=["enemies"] instance=ExtResource("20_d3h0w")]
 z_index = 10
 position = Vector2(2332, 1732)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Wolf3" parent="Enemies" groups=["enemies"] instance=ExtResource("20_d3h0w")]
 z_index = 10
 position = Vector2(4617, 1454)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Wolf4" parent="Enemies" groups=["enemies"] instance=ExtResource("20_d3h0w")]
 z_index = 10
 position = Vector2(6708, 1519)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Traps" type="Node" parent="."]
 

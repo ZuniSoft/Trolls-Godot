@@ -87,7 +87,6 @@ func _on_SideChecker_body_entered(body):
 		return
 	elif body.name == "Hero":
 		if not dying:
-			
 			if position.x < body.position.x:
 				calc_velocity.x = -HIT_JUMP_VELOCITY
 			elif position.x > body.position.x:

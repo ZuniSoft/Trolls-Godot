@@ -244,9 +244,6 @@ position = Vector2(5380, 1124)
 [node name="Key1" parent="Keys" instance=ExtResource("30")]
 position = Vector2(896, 448)
 
-[node name="Key2" parent="Keys" instance=ExtResource("30")]
-position = Vector2(6176, 1424)
-
 [node name="Ladders" type="Node" parent="."]
 
 [node name="Ladder1" type="Area2D" parent="Ladders"]
@@ -410,110 +407,110 @@ collision_layer = 8
 z_index = 10
 position = Vector2(2372, 1468)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Cyclop2" parent="Enemies" groups=["enemies"] instance=ExtResource("18")]
 z_index = 10
 position = Vector2(2852, 891)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Cyclop3" parent="Enemies" groups=["enemies"] instance=ExtResource("18")]
 z_index = 10
 position = Vector2(3966, 1788)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Cyclop4" parent="Enemies" groups=["enemies"] instance=ExtResource("18")]
 z_index = 10
 position = Vector2(5148, 1469)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Cyclop5" parent="Enemies" groups=["enemies"] instance=ExtResource("18")]
 z_index = 10
 position = Vector2(5788, 1467)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin1" parent="Enemies" groups=["enemies"] instance=ExtResource("20")]
 z_index = 10
 position = Vector2(871, 1491)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource("20")]
 z_index = 10
 position = Vector2(1460, 1492)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin3" parent="Enemies" groups=["enemies"] instance=ExtResource("20")]
 z_index = 10
 position = Vector2(260, 986)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Goblin4" parent="Enemies" groups=["enemies"] instance=ExtResource("20")]
 z_index = 10
 position = Vector2(1580, 1036)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin5" parent="Enemies" groups=["enemies"] instance=ExtResource("20")]
 z_index = 10
 position = Vector2(4084, 1492)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Goblin6" parent="Enemies" groups=["enemies"] instance=ExtResource("20")]
 z_index = 10
 position = Vector2(4684, 1084)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Goblin7" parent="Enemies" groups=["enemies"] instance=ExtResource("20")]
 z_index = 10
 position = Vector2(6356, 988)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Ogre1" parent="Enemies" groups=["enemies"] instance=ExtResource("4")]
 z_index = 10
 position = Vector2(7628, 1449)
 scale = Vector2(0.35, 0.35)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Wolf1" parent="Enemies" groups=["enemies"] instance=ExtResource("10")]
 z_index = 10
 position = Vector2(1948, 1487)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 direction = 1
 
 [node name="Wolf2" parent="Enemies" groups=["enemies"] instance=ExtResource("10")]
 z_index = 10
 position = Vector2(2324, 1231)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Wolf3" parent="Enemies" groups=["enemies"] instance=ExtResource("10")]
 z_index = 10
 position = Vector2(4628, 1424)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Wolf4" parent="Enemies" groups=["enemies"] instance=ExtResource("10")]
 z_index = 10
 position = Vector2(6748, 1487)
 scale = Vector2(0.4, 0.4)
-collision_mask = 419
+collision_mask = 8611
 
 [node name="Traps" type="Node" parent="."]
 
@@ -710,7 +707,6 @@ autoplay = true
 [connection signal="fireball_collected" from="Fireballs/Fireballs2" to="HUD" method="_on_fireball_collected"]
 [connection signal="fireball_collected" from="Fireballs/Fireballs3" to="HUD" method="_on_fireball_collected"]
 [connection signal="key_collected" from="Keys/Key1" to="HUD" method="_on_key_collected"]
-[connection signal="key_collected" from="Keys/Key2" to="HUD" method="_on_key_collected"]
 [connection signal="body_entered" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladders/Ladder2" to="Hero" method="_on_Ladder_body_entered"]
