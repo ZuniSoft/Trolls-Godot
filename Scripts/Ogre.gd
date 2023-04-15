@@ -10,6 +10,7 @@ func _ready():
 	
 	var _retval = get_node("TopChecker").connect("body_entered",Callable(self,"_on_TopChecker_body_entered"))
 	_retval = get_node("SideChecker").connect("body_entered",Callable(self,"_on_SideChecker_body_entered"))
+	_retval = get_node("SideChecker").connect("body_exited",Callable(self,"_on_SideChecker_body_exited"))
 	_retval = get_node("DetectArea").connect("body_entered",Callable(self,"_on_DetectArea_body_entered"))
 	_retval = get_node("DetectArea").connect("body_exited",Callable(self,"_on_DetectArea_body_exited"))
 	_retval = get_node("HitTimer").connect("timeout",Callable(self,"_on_HitTimer_timeout"))

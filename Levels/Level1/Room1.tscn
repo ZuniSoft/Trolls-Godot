@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bk8v12681jgds"]
+[gd_scene load_steps=25 format=3 uid="uid://bk8v12681jgds"]
 
 [ext_resource type="Script" path="res://Scripts/Room.gd" id="1_m83yf"]
 [ext_resource type="Texture2D" uid="uid://dmpmfet73iqks" path="res://Assets/RoomBackground1/bg.png" id="2_le3u4"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cga6oeq6x1sxu" path="res://Scenes/Fireballs.tscn" id="9_xo8ip"]
 [ext_resource type="PackedScene" uid="uid://bmnmbwygj3fnm" path="res://Scenes/Spring.tscn" id="13_p3esw"]
 [ext_resource type="PackedScene" uid="uid://qf67dyjrwlkv" path="res://Scenes/Breakable.tscn" id="14_63k00"]
-[ext_resource type="PackedScene" uid="uid://bocb1wgvr8wti" path="res://Scenes/SwitchedDoor.tscn" id="14_423pv"]
 [ext_resource type="PackedScene" uid="uid://bpj2b4gvywh32" path="res://Scenes/LockedDoorExit.tscn" id="15_0hd2j"]
 [ext_resource type="PackedScene" uid="uid://djsejs3ktkcxr" path="res://Scenes/MysteryBox.tscn" id="16_lmcv2"]
 [ext_resource type="PackedScene" uid="uid://dus5yey180oyn" path="res://Scenes/Cyclop.tscn" id="17_r1kkk"]
@@ -198,11 +197,6 @@ speed = 2.0
 [node name="LockedDoorExit" parent="Doors" instance=ExtResource("15_0hd2j")]
 position = Vector2(1797, 1510)
 door_type = "Wood"
-
-[node name="SwitchedDoor" parent="Doors" instance=ExtResource("14_423pv")]
-position = Vector2(936, 1280)
-collision_layer = 256
-collision_mask = 49
 
 [node name="Springs" type="Node" parent="."]
 
@@ -405,7 +399,7 @@ visible = false
 
 [node name="Hero" parent="." instance=ExtResource("32_n3err")]
 z_index = 10
-position = Vector2(652, 988)
+position = Vector2(1108, 988)
 scale = Vector2(0.2, 0.2)
 collision_mask = 16222
 

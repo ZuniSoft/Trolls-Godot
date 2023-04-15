@@ -13,6 +13,7 @@ var calc_velocity = Vector2.ZERO
 var life = LIFE
 var dying = false
 var hero = null
+var hit_hero = false
 
 @export var direction = -1
 @export var detect_cliffs = true
@@ -33,24 +34,28 @@ func _physics_process(_delta):
 		
 	if is_on_wall() or not $FloorChecker.is_colliding() and detect_cliffs and is_on_floor():
 		direction *= -1
-		$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
+		
+		if not hit_hero or direction == -1:
+			$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
+			
 		$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x * direction
-	if hero:
+	elif hero:
 		calc_velocity.x = self.position.direction_to(hero.position).x * speed
 		direction = sign(calc_velocity.x)
-		$AnimatedSprite2D.flip_h = self.global_position > hero.global_position
+		
+		if hit_hero and direction == 1:
+			$AnimatedSprite2D.flip_h = false
+		else:
+			$AnimatedSprite2D.flip_h = self.global_position > hero.global_position
 		
 		if self.global_position > hero.global_position:
-			#$AnimatedSprite2D.flip_h = self.global_position > hero.global_position
 			$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x * direction
 		else:
 			calc_velocity.x *= direction
-			#$AnimatedSprite2D.flip_h = self.global_position > hero.global_position
-			#$AnimatedSprite2D.flip_h = true
-			#$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x * -1
+			$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x
 	else:
 		calc_velocity.x = direction * speed
-		
+			
 	calc_velocity.y += 20
 	
 	set_up_direction(Vector2.UP)
@@ -79,6 +84,10 @@ func _on_TopChecker_body_entered(body):
 		body.bounce()
 		$SoundHit.play()
 
+func _on_SideChecker_body_exited(body):
+	if body.name == "Hero":
+		hit_hero = false
+		
 func _on_SideChecker_body_entered(body):
 	if body.name == "DoorBlock":
 		var heading = (global_transform.origin - body.global_transform.origin).normalized()
@@ -91,6 +100,8 @@ func _on_SideChecker_body_entered(body):
 		return
 	elif body.name == "Hero":
 		if not dying:
+			hit_hero = true
+			
 			if position.x < body.position.x:
 				calc_velocity.x = -HIT_JUMP_VELOCITY
 			elif position.x > body.position.x:
