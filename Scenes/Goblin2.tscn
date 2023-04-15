@@ -1,141 +1,310 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=65 format=3 uid="uid://ux4k3s68ye6k"]
 
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_011.png" type="Texture2D" id=1]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_003.png" type="Texture2D" id=2]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_008.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_008.png" type="Texture2D" id=4]
-[ext_resource path="res://Scripts/Goblin2.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_017.png" type="Texture2D" id=6]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_015.png" type="Texture2D" id=7]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_016.png" type="Texture2D" id=8]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_003.png" type="Texture2D" id=9]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_007.png" type="Texture2D" id=10]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_006.png" type="Texture2D" id=11]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_008.png" type="Texture2D" id=12]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_000.png" type="Texture2D" id=13]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_004.png" type="Texture2D" id=14]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_010.png" type="Texture2D" id=15]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_004.png" type="Texture2D" id=16]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_002.png" type="Texture2D" id=17]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_006.png" type="Texture2D" id=18]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_005.png" type="Texture2D" id=19]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_007.png" type="Texture2D" id=20]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_014.png" type="Texture2D" id=21]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_010.png" type="Texture2D" id=22]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_009.png" type="Texture2D" id=23]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_002.png" type="Texture2D" id=24]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_006.png" type="Texture2D" id=25]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_013.png" type="Texture2D" id=26]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_000.png" type="Texture2D" id=27]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_001.png" type="Texture2D" id=28]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_002.png" type="Texture2D" id=29]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_010.png" type="Texture2D" id=30]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_005.png" type="Texture2D" id=31]
-[ext_resource path="res://Assets/Sound/Hit.mp3" type="AudioStream" id=32]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_000.png" type="Texture2D" id=33]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_012.png" type="Texture2D" id=34]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_009.png" type="Texture2D" id=35]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_009.png" type="Texture2D" id=36]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_005.png" type="Texture2D" id=37]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_014.png" type="Texture2D" id=38]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_011.png" type="Texture2D" id=39]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_004.png" type="Texture2D" id=40]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_001.png" type="Texture2D" id=41]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_013.png" type="Texture2D" id=42]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_012.png" type="Texture2D" id=43]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_011.png" type="Texture2D" id=44]
-[ext_resource path="res://Assets/Goblin2/Hurt/Hurt_003.png" type="Texture2D" id=45]
-[ext_resource path="res://Assets/Goblin2/Walking/Walking_001.png" type="Texture2D" id=46]
-[ext_resource path="res://Assets/Goblin2/Dying/Dying_007.png" type="Texture2D" id=47]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_000.png" type="Texture2D" id=48]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_002.png" type="Texture2D" id=49]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_001.png" type="Texture2D" id=50]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_003.png" type="Texture2D" id=51]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_006.png" type="Texture2D" id=52]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_004.png" type="Texture2D" id=53]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_005.png" type="Texture2D" id=54]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_007.png" type="Texture2D" id=55]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_008.png" type="Texture2D" id=56]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_009.png" type="Texture2D" id=57]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_010.png" type="Texture2D" id=58]
-[ext_resource path="res://Assets/Goblin2/Attacking/Attacking_011.png" type="Texture2D" id=59]
+[ext_resource type="Texture2D" uid="uid://b3sstcavkhx4k" path="res://Assets/Goblin2/Dying/Dying_011.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bmhmvg0171moa" path="res://Assets/Goblin2/Dying/Dying_003.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d2i7h2svmaoq2" path="res://Assets/Goblin2/Dying/Dying_008.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ci3o5swoj263v" path="res://Assets/Goblin2/Walking/Walking_008.png" id="4"]
+[ext_resource type="Script" path="res://Scripts/Goblin2.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://2g37sirfp6g0" path="res://Assets/Goblin2/Walking/Walking_017.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://xrkp44ejjanf" path="res://Assets/Goblin2/Walking/Walking_015.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://qfi5m0byjb5i" path="res://Assets/Goblin2/Walking/Walking_016.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://d00t0s4oluydy" path="res://Assets/Goblin2/Walking/Walking_003.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://ds432hf00t3ox" path="res://Assets/Goblin2/Walking/Walking_007.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cmssqhr1jqch0" path="res://Assets/Goblin2/Walking/Walking_006.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cct3ss5d3opli" path="res://Assets/Goblin2/Hurt/Hurt_008.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://duye80f3l48as" path="res://Assets/Goblin2/Walking/Walking_000.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://ba50pyv76ri8y" path="res://Assets/Goblin2/Hurt/Hurt_004.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://di4yqtp0vujnf" path="res://Assets/Goblin2/Walking/Walking_010.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://boljgyogrgv6o" path="res://Assets/Goblin2/Walking/Walking_004.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://c6k81qoehnnbn" path="res://Assets/Goblin2/Walking/Walking_002.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://crwkv8i3ve7n2" path="res://Assets/Goblin2/Hurt/Hurt_006.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://dg7cjw8da8pk4" path="res://Assets/Goblin2/Hurt/Hurt_005.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://c1r6frwxtvyrb" path="res://Assets/Goblin2/Hurt/Hurt_007.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bb25ceemsw66j" path="res://Assets/Goblin2/Dying/Dying_014.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://dq7w3ylpk26ie" path="res://Assets/Goblin2/Hurt/Hurt_010.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://bobmp67yxn1sk" path="res://Assets/Goblin2/Walking/Walking_009.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://ddi88gff1diw7" path="res://Assets/Goblin2/Dying/Dying_002.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://llco2bftd8gu" path="res://Assets/Goblin2/Dying/Dying_006.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://draknau5gckqf" path="res://Assets/Goblin2/Dying/Dying_013.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://cgptqt83wfx7u" path="res://Assets/Goblin2/Dying/Dying_000.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://bpx7rej4qpdr2" path="res://Assets/Goblin2/Dying/Dying_001.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://bxev7pw4rq4x1" path="res://Assets/Goblin2/Hurt/Hurt_002.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://bsdt2xg1r1uyq" path="res://Assets/Goblin2/Dying/Dying_010.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://udrgdbf0vtkw" path="res://Assets/Goblin2/Walking/Walking_005.png" id="31"]
+[ext_resource type="AudioStream" uid="uid://ba8gu4c4h6vs8" path="res://Assets/Sound/Hit.mp3" id="32"]
+[ext_resource type="Texture2D" uid="uid://kmrvisfq3xxd" path="res://Assets/Goblin2/Hurt/Hurt_000.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://binq2vne3lbkj" path="res://Assets/Goblin2/Dying/Dying_012.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://bfaf4wah4f1b2" path="res://Assets/Goblin2/Dying/Dying_009.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://di5qowg8k7imw" path="res://Assets/Goblin2/Hurt/Hurt_009.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://vp23ynglh8b0" path="res://Assets/Goblin2/Dying/Dying_005.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://d06fdvh70m6ar" path="res://Assets/Goblin2/Walking/Walking_014.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://b6a808phribuv" path="res://Assets/Goblin2/Walking/Walking_011.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://bkl70ypmr44xm" path="res://Assets/Goblin2/Dying/Dying_004.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://caotyyk1pr2gc" path="res://Assets/Goblin2/Hurt/Hurt_001.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://depox52dthchi" path="res://Assets/Goblin2/Walking/Walking_013.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://bo2k1y03y8a2q" path="res://Assets/Goblin2/Walking/Walking_012.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://d13hw1vuughj" path="res://Assets/Goblin2/Hurt/Hurt_011.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://bu4ygwskm1i7q" path="res://Assets/Goblin2/Hurt/Hurt_003.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://d3gnj5juwi8w3" path="res://Assets/Goblin2/Walking/Walking_001.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://csjos1b6lmhwq" path="res://Assets/Goblin2/Dying/Dying_007.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://bup41ufd1nlr1" path="res://Assets/Goblin2/Attacking/Attacking_000.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://btvjqx5yqw0ms" path="res://Assets/Goblin2/Attacking/Attacking_002.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://da3bfmnh0mw58" path="res://Assets/Goblin2/Attacking/Attacking_001.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://deaqo3d8nptx7" path="res://Assets/Goblin2/Attacking/Attacking_003.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://bmxylkdlgwpgb" path="res://Assets/Goblin2/Attacking/Attacking_006.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://5vd4grdrwhi8" path="res://Assets/Goblin2/Attacking/Attacking_004.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://dxe8n6pkb3wwr" path="res://Assets/Goblin2/Attacking/Attacking_005.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://b6k85kd1o4lgx" path="res://Assets/Goblin2/Attacking/Attacking_007.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://da6q4wuo2cukm" path="res://Assets/Goblin2/Attacking/Attacking_008.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://13tyuqlvdckw" path="res://Assets/Goblin2/Attacking/Attacking_009.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://bw5lniyasrr0w" path="res://Assets/Goblin2/Attacking/Attacking_010.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://ixmct6otqbrq" path="res://Assets/Goblin2/Attacking/Attacking_011.png" id="59"]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 52 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ) ],
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59")
+}],
 "loop": true,
-"name": "attacking",
+"name": &"attacking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 24 ), ExtResource( 2 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 25 ), ExtResource( 47 ), ExtResource( 3 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 1 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 21 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}],
 "loop": true,
-"name": "dying",
+"name": &"dying",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 33 ), ExtResource( 41 ), ExtResource( 29 ), ExtResource( 45 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 36 ), ExtResource( 22 ), ExtResource( 44 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}],
 "loop": true,
-"name": "hurt",
+"name": &"hurt",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 46 ), ExtResource( 17 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 31 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 23 ), ExtResource( 15 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
 "loop": true,
-"name": "walking",
+"name": &"walking",
 "speed": 10.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=4]
-size = Vector2( 135, 114 )
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(135, 114)
 
-[sub_resource type="RectangleShape2D" id=3]
-size = Vector2( 127.5, 21.125 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(127.5, 21.125)
 
-[sub_resource type="RectangleShape2D" id=5]
-size = Vector2( 179, 100 )
+[sub_resource type="RectangleShape2D" id="5"]
+size = Vector2(179, 100)
 
-[sub_resource type="RectangleShape2D" id=6]
-size = Vector2( 320, 10 )
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(320, 10)
 
 [node name="Goblin2" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 163
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2( 2, 0 )
-frames = SubResource( 1 )
-animation = "walking"
+position = Vector2(2, 0)
+sprite_frames = SubResource("1")
+animation = &"walking"
 frame = 9
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 12, -5 )
-shape = SubResource( 4 )
+position = Vector2(12, -5)
+shape = SubResource("4")
 
 [node name="FloorChecker" type="RayCast2D" parent="."]
-enabled = true
-target_position = Vector2( 0, 250 )
+target_position = Vector2(0, 250)
 collision_mask = 2
 
 [node name="TopChecker" type="Area2D" parent="."]
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopChecker"]
-position = Vector2( 12.5, -142.875 )
-shape = SubResource( 3 )
+position = Vector2(12.5, -142.875)
+shape = SubResource("3")
 
 [node name="SideChecker" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideChecker"]
-position = Vector2( 16, -20 )
-shape = SubResource( 5 )
+position = Vector2(16, -20)
+shape = SubResource("5")
 
 [node name="DetectArea" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
-shape = SubResource( 6 )
+shape = SubResource("6")
 
 [node name="HitTimer" type="Timer" parent="."]
 one_shot = true
@@ -145,4 +314,4 @@ wait_time = 2.0
 one_shot = true
 
 [node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 32 )
+stream = ExtResource("32")

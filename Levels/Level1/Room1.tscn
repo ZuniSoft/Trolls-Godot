@@ -1,13 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://bk8v12681jgds"]
+[gd_scene load_steps=26 format=3 uid="uid://bk8v12681jgds"]
 
 [ext_resource type="Script" path="res://Scripts/Room.gd" id="1_m83yf"]
 [ext_resource type="Texture2D" uid="uid://dmpmfet73iqks" path="res://Assets/RoomBackground1/bg.png" id="2_le3u4"]
 [ext_resource type="PackedScene" uid="uid://dxwijstdet8lf" path="res://Scenes/Coin.tscn" id="7_7umv2"]
 [ext_resource type="PackedScene" uid="uid://b2os386wnhwja" path="res://Scenes/Heart.tscn" id="8_fj75g"]
 [ext_resource type="PackedScene" uid="uid://cga6oeq6x1sxu" path="res://Scenes/Fireballs.tscn" id="9_xo8ip"]
-[ext_resource type="PackedScene" uid="uid://dg74ueliksysr" path="res://Scenes/Switch.tscn" id="11_f6ilf"]
-[ext_resource type="PackedScene" uid="uid://clg6to70k5c2g" path="res://Scenes/PortalDoor.tscn" id="12_uk0wh"]
-[ext_resource type="PackedScene" uid="uid://da1dsw6ys1sfx" path="res://Scenes/PortalDoorExit.tscn" id="13_1etiy"]
 [ext_resource type="PackedScene" uid="uid://bmnmbwygj3fnm" path="res://Scenes/Spring.tscn" id="13_p3esw"]
 [ext_resource type="PackedScene" uid="uid://qf67dyjrwlkv" path="res://Scenes/Breakable.tscn" id="14_63k00"]
 [ext_resource type="PackedScene" uid="uid://bocb1wgvr8wti" path="res://Scenes/SwitchedDoor.tscn" id="14_423pv"]
@@ -15,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://djsejs3ktkcxr" path="res://Scenes/MysteryBox.tscn" id="16_lmcv2"]
 [ext_resource type="PackedScene" uid="uid://dus5yey180oyn" path="res://Scenes/Cyclop.tscn" id="17_r1kkk"]
 [ext_resource type="PackedScene" uid="uid://cic5toj7pr50j" path="res://Scenes/Goblin.tscn" id="18_b4ey6"]
-[ext_resource type="PackedScene" uid="uid://r5t48us70mr" path="res://Scenes/Ogre.tscn" id="19_rll08"]
 [ext_resource type="PackedScene" uid="uid://dw587a0kg5ec8" path="res://Scenes/Wolf.tscn" id="20_d3h0w"]
 [ext_resource type="PackedScene" uid="uid://cano337k816lv" path="res://Scenes/MetalSpikes.tscn" id="21_uqm4l"]
 [ext_resource type="PackedScene" uid="uid://c57kwgfxcm236" path="res://Scenes/Liquid.tscn" id="23_qjh5l"]
@@ -29,16 +25,10 @@
 [ext_resource type="PackedScene" uid="uid://bxah6utiyxi51" path="res://Scenes/Hero.tscn" id="32_n3err"]
 
 [sub_resource type="RectangleShape2D" id="9"]
-size = Vector2(36, 440)
-
-[sub_resource type="RectangleShape2D" id="10"]
-size = Vector2(34, 311.125)
+size = Vector2(36, 508)
 
 [sub_resource type="RectangleShape2D" id="11"]
-size = Vector2(43.875, 320)
-
-[sub_resource type="RectangleShape2D" id="12"]
-size = Vector2(88, 128)
+size = Vector2(43.875, 512)
 
 [node name="Room1" type="Node2D"]
 position = Vector2(692, 524)
@@ -58,7 +48,7 @@ metadata/_edit_lock_ = true
 offset_left = -8.0
 offset_top = 18.0
 offset_right = 3064.0
-offset_bottom = 1570.0
+offset_bottom = 1618.0
 texture = ExtResource("2_le3u4")
 expand_mode = 1
 stretch_mode = 1
@@ -69,62 +59,62 @@ metadata/_edit_lock_ = true
 
 [node name="Coin1" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 2
-position = Vector2(1298, 812)
+position = Vector2(3040, 1304)
 collision_layer = 8
 
 [node name="Coin2" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 2
-position = Vector2(1168, 812)
+position = Vector2(3104, 1304)
 collision_layer = 8
 
 [node name="Coin3" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 2
-position = Vector2(1233, 812)
+position = Vector2(3168, 1304)
 collision_layer = 8
 
 [node name="Coin4" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 1
-position = Vector2(1076, 1140)
+position = Vector2(416, 1304)
 collision_layer = 8
 
 [node name="Coin5" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 1
-position = Vector2(1012, 1140)
+position = Vector2(352, 1304)
 collision_layer = 8
 
 [node name="Coin6" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 1
-position = Vector2(948, 1140)
+position = Vector2(288, 1304)
 collision_layer = 8
 
 [node name="Coin7" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 2
-position = Vector2(3188, 1332)
+position = Vector2(2952, 1856)
 collision_layer = 8
 
 [node name="Coin8" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 2
-position = Vector2(3252, 1332)
+position = Vector2(3064, 1856)
 collision_layer = 8
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 2
-position = Vector2(3316, 1332)
+position = Vector2(3160, 1880)
 collision_layer = 8
 
 [node name="Coin10" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 2
-position = Vector2(2372, 1020)
+position = Vector2(2312, 1976)
 collision_layer = 8
 
 [node name="Coin11" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 1
-position = Vector2(2436, 1020)
+position = Vector2(2392, 1976)
 collision_layer = 8
 
 [node name="Coin12" parent="Coins" instance=ExtResource("7_7umv2")]
 z_index = 1
-position = Vector2(2500, 1020)
+position = Vector2(2480, 1976)
 collision_layer = 8
 
 [node name="Coin13" parent="Coins" instance=ExtResource("7_7umv2")]
@@ -160,12 +150,12 @@ collision_layer = 8
 [node name="Life" type="Node" parent="."]
 
 [node name="Heart1" parent="Life" instance=ExtResource("8_fj75g")]
-position = Vector2(1472, 1849)
+position = Vector2(608, 152)
 
 [node name="Fireballs" type="Node" parent="."]
 
 [node name="Fireballs1" parent="Fireballs" instance=ExtResource("9_xo8ip")]
-position = Vector2(780, 1284)
+position = Vector2(2976, 152)
 
 [node name="Ladders" type="Node" parent="."]
 
@@ -174,7 +164,7 @@ position = Vector2(692, 548)
 collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1"]
-position = Vector2(1100, 796)
+position = Vector2(940, -98)
 shape = SubResource("9")
 
 [node name="Ladder2" type="Area2D" parent="Ladders"]
@@ -182,82 +172,55 @@ position = Vector2(692, 548)
 collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
-position = Vector2(3108, 1180.44)
-shape = SubResource("10")
-
-[node name="Ladder3" type="Area2D" parent="Ladders"]
-position = Vector2(692, 548)
-collision_layer = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
-position = Vector2(900.062, 1184)
+position = Vector2(1260, -100)
 shape = SubResource("11")
-
-[node name="Ladder4" type="Area2D" parent="Ladders"]
-position = Vector2(692, 548)
-collision_layer = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
-position = Vector2(3492, 1179)
-shape = SubResource("10")
-
-[node name="Switches" type="Node" parent="."]
-
-[node name="Switch1" parent="Switches" instance=ExtResource("11_f6ilf")]
-z_index = 3
-position = Vector2(1620, 1088)
-
-[node name="Switch2" parent="Switches" instance=ExtResource("11_f6ilf")]
-z_index = 3
-position = Vector2(5311, 1165)
-switch_door = 2
 
 [node name="MovingPlatforms" type="Node" parent="."]
 
 [node name="MovingPlatform1" parent="MovingPlatforms" instance=ExtResource("27_x0sym")]
-position = Vector2(284, 756)
+position = Vector2(680, 1160)
+move_direction = "Vertical"
 move_distance = 600
+speed = 2.0
+
+[node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource("27_x0sym")]
+position = Vector2(704, 208)
+move_distance = 700
+speed = 2.0
+
+[node name="MovingPlatform3" parent="MovingPlatforms" instance=ExtResource("27_x0sym")]
+position = Vector2(2176, 208)
+move_distance = 700
+speed = 2.0
 
 [node name="Doors" type="Node" parent="."]
 
-[node name="PortalDoor1" parent="Doors" instance=ExtResource("12_uk0wh")]
-z_index = 3
-position = Vector2(2540, 1732)
-door_type = "Wood"
-
-[node name="PortalDoorExit1" parent="Doors" instance=ExtResource("13_1etiy")]
-position = Vector2(4852, 1508)
-
-[node name="SwitchedDoor1" parent="Doors" instance=ExtResource("14_423pv")]
-z_index = 3
-position = Vector2(2199, 1502)
-collision_mask = 49
-
-[node name="SwitchedDoor2" parent="Doors" instance=ExtResource("14_423pv")]
-z_index = 3
-position = Vector2(7329, 1501)
-collision_mask = 49
-
 [node name="LockedDoorExit" parent="Doors" instance=ExtResource("15_0hd2j")]
-position = Vector2(1188, 1516)
+position = Vector2(1797, 1510)
 door_type = "Wood"
+
+[node name="SwitchedDoor" parent="Doors" instance=ExtResource("14_423pv")]
+position = Vector2(936, 1280)
+collision_layer = 256
+collision_mask = 49
 
 [node name="Springs" type="Node" parent="."]
 
 [node name="Spring1" parent="Springs" instance=ExtResource("13_p3esw")]
 z_index = 2
-position = Vector2(1312, 1536)
+position = Vector2(481, 608)
 collision_layer = 4096
 collision_mask = 1
+spring_velocity = -1350
 
 [node name="MysteryBoxes" type="Node" parent="."]
 
 [node name="MysteryBox1" parent="MysteryBoxes" instance=ExtResource("16_lmcv2")]
-position = Vector2(1964, 1324)
+position = Vector2(1792, 512)
 collision_layer = 8
 
 [node name="MysteryBox2" parent="MysteryBoxes" instance=ExtResource("16_lmcv2")]
-position = Vector2(2852, 1340)
+position = Vector2(1800, 1120)
 collision_layer = 8
 
 [node name="MysteryBox3" parent="MysteryBoxes" instance=ExtResource("16_lmcv2")]
@@ -271,22 +234,22 @@ collision_layer = 8
 [node name="Breakables" type="Node" parent="."]
 
 [node name="Breakable1" parent="Breakables" instance=ExtResource("14_63k00")]
-position = Vector2(824, 1473)
+position = Vector2(1640, 1536)
 blocks_impulse = 600
 debris_max_time = 5
 
 [node name="Breakable2" parent="Breakables" instance=ExtResource("14_63k00")]
-position = Vector2(824, 1538)
+position = Vector2(1640, 1472)
 blocks_impulse = 600
 debris_max_time = 5
 
 [node name="Breakable3" parent="Breakables" instance=ExtResource("14_63k00")]
-position = Vector2(888, 1537)
+position = Vector2(1961, 1536)
 blocks_impulse = 600
 debris_max_time = 5
 
 [node name="Breakable4" parent="Breakables" instance=ExtResource("14_63k00")]
-position = Vector2(888, 1473)
+position = Vector2(1961, 1472)
 blocks_impulse = 600
 debris_max_time = 5
 
@@ -294,65 +257,40 @@ debris_max_time = 5
 
 [node name="Cyclop1" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
 z_index = 10
-position = Vector2(2540, 1892)
-scale = Vector2(0.35, 0.35)
-collision_mask = 8611
-
-[node name="Cyclop2" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
-z_index = 10
-position = Vector2(3212, 1756)
-scale = Vector2(0.35, 0.35)
-collision_mask = 8611
-direction = 1
-
-[node name="Cyclop3" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
-z_index = 10
-position = Vector2(3995, 1820)
-scale = Vector2(0.35, 0.35)
-collision_mask = 8611
-direction = 1
-
-[node name="Cyclop4" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
-z_index = 10
-position = Vector2(5108, 1501)
-scale = Vector2(0.35, 0.35)
-collision_mask = 8611
-direction = 1
-
-[node name="Cyclop5" parent="Enemies" groups=["enemies"] instance=ExtResource("17_r1kkk")]
-z_index = 10
-position = Vector2(5692, 1500)
+position = Vector2(1648, 636)
 scale = Vector2(0.35, 0.35)
 collision_mask = 8611
 
 [node name="Goblin1" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
-position = Vector2(172, 1716)
+position = Vector2(808, 592)
 scale = Vector2(0.4, 0.4)
 collision_mask = 8611
 
 [node name="Goblin2" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
-position = Vector2(1420, 1524)
+position = Vector2(1040, 1296)
 scale = Vector2(0.4, 0.4)
 collision_mask = 8611
+direction = 1
 
 [node name="Goblin3" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
-position = Vector2(156, 1868)
+position = Vector2(2600, 1528)
 scale = Vector2(0.4, 0.4)
 collision_mask = 8611
 direction = 1
 
 [node name="Goblin4" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
-position = Vector2(868, 1772)
+position = Vector2(896, 1527)
 scale = Vector2(0.4, 0.4)
 collision_mask = 8611
+direction = 1
 
 [node name="Goblin5" parent="Enemies" groups=["enemies"] instance=ExtResource("18_b4ey6")]
 z_index = 10
-position = Vector2(4044, 1524)
+position = Vector2(2592, 1300)
 scale = Vector2(0.4, 0.4)
 collision_mask = 8611
 
@@ -370,22 +308,16 @@ scale = Vector2(0.4, 0.4)
 collision_mask = 8611
 direction = 1
 
-[node name="Ogre1" parent="Enemies" groups=["enemies"] instance=ExtResource("19_rll08")]
-z_index = 10
-position = Vector2(7588, 1481)
-scale = Vector2(0.35, 0.35)
-collision_mask = 8611
-
 [node name="Wolf1" parent="Enemies" groups=["enemies"] instance=ExtResource("20_d3h0w")]
 z_index = 10
-position = Vector2(1868, 1772)
+position = Vector2(1480, 136)
 scale = Vector2(0.4, 0.4)
 collision_mask = 8611
 direction = 1
 
 [node name="Wolf2" parent="Enemies" groups=["enemies"] instance=ExtResource("20_d3h0w")]
 z_index = 10
-position = Vector2(2332, 1732)
+position = Vector2(2136, 152)
 scale = Vector2(0.4, 0.4)
 collision_mask = 8611
 
@@ -414,59 +346,41 @@ position = Vector2(5108, 1676)
 
 [node name="Water1" parent="Traps" instance=ExtResource("23_qjh5l")]
 z_index = 2
-position = Vector2(436, 1668)
+position = Vector2(568, 1648)
 
 [node name="Water2" parent="Traps" instance=ExtResource("23_qjh5l")]
 z_index = 2
-position = Vector2(540, 1668)
+position = Vector2(664, 1648)
 
 [node name="Water3" parent="Traps" instance=ExtResource("23_qjh5l")]
 z_index = 2
-position = Vector2(652, 1668)
+position = Vector2(760, 1648)
 
 [node name="Water4" parent="Traps" instance=ExtResource("23_qjh5l")]
 z_index = 2
-position = Vector2(1100, 1676)
+position = Vector2(2744, 1648)
 
 [node name="Water5" parent="Traps" instance=ExtResource("23_qjh5l")]
 z_index = 2
-position = Vector2(1212, 1668)
+position = Vector2(2840, 1648)
 
 [node name="Water6" parent="Traps" instance=ExtResource("23_qjh5l")]
 z_index = 2
-position = Vector2(1316, 1676)
-
-[node name="Water7" parent="Traps" instance=ExtResource("23_qjh5l")]
-z_index = 2
-position = Vector2(5920, 1684)
-
-[node name="Water8" parent="Traps" instance=ExtResource("23_qjh5l")]
-z_index = 2
-position = Vector2(6016, 1684)
+position = Vector2(2936, 1648)
 
 [node name="Saw" parent="Traps" instance=ExtResource("24_0hn6x")]
-position = Vector2(3228, 1108)
-
-[node name="Stops" type="Node" parent="."]
-
-[node name="BreakableStop1" type="StaticBody2D" parent="Stops"]
-position = Vector2(692, 548)
-collision_layer = 8192
-collision_mask = 8192
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stops/BreakableStop1"]
-position = Vector2(-100, 676)
-shape = SubResource("12")
+position = Vector2(1784, 221)
 
 [node name="Tilesets" type="Node" parent="."]
 
 [node name="Room" type="TileMap" parent="Tilesets"]
-position = Vector2(692, 548)
+z_index = 2
+position = Vector2(693, 548)
 tile_set = ExtResource("30_r83s1")
 cell_quadrant_size = 8
 format = 2
 layer_0/name = "Room"
-layer_0/tile_data = PackedInt32Array(8650672, 25, 0, 8650680, 25, 0, 8650688, 25, 0, 8650696, 25, 0, 8650704, 25, 0, 8650712, 25, 0, -4456528, 31, 0, -4456520, 31, 0, -4456512, 31, 0, -4456504, 31, 0, -4456496, 31, 0, -4456488, 31, 0, -4456480, 31, 0, -4456472, 31, 0, -4456464, 31, 0, -4456456, 31, 0, -4521984, 31, 0, -4521976, 31, 0, -4521968, 31, 0, -4521960, 31, 0, -4521952, 31, 0, -4521944, 31, 0, -4521936, 31, 0, -4521928, 31, 0, -4521920, 31, 0, -4521912, 31, 0, -4521904, 31, 0, -4521896, 31, 0, -4521888, 31, 0, -4521880, 31, 0, -4521872, 31, 0, -4521864, 31, 0, -4521856, 31, 0, -4521848, 31, 0, -4521840, 31, 0, -4521832, 31, 0, -4521824, 31, 0, -4521816, 31, 0, -4521808, 31, 0, -4521800, 31, 0, -4521792, 31, 0, -4521784, 31, 0, -4521776, 31, 0, -4521768, 31, 0, -4521760, 31, 0, -4521752, 31, 0, -4521744, 31, 0, -4521736, 31, 0, -4521728, 31, 0, -4521720, 31, 0, -4521712, 31, 0, -4521704, 31, 0, -4521696, 31, 0, -4521688, 31, 0, -4521680, 31, 0, -4521672, 31, 0, -4521664, 31, 0, -4521656, 31, 0, 8585544, 25, 0, 8585536, 25, 0, 8585528, 25, 0, 8585520, 25, 0, 8585512, 25, 0, 8585504, 25, 0, 8585496, 25, 0, 8585488, 25, 0, 8585480, 25, 0, 8585472, 25, 0, 8585464, 25, 0, 8585456, 25, 0, 8585448, 25, 0, 8585344, 25, 0, 8585352, 25, 0, 8585360, 25, 0, 8585368, 25, 0, 8585376, 25, 0, 8585384, 25, 0, 8585392, 25, 0, 8585400, 25, 0, 8585408, 25, 0, 8585416, 25, 0, 8585424, 25, 0, 8585432, 25, 0, 8585440, 25, 0, 8585240, 25, 0, 8585248, 25, 0, 8585256, 25, 0, 8585264, 25, 0, 8585272, 25, 0, 8585280, 25, 0, 8585288, 25, 0, 8585296, 25, 0, 8585304, 25, 0, 8585312, 25, 0, 8585320, 25, 0, 8585328, 25, 0, 8585336, 25, 0, 8650720, 25, 0, 8650728, 25, 0, 8650736, 25, 0, 8650744, 25, 0, 8585216, 25, 0, 8585224, 25, 0, 8585232, 25, 0, 8650664, 34, 0, -3932248, 29, 0, -3407960, 29, 0, -2883672, 29, 0, -2359384, 29, 0, -1835096, 29, 0, -1310808, 29, 0, -786520, 29, 0, -262232, 29, 0, 262056, 29, 0, 786344, 29, 0, 1310632, 29, 0, 1834920, 29, 0, 2359208, 29, 0, 2883496, 29, 0, 3407784, 29, 0, 3932072, 29, 0, 4456360, 29, 0, 4980648, 29, 0, 5504936, 29, 0, 6029224, 29, 0, 6553512, 29, 0, 7077800, 29, 0, 7602088, 29, 0, 8126376, 29, 0, -4456536, 36, 0, -4521648, 35, 0, -3997360, 27, 0, -3473072, 27, 0, -2948784, 27, 0, -2424496, 27, 0, -1900208, 27, 0, -1375920, 27, 0, -851632, 27, 0, -327344, 27, 0, 196944, 27, 0, 721232, 27, 0, 1245520, 27, 0, 1769808, 27, 0, 2294096, 27, 0, 2818384, 27, 0, 3342672, 27, 0, 3866960, 27, 0, 4391248, 27, 0, 4915536, 27, 0, 5439824, 27, 0, 5964112, 27, 0, 6488400, 27, 0, 7012688, 27, 0, 7536976, 27, 0, 8061264, 27, 0, 8585552, 33, 0, 7012364, 28, 0, 7012372, 28, 0, 7012380, 28, 0, 7012356, 28, 0, 7012388, 28, 0)
+layer_0/tile_data = PackedInt32Array(8650672, 25, 0, 8650680, 25, 0, 8650688, 25, 0, 8650696, 25, 0, 8650704, 25, 0, 8650712, 25, 0, -4456528, 31, 0, -4456520, 31, 0, -4456512, 31, 0, -4456504, 31, 0, -4456496, 31, 0, -4456488, 31, 0, -4456480, 31, 0, -4456472, 31, 0, -4456464, 31, 0, -4456456, 31, 0, -4521984, 31, 0, -4521976, 31, 0, -4521968, 31, 0, -4521960, 31, 0, -4521952, 31, 0, -4521944, 31, 0, -4521936, 31, 0, -4521928, 31, 0, -4521920, 31, 0, -4521912, 31, 0, -4521904, 31, 0, -4521896, 31, 0, -4521888, 31, 0, -4521880, 31, 0, -4521872, 31, 0, -4521864, 31, 0, -4521832, 31, 0, -4521824, 31, 0, -4521816, 31, 0, -4521808, 31, 0, -4521800, 31, 0, -4521792, 31, 0, -4521784, 31, 0, -4521776, 31, 0, -4521768, 31, 0, -4521760, 31, 0, -4521752, 31, 0, -4521744, 31, 0, -4521736, 31, 0, -4521728, 31, 0, -4521720, 31, 0, -4521712, 31, 0, -4521704, 31, 0, -4521696, 31, 0, -4521688, 31, 0, -4521680, 31, 0, -4521672, 31, 0, -4521664, 31, 0, -4521656, 31, 0, 8585544, 25, 0, 8585536, 25, 0, 8585528, 25, 0, 8585520, 25, 0, 8585512, 25, 0, 8585464, 26, 0, 8585456, 25, 0, 8585448, 25, 0, 8585344, 25, 0, 8585352, 25, 0, 8585360, 25, 0, 8585368, 25, 0, 8585376, 25, 0, 8585384, 25, 0, 8585392, 25, 0, 8585400, 25, 0, 8585408, 25, 0, 8585416, 25, 0, 8585424, 25, 0, 8585432, 25, 0, 8585440, 25, 0, 8585240, 25, 0, 8585248, 25, 0, 8585256, 25, 0, 8585264, 25, 0, 8585272, 25, 0, 8585280, 25, 0, 8585288, 25, 0, 8585296, 25, 0, 8585304, 25, 0, 8585312, 25, 0, 8585320, 25, 0, 8585328, 25, 0, 8585336, 25, 0, 8650720, 25, 0, 8650728, 26, 0, 8585232, 24, 0, 8650664, 34, 0, -3932248, 29, 0, -3407960, 29, 0, -2883672, 29, 0, -2359384, 29, 0, -1835096, 29, 0, -1310808, 29, 0, -786520, 29, 0, -262232, 29, 0, 262056, 29, 0, 786344, 29, 0, 1310632, 29, 0, 1834920, 29, 0, 2359208, 29, 0, 2883496, 29, 0, 3407784, 29, 0, 3932072, 29, 0, 4456360, 29, 0, 4980648, 29, 0, 5504936, 29, 0, 6029224, 29, 0, 6553512, 29, 0, 7077800, 29, 0, 7602088, 29, 0, 8126376, 29, 0, -4456536, 36, 0, -4521648, 35, 0, -3997360, 27, 0, -3473072, 27, 0, -2948784, 27, 0, -2424496, 27, 0, -1900208, 27, 0, -1375920, 27, 0, -851632, 27, 0, -327344, 27, 0, 196944, 27, 0, 721232, 27, 0, 1245520, 27, 0, 1769808, 27, 0, 2294096, 27, 0, 2818384, 27, 0, 3342672, 27, 0, 3866960, 27, 0, 4391248, 27, 0, 4915536, 27, 0, 5439824, 27, 0, 5964112, 27, 0, 6488400, 27, 0, 7012688, 27, 0, 7536976, 27, 0, 8061264, 27, 0, 8585552, 33, 0, 6815693, 42, 0, 6815701, 42, 0, 5767157, 42, 0, 5767165, 42, 0, 5701637, 42, 0, 6750237, 42, 0, 6750245, 42, 0, 6750253, 42, 0, 6815709, 42, 0, 4718557, 42, 0, 4718549, 42, 0, 4653085, 42, 0, 4653093, 42, 0, 1048557, 42, 0, 1048549, 42, 0, 1048541, 42, 0, 983053, 42, 0, 983061, 42, 0, 983069, 42, 0, -2621459, 42, 0, -2621451, 42, 0, -2621443, 42, 0, -2686883, 24, 0, -2686875, 25, 0, -2686867, 26, 0, -2162579, 32, 0, -2162595, 27, 0, -1638307, 27, 0, -2162587, 36, 0, -1638299, 29, 0, -1114011, 29, 0, -589723, 29, 0, -65435, 29, 0, 458853, 29, 0, 983141, 29, 0, -1114019, 27, 0, -589731, 27, 0, -65443, 27, 0, 458845, 27, 0, 983133, 27, 0, 1507421, 27, 0, 2031709, 30, 0, 2031717, 31, 0, 2031725, 31, 0, 2031733, 31, 0, 2031741, 31, 0, 2031749, 31, 0, 2031757, 31, 0, 2031765, 31, 0, 2031773, 31, 0, 2031781, 31, 0, 2031789, 31, 0, 1507429, 34, 0, 1507437, 25, 0, 1507445, 25, 0, 1507453, 25, 0, -2686851, 24, 0, -2162563, 30, 0, 1507461, 25, 0, 1507469, 25, 0, 1507477, 25, 0, -2162555, 31, 0, -2162547, 31, 0, -2162539, 32, 0, -2686827, 26, 0, 1507485, 25, 0, 1507493, 25, 0, -2686811, 24, 0, -2162523, 30, 0, -2686843, 25, 0, -2686835, 25, 0, -4521856, 31, 0, -4521848, 31, 0, -4521840, 31, 0, -2686803, 25, 0, -2686795, 26, 0, -2162507, 29, 0, -1638219, 29, 0, -1113931, 29, 0, -589643, 29, 0, -65355, 29, 0, 458933, 29, 0, -2162515, 35, 0, -1638227, 27, 0, -1113939, 27, 0, -589651, 27, 0, -65363, 27, 0, 458925, 27, 0, 983213, 27, 0, 1507501, 33, 0, 2031797, 32, 0, 983221, 29, 0, 1507509, 29, 0, -2686699, 42, 0, -2686691, 42, 0, -2686683, 42, 0, 7012470, 41, 0, 6488182, 41, 0, 6488190, 41, 0, 6488198, 41, 0, 6488206, 41, 0, 6488214, 41, 0, 6488222, 41, 0, 7012510, 41, 0, 6750437, 42, 0, 6750445, 42, 0, 6750453, 42, 0, 6750501, 42, 0, 6750509, 42, 0, 6750517, 42, 0, 9175016, 39, 0, 9109520, 40, 0, 8585504, 24, 0, 9109752, 39, 0, 9109792, 40, 0, 9175008, 28, 0, 9175000, 28, 0, 9174992, 28, 0, 9174984, 28, 0, 9174976, 28, 0, 9174968, 28, 0, 9174960, 28, 0, 9174952, 28, 0, 9109528, 28, 0, 9109536, 28, 0, 9109544, 28, 0, 9109552, 28, 0, 9109560, 28, 0, 9109568, 28, 0, 9109576, 28, 0, 9109584, 28, 0, 9109592, 28, 0, 9109600, 28, 0, 9109608, 28, 0, 9109616, 28, 0, 9109624, 28, 0, 9109632, 28, 0, 9109640, 28, 0, 9109648, 28, 0, 9109656, 28, 0, 9109664, 28, 0, 9109672, 28, 0, 9109680, 28, 0, 9109688, 28, 0, 9109696, 28, 0, 9109704, 28, 0, 9109712, 28, 0, 9109720, 28, 0, 9109728, 28, 0, 9109736, 28, 0, 9109744, 28, 0, 9109800, 28, 0, 9109808, 28, 0, 9109816, 28, 0, 9109824, 28, 0, 9109832, 28, 0, 9109840, 28, 0)
 
 [node name="Bridge" type="TileMap" parent="Tilesets"]
 z_index = 2
@@ -484,14 +398,14 @@ tile_set = ExtResource("29_jp8it")
 cell_quadrant_size = 8
 format = 2
 layer_0/name = "Ladder"
-layer_0/tile_data = PackedInt32Array(4915337, 0, 0, 5439625, 1, 0, 5963913, 1, 0, 6488201, 1, 0, 7012489, 1, 0, 7536777, 1, 0, 8061065, 2, 0, 9109616, 1, 0, 9633904, 1, 0, 10158192, 1, 0, 10682480, 2, 0, 8585328, 0, 0, 8585604, 0, 0, 9109892, 1, 0, 9634180, 1, 0, 10158468, 1, 0, 10682756, 1, 0, 8585652, 0, 0, 9109940, 1, 0, 9634228, 1, 0, 10158516, 1, 0, 10682804, 2, 0)
+layer_0/tile_data = PackedInt32Array(-2686859, 0, 0, -2162571, 1, 0, -1638283, 1, 0, -1113995, 1, 0, -589707, 1, 0, -65419, 1, 0, 458869, 1, 0, 983157, 1, 0, -2686819, 0, 0, -2162531, 1, 0, -1638243, 1, 0, -1113955, 1, 0, -589667, 1, 0, -65379, 1, 0, 458909, 1, 0, 983197, 1, 0)
 
 [node name="HUD" parent="." instance=ExtResource("30_y84gh")]
 visible = false
 
 [node name="Hero" parent="." instance=ExtResource("32_n3err")]
 z_index = 10
-position = Vector2(496, 984)
+position = Vector2(652, 988)
 scale = Vector2(0.2, 0.2)
 collision_mask = 16222
 
@@ -504,7 +418,6 @@ limit_bottom = 1660
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true
-editor_draw_drag_margin = true
 
 [node name="SoundBackground" type="AudioStreamPlayer2D" parent="."]
 visible = false
@@ -537,10 +450,6 @@ autoplay = true
 [connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladders/Ladder2" to="Hero" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladders/Ladder2" to="Hero" method="_on_Ladder_body_exited"]
-[connection signal="body_entered" from="Ladders/Ladder3" to="Hero" method="_on_Ladder_body_entered"]
-[connection signal="body_exited" from="Ladders/Ladder3" to="Hero" method="_on_Ladder_body_exited"]
-[connection signal="body_entered" from="Ladders/Ladder4" to="Hero" method="_on_Ladder_body_entered"]
-[connection signal="body_exited" from="Ladders/Ladder4" to="Hero" method="_on_Ladder_body_exited"]
 [connection signal="fireballs_empty" from="HUD" to="Hero" method="_on_HUD_fireballs_empty"]
 [connection signal="has_fireballs" from="HUD" to="Hero" method="_on_HUD_has_fireballs"]
 [connection signal="has_keys" from="HUD" to="Hero" method="_on_HUD_has_keys"]

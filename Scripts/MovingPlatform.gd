@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var move_direction = "Horizontal"
+@export_enum("Horizontal", "Vertical") var move_direction: String = "Horizontal"
 @export var move_distance = 192
 @export var speed = 3.0
 

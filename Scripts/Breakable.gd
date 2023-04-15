@@ -213,12 +213,13 @@ func _on_opacity_tween_completed(child):
 
 func _on_body_entered(body):
 	if "Fireball" in body.name and object == {}:
-		self.set_collision_layer_value(14, false)
+		set_collision_layer_value(14, false)
 		initialize()
 		body.queue_free()
 		object.detonate = true
 		
 		var room = self.get_node("../../")
+		
 		if "Room" in room.name and name != "Breakable":
 			RoomState.blocks_broken[name] = true
 		elif "Level" in room.name and name != "Breakable":

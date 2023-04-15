@@ -35,23 +35,26 @@ func _physics_process(_delta):
 		direction *= -1
 		$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
 		$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x * direction
-		
 	if hero:
 		calc_velocity.x = self.position.direction_to(hero.position).x * speed
 		direction = sign(calc_velocity.x)
+		$AnimatedSprite2D.flip_h = self.global_position > hero.global_position
 		
 		if self.global_position > hero.global_position:
-			$AnimatedSprite2D.flip_h = self.global_position > hero.global_position
+			#$AnimatedSprite2D.flip_h = self.global_position > hero.global_position
+			$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x * direction
 		else:
-			$AnimatedSprite2D.flip_h = false
-		
-		$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x * direction
+			calc_velocity.x *= direction
+			#$AnimatedSprite2D.flip_h = self.global_position > hero.global_position
+			#$AnimatedSprite2D.flip_h = true
+			#$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x * -1
 	else:
 		calc_velocity.x = direction * speed
-	
+		
 	calc_velocity.y += 20
 	
 	set_up_direction(Vector2.UP)
+	
 	velocity = calc_velocity
 	move_and_slide()
 	calc_velocity = velocity
@@ -68,6 +71,7 @@ func _on_DetectArea_body_exited(_body):
 	$AnimatedSprite2D.play("walking")
 	hero = null
 	speed = WALK_SPEED
+	direction = sign(calc_velocity.x)
 
 func _on_TopChecker_body_entered(body):
 	if body.name == "Hero":

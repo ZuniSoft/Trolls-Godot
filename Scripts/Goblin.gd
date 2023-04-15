@@ -1,5 +1,5 @@
 extends KinematicEnemy
-
+	
 func _ready():
 	super._ready()
 	
