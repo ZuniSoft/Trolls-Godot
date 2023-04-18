@@ -25,8 +25,6 @@ func _ready():
 	$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x * direction
 	$FloorChecker.enabled = detect_cliffs
 	
-	safe_margin = 1
-	
 	$AnimatedSprite2D.play()
 	
 func _physics_process(_delta):
