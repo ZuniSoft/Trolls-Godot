@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ca7n5uktr48ta" path="res://Assets/Fireball/Fireball.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://b8tp4rjxb77ky" path="res://Assets/CommonObjects/heart.png" id="9"]
 [ext_resource type="FontFile" uid="uid://dkaujrdvyg0wr" path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" id="11_obvkp"]
-[ext_resource type="Texture2D" uid="uid://b2mwjgpkajbe" path="res://addons/ActionIcon/Keyboard/Blank.png" id="11_tku4s"]
+[ext_resource type="Texture2D" uid="uid://di0tbwx1rdcw0" path="res://addons/ActionIcon/Keyboard/Blank.png" id="11_tku4s"]
 [ext_resource type="Script" path="res://addons/ActionIcon/ActionIcon.gd" id="12_f53p2"]
 
 [node name="Node2D" type="Node2D"]
@@ -47,14 +47,14 @@ text = "VERSION"
 [node name="Title" type="Label" parent="Menu"]
 layout_mode = 0
 offset_left = 440.0
-offset_top = 193.0
+offset_top = 296.0
 offset_right = 1448.0
-offset_bottom = 496.0
-theme_override_colors/font_color = Color(0, 0.305882, 0.309804, 1)
-theme_override_colors/font_outline_color = Color(0, 0.113725, 0.309804, 1)
+offset_bottom = 479.0
+theme_override_colors/font_color = Color(0, 0.65098, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(0.286275, 0.231373, 0.192157, 1)
 theme_override_constants/outline_size = 72
 theme_override_fonts/font = ExtResource("2")
-theme_override_font_sizes/font_size = 240
+theme_override_font_sizes/font_size = 144
 text = "TITLE"
 horizontal_alignment = 1
 
