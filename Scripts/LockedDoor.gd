@@ -68,7 +68,8 @@ func open_door_scene():
 	GameState.last_position_x = hero.position.x
 	GameState.last_position_y = hero.position.y
 	
-	Game.change_scene(door_scene, Globals.TRANSITION_USE_SUB_THREADS, Globals.TRANSITION_IMAGE_SCENE)
+	#Game.change_scene(door_scene, Globals.TRANSITION_USE_SUB_THREADS, Globals.TRANSITION_IMAGE_SCENE)
+	get_tree().change_scene_to_file(door_scene)
 
 func _on_SoundPlayTimer_timeout():
 	emit_signal("key_used")

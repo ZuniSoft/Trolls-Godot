@@ -2,6 +2,12 @@ extends Node
 
 var current_scene : Node = null
 
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		if current_scene != null:
+			current_scene.queue_free()
+	
+
 func change_scene(path: String, use_sub_threads: bool = true, transition: String = ""):
 	if transition.is_empty():
 		ThreadedLoaderUtils.loader.request(path, use_sub_threads).completed.connect(_on_loader_completed)

@@ -32,7 +32,6 @@ size = Vector2(43.875, 640)
 [node name="Room1" type="Node2D"]
 position = Vector2(692, 524)
 script = ExtResource("1_m83yf")
-design_mode = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
