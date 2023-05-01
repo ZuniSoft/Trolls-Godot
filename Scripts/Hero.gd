@@ -130,21 +130,22 @@ func bounce():
 	calc_velocity.y = JUMPFORCE * 0.7
 	
 func hit(enemy_pos_x, hit_points):
-	is_hit = true
-	set_modulate(Color(1.0, 0.3, 0.3, 0.3))
-	calc_velocity.y = JUMPFORCE * 0.5
+	if not Globals.GOD_MODE:
+		is_hit = true
+		set_modulate(Color(1.0, 0.3, 0.3, 0.3))
+		calc_velocity.y = JUMPFORCE * 0.5
 
-	if position.x < enemy_pos_x:
-		calc_velocity.x = -HIT_JUMP_VEL
-	elif position.x > enemy_pos_x:
-		calc_velocity.x = HIT_JUMP_VEL
+		if position.x < enemy_pos_x:
+			calc_velocity.x = -HIT_JUMP_VEL
+		elif position.x > enemy_pos_x:
+			calc_velocity.x = HIT_JUMP_VEL
 
-	Input.action_release("ui_left")
-	Input.action_release("ui_right")
-	
-	$SoundBump.play()
-	emit_signal("life_lost", hit_points)
-	$HitTimer.start()
+		Input.action_release("ui_left")
+		Input.action_release("ui_right")
+		
+		$SoundBump.play()
+		emit_signal("life_lost", hit_points)
+		$HitTimer.start()
 
 func dying():
 	set_modulate(Color(1, 1, 1, 1))
