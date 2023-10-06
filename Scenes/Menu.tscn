@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ca7n5uktr48ta" path="res://Assets/Fireball/Fireball.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://b8tp4rjxb77ky" path="res://Assets/CommonObjects/heart.png" id="9"]
 [ext_resource type="FontFile" uid="uid://dkaujrdvyg0wr" path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" id="11_obvkp"]
-[ext_resource type="Texture2D" uid="uid://di0tbwx1rdcw0" path="res://addons/ActionIcon/Keyboard/Blank.png" id="11_tku4s"]
+[ext_resource type="Texture2D" uid="uid://di2irde4wji5f" path="res://addons/ActionIcon/Keyboard/Blank.png" id="11_tku4s"]
 [ext_resource type="Script" path="res://addons/ActionIcon/ActionIcon.gd" id="12_f53p2"]
 
 [node name="Node2D" type="Node2D"]
