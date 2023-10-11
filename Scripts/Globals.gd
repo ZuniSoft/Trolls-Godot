@@ -27,3 +27,5 @@ const TRANSITION_IMAGE_SCENE = "res://Transitions/TransitionImage.tscn"
 const TRANSITION_SCENE = "res://Transitions/Transition.tscn"
 
 const GOD_MODE = true
+
+var is_touch_platform = false

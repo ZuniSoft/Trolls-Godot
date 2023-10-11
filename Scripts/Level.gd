@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var timer = Timer.new()
 @onready var hud = get_node("HUD")
+@onready var ui = get_node("UI")
 	
 func _ready():
 	GameState.load_config()
@@ -93,3 +94,8 @@ func _exit_tree():
 func _on_timer_timeout():
 	timer.stop()
 	hud.visible = true
+	
+	if Globals.is_touch_platform:
+		ui.visible = true
+	else:
+		ui.free()

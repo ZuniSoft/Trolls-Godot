@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2vmetdm76goy"]
+
+[ext_resource type="Texture2D" uid="uid://tdymujfc3igl" path="res://Assets/UI/AttackButton.png" id="1_qu2wb"]
+[ext_resource type="Script" path="res://Scripts/UIButtons.gd" id="2_1x4gd"]
+[ext_resource type="Texture2D" uid="uid://c8c0qj1lpdgac" path="res://Assets/UI/JumpButton.png" id="3_egv3v"]
+[ext_resource type="Texture2D" uid="uid://dqsbyi8hm6r73" path="res://Assets/UI/FireballButton.png" id="3_mqsgi"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://Joystick/virtual_joystick.tscn" id="3_ukup6"]
+[ext_resource type="Texture2D" uid="uid://cipbwgpfun8xv" path="res://Assets/UI/PauseButton.png" id="5_8ae5p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3tyi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="PlayerButtons" type="Panel" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -712.0
+offset_top = -264.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u3tyi")
+
+[node name="AttackButton" type="TextureButton" parent="PlayerButtons"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 544.0
+offset_bottom = 520.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("1_qu2wb")
+script = ExtResource("2_1x4gd")
+
+[node name="FireballButton" type="TextureButton" parent="PlayerButtons"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 8.0
+offset_right = 768.0
+offset_bottom = 520.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("3_mqsgi")
+script = ExtResource("2_1x4gd")
+
+[node name="JumpButton" type="TextureButton" parent="PlayerButtons"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 8.0
+offset_right = 1012.0
+offset_bottom = 520.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("3_egv3v")
+script = ExtResource("2_1x4gd")
+
+[node name="SystemButtons" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_bottom = 232.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u3tyi")
+
+[node name="PauseButton" type="TextureButton" parent="SystemButtons"]
+layout_mode = 0
+offset_left = 48.0002
+offset_top = 31.0
+offset_right = 560.0
+offset_bottom = 543.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("5_8ae5p")
+script = ExtResource("2_1x4gd")
+
+[node name="PlayerJoystick" parent="." instance=ExtResource("3_ukup6")]
+
+[connection signal="button_down" from="PlayerButtons/AttackButton" to="PlayerButtons/AttackButton" method="_on_AttackButton_down"]
+[connection signal="button_up" from="PlayerButtons/AttackButton" to="PlayerButtons/AttackButton" method="_on_AttackButton_up"]
+[connection signal="button_down" from="PlayerButtons/FireballButton" to="PlayerButtons/FireballButton" method="_on_FireballButton_down"]
+[connection signal="button_up" from="PlayerButtons/FireballButton" to="PlayerButtons/FireballButton" method="_on_FireballButton_up"]
+[connection signal="button_down" from="PlayerButtons/JumpButton" to="PlayerButtons/JumpButton" method="_on_JumpButton_down"]
+[connection signal="button_up" from="PlayerButtons/JumpButton" to="PlayerButtons/JumpButton" method="_on_JumpButton_up"]
+[connection signal="button_down" from="SystemButtons/PauseButton" to="SystemButtons/PauseButton" method="_on_PauseButton_down"]
+[connection signal="button_up" from="SystemButtons/PauseButton" to="SystemButtons/PauseButton" method="_on_PauseButton_up"]
