@@ -1,6 +1,10 @@
 extends Node2D
 
 func _ready():
+	if Globals.is_touch_platform:
+		get_node("Menu/Keys").free()
+		get_node("Menu/Legend").free()
+	
 	get_node("Menu/PlayButton").grab_focus()
 
 func _on_PlayButton_pressed():

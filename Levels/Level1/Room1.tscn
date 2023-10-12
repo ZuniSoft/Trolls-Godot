@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bk8v12681jgds"]
+[gd_scene load_steps=26 format=3 uid="uid://bk8v12681jgds"]
 
 [ext_resource type="Script" path="res://Scripts/Room.gd" id="1_m83yf"]
 [ext_resource type="Texture2D" uid="uid://dmpmfet73iqks" path="res://Assets/RoomBackground1/bg.png" id="2_le3u4"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dus5yey180oyn" path="res://Scenes/Cyclop.tscn" id="17_r1kkk"]
 [ext_resource type="PackedScene" uid="uid://cic5toj7pr50j" path="res://Scenes/Goblin.tscn" id="18_b4ey6"]
 [ext_resource type="PackedScene" uid="uid://dw587a0kg5ec8" path="res://Scenes/Wolf.tscn" id="20_d3h0w"]
+[ext_resource type="PackedScene" uid="uid://b2vmetdm76goy" path="res://Scenes/UI.tscn" id="21_88j5a"]
 [ext_resource type="PackedScene" uid="uid://cano337k816lv" path="res://Scenes/MetalSpikes.tscn" id="21_uqm4l"]
 [ext_resource type="PackedScene" uid="uid://c57kwgfxcm236" path="res://Scenes/Liquid.tscn" id="23_qjh5l"]
 [ext_resource type="PackedScene" uid="uid://baid4qmix4g6y" path="res://Scenes/Saw.tscn" id="24_0hn6x"]
@@ -330,6 +331,9 @@ layer_0/name = "Ladder"
 layer_0/tile_data = PackedInt32Array(-2686859, 0, 0, -2162571, 1, 0, -1638283, 1, 0, -1113995, 1, 0, -589707, 1, 0, -65419, 1, 0, 458869, 1, 0, -2686819, 0, 0, -2162531, 1, 0, -1638243, 1, 0, -1113955, 1, 0, -589667, 1, 0, -65379, 1, 0, 458909, 1, 0, 983157, 1, 0, 1507445, 1, 0, 983197, 1, 0, 1507485, 1, 0, 2031733, 1, 0, 2031773, 1, 0)
 
 [node name="HUD" parent="." instance=ExtResource("30_y84gh")]
+visible = false
+
+[node name="UI" parent="." instance=ExtResource("21_88j5a")]
 visible = false
 
 [node name="Hero" parent="." instance=ExtResource("32_n3err")]

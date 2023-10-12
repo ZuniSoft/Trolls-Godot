@@ -4,7 +4,7 @@
 
 [node name="Control" type="ConfirmationDialog"]
 title = "RESET_DLG_TITLE"
-position = Vector2i(645, 475)
+initial_position = 2
 size = Vector2i(632, 135)
 visible = true
 ok_button_text = "BTN_OK"
