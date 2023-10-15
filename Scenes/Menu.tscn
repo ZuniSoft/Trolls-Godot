@@ -12,29 +12,42 @@
 [ext_resource type="Texture2D" uid="uid://di2irde4wji5f" path="res://addons/ActionIcon/Keyboard/Blank.png" id="11_tku4s"]
 [ext_resource type="Script" path="res://addons/ActionIcon/ActionIcon.gd" id="12_f53p2"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_d6dk6")
-
-[node name="Menu" type="Control" parent="."]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d6dk6")
 
-[node name="Background" type="TextureRect" parent="Menu"]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1928.0
-offset_bottom = 1088.0
+offset_left = -376.0
+offset_right = 792.0
+offset_bottom = 824.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_x7uu1")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Version" type="Label" parent="Menu"]
 layout_mode = 0
@@ -406,6 +419,18 @@ flat = true
 stream = ExtResource("7")
 volume_db = -10.0
 autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+offset = Vector2(2.08165e-12, 2.08165e-12)
+limit_left = 0
+limit_top = 0
+limit_right = 2732
+limit_bottom = 2048
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [connection signal="pressed" from="Menu/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Menu/ResetButton" to="." method="_on_ResetButton_pressed"]

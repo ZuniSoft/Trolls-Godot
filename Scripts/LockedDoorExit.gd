@@ -27,7 +27,7 @@ func _on_activate_door(hero, door_name):
 		hero.process_mode = Node.PROCESS_MODE_DISABLED
 		hud.visible = false
 		
-		Game.change_scene(door_exit_scene, Globals.TRANSITION_USE_SUB_THREADS, Globals.TRANSITION_IMAGE_SCENE)
+		Game.change_scene(door_exit_scene, Globals.TRANSITION_USE_SUB_THREADS, Globals.TRANSITION_SCENE)
 
 func _on_LockedDoorExit_body_entered(body):
 	body.door_area_entered(name)
