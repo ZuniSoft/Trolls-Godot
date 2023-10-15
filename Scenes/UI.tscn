@@ -51,8 +51,8 @@ grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_u3tyi")
 
 [node name="PauseButton" type="TouchScreenButton" parent="SystemButtons"]
-position = Vector2(45, 36)
-scale = Vector2(0.35, 0.35)
+position = Vector2(47, 43)
+scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("5_8ae5p")
 action = "ui_pause"
 
