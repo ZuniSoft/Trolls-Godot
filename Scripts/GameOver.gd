@@ -1,4 +1,8 @@
 extends Control
 
 func _ready():
-	get_node("MenuButton").grab_focus()
+	if Globals.is_touch_platform:
+		get_node("Controls/MenuButton").focus_mode = FOCUS_NONE
+		get_node("Controls/RetryButton").focus_mode = FOCUS_NONE
+	else:
+		get_node("Controls/MenuButton").grab_focus()

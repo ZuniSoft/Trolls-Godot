@@ -1,6 +1,8 @@
 extends Node
 	
 func _ready():	
+	#get_window().size = Vector2(1024, 768)
+	
 	match OS.get_name():
 		"Windows", "UWP", "macOS", "Linux":
 			var screen_size =  DisplayServer.screen_get_size()
