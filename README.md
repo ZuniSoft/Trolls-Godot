@@ -49,5 +49,6 @@ Config files can be found here:
 ## Export Notes
 1. Set version number in localization file
 2. Set version number in export templates
-3. Export without debug information
-4. Sign macOS and Windows executables
+3. Set const GOD_MODE = false in Globals.gd
+4. Export without debug information
+5. Sign macOS and Windows executables
