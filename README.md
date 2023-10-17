@@ -50,5 +50,7 @@ Config files can be found here:
 1. Set version number in localization file
 2. Set version number in export templates
 3. Set const GOD_MODE = false in Globals.gd
-4. Export without debug information
-5. Sign macOS and Windows executables
+4. Comment out any screen size settings in Startup.gd _ready() function
+5. Set design_mode = false in the node inspector for all levels and rooms
+6. Export without debug information
+7. Sign macOS and Windows executables

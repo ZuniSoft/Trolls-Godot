@@ -1,6 +1,7 @@
 extends Node
 	
 func _ready():	
+	# Window test settings
 	#get_window().size = Vector2(1024, 768)
 	
 	match OS.get_name():
