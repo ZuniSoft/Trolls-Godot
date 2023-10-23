@@ -22,4 +22,9 @@ func _on_DieTimer_timeout():
 	RoomState.reset_rooms()
 	GameState.set_next_level(1)
 	
+	get_node("../../HUD").visible = false
+	
+	if Globals.is_touch_platform:
+		get_node("../../UI").visible = false
+	
 	Game.change_scene("res://Scenes/Win.tscn", Globals.TRANSITION_LIGHT_WEIGHT_USE_SUB_THREADS, Globals.TRANSITION_SCENE)

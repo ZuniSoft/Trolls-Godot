@@ -5,12 +5,16 @@ func _ready():
 
 func _on_MenuButton_pressed():
 	var hud = get_tree().get_root().find_child("HUD", true, false)
+	var ui = get_tree().get_root().find_child("UI", true, false)
 	var pause = get_tree().get_root().find_child("PauseMenu", true, false)
 	
 	if pause and hud:
 		hud.visible = false
 		pause.visible = false
-	
+		
+		if Globals.is_touch_platform:
+			ui.visible = false
+			
 	if get_tree().paused:
 		get_tree().paused = false	
 	

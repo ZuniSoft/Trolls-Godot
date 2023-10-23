@@ -61,9 +61,13 @@ func unlock_door():
 func open_door_scene():
 	var hero = get_node("../../Hero")
 	var hud = get_node("../../HUD")
+	var ui = get_node("../../UI")
 	
 	hero.process_mode = Node.PROCESS_MODE_DISABLED
 	hud.visible = false
+	
+	if Globals.is_touch_platform:
+		ui.visible = false
 	
 	GameState.last_position_x = hero.position.x
 	GameState.last_position_y = hero.position.y

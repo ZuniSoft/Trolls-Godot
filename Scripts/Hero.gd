@@ -157,6 +157,10 @@ func dying():
 
 func hero_died_cleanup():
 	get_node("../HUD").visible = false
+	
+	if Globals.is_touch_platform:
+		get_node("../UI").visible = false
+	
 	Game.change_scene("res://Scenes/GameOver.tscn", Globals.TRANSITION_LIGHT_WEIGHT_USE_SUB_THREADS, Globals.TRANSITION_SCENE)
 
 func _on_HitTimer_timeout():

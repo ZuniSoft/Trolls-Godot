@@ -22,7 +22,9 @@ func _on_DieTimer_timeout():
 	RoomState.reset_rooms()
 	GameState.set_next_level(2)
 	
-	# test code for ogre death, hide HUD node
 	get_node("../../HUD").visible = false
 	
-	Game.change_scene("res://Levels/Level2/Scene.tscn", Globals.TRANSITION_USE_SUB_THREADS, Globals.TRANSITION_IMAGE_SCENE)
+	if Globals.is_touch_platform:
+		get_node("../../UI").visible = false
+	
+	Game.change_scene("res://Levels/Level2/Scene.tscn", Globals.TRANSITION_USE_SUB_THREADS, Globals.TRANSITION_SCENE)
