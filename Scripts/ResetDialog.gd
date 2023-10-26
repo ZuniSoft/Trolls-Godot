@@ -5,7 +5,9 @@ func _ready():
 	
 func _on_Control_confirmed():
 	RoomState.reset_rooms()
-	GameState.set_next_level(1)
+	GameState.set_next_level(1, true)
+	GameState.total_coins = 0
+	GameState.coins = 0
 	GameState.save_config()
 	
 	close()

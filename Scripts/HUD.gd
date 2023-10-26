@@ -47,7 +47,6 @@ func _on_coin_collected():
 			life = life + Globals.EXTRA_LIFE
 		else:
 			life = Globals.MAX_LIFE
-		coins = 0
 	_ready()
 		
 func _on_fireball_collected(fireball_cnt):

@@ -1,6 +1,7 @@
 extends Node
 
 var current_level = 1
+var total_coins = 0
 
 var coins = 0
 var keys = 0
@@ -55,6 +56,7 @@ func load_config():
 	for section in config.get_sections():
 		if section == "state":
 			current_level = config.get_value(section, "current_level")
+			total_coins = config.get_value(section, "total_coins")
 		if section == "hud":
 			coins = config.get_value(section, "coins")
 			keys = config.get_value(section, "keys")
@@ -106,6 +108,7 @@ func save_config():
 	var config = ConfigFile.new()
 	
 	config.set_value("state", "current_level", current_level)
+	config.set_value("state", "total_coins", total_coins)
 	
 	config.set_value("hud", "coins", coins)
 	config.set_value("hud", "keys", keys)
@@ -144,7 +147,7 @@ func save_config():
 	config.save("user://game_state.cfg")
 
 func reset_hud_values():
-	coins = 0
+	#coins = 0
 	keys = 0
 	fireballs = Globals.MAX_FIREBALLS
 	life = Globals.MAX_LIFE	
@@ -159,6 +162,7 @@ func set_gs_values_from_hud(hud):
 
 func clear():
 	current_level = 0
+	total_coins = 0
 	
 	has_fireballs = false
 	has_keys = false
@@ -197,7 +201,20 @@ func clear():
 	last_position_x = Globals.DROP_POS_X
 	last_position_y = Globals.DROP_POS_Y
 
-func set_next_level(level):
-	clear()
-	reset_hud_values()
+func set_next_level(level, retry):
+	var tmp_coins = coins
+	var tmp_total_coins = total_coins
+	
+	if retry:
+		clear()
+		reset_hud_values()
+		tmp_coins = 0
+	
+	if tmp_coins > tmp_total_coins:
+		total_coins = tmp_total_coins + (tmp_coins - tmp_total_coins)
+	else:
+		coins = tmp_total_coins
+	
 	current_level = level
+		
+	save_config()

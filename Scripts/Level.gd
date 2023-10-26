@@ -14,6 +14,11 @@ func _ready():
 	
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
+
+	if GameState.total_coins >= GameState.coins:
+		GameState.coins = GameState.total_coins
+	else:
+		GameState.total_coins = GameState.coins
 	
 	GameState.set_hud_to_gs_values(hud)
 		

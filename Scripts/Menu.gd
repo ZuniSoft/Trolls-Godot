@@ -11,8 +11,10 @@ func _ready():
 
 func _on_PlayButton_pressed():
 	GameState.load_config()
+	
 	var level = "res://Levels/Level" + str(GameState.current_level) + "/Scene.tscn"
 	
+	GameState.set_next_level(GameState.current_level, false)
 	Game.change_scene(level, Globals.TRANSITION_USE_SUB_THREADS, Globals.TRANSITION_SCENE)
 	
 func _on_ResetButton_pressed():

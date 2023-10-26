@@ -3,7 +3,7 @@ extends Button
 func _on_RetryButton_pressed():
 	RoomState.reset_rooms()
 	
-	GameState.set_next_level(GameState.current_level)
+	GameState.set_next_level(GameState.current_level, true)
 	GameState.exit_from_door = false
 	GameState.save_config()
 	
