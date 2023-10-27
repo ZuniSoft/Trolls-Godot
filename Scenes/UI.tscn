@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2vmetdm76goy"]
+[gd_scene load_steps=8 format=3 uid="uid://b2vmetdm76goy"]
 
 [ext_resource type="Texture2D" uid="uid://tdymujfc3igl" path="res://Assets/UI/AttackButton.png" id="1_qu2wb"]
 [ext_resource type="Texture2D" uid="uid://c8c0qj1lpdgac" path="res://Assets/UI/JumpButton.png" id="3_egv3v"]
 [ext_resource type="Texture2D" uid="uid://dqsbyi8hm6r73" path="res://Assets/UI/FireballButton.png" id="3_mqsgi"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://Joystick/virtual_joystick.tscn" id="3_ukup6"]
+[ext_resource type="Texture2D" uid="uid://cnccc4rk0ggh5" path="res://Assets/UI/RunButton.png" id="4_an2jx"]
 [ext_resource type="Texture2D" uid="uid://cipbwgpfun8xv" path="res://Assets/UI/PauseButton.png" id="5_8ae5p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3tyi"]
@@ -17,29 +18,37 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -712.0
-offset_top = -264.0
+offset_left = -664.0
+offset_top = -562.0
+offset_right = -29.0
+offset_bottom = -18.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_u3tyi")
 
 [node name="AttackButton" type="TouchScreenButton" parent="PlayerButtons"]
-position = Vector2(0, 7)
+position = Vector2(196, 312)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("1_qu2wb")
 action = "ui_attack"
 
 [node name="FireballButton" type="TouchScreenButton" parent="PlayerButtons"]
-position = Vector2(239, 7)
+position = Vector2(402, 169)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("3_mqsgi")
 action = "ui_shoot"
 
 [node name="JumpButton" type="TouchScreenButton" parent="PlayerButtons"]
-position = Vector2(480, 7)
+position = Vector2(-14.0001, 168)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("3_egv3v")
 action = "ui_jump"
+
+[node name="RunButton" type="TouchScreenButton" parent="PlayerButtons"]
+position = Vector2(194, 22)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_an2jx")
+action = "ui_run"
 
 [node name="SystemButtons" type="Panel" parent="."]
 anchors_preset = 1
