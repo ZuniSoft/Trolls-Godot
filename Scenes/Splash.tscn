@@ -14,13 +14,11 @@ grow_vertical = 2
 script = ExtResource("3")
 
 [node name="Background" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 2424.0
-offset_bottom = 1472.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -78,8 +76,8 @@ one_shot = true
 offset = Vector2(2.08165e-12, 2.08165e-12)
 limit_left = 0
 limit_top = 0
-limit_right = 3840
-limit_bottom = 2160
+limit_right = 2732
+limit_bottom = 2048
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true
