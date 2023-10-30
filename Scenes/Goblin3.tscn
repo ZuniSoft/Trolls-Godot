@@ -315,3 +315,17 @@ one_shot = true
 
 [node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("32")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+visible = false
+modulate = Color(0.270588, 0.937255, 0.294118, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.0
+offset_top = -184.0
+offset_right = 147.0
+offset_bottom = -157.0
+grow_horizontal = 2
+step = 1.0
+show_percentage = false

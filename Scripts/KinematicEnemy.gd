@@ -19,6 +19,8 @@ var hit_hero = false
 @export var detect_cliffs = true
 
 func _ready():
+	$HealthBar.set_max(life)
+	
 	if direction == -1:
 		$AnimatedSprite2D.flip_h = true
 	
@@ -111,21 +113,35 @@ func _on_SideChecker_body_entered(body):
 			body.bounce()
 			speed = WALK_SPEED
 
-func hit(damage):
+func hit(damage):	
 	if life > 0:
 		life -= damage
+		
+		if life > LIFE / 2.0:
+			$HealthBar.set_modulate(Color(0,1,0))
+		else:
+			$HealthBar.set_modulate(Color(1,0,0))
+		
 	if life <= 0:
-		speed = 0
-		$AnimatedSprite2D.play("dying")	
 		dying = true
+		speed = 0
+		
+		$AnimatedSprite2D.play("dying")
+		$HitTimer.stop()
+			
 		if $DieTimer.time_left == 0:
 			$DieTimer.start()
 	else:
 		$AnimatedSprite2D.play("hurt")
+		
+		$HealthBar.value = life
+		$HealthBar.visible = true
+			
 		$HitTimer.start()
 		
 func _on_HitTimer_timeout():
 	$AnimatedSprite2D.play("walking")
+	$HealthBar.visible = false
 	
 func _on_DieTimer_timeout():
 	queue_free()
