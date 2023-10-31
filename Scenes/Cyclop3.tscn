@@ -318,7 +318,6 @@ one_shot = true
 stream = ExtResource("32")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-visible = false
 modulate = Color(0.270588, 0.937255, 0.294118, 1)
 anchors_preset = 5
 anchor_left = 0.5

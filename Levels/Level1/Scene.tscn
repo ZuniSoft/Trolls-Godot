@@ -155,7 +155,7 @@ collision_layer = 8
 
 [node name="Coin6" parent="Coins" instance=ExtResource("11")]
 z_index = 1
-position = Vector2(128, 1496)
+position = Vector2(987, 1109)
 collision_layer = 8
 
 [node name="Coin7" parent="Coins" instance=ExtResource("11")]
@@ -303,7 +303,7 @@ collision_mask = 49
 
 [node name="LockedDoor1" parent="Doors" instance=ExtResource("31")]
 z_index = 2
-position = Vector2(360, 1480)
+position = Vector2(6392, 1416)
 door_type = "Wood"
 
 [node name="OnewayPlatforms" type="Node" parent="."]
@@ -451,7 +451,7 @@ collision_mask = 8611
 
 [node name="Goblin3" parent="Enemies" groups=["enemies"] instance=ExtResource("20")]
 z_index = 10
-position = Vector2(260, 986)
+position = Vector2(448, 1072)
 scale = Vector2(0.4, 0.4)
 collision_mask = 8611
 direction = 1

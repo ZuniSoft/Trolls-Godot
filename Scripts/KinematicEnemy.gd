@@ -2,6 +2,8 @@ class_name KinematicEnemy
 
 extends CharacterBody2D
 
+const GRAVITY = 35
+
 var WALK_SPEED = 60
 var RUN_SPEED = 200
 var HIT_JUMP_VELOCITY = 10
@@ -9,7 +11,7 @@ var HIT_POINTS = 2
 var LIFE = 10
 
 var speed = WALK_SPEED
-var calc_velocity = Vector2.ZERO
+var calc_velocity = null
 var life = LIFE
 var dying = false
 var hero = null
@@ -19,6 +21,9 @@ var hit_hero = false
 @export var detect_cliffs = true
 
 func _ready():
+	calc_velocity = Vector2.ZERO
+	
+	$HealthBar.visible = false
 	$HealthBar.set_max(life)
 	
 	if direction == -1:
@@ -30,7 +35,7 @@ func _ready():
 	$AnimatedSprite2D.play()
 	
 func _physics_process(_delta):
-	calc_velocity = Vector2.ZERO	
+	calc_velocity = velocity
 		
 	if is_on_wall() or not $FloorChecker.is_colliding() and detect_cliffs and is_on_floor():
 		direction *= -1
@@ -56,7 +61,10 @@ func _physics_process(_delta):
 	else:
 		calc_velocity.x = direction * speed
 			
-	calc_velocity.y += 20
+	if not is_on_floor() and not is_on_wall():
+		calc_velocity.y += GRAVITY
+	else:
+		calc_velocity.y += 20
 	
 	set_up_direction(Vector2.UP)
 	
@@ -86,7 +94,7 @@ func _on_TopChecker_body_entered(body):
 		hit(body.JUMP_HIT_POINTS)
 		
 		if dying:
-			set_collision_layer_value(5, false)
+			clear_collisions()
 		else:
 			body.bounce()
 			$SoundHit.play()
@@ -120,7 +128,7 @@ func _on_SideChecker_body_entered(body):
 			body.bounce()
 			speed = WALK_SPEED
 		else:
-			set_collision_layer_value(5, false)
+			clear_collisions()
 
 func hit(damage):	
 	life -= damage
@@ -150,7 +158,11 @@ func hit(damage):
 		
 		if $HitTimer.time_left == 0:
 			$HitTimer.start()
-		
+
+func clear_collisions():
+	set_collision_layer_value(5, false)
+	set_collision_mask_value(1, false)
+	
 func _on_HitTimer_timeout():
 	$AnimatedSprite2D.play("walking")
 	$HealthBar.visible = false

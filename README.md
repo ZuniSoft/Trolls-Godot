@@ -52,5 +52,6 @@ Config files can be found here:
 3. Set const GOD_MODE = false in Globals.gd
 4. Comment out any screen size settings in Startup.gd _ready() function
 5. Set design_mode = false in the node inspector for all levels and rooms
-6. Export without debug information
-7. Sign macOS and Windows executables
+6. Check project settings Rendering -> Renderer -> Rendering Method.mobile is set to "mobile"
+7. Export without debug information
+8. Sign macOS and Windows executables
