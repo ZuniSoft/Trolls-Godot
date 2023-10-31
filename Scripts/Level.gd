@@ -1,11 +1,16 @@
 extends Node2D
 
+@export var design_mode = false
+
 @onready var timer = Timer.new()
 @onready var hud = get_node("HUD")
 @onready var ui = get_node("UI")
 	
-func _ready():
+func _ready():	
 	GameState.load_config()
+	
+	if design_mode:
+		GameState.set_hud_to_gs_values(hud)
 	
 	timer.name = "CanvasLayerTimer"
 	timer.wait_time = 1

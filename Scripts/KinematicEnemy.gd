@@ -35,7 +35,7 @@ func _physics_process(_delta):
 	if is_on_wall() or not $FloorChecker.is_colliding() and detect_cliffs and is_on_floor():
 		direction *= -1
 		
-		if not hit_hero or direction == -1:
+		if (not hit_hero or direction == -1) and not dying:
 			$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
 			
 		$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x * direction
@@ -68,21 +68,28 @@ func _on_DetectArea_body_entered(body):
 	if body.name == "DoorBlock":
 		return
 		
-	$AnimatedSprite2D.play("attacking")
-	hero = body
-	speed = RUN_SPEED
+	if not dying:
+		$AnimatedSprite2D.play("attacking")
+		hero = body
+		speed = RUN_SPEED
 
 func _on_DetectArea_body_exited(_body):
-	$AnimatedSprite2D.play("walking")
-	hero = null
-	speed = WALK_SPEED
-	direction = sign(calc_velocity.x)
+	if not dying:
+		$AnimatedSprite2D.play("walking")
+		hero = null
+		speed = WALK_SPEED
+		
+		direction = sign(calc_velocity.x)
 
 func _on_TopChecker_body_entered(body):
 	if body.name == "Hero":
 		hit(body.JUMP_HIT_POINTS)
-		body.bounce()
-		$SoundHit.play()
+		
+		if dying:
+			set_collision_layer_value(5, false)
+		else:
+			body.bounce()
+			$SoundHit.play()
 
 func _on_SideChecker_body_exited(body):
 	if body.name == "Hero":
@@ -112,32 +119,37 @@ func _on_SideChecker_body_entered(body):
 			body.hit(position.x, HIT_POINTS)
 			body.bounce()
 			speed = WALK_SPEED
+		else:
+			set_collision_layer_value(5, false)
 
 func hit(damage):	
-	if life > 0:
-		life -= damage
-		
-		if life > LIFE / 2.0:
-			$HealthBar.set_modulate(Color(0,1,0))
-		else:
-			$HealthBar.set_modulate(Color(1,0,0))
-		
+	life -= damage
+	
+	$HealthBar.value = life
+	
+	if life > LIFE / 2.0:
+		$HealthBar.set_modulate(Color(0,1,0))
+	else:
+		$HealthBar.set_modulate(Color(1,0,0))
+	
 	if life <= 0:
 		dying = true
 		speed = 0
 		
+		$HealthBar.value = 0
 		$AnimatedSprite2D.play("dying")
-		$HitTimer.stop()
-			
+		
+		if $HitTimer.time_left != 0:
+			$HitTimer.stop()
+		
 		if $DieTimer.time_left == 0:
 			$DieTimer.start()
 	else:
 		$AnimatedSprite2D.play("hurt")
-		
-		$HealthBar.value = life
 		$HealthBar.visible = true
-			
-		$HitTimer.start()
+		
+		if $HitTimer.time_left == 0:
+			$HitTimer.start()
 		
 func _on_HitTimer_timeout():
 	$AnimatedSprite2D.play("walking")

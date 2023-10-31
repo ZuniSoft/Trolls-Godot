@@ -181,25 +181,21 @@ collision_layer = 8
 [node name="Breakables" type="Node" parent="."]
 
 [node name="Breakable1" parent="Breakables" instance=ExtResource("14_63k00")]
-z_index = 3
 position = Vector2(1640, 1536)
 blocks_impulse = 600
 debris_max_time = 5
 
 [node name="Breakable2" parent="Breakables" instance=ExtResource("14_63k00")]
-z_index = 3
 position = Vector2(1640, 1472)
 blocks_impulse = 600
 debris_max_time = 5
 
 [node name="Breakable3" parent="Breakables" instance=ExtResource("14_63k00")]
-z_index = 3
 position = Vector2(1961, 1536)
 blocks_impulse = 600
 debris_max_time = 5
 
 [node name="Breakable4" parent="Breakables" instance=ExtResource("14_63k00")]
-z_index = 3
 position = Vector2(1961, 1472)
 blocks_impulse = 600
 debris_max_time = 5
@@ -341,7 +337,7 @@ visible = false
 visible = false
 
 [node name="Hero" parent="." instance=ExtResource("32_n3err")]
-z_index = 10
+z_index = 15
 position = Vector2(1100, 988)
 scale = Vector2(0.2, 0.2)
 collision_mask = 16222
