@@ -61,7 +61,7 @@ func _physics_process(_delta):
 	else:
 		calc_velocity.x = direction * speed
 			
-	if not is_on_floor() and not is_on_wall():
+	if not is_on_floor():
 		calc_velocity.y += GRAVITY
 	else:
 		calc_velocity.y += 20
