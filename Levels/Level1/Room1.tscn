@@ -124,12 +124,12 @@ speed = 2.0
 
 [node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource("27_x0sym")]
 position = Vector2(704, 208)
-move_distance = 700
+move_distance = 575
 speed = 2.0
 
 [node name="MovingPlatform3" parent="MovingPlatforms" instance=ExtResource("27_x0sym")]
 position = Vector2(2296, 208)
-move_distance = 595
+move_distance = 650
 speed = 2.0
 
 [node name="MovingPlatform4" parent="MovingPlatforms" instance=ExtResource("27_x0sym")]

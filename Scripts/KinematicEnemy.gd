@@ -60,11 +60,10 @@ func _physics_process(_delta):
 			$FloorChecker.target_position.x = $CollisionShape2D.shape.get_size().x
 	else:
 		calc_velocity.x = direction * speed
-			
-	if not is_on_floor():
-		calc_velocity.y += GRAVITY
-	else:
-		calc_velocity.y += 20
+	
+	# do not know why setting the y velocity to -1 fixes
+	# flickering when colliding with a wall
+	calc_velocity.y += GRAVITY if not is_on_floor() else -1
 	
 	set_up_direction(Vector2.UP)
 	
