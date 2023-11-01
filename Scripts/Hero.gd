@@ -23,8 +23,8 @@ const JUMPFORCE = -1100
 const HIT_JUMP_VEL = 200 
 const LADDER_STEP_HT = 1
 const FIREBALL = preload("res://Scenes/Fireball.tscn")
-const ATTACK_HIT_POINTS = 5
-const JUMP_HIT_POINTS = 2
+const ATTACK_HIT_POINTS = 3
+const JUMP_HIT_POINTS = 1
 const SWORD_X_POS = 310
 
 func _ready():

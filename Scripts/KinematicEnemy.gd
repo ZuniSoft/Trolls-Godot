@@ -61,9 +61,9 @@ func _physics_process(_delta):
 	else:
 		calc_velocity.x = direction * speed
 	
-	# do not know why setting the y velocity to -1 fixes
-	# flickering when colliding with a wall
-	calc_velocity.y += GRAVITY if not is_on_floor() else -1
+	if is_on_wall(): calc_velocity.x = 0
+	
+	calc_velocity.y += GRAVITY
 	
 	set_up_direction(Vector2.UP)
 	
