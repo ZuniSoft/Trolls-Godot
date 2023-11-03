@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0fxwx6d0mi3q"]
+[gd_scene load_steps=15 format=3 uid="uid://d0fxwx6d0mi3q"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_0efca"]
 [ext_resource type="Texture2D" uid="uid://caxyvjeuedhic" path="res://Assets/Background2/Background.png" id="2_h7ll8"]
@@ -8,16 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://bb8fxgd3vlxqj" path="res://Assets/Background2/Layer3.png" id="6_mffh5"]
 [ext_resource type="PackedScene" uid="uid://u25i8e0a1jqq" path="res://Scenes/HUD.tscn" id="6_qwe80"]
 [ext_resource type="PackedScene" uid="uid://b2vmetdm76goy" path="res://Scenes/UI.tscn" id="7_mgl5d"]
+[ext_resource type="TileSet" uid="uid://cgfd0f8t4gs1v" path="res://Levels/Level2/platformer.tres" id="7_tgi0d"]
+[ext_resource type="TileSet" uid="uid://b3xxfnxwji5j3" path="res://Levels/Level2/bridge.tres" id="8_anr5o"]
 [ext_resource type="PackedScene" uid="uid://bxah6utiyxi51" path="res://Scenes/Hero.tscn" id="8_inhak"]
+[ext_resource type="TileSet" uid="uid://c18n1d4gshr2i" path="res://Levels/Level2/ladder.tres" id="9_lh3ey"]
 [ext_resource type="AudioStream" uid="uid://duxxcer38iymi" path="res://Assets/Sound/Forest.mp3" id="10_8bwxs"]
+[ext_resource type="TileSet" uid="uid://cdys0bq5dd3ip" path="res://Levels/Level2/environment.tres" id="10_efx65"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_0efca")
 
 [node name="SkyBackground" type="TextureRect" parent="."]
-offset_top = 13.0
+offset_top = -204.0
 offset_right = 8190.0
-offset_bottom = 1133.0
+offset_bottom = 916.0
 texture = ExtResource("2_h7ll8")
 expand_mode = 1
 stretch_mode = 1
@@ -25,9 +29,9 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="GroundBackground" type="TextureRect" parent="."]
-offset_top = 1549.0
+offset_top = 1553.0
 offset_right = 8196.0
-offset_bottom = 2093.0
+offset_bottom = 2097.0
 texture = ExtResource("3_f16ix")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -43,9 +47,9 @@ motion_mirroring = Vector2(5120, 2.08165e-12)
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer1"]
-offset_top = 1125.0
+offset_top = 914.0
 offset_right = 5120.0
-offset_bottom = 1765.0
+offset_bottom = 1554.0
 texture = ExtResource("4_i5fc2")
 expand_mode = 1
 stretch_mode = 1
@@ -59,9 +63,9 @@ motion_mirroring = Vector2(5120, 2.08165e-12)
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
-offset_top = 909.0
+offset_top = 913.0
 offset_right = 5120.0
-offset_bottom = 1549.0
+offset_bottom = 1553.0
 texture = ExtResource("5_xti7c")
 expand_mode = 1
 stretch_mode = 1
@@ -75,14 +79,57 @@ motion_mirroring = Vector2(5120, 2.08165e-12)
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
-offset_top = 909.0
+offset_top = 913.0
 offset_right = 5120.0
-offset_bottom = 1549.0
+offset_bottom = 1553.0
 texture = ExtResource("6_mffh5")
 expand_mode = 1
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
+
+[node name="Tilesets" type="Node" parent="."]
+
+[node name="Platform" type="TileMap" parent="Tilesets"]
+z_index = 2
+position = Vector2(732, 516)
+tile_set = ExtResource("7_tgi0d")
+cell_quadrant_size = 8
+format = 2
+layer_0/name = "Platform"
+layer_0/tile_data = PackedInt32Array(8781736, 105, 0, 8781744, 105, 0, 8781752, 105, 0, 8781760, 105, 0, 8781768, 105, 0, 8781776, 105, 0, 8781784, 105, 0, 8257494, 103, 0)
+
+[node name="Bridge" type="TileMap" parent="Tilesets"]
+z_index = 2
+position = Vector2(732, 516)
+tile_set = ExtResource("8_anr5o")
+cell_quadrant_size = 8
+format = 2
+layer_0/name = "Bridge"
+
+[node name="Ladder" type="TileMap" parent="Tilesets"]
+z_index = 2
+position = Vector2(732, 516)
+tile_set = ExtResource("9_lh3ey")
+cell_quadrant_size = 8
+format = 2
+layer_0/name = "Ladder"
+
+[node name="EnvironmentBkg" type="TileMap" parent="Tilesets"]
+z_index = 1
+position = Vector2(732, 516)
+tile_set = ExtResource("10_efx65")
+cell_quadrant_size = 8
+format = 2
+layer_0/name = "EnvironmentBkg"
+
+[node name="EnvironmentFore" type="TileMap" parent="Tilesets"]
+z_index = 3
+position = Vector2(735, 518)
+tile_set = ExtResource("10_efx65")
+cell_quadrant_size = 8
+format = 2
+layer_0/name = "EnvironmentFore"
 
 [node name="HUD" parent="." instance=ExtResource("6_qwe80")]
 visible = false
