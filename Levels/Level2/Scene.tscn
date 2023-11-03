@@ -1,15 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://d0fxwx6d0mi3q"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_0efca"]
-[ext_resource type="Texture2D" uid="uid://deei0h47qdyil" path="res://Assets/Background1/Background1.png" id="1_5b3il"]
-[ext_resource type="Texture2D" uid="uid://ccs7qqm1qnetg" path="res://Assets/Background1/Background2.png" id="2_wdr13"]
-[ext_resource type="Texture2D" uid="uid://0ucg2x3v163g" path="res://Assets/Background1/Layer1.png" id="3_x1nyj"]
-[ext_resource type="Texture2D" uid="uid://dwxlh6rkl52tn" path="res://Assets/Background1/Layer2.png" id="4_c6vja"]
-[ext_resource type="Texture2D" uid="uid://cnx64gjfkbndi" path="res://Assets/Background1/Layer3.png" id="5_vt58c"]
+[ext_resource type="Texture2D" uid="uid://caxyvjeuedhic" path="res://Assets/Background2/Background.png" id="2_h7ll8"]
+[ext_resource type="Texture2D" uid="uid://dhfanf13sv44i" path="res://Assets/Background2/Background2.png" id="3_f16ix"]
+[ext_resource type="Texture2D" uid="uid://x664khxxqux2" path="res://Assets/Background2/Layer1.png" id="4_i5fc2"]
+[ext_resource type="Texture2D" uid="uid://tmosqbul0bh1" path="res://Assets/Background2/Layer2.png" id="5_xti7c"]
+[ext_resource type="Texture2D" uid="uid://bb8fxgd3vlxqj" path="res://Assets/Background2/Layer3.png" id="6_mffh5"]
 [ext_resource type="PackedScene" uid="uid://u25i8e0a1jqq" path="res://Scenes/HUD.tscn" id="6_qwe80"]
 [ext_resource type="PackedScene" uid="uid://b2vmetdm76goy" path="res://Scenes/UI.tscn" id="7_mgl5d"]
 [ext_resource type="PackedScene" uid="uid://bxah6utiyxi51" path="res://Scenes/Hero.tscn" id="8_inhak"]
-[ext_resource type="AudioStream" uid="uid://cjjia3p058ims" path="res://Assets/Sound/Swamp.mp3" id="9_munkg"]
+[ext_resource type="AudioStream" uid="uid://duxxcer38iymi" path="res://Assets/Sound/Forest.mp3" id="10_8bwxs"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_0efca")
@@ -18,7 +18,7 @@ script = ExtResource("1_0efca")
 offset_top = 13.0
 offset_right = 8190.0
 offset_bottom = 1133.0
-texture = ExtResource("1_5b3il")
+texture = ExtResource("2_h7ll8")
 expand_mode = 1
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -28,7 +28,7 @@ metadata/_edit_lock_ = true
 offset_top = 1549.0
 offset_right = 8196.0
 offset_bottom = 2093.0
-texture = ExtResource("2_wdr13")
+texture = ExtResource("3_f16ix")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
@@ -46,7 +46,7 @@ metadata/_edit_lock_ = true
 offset_top = 1125.0
 offset_right = 5120.0
 offset_bottom = 1765.0
-texture = ExtResource("3_x1nyj")
+texture = ExtResource("4_i5fc2")
 expand_mode = 1
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -59,10 +59,10 @@ motion_mirroring = Vector2(5120, 2.08165e-12)
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
-offset_top = 901.0
+offset_top = 909.0
 offset_right = 5120.0
-offset_bottom = 1541.0
-texture = ExtResource("4_c6vja")
+offset_bottom = 1549.0
+texture = ExtResource("5_xti7c")
 expand_mode = 1
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -75,10 +75,10 @@ motion_mirroring = Vector2(5120, 2.08165e-12)
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
-offset_top = 903.0
+offset_top = 909.0
 offset_right = 5120.0
-offset_bottom = 1543.0
-texture = ExtResource("5_vt58c")
+offset_bottom = 1549.0
+texture = ExtResource("6_mffh5")
 expand_mode = 1
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -110,6 +110,5 @@ editor_draw_drag_margin = true
 [node name="SoundBackground" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2(-664, 1456)
-stream = ExtResource("9_munkg")
-volume_db = -10.0
+stream = ExtResource("10_8bwxs")
 autoplay = true
