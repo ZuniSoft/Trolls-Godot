@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0fxwx6d0mi3q"]
+[gd_scene load_steps=17 format=3 uid="uid://d0fxwx6d0mi3q"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_0efca"]
 [ext_resource type="Texture2D" uid="uid://caxyvjeuedhic" path="res://Assets/Background2/Background.png" id="2_h7ll8"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://tmosqbul0bh1" path="res://Assets/Background2/Layer2.png" id="5_xti7c"]
 [ext_resource type="Texture2D" uid="uid://bb8fxgd3vlxqj" path="res://Assets/Background2/Layer3.png" id="6_mffh5"]
 [ext_resource type="PackedScene" uid="uid://u25i8e0a1jqq" path="res://Scenes/HUD.tscn" id="6_qwe80"]
+[ext_resource type="PackedScene" uid="uid://bmnmbwygj3fnm" path="res://Scenes/Spring.tscn" id="7_l0osc"]
 [ext_resource type="PackedScene" uid="uid://b2vmetdm76goy" path="res://Scenes/UI.tscn" id="7_mgl5d"]
 [ext_resource type="TileSet" uid="uid://cgfd0f8t4gs1v" path="res://Levels/Level2/platformer.tres" id="7_tgi0d"]
 [ext_resource type="TileSet" uid="uid://b3xxfnxwji5j3" path="res://Levels/Level2/bridge.tres" id="8_anr5o"]
+[ext_resource type="PackedScene" uid="uid://c57kwgfxcm236" path="res://Scenes/Liquid.tscn" id="8_f88ix"]
 [ext_resource type="PackedScene" uid="uid://bxah6utiyxi51" path="res://Scenes/Hero.tscn" id="8_inhak"]
 [ext_resource type="TileSet" uid="uid://c18n1d4gshr2i" path="res://Levels/Level2/ladder.tres" id="9_lh3ey"]
 [ext_resource type="AudioStream" uid="uid://duxxcer38iymi" path="res://Assets/Sound/Forest.mp3" id="10_8bwxs"]
@@ -17,6 +19,7 @@
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_0efca")
+design_mode = true
 
 [node name="SkyBackground" type="TextureRect" parent="."]
 offset_top = -204.0
@@ -88,6 +91,34 @@ stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
+[node name="Springs" type="Node" parent="."]
+
+[node name="Spring1" parent="Springs" instance=ExtResource("7_l0osc")]
+z_index = 2
+position = Vector2(512, 1520)
+collision_layer = 4096
+collision_mask = 1
+spring_velocity = -1350
+
+[node name="Spring2" parent="Springs" instance=ExtResource("7_l0osc")]
+z_index = 2
+position = Vector2(1024, 1520)
+collision_layer = 4096
+collision_mask = 1
+spring_velocity = -1350
+
+[node name="Traps" type="Node" parent="."]
+
+[node name="Water1" parent="Traps" instance=ExtResource("8_f88ix")]
+z_index = 2
+position = Vector2(1648, 1648)
+liquid_type = "Swamp"
+
+[node name="Water2" parent="Traps" instance=ExtResource("8_f88ix")]
+z_index = 2
+position = Vector2(1744, 1648)
+liquid_type = "Swamp"
+
 [node name="Tilesets" type="Node" parent="."]
 
 [node name="Platform" type="TileMap" parent="Tilesets"]
@@ -97,7 +128,7 @@ tile_set = ExtResource("7_tgi0d")
 cell_quadrant_size = 8
 format = 2
 layer_0/name = "Platform"
-layer_0/tile_data = PackedInt32Array(8781736, 105, 0, 8781744, 105, 0, 8781752, 105, 0, 8781760, 105, 0, 8781768, 105, 0, 8781776, 105, 0, 8781784, 105, 0, 8257494, 103, 0)
+layer_0/tile_data = PackedInt32Array(8781776, 113, 0, 8781784, 105, 0, 8781792, 105, 0, 8257488, 106, 0, 8257480, 105, 0, 8257472, 105, 0, 8257464, 105, 0, 8257456, 105, 0, 8257448, 105, 0, 8060832, 108, 0, 7536544, 108, 0, 7012256, 108, 0, 6487968, 108, 0, 5963680, 108, 0, 5439392, 108, 0, 4915104, 108, 0, 1245088, 108, 0, 1769376, 108, 0, 2293664, 108, 0, 2817952, 108, 0, 3342240, 108, 0, 3866528, 108, 0, 4390816, 108, 0, -2424928, 108, 0, -1900640, 108, 0, -1376352, 108, 0, -852064, 108, 0, -327776, 108, 0, 196512, 108, 0, 720800, 108, 0, -6094944, 108, 0, -5570656, 108, 0, -5046368, 108, 0, -4522080, 108, 0, -3997792, 108, 0, -3473504, 108, 0, -2949216, 108, 0, 8781800, 105, 0, 8781808, 114, 0, 8257520, 107, 0, 7733232, 107, 0, 7208944, 107, 0, 6684656, 107, 0, 6160368, 104, 0, 6160376, 105, 0, 6094848, 105, 0, 6094856, 105, 0, 6094864, 105, 0, 6094872, 106, 0, 6619160, 109, 0, 7143448, 109, 0, 7667736, 109, 0, 8192024, 109, 0, 8716312, 113, 0, 8716320, 105, 0, 8716328, 105, 0, 8192056, 104, 0, 8716344, 114, 0, 8192064, 105, 0, 8192072, 105, 0, 8192080, 106, 0, 8716368, 113, 0, 8716376, 105, 0, 8716384, 105, 0, 8716392, 106, 0, 8716336, 105, 0, 9240680, 119, 0, 9764968, 119, 0, 8716424, 104, 0, 9240712, 120, 0, 9765000, 120, 0, 10289256, 117, 0, 10289288, 118, 0, 10289264, 111, 65536, 10289272, 111, 65536, 10289280, 111, 65536, 4325384, 121, 0, 4325392, 121, 0, 2818072, 121, 0, 2818080, 121, 0, 3866680, 121, 0, 3866688, 121, 0, 4849752, 121, 0, 4849760, 121, 0, 5963896, 121, 0, 5963904, 121, 0)
 
 [node name="Bridge" type="TileMap" parent="Tilesets"]
 z_index = 2
@@ -106,6 +137,7 @@ tile_set = ExtResource("8_anr5o")
 cell_quadrant_size = 8
 format = 2
 layer_0/name = "Bridge"
+layer_0/tile_data = PackedInt32Array(8585328, 0, 0, 8585336, 0, 0, 8585344, 0, 0)
 
 [node name="Ladder" type="TileMap" parent="Tilesets"]
 z_index = 2
@@ -122,6 +154,7 @@ tile_set = ExtResource("10_efx65")
 cell_quadrant_size = 8
 format = 2
 layer_0/name = "EnvironmentBkg"
+layer_0/tile_data = PackedInt32Array(8781736, 17, 0, 8781744, 17, 0, 8781752, 17, 0, 8781760, 17, 0, 8781768, 17, 0, 9306072, 17, 0, 9306080, 17, 0, 9306088, 17, 0, 9306096, 17, 0, 6684664, 17, 0, 6619136, 17, 0, 6619144, 17, 0, 6619152, 17, 0, 9306024, 17, 0, 9306032, 17, 0, 9306040, 17, 0, 9306048, 17, 0, 9306056, 17, 0, 9830312, 17, 0, 9830320, 17, 0, 9830328, 17, 0, 9830336, 17, 0, 9830344, 17, 0, 10354600, 17, 0, 10354608, 17, 0, 10354616, 17, 0, 10354624, 17, 0, 10354632, 17, 0, 10878888, 17, 0, 10878896, 17, 0, 10878904, 17, 0, 10878912, 17, 0, 10878920, 17, 0, 11403176, 17, 0, 11403184, 17, 0, 11403192, 17, 0, 11403200, 17, 0, 11403208, 17, 0, 9306064, 17, 0, 9830352, 17, 0, 9830360, 17, 0, 9830368, 17, 0, 9830376, 17, 0, 9830384, 17, 0, 10354640, 17, 0, 10354648, 17, 0, 10354656, 17, 0, 10354664, 17, 0, 10354672, 17, 0, 10878928, 17, 0, 10878936, 17, 0, 10878944, 17, 0, 10878952, 17, 0, 10878960, 17, 0, 11403216, 17, 0, 11403224, 17, 0, 11403232, 17, 0, 11403240, 17, 0, 11403248, 17, 0, 7208952, 17, 0, 7143424, 17, 0, 7143432, 17, 0, 7143440, 17, 0, 7733240, 17, 0, 7667712, 17, 0, 7667720, 17, 0, 7667728, 17, 0, 8257528, 17, 0, 8192000, 17, 0, 8192008, 17, 0, 8192016, 17, 0, 8781816, 17, 0, 8716288, 17, 0, 8716296, 17, 0, 8716304, 17, 0, 9306104, 17, 0, 9240576, 17, 0, 9240584, 17, 0, 9240592, 17, 0, 9830392, 17, 0, 9764864, 17, 0, 9764872, 17, 0, 9764880, 17, 0, 10354680, 17, 0, 10289152, 17, 0, 10289160, 17, 0, 10289168, 17, 0, 10878968, 17, 0, 10813440, 17, 0, 10813448, 17, 0, 10813456, 17, 0, 11403256, 17, 0, 11337728, 17, 0, 11337736, 17, 0, 11337744, 17, 0, 9896048, 2, 0, 9896056, 2, 0, 9896064, 2, 0, 7602093, 5, 0)
 
 [node name="EnvironmentFore" type="TileMap" parent="Tilesets"]
 z_index = 3
@@ -130,6 +163,7 @@ tile_set = ExtResource("10_efx65")
 cell_quadrant_size = 8
 format = 2
 layer_0/name = "EnvironmentFore"
+layer_0/tile_data = PackedInt32Array(7274490, 0, 0, 7733263, 1, 0, 9109421, 1, 0, 10026939, 0, 65536, 9633759, 0, 0, 9633909, 3, 0)
 
 [node name="HUD" parent="." instance=ExtResource("6_qwe80")]
 visible = false

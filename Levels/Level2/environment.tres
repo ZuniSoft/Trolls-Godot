@@ -1,24 +1,48 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://cdys0bq5dd3ip"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://cdys0bq5dd3ip"]
 
 [ext_resource type="Texture2D" uid="uid://dthwx1xuxjpy1" path="res://Assets/Environment2/sign.png" id="1_bdha1"]
-[ext_resource type="Texture2D" uid="uid://blg0pcrishkhv" path="res://Assets/Environment2/dungeon-water.png" id="2_vay8s"]
+[ext_resource type="Texture2D" uid="uid://dvjopwid4ufx2" path="res://Assets/Environment2/patch-1.png" id="1_w2s70"]
+[ext_resource type="Texture2D" uid="uid://dxvy20tln8077" path="res://Assets/Environment2/patch-2.png" id="2_i17ms"]
 [ext_resource type="Texture2D" uid="uid://cdrmvh4gx5wao" path="res://Assets/Environment2/tile-5.png" id="3_bkien"]
+[ext_resource type="Texture2D" uid="uid://d1iwqi47jbbmp" path="res://Assets/CommonObjects/swamp-water.png" id="5_q3h0g"]
+[ext_resource type="Texture2D" uid="uid://clkgm3cfdy13g" path="res://Assets/CommonObjects/fish.png" id="6_qe1cu"]
 [ext_resource type="Texture2D" uid="uid://vqrbwl5ijofb" path="res://Assets/Environment1/shrine-1.png" id="10_ymdip"]
 [ext_resource type="Texture2D" uid="uid://b53lqe1cae53q" path="res://Assets/Environment1/shrine-2.png" id="11_o5kih"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mf4gh"]
+texture = ExtResource("1_w2s70")
+texture_region_size = Vector2i(57, 108)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jt2o"]
+texture = ExtResource("2_i17ms")
+texture_region_size = Vector2i(59, 101)
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g081y"]
 texture = ExtResource("1_bdha1")
 texture_region_size = Vector2i(70, 74)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cmimo"]
-texture = ExtResource("2_vay8s")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h00y3"]
 texture = ExtResource("3_bkien")
 texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0yqk"]
+texture = ExtResource("5_q3h0g")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_byuj5"]
+texture = ExtResource("6_qe1cu")
+texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qupdk"]
@@ -76,5 +100,8 @@ tile_size = Vector2i(8, 8)
 sources/5 = SubResource("TileSetAtlasSource_qupdk")
 sources/6 = SubResource("TileSetAtlasSource_q53sh")
 sources/15 = SubResource("TileSetAtlasSource_g081y")
-sources/16 = SubResource("TileSetAtlasSource_cmimo")
 sources/17 = SubResource("TileSetAtlasSource_h00y3")
+sources/0 = SubResource("TileSetAtlasSource_mf4gh")
+sources/1 = SubResource("TileSetAtlasSource_1jt2o")
+sources/2 = SubResource("TileSetAtlasSource_y0yqk")
+sources/3 = SubResource("TileSetAtlasSource_byuj5")
