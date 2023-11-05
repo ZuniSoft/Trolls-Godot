@@ -10,29 +10,18 @@ var life = Globals.MAX_LIFE
 
 var enemies_killed = {}
 var coins_collected = {}
+var fireballs_collected = {}
+var hearts_collected = {}
+var mystery_boxes_collected = {}
 var blocks_broken = {}
 
 var door_1_locked = true
 var door_2_locked = true
 var door_3_locked = true
 
-var fireball_1_collected = false
-var fireball_2_collected = false
-var fireball_3_collected = false
-
-var heart_1_collected = false
-var heart_2_collected = false
-var heart_3_collected = false
-
 var key_1_collected = false
 var key_2_collected = false
 var key_3_collected = false
-
-var mystery_1_collected = false
-var mystery_2_collected = false
-var mystery_3_collected = false
-var mystery_4_collected = false
-var mystery_5_collected = false
 
 var last_position_x = Globals.DROP_POS_X
 var last_position_y = Globals.DROP_POS_Y
@@ -73,23 +62,15 @@ func load_config():
 			door_2_locked = config.get_value(section, "door_2_locked")
 			door_3_locked = config.get_value(section, "door_3_locked")
 		if section == "fireballs":
-			fireball_1_collected = config.get_value(section, "fireball_1_collected")
-			fireball_2_collected = config.get_value(section, "fireball_2_collected")
-			fireball_3_collected = config.get_value(section, "fireball_3_collected")
+			fireballs_collected = config.get_value(section, "collected")
 		if section == "hearts":
-			heart_1_collected = config.get_value(section, "heart_1_collected")
-			heart_2_collected = config.get_value(section, "heart_2_collected")
-			heart_3_collected = config.get_value(section, "heart_3_collected")
+			hearts_collected = config.get_value(section, "collected")
 		if section == "keys":
 			key_1_collected = config.get_value(section, "key_1_collected")
 			key_2_collected = config.get_value(section, "key_2_collected")
 			key_3_collected = config.get_value(section, "key_3_collected")
-		if section == "mystery":
-			mystery_1_collected = config.get_value(section, "mystery_1_collected")
-			mystery_2_collected = config.get_value(section, "mystery_2_collected")
-			mystery_3_collected = config.get_value(section, "mystery_3_collected")
-			mystery_4_collected = config.get_value(section, "mystery_4_collected")
-			mystery_5_collected = config.get_value(section, "mystery_5_collected")
+		if section == "mystery_boxes":
+			mystery_boxes_collected = config.get_value(section, "collected")
 		if section == "hero":
 			last_position_x = config.get_value(section, "last_position_x")
 			last_position_y = config.get_value(section, "last_position_y")
@@ -117,29 +98,18 @@ func save_config():
 	
 	config.set_value("enemies", "killed", enemies_killed)
 	config.set_value("coins", "collected", coins_collected)
+	config.set_value("fireballs", "collected", fireballs_collected)
+	config.set_value("hearts", "collected", hearts_collected)
+	config.set_value("mystery_boxes", "collected", mystery_boxes_collected)
 	config.set_value("blocks", "broken", blocks_broken)
 	
 	config.set_value("doors", "door_1_locked", door_1_locked)
 	config.set_value("doors", "door_2_locked", door_2_locked)
 	config.set_value("doors", "door_3_locked", door_3_locked)
 	
-	config.set_value("fireballs", "fireball_1_collected", fireball_1_collected)
-	config.set_value("fireballs", "fireball_2_collected", fireball_2_collected)
-	config.set_value("fireballs", "fireball_3_collected", fireball_3_collected)
-	
-	config.set_value("hearts", "heart_1_collected", heart_1_collected)
-	config.set_value("hearts", "heart_2_collected", heart_2_collected)
-	config.set_value("hearts", "heart_3_collected", heart_3_collected)
-	
 	config.set_value("keys", "key_1_collected", key_1_collected)
 	config.set_value("keys", "key_2_collected", key_2_collected)
 	config.set_value("keys", "key_3_collected", key_3_collected)
-	
-	config.set_value("mystery", "mystery_1_collected", mystery_1_collected)
-	config.set_value("mystery", "mystery_2_collected", mystery_2_collected)
-	config.set_value("mystery", "mystery_3_collected", mystery_3_collected)
-	config.set_value("mystery", "mystery_4_collected", mystery_4_collected)
-	config.set_value("mystery", "mystery_5_collected", mystery_5_collected)
 	
 	config.set_value("hero", "last_position_x", last_position_x)
 	config.set_value("hero", "last_position_y", last_position_y)
@@ -147,7 +117,6 @@ func save_config():
 	config.save("user://game_state.cfg")
 
 func reset_hud_values():
-	#coins = 0
 	keys = 0
 	fireballs = Globals.MAX_FIREBALLS
 	life = Globals.MAX_LIFE	
@@ -174,29 +143,18 @@ func clear():
 
 	enemies_killed = {}
 	coins_collected = {}
+	fireballs_collected = {}
+	hearts_collected = {}
+	mystery_boxes_collected = {}
 	blocks_broken = {}
 
 	door_1_locked = true
 	door_2_locked = true
 	door_3_locked = true
 	
-	fireball_1_collected = false
-	fireball_2_collected = false
-	fireball_3_collected = false
-
-	heart_1_collected = false
-	heart_2_collected = false
-	heart_3_collected = false
-	
 	key_1_collected = false
 	key_2_collected = false
 	key_3_collected = false
-	
-	mystery_1_collected = false
-	mystery_2_collected = false
-	mystery_3_collected = false
-	mystery_4_collected = false
-	mystery_5_collected = false
 	
 	last_position_x = Globals.DROP_POS_X
 	last_position_y = Globals.DROP_POS_Y

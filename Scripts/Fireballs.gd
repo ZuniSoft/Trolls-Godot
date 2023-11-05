@@ -7,12 +7,11 @@ func _on_Fireballs_body_entered(_body):
 	$SoundFireball.play()
 	
 	var room = self.get_node("../../")
-	var node_idx = name.lstrip(Globals.NODE_FIREBALLS_NAME)
 	
 	if "Room" in room.name and name != "Fireballs":
-		RoomState.set("fireball_" + str(node_idx) + "_collected", true)
+		RoomState.fireballs_collected[name] = true
 	elif "Level" in room.name and name != "Fireballs":
-		GameState.set("fireball_" + str(node_idx) + "_collected", true)
+		GameState.fireballs_collected[name] = true
 	
 	emit_signal("fireball_collected", 5)
 	set_collision_mask_value(1, false)

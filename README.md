@@ -14,11 +14,11 @@ Runs on MacOS, Linux, Windows, and iOS
 4. No limit on portal doors
 5. No limit on springs
 6. No limit on breakable tiles
-7. Maximum of three locked doors w/ rooms
-8. Maximum of three keys
-9. Maximum of five mystery boxes
-10. Maximum of three hearts
-11. Maximum of three fireballs
+7. No limit on mystery boxes
+8. No limit on hearts
+9. No limit on fireballs
+10. Maximum of three keys
+11. Maximum of three locked doors w/ rooms
 12. One Ogre as a boss that must be killed to advance to the next level
 
 ### Room Limits
@@ -28,11 +28,11 @@ Runs on MacOS, Linux, Windows, and iOS
 4. No limit on portal doors
 5. No limit on springs
 6. No limit on breakable tiles
-7. No locked doors w/ rooms
-8. Maximum of one key
-9. Maximum of five mystery boxes
-10. Maximum of one heart
-11. Maximum of one fireball
+8. No limit on mystery boxes
+9. No limt on hearts
+10. No limit on fireballs
+11. Maximum of one key
+12. No locked doors in rooms
 
 ### Items of Note
 1. Remember that running the scene directly messes up screen transitions. No previous scene to remove

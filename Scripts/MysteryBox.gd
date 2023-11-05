@@ -3,7 +3,7 @@ extends Area2D
 var mystery_items = ["res://Scenes/Fireballs.tscn", "res://Scenes/Heart.tscn","res://Scenes/Coin.tscn"]
 
 func _on_MysteryBox_body_entered(body):
-	if position.y < body.position.y:
+	if position.y >= body.position.y or position.y < body.position.y:
 		$AnimationPlayer.play("Bounce")
 		
 		mystery_items.shuffle()	
@@ -19,12 +19,11 @@ func _on_MysteryBox_body_entered(body):
 			scene_instance.connect("coin_collected",Callable(hud_instance,"_on_coin_collected"))
 
 		var room = self.get_node("../../")
-		var node_idx = name.lstrip(Globals.NODE_MYSTERY_NAME)
 		
 		if "Room" in room.name:
-			RoomState.set("mystery_" + str(node_idx) + "_collected", true)
+			RoomState.mystery_boxes_collected[name] = true
 		else:
-			GameState.set("mystery_" + str(node_idx) + "_collected", true)
+			GameState.mystery_boxes_collected[name] = true
 
 		scene_instance.set_position(position)
 		get_parent().call_deferred("add_child", scene_instance)

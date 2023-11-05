@@ -7,7 +7,6 @@ const MAX_LIFE = 50
 const MAX_FIREBALLS = 20
 const MAX_KEYS = 3
 const MAX_LOCKED_DOORS = 3
-const MAX_MYSTERY_BOXES = 5
 
 const DROP_POS_X = 288 #6272 #7184
 const DROP_POS_Y = 1424 #1488 #1264

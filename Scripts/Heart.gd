@@ -7,12 +7,11 @@ func _on_Heart_body_entered(_body):
 	$SoundHeart.play()
 	
 	var room = self.get_node("../../")
-	var node_idx = name.lstrip(Globals.NODE_HEART_NAME)
 	
 	if "Room" in room.name and name != "Heart":
-		RoomState.set("heart_" + str(node_idx) + "_collected", true)
+		RoomState.hearts_collected[name] = true
 	elif "Level" in room.name and name != "Heart":
-		GameState.set("heart_" + str(node_idx) + "_collected", true)
+		GameState.hearts_collected[name] = true
 	
 	emit_signal("heart_collected", 5)
 	set_collision_mask_value(1, false)

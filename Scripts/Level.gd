@@ -60,25 +60,25 @@ func _ready():
 				key.show_closed_door()
 			else:
 				key.show_open_door()
-				
-	for idx in range(1, Globals.MAX_FIREBALLS):
-		collected = GameState.get("fireball_" + str(idx) + "_collected")
+		
+	for fireball in GameState.fireballs_collected:
+		collected = GameState.fireballs_collected[fireball]
 		if collected:
-			key = get_node("Fireballs/Fireballs" + str(idx))
-			key.queue_free()
+			var fireball_node = get_node("Fireballs/" + fireball)
+			fireball_node.queue_free()
 			
-	for idx in range(1, Globals.MAX_LIFE):
-		collected = GameState.get("heart_" + str(idx) + "_collected")
+	for heart in GameState.hearts_collected:
+		collected = GameState.hearts_collected[heart]
 		if collected:
-			key = get_node("Life/Heart" + str(idx))
-			key.queue_free()
+			var heart_node = get_node("Life/" + heart)
+			heart_node.queue_free()
 			
-	for idx in range(1, Globals.MAX_MYSTERY_BOXES):
-		collected = GameState.get("mystery_" + str(idx) + "_collected")
+	for mystery_box in GameState.mystery_boxes_collected:
+		collected = GameState.mystery_boxes_collected[mystery_box]
 		if collected:
-			key = get_node("MysteryBoxes/MysteryBox" + str(idx))
-			key.queue_free()
-			
+			var mystery_box_node = get_node("MysteryBoxes/" + mystery_box)
+			mystery_box_node.queue_free()
+	
 	for coin in GameState.coins_collected:
 		collected = GameState.coins_collected[coin]
 		if collected:
