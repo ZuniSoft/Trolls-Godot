@@ -388,19 +388,15 @@ position = Vector2(7424, 1440)
 
 [node name="MysteryBox1" parent="MysteryBoxes" instance=ExtResource("33")]
 position = Vector2(2004, 1292)
-collision_layer = 8
 
 [node name="MysteryBox2" parent="MysteryBoxes" instance=ExtResource("33")]
 position = Vector2(2892, 1308)
-collision_layer = 8
 
 [node name="MysteryBox3" parent="MysteryBoxes" instance=ExtResource("33")]
 position = Vector2(3988, 804)
-collision_layer = 8
 
 [node name="MysteryBox4" parent="MysteryBoxes" instance=ExtResource("33")]
 position = Vector2(6392, 848)
-collision_layer = 8
 
 [node name="Enemies" type="Node" parent="."]
 

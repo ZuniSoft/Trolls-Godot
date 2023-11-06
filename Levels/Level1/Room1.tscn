@@ -164,19 +164,15 @@ spring_velocity = -1350
 
 [node name="MysteryBox1" parent="MysteryBoxes" instance=ExtResource("16_lmcv2")]
 position = Vector2(1792, 639)
-collision_layer = 8
 
 [node name="MysteryBox2" parent="MysteryBoxes" instance=ExtResource("16_lmcv2")]
 position = Vector2(1800, 1120)
-collision_layer = 8
 
 [node name="MysteryBox3" parent="MysteryBoxes" instance=ExtResource("16_lmcv2")]
 position = Vector2(2784, 440)
-collision_layer = 8
 
 [node name="MysteryBox4" parent="MysteryBoxes" instance=ExtResource("16_lmcv2")]
 position = Vector2(864, 440)
-collision_layer = 8
 
 [node name="Breakables" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0fxwx6d0mi3q"]
+[gd_scene load_steps=19 format=3 uid="uid://d0fxwx6d0mi3q"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_0efca"]
 [ext_resource type="Texture2D" uid="uid://caxyvjeuedhic" path="res://Assets/Background2/Background.png" id="2_h7ll8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://tmosqbul0bh1" path="res://Assets/Background2/Layer2.png" id="5_xti7c"]
 [ext_resource type="Texture2D" uid="uid://bb8fxgd3vlxqj" path="res://Assets/Background2/Layer3.png" id="6_mffh5"]
 [ext_resource type="PackedScene" uid="uid://u25i8e0a1jqq" path="res://Scenes/HUD.tscn" id="6_qwe80"]
+[ext_resource type="PackedScene" uid="uid://djsejs3ktkcxr" path="res://Scenes/MysteryBox.tscn" id="7_2gduu"]
 [ext_resource type="PackedScene" uid="uid://bmnmbwygj3fnm" path="res://Scenes/Spring.tscn" id="7_l0osc"]
 [ext_resource type="PackedScene" uid="uid://b2vmetdm76goy" path="res://Scenes/UI.tscn" id="7_mgl5d"]
 [ext_resource type="TileSet" uid="uid://cgfd0f8t4gs1v" path="res://Levels/Level2/platformer.tres" id="7_tgi0d"]
@@ -16,6 +17,9 @@
 [ext_resource type="TileSet" uid="uid://c18n1d4gshr2i" path="res://Levels/Level2/ladder.tres" id="9_lh3ey"]
 [ext_resource type="AudioStream" uid="uid://duxxcer38iymi" path="res://Assets/Sound/Forest.mp3" id="10_8bwxs"]
 [ext_resource type="TileSet" uid="uid://cdys0bq5dd3ip" path="res://Levels/Level2/environment.tres" id="10_efx65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_new08"]
+size = Vector2(36, 320)
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_0efca")
@@ -91,16 +95,24 @@ stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
+[node name="Ladders" type="Node" parent="."]
+
+[node name="Ladder1" type="Area2D" parent="Ladders"]
+position = Vector2(732, 516)
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder1"]
+position = Vector2(-189, 876)
+shape = SubResource("RectangleShape2D_new08")
+
+[node name="MysteryBoxes" type="Node" parent="."]
+
+[node name="MysteryBox1" parent="MysteryBoxes" instance=ExtResource("7_2gduu")]
+position = Vector2(1256, 1296)
+
 [node name="Springs" type="Node" parent="."]
 
 [node name="Spring1" parent="Springs" instance=ExtResource("7_l0osc")]
-z_index = 2
-position = Vector2(512, 1520)
-collision_layer = 4096
-collision_mask = 1
-spring_velocity = -1350
-
-[node name="Spring2" parent="Springs" instance=ExtResource("7_l0osc")]
 z_index = 2
 position = Vector2(1024, 1520)
 collision_layer = 4096
@@ -146,6 +158,7 @@ tile_set = ExtResource("9_lh3ey")
 cell_quadrant_size = 8
 format = 2
 layer_0/name = "Ladder"
+layer_0/tile_data = PackedInt32Array(6160360, 0, 0, 6684648, 1, 0, 7208936, 1, 0, 7733224, 1, 0, 8257512, 1, 0)
 
 [node name="EnvironmentBkg" type="TileMap" parent="Tilesets"]
 z_index = 1
@@ -193,3 +206,6 @@ visible = false
 position = Vector2(-664, 1456)
 stream = ExtResource("10_8bwxs")
 autoplay = true
+
+[connection signal="body_entered" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_entered"]
+[connection signal="body_exited" from="Ladders/Ladder1" to="Hero" method="_on_Ladder_body_exited"]
