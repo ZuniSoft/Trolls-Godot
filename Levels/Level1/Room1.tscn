@@ -180,21 +180,25 @@ position = Vector2(864, 440)
 position = Vector2(1640, 1536)
 blocks_impulse = 600
 debris_max_time = 5
+collision_one_way = false
 
 [node name="Breakable2" parent="Breakables" instance=ExtResource("14_63k00")]
 position = Vector2(1640, 1472)
 blocks_impulse = 600
 debris_max_time = 5
+collision_one_way = false
 
 [node name="Breakable3" parent="Breakables" instance=ExtResource("14_63k00")]
 position = Vector2(1961, 1536)
 blocks_impulse = 600
 debris_max_time = 5
+collision_one_way = false
 
 [node name="Breakable4" parent="Breakables" instance=ExtResource("14_63k00")]
 position = Vector2(1961, 1472)
 blocks_impulse = 600
 debris_max_time = 5
+collision_one_way = false
 
 [node name="Enemies" type="Node" parent="."]
 
