@@ -176,6 +176,7 @@ func explosion():
 	for i in range(object.blocks_container.get_child_count()):
 		var child = object.blocks_container.get_child(i)
 		child.apply_central_impulse(Vector2(randf_range(-blocks_impulse, blocks_impulse), -blocks_impulse))
+		child.set_collision_layer_value(14, true)
 		
 	object.debris_timer.start()
 
