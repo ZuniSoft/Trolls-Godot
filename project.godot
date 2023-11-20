@@ -37,6 +37,7 @@ window/handheld/orientation=4
 
 [editor]
 
+movie_writer/movie_file="/Users/krdavis/Desktop/output.avi"
 export/convert_text_resources_to_binary=false
 
 [editor_plugins]

@@ -20,7 +20,7 @@ func _on_DieTimer_timeout():
 	super._on_DieTimer_timeout()
 	
 	RoomState.reset_rooms()
-	GameState.set_next_level(3, false)
+	GameState.set_next_level(3, true)
 	
 	get_node("../../HUD").visible = false
 	
